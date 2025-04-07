@@ -1,0 +1,105 @@
+{
+    "coffee": {
+        "espresso": {
+            "sizes": {
+                "single": 63,
+                "double": 126
+            }
+        },
+        "cappuccino": {
+            "sizes": {
+                "small": 75,
+                "medium": 150,
+                "large": 225
+            }
+        },
+        "latte": {
+            "sizes": {
+                "small": 75,
+                "medium": 150,
+                "large": 225
+            }
+        },
+        "americano": {
+            "sizes": {
+                "small": 75,
+                "medium": 150,
+                "large": 225
+            }
+        },
+        "mocha": {
+            "sizes": {
+                "small": 95,
+                "medium": 190,
+                "large": 285
+            }
+        },
+        "drip": {
+            "sizes": {
+                "small": 95,
+                "medium": 150,
+                "large": 200
+            }
+        },
+        "instant": {
+            "sizes": {
+                "small": 30,
+                "medium": 60,
+                "large": 90
+            }
+        },
+        "decaf": {
+            "sizes": {
+                "small": 2,
+                "medium": 4,
+                "large": 6
+            }
+        }
+    },
+    "tea": {
+        "blackTea": {
+            "sizes": {
+                "small": 40,
+                "medium": 80,
+                "large": 120
+            }
+        },
+        "greenTea": {
+            "sizes": {
+                "small": 30,
+                "medium": 60,
+                "large": 90
+            }
+        },
+        "herbalTea": {
+            "sizes": {
+                "small": 0,
+                "medium": 0,
+                "large": 0
+            }
+        }
+    },
+    "energyDrink": {
+        "redBull": {
+            "sizes": {
+                "small": 80,
+                "medium": 160,
+                "large": 240
+            }
+        },
+        "monster": {
+            "sizes": {
+                "small": 160,
+                "medium": 320,
+                "large": 480
+            }
+        },
+        "rockstar": {
+            "sizes": {
+                "small": 160,
+                "medium": 320,
+                "large": 480
+            }
+        }
+    }
+}
