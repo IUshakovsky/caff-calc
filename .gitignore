@@ -1,0 +1,28 @@
+# macOS system files
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.*
+*.local
+
+# VS Code settings
+.vscode/
+
+# Other system files
+Thumbs.db
+
+# Optional: ignore SEO/build/test artifacts
+seo/
+coverage/

@@ -5,6 +5,7 @@ let user = {
   weight: 75,
   weightUnit: 'kg',
   isPregnant: false,
+  isBreastfeeding: false,
   sensitivity: 3,
   volumeUnit: 'ml'
 };
@@ -63,16 +64,23 @@ function updateGender(gender) {
   user.gender = gender;
   const maleBtn = document.getElementById('maleBtn');
   const femaleBtn = document.getElementById('femaleBtn');
-  const pregnantContainer = document.getElementById('pregnantContainer');
+  const femaleHealthPanel = document.getElementById('femaleHealthPanel');
 
   maleBtn.classList.toggle('active', gender === 'Male');
   femaleBtn.classList.toggle('active', gender === 'Female');
-  pregnantContainer.style.display = gender === 'Female' ? 'flex' : 'none';
   
-  if (gender === 'Male') {
+  // Show/hide female health panel based on gender
+  if (gender === 'Female') {
+    femaleHealthPanel.classList.remove('d-none');
+  } else {
+    femaleHealthPanel.classList.add('d-none');
+    // Reset health switches when switching to male
     document.getElementById('pregnantSwitch').checked = false;
+    document.getElementById('breastfeedingSwitch').checked = false;
     user.isPregnant = false;
+    user.isBreastfeeding = false;
   }
+  
   updateCalculation();
 }
 
@@ -84,6 +92,10 @@ window.updateUnit = function(type, unit, savePrefs = true) {
 
   if (type === 'weight') {
     const inputField = document.getElementById('weightInput');
+    if (!inputField) {
+      // We're not on the calculator page, just update the user object
+      return;
+    }
     const currentValue = parseFloat(inputField.value);
     
     if (!isNaN(currentValue)) {
@@ -97,7 +109,8 @@ window.updateUnit = function(type, unit, savePrefs = true) {
     const beverageDropdown = document.getElementById('caffeineBeverage');
     const sizeDropdown = document.getElementById('caffeineSize');
     
-    if (beverageDropdown.value && beverageDropdown.value !== 'custom' && !sizeDropdown.disabled) {
+    if (beverageDropdown && sizeDropdown && beverageDropdown.value && 
+        beverageDropdown.value !== 'custom' && !sizeDropdown.disabled) {
       // Get currently selected beverage
       const [category, type] = beverageDropdown.value.split('_');
       
@@ -106,8 +119,12 @@ window.updateUnit = function(type, unit, savePrefs = true) {
     }
   }
 
-  document.querySelectorAll(`[data-unit="${prevUnit}"]`).forEach(btn => btn.classList.remove('active'));
-  document.querySelectorAll(`[data-unit="${unit}"]`).forEach(btn => btn.classList.add('active'));
+  // Only update UI if elements exist (we might be on a different page)
+  const unitButtons = document.querySelectorAll(`[data-unit]`);
+  if (unitButtons.length > 0) {
+    document.querySelectorAll(`[data-unit="${prevUnit}"]`).forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll(`[data-unit="${unit}"]`).forEach(btn => btn.classList.add('active'));
+  }
   updateCalculation();
   
   // Save user preferences to local storage if needed
@@ -123,12 +140,34 @@ function convertWeight(value, fromUnit, toUnit) {
 
 // Update calculation
 function updateCalculation() {
-  const pregnancyModifier = document.getElementById('pregnantSwitch').checked ? 0.5 : 1;
-  user.isPregnant = document.getElementById('pregnantSwitch').checked;
+  const pregnantSwitch = document.getElementById('pregnantSwitch');
+  const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
+  
+  // Update user status based on switches (only if elements exist)
+  if (pregnantSwitch) {
+    user.isPregnant = pregnantSwitch.checked;
+  }
+  
+  if (breastfeedingSwitch) {
+    user.isBreastfeeding = breastfeedingSwitch.checked;
+  }
+  
+  // Update switch container styles (only if elements exist)
+  const femaleHealthPanel = document.getElementById('femaleHealthPanel');
+  if (femaleHealthPanel) {
+    femaleHealthPanel.classList.toggle('active', user.isPregnant || user.isBreastfeeding);
+  }
   
   // Get base limit from age group
   let baseLimit = caffeineLimits[user.ageGroup];
-  if (user.isPregnant) baseLimit = caffeineLimits.pregnant;
+  
+  // Set limits based on pregnancy/breastfeeding status
+  // Pregnant takes precedence if both are checked
+  if (user.isPregnant) {
+    baseLimit = caffeineLimits.pregnant; // 200mg for pregnant women
+  } else if (user.isBreastfeeding) {
+    baseLimit = 300; // 300mg for breastfeeding women
+  }
   
   // Apply weight-based adjustment if applicable
   let weightBasedLimit = 0;
@@ -183,6 +222,11 @@ document.getElementById('pregnantSwitch').addEventListener('change', function(e)
   updateCalculation();
 });
 
+document.getElementById('breastfeedingSwitch').addEventListener('change', function(e) {
+  user.isBreastfeeding = e.target.checked;
+  updateCalculation();
+});
+
 // Sensitivity buttons handler
 document.querySelectorAll('.sensitivity-btn').forEach(btn => {
   btn.addEventListener('click', function() {
@@ -201,7 +245,7 @@ let totalCaffeineConsumed = 0;
 // Load caffeine data and populate beverage dropdown
 async function loadCaffeineData() {
   try {
-    const response = await fetch('caf_src.json');
+    const response = await fetch('../assets/data/caf_src.json');
     caffeineData = await response.json();
     console.log('Caffeine data loaded successfully');
     
@@ -567,6 +611,7 @@ function updateCaffeineStatus() {
   // Get user's safe limit based on age, pregnancy, etc.
   let baseLimit = caffeineLimits[user.ageGroup];
   if (user.isPregnant) baseLimit = caffeineLimits.pregnant;
+  else if (user.isBreastfeeding) baseLimit = 300;
   
   // Apply sensitivity modifier (1-5 scale)
   // Higher sensitivity (5) means LOWER tolerance, so we invert the scale
@@ -579,7 +624,7 @@ function updateCaffeineStatus() {
   if (baseLimit === 0 && totalCaffeineConsumed > 0) {
     statusElement.classList.remove('d-none', 'alert-success', 'alert-warning');
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="health-advice.html" class="alert-link">See health advice</a> for more information.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="pages/health-advice.html" class="alert-link">See health advice</a> for more information.`;
     return { percentage: 100, adjustedLimit: 0 };
   }
   
@@ -593,10 +638,10 @@ function updateCaffeineStatus() {
     statusElement.innerHTML = `<strong>Safe:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg).`;
   } else if (percentage <= 100) {
     statusElement.classList.add('alert-warning');
-    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="caffeine-science.html" class="alert-link">Learn more</a> about caffeine metabolism.`;
+    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="pages/caffeine-science.html" class="alert-link">Learn more</a> about caffeine metabolism.`;
   } else {
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="overdose-symptoms.html" class="alert-link">overdose symptoms</a> for health concerns.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="pages/overdose-symptoms.html" class="alert-link">overdose symptoms</a> for health concerns.`;
   }
   
   return { percentage, adjustedLimit };
@@ -729,6 +774,7 @@ function saveUserPreferences() {
     weight: user.weight,
     weightUnit: user.weightUnit,
     isPregnant: user.isPregnant,
+    isBreastfeeding: user.isBreastfeeding,
     sensitivity: user.sensitivity,
     volumeUnit: user.volumeUnit
   };
@@ -755,27 +801,44 @@ function loadUserPreferences() {
     user.weight = preferences.weight || 70;
     user.weightUnit = preferences.weightUnit || 'kg';
     user.isPregnant = preferences.isPregnant || false;
+    user.isBreastfeeding = preferences.isBreastfeeding || false;
     user.sensitivity = preferences.sensitivity || 3;
     user.volumeUnit = preferences.volumeUnit || 'ml';
     
-    // Update UI to reflect loaded preferences
-    setAgeGroup(user.ageGroup);
-    updateGender(user.gender);
+    // Check if we're on the calculator page before updating UI elements
+    const isCalculatorPage = document.getElementById('weightInput') !== null;
     
-    // Set weight input value
-    document.getElementById('weightInput').value = user.weight;
-    document.getElementById('weightUnit').textContent = user.weightUnit;
-    
-    // Set pregnant switch if applicable
-    if (user.gender === 'Female') {
-      document.getElementById('pregnantContainer').style.display = 'flex';
-      document.getElementById('pregnantSwitch').checked = user.isPregnant;
+    if (isCalculatorPage) {
+      // Update UI to reflect loaded preferences
+      setAgeGroup(user.ageGroup);
+      updateGender(user.gender);
+      
+      // Set weight input value
+      const weightInput = document.getElementById('weightInput');
+      const weightUnitElement = document.getElementById('weightUnit');
+      if (weightInput) weightInput.value = user.weight;
+      if (weightUnitElement) weightUnitElement.textContent = user.weightUnit;
+      
+      // Set female health panel if applicable
+      const femaleHealthPanel = document.getElementById('femaleHealthPanel');
+      const pregnantSwitch = document.getElementById('pregnantSwitch');
+      const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
+      
+      if (user.gender === 'Female' && femaleHealthPanel) {
+        femaleHealthPanel.classList.remove('d-none');
+        
+        if (pregnantSwitch) pregnantSwitch.checked = user.isPregnant;
+        if (breastfeedingSwitch) breastfeedingSwitch.checked = user.isBreastfeeding;
+      }
+      
+      // Set sensitivity
+      const sensitivityBtns = document.querySelectorAll('.sensitivity-btn');
+      if (sensitivityBtns.length > 0) {
+        sensitivityBtns.forEach(btn => {
+          btn.classList.toggle('active', parseInt(btn.dataset.value) === user.sensitivity);
+        });
+      }
     }
-    
-    // Set sensitivity
-    document.querySelectorAll('.sensitivity-btn').forEach(btn => {
-      btn.classList.toggle('active', parseInt(btn.dataset.value) === user.sensitivity);
-    });
     
     // Set units
     updateUnit('weight', user.weightUnit, false); // Pass false to prevent saving during initial load
@@ -959,13 +1022,29 @@ async function initApp() {
   }
 }
 
+// Initialize search scrolling behavior
+function initSearchScrolling() {
+  // Check for scroll target from search results
+  checkForScrollTarget();
+}
+
 // Initialize on DOM load
-document.addEventListener('DOMContentLoaded', initApp);
+document.addEventListener('DOMContentLoaded', function() {
+  initApp();
+  initSearchScrolling();
+});
 
 // Search functionality
-function performSearch(event) {
-  event.preventDefault();
-  const searchTerm = document.getElementById('siteSearch').value.trim().toLowerCase();
+async function performSearch(event) {
+  if (event) event.preventDefault();
+  
+  const searchInput = document.getElementById('siteSearch');
+  if (!searchInput) {
+    console.error('Search input element not found');
+    return false;
+  }
+  
+  const searchTerm = searchInput.value.trim();
   
   // Log the search term for debugging
   console.log('Searching for:', searchTerm);
@@ -978,26 +1057,6 @@ function performSearch(event) {
   } catch (error) {
     console.error('Could not save search term:', error);
   }
-  
-  // Define search content for each page with more comprehensive content
-  const searchContent = {
-    'index.html': {
-      title: 'Caffeine Calculator',
-      content: 'Calculate your safe caffeine intake based on personal factors like age, weight, gender, pregnancy status, and sensitivity. Track your consumption and avoid caffeine overdose. For pregnant women, the recommended limit is lower at 200mg. Children should have no caffeine, teens should have less than 100mg, adults can have up to 400mg, and seniors should limit to 300mg.'
-    },
-    'caffeine-science.html': {
-      title: 'Caffeine Science',
-      content: 'Learn about caffeine chemistry, absorption, metabolism, and how it affects your body. Information about caffeine sources, half-life, and sensitivity factors. Caffeine is absorbed quickly and peaks in 30-60 minutes. The half-life is 3-5 hours, meaning half the caffeine is eliminated in this time. Pregnant women metabolize caffeine more slowly, with a half-life of up to 9 hours. Factors affecting sensitivity include age, body mass, genetics, liver function, and medication use.'
-    },
-    'overdose-symptoms.html': {
-      title: 'Caffeine Overdose Symptoms',
-      content: 'Recognize the signs of caffeine overdose including anxiety, jitters, rapid heartbeat, insomnia, digestive issues, and when to seek medical help. Consuming less caffeine can help avoid these symptoms. Pregnant women, children, and those with certain health conditions are more sensitive to caffeine and should consume less. Symptoms can appear with as little as 200mg for sensitive individuals.'
-    },
-    'health-advice.html': {
-      title: 'Caffeine Health Advice',
-      content: 'Expert health advice on caffeine consumption. Safe limits, effects on health conditions, and smart ways to manage your caffeine intake. Pregnant women should limit caffeine to less than 200mg per day. People with anxiety, heart conditions, or sleep disorders should consume less caffeine. Balance each caffeinated beverage with water to stay hydrated. Timing your caffeine intake earlier in the day can help with sleep quality.'
-    }
-  };
   
   // Create or get search results container
   let searchResults = document.getElementById('searchResults');
@@ -1015,7 +1074,7 @@ function performSearch(event) {
   const header = document.createElement('div');
   header.className = 'search-results-header';
   header.innerHTML = `
-    <h5>Search Results for "${searchTerm}"</h5>
+    <h5>Searching across all pages for "${searchTerm}"...</h5>
     <button class="close-btn" onclick="closeSearchResults()"><i class="fas fa-times"></i></button>
   `;
   searchResults.appendChild(header);
@@ -1024,94 +1083,366 @@ function performSearch(event) {
   const body = document.createElement('div');
   body.className = 'search-results-body';
   
-  // Filter results
-  let resultsCount = 0;
-  
-  // Split search term into words for better matching
-  const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 2);
-  console.log('Search words:', searchWords);
-  
-  for (const [page, data] of Object.entries(searchContent)) {
-    // Check for exact matches first
-    const titleMatch = data.title.toLowerCase().includes(searchTerm);
-    const contentMatch = data.content.toLowerCase().includes(searchTerm);
-    
-    // Check for individual word matches if no exact match
-    let wordMatches = false;
-    if (!titleMatch && !contentMatch && searchWords.length > 0) {
-      wordMatches = searchWords.some(word => 
-        data.title.toLowerCase().includes(word) || 
-        data.content.toLowerCase().includes(word)
-      );
-    }
-    
-    if (titleMatch || contentMatch || wordMatches) {
-      resultsCount++;
-      const resultItem = document.createElement('div');
-      resultItem.className = 'search-result-item';
-      
-      // Highlight the search term in content
-      let highlightedContent = data.content;
-      
-      // Function to get context with highlighting
-      const getHighlightedContext = (content, term) => {
-        const lowerContent = content.toLowerCase();
-        const startIndex = lowerContent.indexOf(term);
-        if (startIndex === -1) return null;
-        
-        const endIndex = startIndex + term.length;
-        const contextStart = Math.max(0, startIndex - 50);
-        const contextEnd = Math.min(content.length, endIndex + 50);
-        let context = content.substring(contextStart, contextEnd);
-        
-        if (contextStart > 0) context = '...' + context;
-        if (contextEnd < content.length) context += '...';
-        
-        return context.replace(
-          new RegExp(term, 'gi'),
-          match => `<strong>${match}</strong>`
-        );
-      };
-      
-      if (contentMatch) {
-        highlightedContent = getHighlightedContext(data.content, searchTerm);
-      } else if (wordMatches) {
-        // Find the first matching word and highlight it
-        for (const word of searchWords) {
-          if (data.content.toLowerCase().includes(word)) {
-            const highlighted = getHighlightedContext(data.content, word);
-            if (highlighted) {
-              highlightedContent = highlighted;
-              break;
-            }
-          }
-        }
-      }
-
-      
-      resultItem.innerHTML = `
-        <a href="${page}">
-          <div class="result-title">${data.title}</div>
-          <p class="result-context">${highlightedContent}</p>
-        </a>
-      `;
-      
-      body.appendChild(resultItem);
-    }
-  }
+  // Add loading message
+  const loadingDiv = document.createElement('div');
+  loadingDiv.className = 'loading-results';
+  loadingDiv.textContent = 'Searching all pages...';
+  body.appendChild(loadingDiv);
   
   searchResults.appendChild(body);
   
-  // Create footer
-  const footer = document.createElement('div');
-  footer.className = 'search-results-footer';
-  footer.textContent = `${resultsCount} result${resultsCount !== 1 ? 's' : ''} found`;
-  searchResults.appendChild(footer);
-  
-  // Show results
+  // Show results container with loading state
   searchResults.classList.add('show');
   
+  try {
+    // Search through all page content asynchronously
+    const results = await searchAllPages(searchTerm);
+    const resultsCount = results.length;
+    
+    // Update header after search completes
+    header.innerHTML = `
+      <h5>Search Results for "${searchTerm}"</h5>
+      <button class="close-btn" onclick="closeSearchResults()"><i class="fas fa-times"></i></button>
+    `;
+    
+    // Clear loading message
+    body.innerHTML = '';
+    
+    if (resultsCount > 0) {
+      results.forEach(result => {
+        const resultItem = document.createElement('div');
+        resultItem.className = 'search-result-item';
+        
+        // Add page indicator for non-current page results
+        const pageName = result.url.replace('.html', '').replace('pages/', '');
+        const pageIndicator = result.url !== window.location.pathname ? 
+          `<div class="result-page">Page: ${pageName}</div>` : '';
+        
+        resultItem.innerHTML = `
+          <a href="${result.url}" data-target="${result.id}" onclick="scrollToElement(event, '${result.id}')">
+            <div class="result-title">${result.title}</div>
+            <p class="result-context">${result.content}</p>
+            ${pageIndicator}
+          </a>
+        `;
+        
+        body.appendChild(resultItem);
+      });
+    } else {
+      const noResults = document.createElement('div');
+      noResults.className = 'no-results';
+      noResults.textContent = 'No results found.';
+      body.appendChild(noResults);
+    }
+    
+    // Create footer
+    const footer = document.createElement('div');
+    footer.className = 'search-results-footer';
+    footer.textContent = `${resultsCount} result${resultsCount !== 1 ? 's' : ''} found across all pages`;
+    searchResults.appendChild(footer);
+  } catch (error) {
+    console.error('Search error:', error);
+    body.innerHTML = '<div class="search-error">An error occurred while searching. Please try again.</div>';
+    
+    // Create error footer
+    const footer = document.createElement('div');
+    footer.className = 'search-results-footer';
+    footer.textContent = 'Search failed';
+    searchResults.appendChild(footer);
+  }
+  
   return false;
+}
+
+// Function to search across all pages
+async function searchAllPages(searchTerm) {
+  const results = [];
+  const searchTermLower = searchTerm.toLowerCase();
+  
+  // Only search if term is at least 3 characters
+  if (searchTermLower.length < 3) {
+    return [];
+  }
+
+  // Get all page URLs
+  const pages = [
+    'index.html',
+    'pages/caffeine-science.html',
+    'pages/overdose-symptoms.html',
+    'pages/health-advice.html'
+  ];
+
+  // First search current page
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPageResults = await searchPageContent(searchTerm);
+  results.push(...currentPageResults);
+
+  // Then search other pages using Fetch API
+  for (const page of pages) {
+    // Skip current page as we've already searched it
+    if (page === currentPath || (currentPath === '/' && page === 'index.html')) {
+      continue;
+    }
+
+    try {
+      // Check if we're in a subpage and need to adjust the path
+      const isInPagesDir = window.location.pathname.includes('/pages/');
+      const pagePath = isInPagesDir ? 
+        (page === 'index.html' ? '../index.html' : 
+         page.startsWith('pages/') ? page.replace('pages/', '') : 
+         '../' + page) : page;
+      
+      const response = await fetch(pagePath);
+      if (!response.ok) continue;
+      
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      // Search in headings and paragraphs
+      const searchableElements = doc.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th');
+      
+      // Skip elements that are part of search UI
+      const skipElements = new Set();
+      doc.querySelectorAll('#searchResults *, .search-form *').forEach(el => skipElements.add(el));
+      
+      searchableElements.forEach(element => {
+        // Skip elements that are part of search UI
+        if (skipElements.has(element) || element.closest('#searchResults') || element.closest('.search-form')) {
+          return;
+        }
+        
+        const text = element.textContent;
+        const textLower = text.toLowerCase();
+        
+        // Check for match in current element
+        const exactMatch = textLower.includes(searchTermLower);
+        
+        if (exactMatch) {
+          // Get the context with highlighted text
+          let highlightedText = getHighlightedContext(text, searchTermLower);
+          
+          // Get the nearest heading as the title
+          let headingElement = element;
+          let title = 'Result';
+          
+          // If the element itself is a heading, use it as title
+          if (/^H[1-6]$/.test(element.tagName)) {
+            title = element.textContent;
+          } else {
+            // Look for the nearest heading above this element
+            let parent = element.parentElement;
+            let found = false;
+            
+            // First try to find headings in the same parent
+            while (headingElement.previousElementSibling) {
+              headingElement = headingElement.previousElementSibling;
+              if (/^H[1-6]$/.test(headingElement.tagName)) {
+                title = headingElement.textContent;
+                found = true;
+                break;
+              }
+            }
+            
+            // If no heading found, try parent sections
+            if (!found) {
+              while (parent && parent.tagName !== 'BODY') {
+                const heading = parent.querySelector('h1, h2, h3, h4, h5, h6');
+                if (heading) {
+                  title = heading.textContent;
+                  break;
+                }
+                parent = parent.parentElement;
+              }
+            }
+          }
+          
+          // Add to results with page URL
+          results.push({
+            id: 'search-target-' + Math.random().toString(36).substr(2, 9),
+            title: title.trim(),
+            content: highlightedText,
+            url: page
+          });
+        }
+      });
+    } catch (error) {
+      console.error(`Error searching ${page}:`, error);
+    }
+  }
+
+  // Sort results by relevance (exact matches first) and then by page
+  results.sort((a, b) => {
+    const aExactMatch = a.content.toLowerCase().includes(searchTermLower);
+    const bExactMatch = b.content.toLowerCase().includes(searchTermLower);
+    
+    // First sort by exact match
+    if (aExactMatch && !bExactMatch) return -1;
+    if (!aExactMatch && bExactMatch) return 1;
+    
+    // Then group by page URL
+    if (a.url === currentPath && b.url !== currentPath) return -1;
+    if (a.url !== currentPath && b.url === currentPath) return 1;
+    
+    return 0;
+  });
+
+  return results;
+}
+
+// Function to search through the content of the current page
+function searchPageContent(searchTerm) {
+  return new Promise((resolve) => {
+    const results = [];
+    const searchTermLower = searchTerm.toLowerCase();
+    
+    // Search in headings and paragraphs
+    const searchableElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th');
+    
+    // Skip the search box itself and search results
+    const skipElements = new Set();
+    document.querySelectorAll('#searchResults *, .search-form *').forEach(el => skipElements.add(el));
+    
+    searchableElements.forEach(element => {
+      // Skip elements that are part of search UI
+      if (skipElements.has(element) || element.closest('#searchResults') || element.closest('.search-form')) {
+        return;
+      }
+      
+      const text = element.textContent;
+      const textLower = text.toLowerCase();
+      
+      // Check for match in current element
+      const exactMatch = textLower.includes(searchTermLower);
+      
+      if (exactMatch) {
+        // Generate unique ID for the element if it doesn't have one
+        if (!element.id) {
+          element.id = 'search-target-' + Math.random().toString(36).substr(2, 9);
+        }
+        
+        // Get the context with highlighted text
+        let highlightedText = getHighlightedContext(text, searchTermLower);
+        
+        // Get the nearest heading as the title
+        let headingElement = element;
+        let title = 'Result';
+        
+        // If the element itself is a heading, use it as title
+        if (/^H[1-6]$/.test(element.tagName)) {
+          title = element.textContent;
+        } else {
+          // Look for the nearest heading above this element
+          let parent = element.parentElement;
+          let found = false;
+          
+          // First try to find headings in the same parent
+          while (headingElement.previousElementSibling) {
+            headingElement = headingElement.previousElementSibling;
+            if (/^H[1-6]$/.test(headingElement.tagName)) {
+              title = headingElement.textContent;
+              found = true;
+              break;
+            }
+          }
+          
+          // If no heading found, try parent sections
+          if (!found) {
+            while (parent && parent.tagName !== 'BODY') {
+              const heading = parent.querySelector('h1, h2, h3, h4, h5, h6');
+              if (heading) {
+                title = heading.textContent;
+                break;
+              }
+              parent = parent.parentElement;
+            }
+          }
+        }
+        
+        // Add to results with current page URL
+        results.push({
+          id: element.id,
+          title: title.trim(),
+          content: highlightedText,
+          url: window.location.pathname
+        });
+      }
+    });
+    
+    resolve(results);
+  });
+}
+
+// Function to get context with highlighting
+function getHighlightedContext(content, term) {
+  if (!term) return content;
+  
+  const lowerContent = content.toLowerCase();
+  const startIndex = lowerContent.indexOf(term);
+  
+  if (startIndex === -1) return content;
+  
+  const endIndex = startIndex + term.length;
+  const contextStart = Math.max(0, startIndex - 30);
+  const contextEnd = Math.min(content.length, endIndex + 30);
+  let context = content.substring(contextStart, contextEnd);
+  
+  if (contextStart > 0) context = '...' + context;
+  if (contextEnd < content.length) context += '...';
+  
+  return context.replace(
+    new RegExp(term, 'gi'),
+    match => `<strong>${match}</strong>`
+  );
+}
+
+// Function to scroll to element when search result is clicked
+function scrollToElement(event, elementId) {
+  event.preventDefault();
+  
+  // Get the target URL from the clicked link
+  const targetURL = event.currentTarget.getAttribute('href');
+  
+  // If we're already on the target page, just scroll
+  if (window.location.pathname.endsWith(targetURL)) {
+    const targetElement = document.getElementById(elementId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      // Highlight the element briefly
+      targetElement.classList.add('search-highlight');
+      setTimeout(() => {
+        targetElement.classList.remove('search-highlight');
+      }, 3000);
+      // Close search results
+      closeSearchResults();
+    }
+  } else {
+    // Store the target element ID in localStorage for retrieval after navigation
+    localStorage.setItem('scrollToElementId', elementId);
+    window.location.href = targetURL;
+  }
+}
+
+// Function to check for scrollToElement after page load
+function checkForScrollTarget() {
+  const targetId = localStorage.getItem('scrollToElementId');
+  if (targetId) {
+    // Clear it immediately to prevent future unwanted scrolls
+    localStorage.removeItem('scrollToElementId');
+    
+    // Wait for page to fully render
+    setTimeout(() => {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        // Highlight the element briefly
+        targetElement.classList.add('search-highlight');
+        setTimeout(() => {
+          targetElement.classList.remove('search-highlight');
+        }, 3000);
+      }
+    }, 500);
+  }
 }
 
 // Close search results
@@ -1119,5 +1450,62 @@ function closeSearchResults() {
   const searchResults = document.getElementById('searchResults');
   if (searchResults) {
     searchResults.classList.remove('show');
+  }
+}
+
+// Initialize search functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.addEventListener('input', debounce(handleSearchInput, 300));
+  }
+
+  // Initialize search form
+  const searchForm = document.getElementById('searchForm');
+  if (searchForm) {
+    searchForm.addEventListener('submit', handleSearchSubmit);
+  }
+
+  // Initialize search results container
+  const searchResults = document.getElementById('searchResults');
+  if (searchResults) {
+    searchResults.addEventListener('click', handleSearchResultsClick);
+  }
+});
+
+// Debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function() {
+    const context = this;
+    const args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context, args);
+    }, wait);
+  };
+}
+
+// Handle search input
+function handleSearchInput() {
+  const searchTerm = document.getElementById('searchInput').value.trim();
+  if (searchTerm) {
+    performSearch();
+  }
+}
+
+// Handle search submit
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  const searchTerm = document.getElementById('searchInput').value.trim();
+  if (searchTerm) {
+    performSearch();
+  }
+}
+
+// Handle search results click
+function handleSearchResultsClick(event) {
+  if (event.target.classList.contains('close-btn')) {
+    closeSearchResults();
   }
 }

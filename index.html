@@ -13,10 +13,11 @@
   <meta name="twitter:title" content="Caffeine Sensitivity Calculator">
   <meta name="twitter:description" content="Calculate your personalized safe caffeine intake based on your age, weight, and sensitivity level">
   <title>Caffeine Sensitivity Calculator | Track Your Caffeine Intake</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="styles.css" rel="stylesheet" />
+  <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -24,7 +25,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <i class="fas fa-coffee me-2"></i>Caffeine Calc
+        <img src="assets/images/image.svg" alt="Coffee icon" class="me-1 coffee-icon">Caff Calc
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,13 +37,13 @@
             <a class="nav-link active" href="index.html"><i class="fas fa-calculator me-1"></i>Calculator</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="caffeine-science.html"><i class="fas fa-flask me-1"></i>Caffeine Science</a>
+            <a class="nav-link" href="pages/caffeine-science.html"><i class="fas fa-flask me-1"></i>Caffeine Science</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="overdose-symptoms.html"><i class="fas fa-exclamation-triangle me-1"></i>Overdose Symptoms</a>
+            <a class="nav-link" href="pages/overdose-symptoms.html"><i class="fas fa-exclamation-triangle me-1"></i>Overdose Symptoms</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="health-advice.html"><i class="fas fa-heartbeat me-1"></i>Health Advice</a>
+            <a class="nav-link" href="pages/health-advice.html"><i class="fas fa-heartbeat me-1"></i>Health Advice</a>
           </li>
         </ul>
         <form class="d-flex search-form" onsubmit="return performSearch(event)">
@@ -58,8 +59,13 @@
   <!-- Header Area -->
   <header class="header-area py-4">
     <div class="container">
-      <h1 class="text-center">Caffeine Overdose Calculator</h1>
-      <p class="text-center lead">Calculate your safe caffeine intake based on your personal factors</p>
+      <div class="d-flex align-items-center justify-content-center">
+        <!-- <img src="sci_cup.svg" alt="Science Cup" class="header-icon me-3"> -->
+        <div>
+          <h1>Caffeine Overdose Calculator</h1>
+          <p class="lead">Calculate your safe caffeine intake based on your personal factors</p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -136,11 +142,29 @@
         </button>
       </div>
 
-      <!-- Pregnant Switch -->
-      <div id="pregnantContainer" class="pregnant-container">
-        <label class="form-label me-2 mb-0"><i class="fas fa-baby me-1"></i><span class="pregnant-text">Pregnant</span></label>
-        <div class="form-check form-switch mb-0">
-          <input class="form-check-input" type="checkbox" id="pregnantSwitch" />
+      <!-- Health Status Panel -->
+      <div id="femaleHealthPanel" class="health-status-panel d-none mb-3">
+        <div class="card">
+          <div class="card-body p-2">
+            <h6 class="mb-2"><i class="fas fa-venus me-1"></i>Female Health Status</h6>
+            <div class="d-flex flex-wrap justify-content-between">
+              <!-- Pregnant Switch -->
+              <div class="form-check form-switch mb-0 me-3">
+                <input class="form-check-input" type="checkbox" id="pregnantSwitch" />
+                <label class="form-check-label" for="pregnantSwitch">
+                  <i class="fas fa-baby me-1"></i>Pregnant
+                </label>
+              </div>
+              
+              <!-- Breastfeeding Switch -->
+              <div class="form-check form-switch mb-0">
+                <input class="form-check-input" type="checkbox" id="breastfeedingSwitch" />
+                <label class="form-check-label" for="breastfeedingSwitch">
+                  <i class="fas fa-baby-carriage me-1"></i>Breastfeeding
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -156,19 +180,21 @@
       <label class="form-label">
         <i class="fas fa-heartbeat me-1 text-secondary"></i>
         Caffeine Sensitivity
-        <i class="fas fa-info-circle ms-1 text-muted tooltip-icon" data-tooltip="how your body processes and reacts to caffeine. This affects how long caffeine stays in your system and the intensity of its effects. Higher sensitivity means stronger effects with less caffeine."></i>
+        <span class="tooltip-element" data-tooltip="Caffeine sensitivity refers to how your body metabolizes and responds to caffeine intake. People with higher sensitivity experience stronger effects from smaller amounts and may feel jittery or anxious more easily. Your age, weight, genetics, and overall health all contribute to your personal sensitivity level.">
+          <i class="fas fa-info-circle ms-1 text-muted tooltip-icon"></i>
+        </span>
       </label>
       <div class="btn-group w-100 mb-3" role="group">
         <button type="button" class="btn btn-outline-primary sensitivity-btn" data-value="1"
-          data-tooltip="slow metabolism">Low</button>
+          title="slow metabolism">Low</button>
         <button type="button" class="btn btn-outline-primary sensitivity-btn" data-value="2"
-          data-tooltip="below average">Moderate</button>
+          title="below average">Moderate</button>
         <button type="button" class="btn btn-outline-primary sensitivity-btn active" data-value="3"
-          data-tooltip="average">Medium</button>
+          title="average">Medium</button>
         <button type="button" class="btn btn-outline-primary sensitivity-btn" data-value="4"
-          data-tooltip="above average">High</button>
+          title="above average">High</button>
         <button type="button" class="btn btn-outline-primary sensitivity-btn" data-value="5"
-          data-tooltip="fast metabolism">Extreme</button>
+          title="fast metabolism">Extreme</button>
       </div>
 
       <!-- Current Safe Limit Display -->
@@ -334,9 +360,9 @@
     <div class="container">
       <div class="d-flex flex-md-row justify-content-between align-items-center">
         <div class="footer-links d-flex gap-3">
-          <a href="caffeine-science.html">Caffeine Science</a>
-          <a href="overdose-symptoms.html">Overdose Symptoms</a>
-          <a href="health-advice.html">Health Advice</a>
+          <a href="pages/caffeine-science.html">Caffeine Science</a>
+          <a href="pages/overdose-symptoms.html">Overdose Symptoms</a>
+          <a href="pages/health-advice.html">Health Advice</a>
         </div>
         <div class="d-flex align-items-center">
           <a href="mailto:info@example.com" class="email-link me-3"><i class="fas fa-envelope"></i></a>
@@ -346,7 +372,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
