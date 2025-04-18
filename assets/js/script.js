@@ -1109,17 +1109,57 @@ async function performSearch(event) {
     body.innerHTML = '';
     
     if (resultsCount > 0) {
-      results.forEach(result => {
+      // Filter out duplicate results from the same page
+      // Create a map to track seen result IDs with their URLs
+      const seenResults = new Map();
+      const filteredResults = results.filter(result => {
+        // Get normalized URL to identify duplicates even with different path formats
+        const normalizedUrl = result.url.split('/').pop();
+        const resultKey = `${result.title}-${normalizedUrl}`;
+        
+        // If this key already exists and current result is not from current page, skip it
+        if (seenResults.has(resultKey)) {
+          // Prefer results from current page
+          const existingResult = seenResults.get(resultKey);
+          if (result.isCurrentPage && !existingResult.isCurrentPage) {
+            // Replace the existing one with the current page version
+            seenResults.set(resultKey, result);
+            return true;
+          }
+          return false; // Skip duplicate
+        }
+        
+        // This is a new result, add it to seen map
+        seenResults.set(resultKey, result);
+        return true;
+      });
+      
+      // Display the filtered results
+      filteredResults.forEach(result => {
         const resultItem = document.createElement('div');
         resultItem.className = 'search-result-item';
         
-        // Add page indicator for non-current page results
-        const pageName = result.url.replace('.html', '').replace('pages/', '');
-        const pageIndicator = result.url !== window.location.pathname ? 
-          `<div class="result-page">Page: ${pageName}</div>` : '';
+        // Add page indicator only for non-current page results
+        let pageIndicator = '';
+        if (!result.isCurrentPage) {
+          const pageName = result.url.replace('.html', '').replace('pages/', '');
+          pageIndicator = `<div class="result-page">Page: ${pageName}</div>`;
+        }
+        
+        // Fix URL path resolution to prevent '/pages/pages' issue
+        let correctUrl = result.url;
+        // Check if we're in a subpage and need to adjust the path
+        const isInPagesDir = window.location.pathname.includes('/pages/');
+        if (isInPagesDir && result.url.startsWith('pages/')) {
+          // If we're in /pages/ and the result URL also starts with pages/, use just the filename
+          correctUrl = result.url.replace('pages/', '');
+        } else if (!isInPagesDir && result.url !== 'index.html' && !result.url.startsWith('pages/')) {
+          // If we're in root and result URL doesn't have proper path, add 'pages/' prefix
+          correctUrl = 'pages/' + result.url;
+        }
         
         resultItem.innerHTML = `
-          <a href="${result.url}" data-target="${result.id}" onclick="scrollToElement(event, '${result.id}')">
+          <a href="${correctUrl}" data-target="${result.id}" onclick="scrollToElement(event, '${result.id}')">
             <div class="result-title">${result.title}</div>
             <p class="result-context">${result.content}</p>
             ${pageIndicator}
@@ -1175,6 +1215,12 @@ async function searchAllPages(searchTerm) {
   // First search current page
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const currentPageResults = await searchPageContent(searchTerm);
+  
+  // Add results with current page flag to prevent duplicates
+  currentPageResults.forEach(result => {
+    result.isCurrentPage = true;
+  });
+  
   results.push(...currentPageResults);
 
   // Then search other pages using Fetch API
@@ -1403,8 +1449,17 @@ function scrollToElement(event, elementId) {
   // Get the target URL from the clicked link
   const targetURL = event.currentTarget.getAttribute('href');
   
+  // Normalize current path and target URL for comparison
+  const currentPath = window.location.pathname;
+  const currentPathClean = currentPath.split('/').pop() || 'index.html'; // Get filename
+  const targetURLClean = targetURL.split('/').pop(); // Get filename without path
+  
+  // Log for debugging
+  console.log('Current path:', currentPathClean, 'Target:', targetURLClean);
+  
   // If we're already on the target page, just scroll
-  if (window.location.pathname.endsWith(targetURL)) {
+  if (currentPathClean === targetURLClean) {
+    console.log('Same page, scrolling to element:', elementId);
     const targetElement = document.getElementById(elementId);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth' });
@@ -1415,9 +1470,14 @@ function scrollToElement(event, elementId) {
       }, 3000);
       // Close search results
       closeSearchResults();
+    } else {
+      console.warn('Target element not found:', elementId);
+      // Element not found on current page, try searching page content
+      searchPageContent(document.getElementById('siteSearch').value.trim());
     }
   } else {
     // Store the target element ID in localStorage for retrieval after navigation
+    console.log('Navigating to:', targetURL, 'with target ID:', elementId);
     localStorage.setItem('scrollToElementId', elementId);
     window.location.href = targetURL;
   }
@@ -1427,22 +1487,59 @@ function scrollToElement(event, elementId) {
 function checkForScrollTarget() {
   const targetId = localStorage.getItem('scrollToElementId');
   if (targetId) {
+    console.log('Found scroll target in localStorage:', targetId);
     // Clear it immediately to prevent future unwanted scrolls
     localStorage.removeItem('scrollToElementId');
     
-    // Wait for page to fully render
-    setTimeout(() => {
-      const targetElement = document.getElementById(targetId);
+    // Try once immediately (some elements might already be available)
+    let targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      console.log('Target element found immediately');
+      scrollToAndHighlight(targetElement);
+      return;
+    }
+    
+    console.log('Target element not found immediately, waiting for full page load...');
+    
+    // Wait for page to fully render and make multiple attempts
+    let attempts = 0;
+    const maxAttempts = 5;
+    const attemptInterval = 300; // ms
+    
+    const findAndScrollToElement = () => {
+      targetElement = document.getElementById(targetId);
+      attempts++;
+      
       if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        // Highlight the element briefly
-        targetElement.classList.add('search-highlight');
-        setTimeout(() => {
-          targetElement.classList.remove('search-highlight');
-        }, 3000);
+        console.log(`Found element on attempt ${attempts}`);
+        scrollToAndHighlight(targetElement);
+      } else if (attempts < maxAttempts) {
+        console.log(`Element not found, attempt ${attempts}/${maxAttempts}`);
+        setTimeout(findAndScrollToElement, attemptInterval);
+      } else {
+        console.warn(`Failed to find element with ID ${targetId} after ${maxAttempts} attempts`);
+        // Try using a different strategy - perhaps the ID is in a data attribute somewhere
+        const elements = document.querySelectorAll('[data-target="' + targetId + '"]');
+        if (elements.length > 0) {
+          console.log('Found element by data-target attribute');
+          scrollToAndHighlight(elements[0]);
+        }
       }
-    }, 500);
+    };
+    
+    // Start the attempt sequence
+    setTimeout(findAndScrollToElement, 300);
   }
+}
+
+// Helper function to scroll to and highlight an element
+function scrollToAndHighlight(element) {
+  element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Highlight the element briefly
+  element.classList.add('search-highlight');
+  setTimeout(() => {
+    element.classList.remove('search-highlight');
+  }, 3000);
 }
 
 // Close search results
