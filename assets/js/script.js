@@ -212,28 +212,39 @@ function updateCalculation() {
 }
 
 // Event Listeners
-document.getElementById('weightInput').addEventListener('input', function(e) {
-  user.weight = parseFloat(e.target.value) || 0;
-  updateCalculation();
-});
 
-document.getElementById('pregnantSwitch').addEventListener('change', function(e) {
-  user.isPregnant = e.target.checked;
-  updateCalculation();
-});
+document.addEventListener('DOMContentLoaded', function() {
+  const weightInput = document.getElementById('weightInput');
+  if (weightInput) {
+    weightInput.addEventListener('input', function(e) {
+      user.weight = parseFloat(e.target.value) || 0;
+      updateCalculation();
+    });
+  }
 
-document.getElementById('breastfeedingSwitch').addEventListener('change', function(e) {
-  user.isBreastfeeding = e.target.checked;
-  updateCalculation();
-});
+  const pregnantSwitch = document.getElementById('pregnantSwitch');
+  if (pregnantSwitch) {
+    pregnantSwitch.addEventListener('change', function(e) {
+      user.isPregnant = e.target.checked;
+      updateCalculation();
+    });
+  }
 
-// Sensitivity buttons handler
-document.querySelectorAll('.sensitivity-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.sensitivity-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    user.sensitivity = parseInt(this.dataset.value);
-    updateCalculation();
+  const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
+  if (breastfeedingSwitch) {
+    breastfeedingSwitch.addEventListener('change', function(e) {
+      user.isBreastfeeding = e.target.checked;
+      updateCalculation();
+    });
+  }
+
+  document.querySelectorAll('.sensitivity-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.sensitivity-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      user.sensitivity = parseInt(this.dataset.value);
+      updateCalculation();
+    });
   });
 });
 

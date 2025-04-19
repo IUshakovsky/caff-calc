@@ -1375,3 +1375,10 @@ option.energy-item {
   font-weight: 600;
 }
 
+/* Center .title on mobile devices */
+@media (max-width: 600px) {
+  .title,
+  .subtitle {
+    text-align: center !important;
+  }
+}
