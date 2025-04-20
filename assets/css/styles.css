@@ -976,6 +976,33 @@ option.energy-item {
   flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
+/* Mobile footer styles */
+@media (max-width: 767px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  
+  .footer .container > div {
+    flex-direction: column !important;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer-links {
+    display: none !important; /* Hide footer links on mobile */
+  }
+  
+  .footer .email-link {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  
+  .footer .small {
+    text-align: center;
+  }
+}
+
 .footer h6 {
   color: white;
   font-size: 1rem;
@@ -1043,6 +1070,8 @@ option.energy-item {
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  display: inline-block;
 }
 
 .email-link {
