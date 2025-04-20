@@ -57,6 +57,7 @@ function setAgeGroup(group) {
     btn.classList.toggle('active', btn.dataset.ageGroup === group);
   });
   updateCalculation();
+  saveUserPreferences();
 }
 
 // Update gender
@@ -82,6 +83,7 @@ function updateGender(gender) {
   }
   
   updateCalculation();
+  saveUserPreferences();
 }
 
 // Update unit (weight or volume)
@@ -148,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
     weightInput.addEventListener('input', function(e) {
       user.weight = parseFloat(e.target.value) || 0;
       updateCalculation();
+      saveUserPreferences();
     });
   }
 
@@ -156,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pregnantSwitch.addEventListener('change', function(e) {
       user.isPregnant = e.target.checked;
       updateCalculation();
+      saveUserPreferences();
     });
   }
 
@@ -164,6 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
     breastfeedingSwitch.addEventListener('change', function(e) {
       user.isBreastfeeding = e.target.checked;
       updateCalculation();
+      saveUserPreferences();
     });
   }
 
@@ -173,6 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.add('active');
       user.sensitivity = parseInt(this.dataset.value);
       updateCalculation();
+      saveUserPreferences();
     });
   });
 });
@@ -581,12 +587,21 @@ function updateCalculation() {
   const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
   
   // Update user status based on switches (only if elements exist)
-  if (pregnantSwitch) {
+  let prefsChanged = false;
+  
+  if (pregnantSwitch && user.isPregnant !== pregnantSwitch.checked) {
     user.isPregnant = pregnantSwitch.checked;
+    prefsChanged = true;
   }
   
-  if (breastfeedingSwitch) {
+  if (breastfeedingSwitch && user.isBreastfeeding !== breastfeedingSwitch.checked) {
     user.isBreastfeeding = breastfeedingSwitch.checked;
+    prefsChanged = true;
+  }
+  
+  // Save preferences if they were changed in this function
+  if (prefsChanged) {
+    saveUserPreferences();
   }
   
   // Update switch container styles (only if elements exist)
