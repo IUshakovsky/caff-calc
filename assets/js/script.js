@@ -138,78 +138,7 @@ function convertWeight(value, fromUnit, toUnit) {
   return fromUnit === toUnit ? value : value * weightConversion[fromUnit][toUnit];
 }
 
-// Update calculation
-function updateCalculation() {
-  const pregnantSwitch = document.getElementById('pregnantSwitch');
-  const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
-  
-  // Update user status based on switches (only if elements exist)
-  if (pregnantSwitch) {
-    user.isPregnant = pregnantSwitch.checked;
-  }
-  
-  if (breastfeedingSwitch) {
-    user.isBreastfeeding = breastfeedingSwitch.checked;
-  }
-  
-  // Update switch container styles (only if elements exist)
-  const femaleHealthPanel = document.getElementById('femaleHealthPanel');
-  if (femaleHealthPanel) {
-    femaleHealthPanel.classList.toggle('active', user.isPregnant || user.isBreastfeeding);
-  }
-  
-  // Get base limit from age group
-  let baseLimit = caffeineLimits[user.ageGroup];
-  
-  // Set limits based on pregnancy/breastfeeding status
-  // Pregnant takes precedence if both are checked
-  if (user.isPregnant) {
-    baseLimit = caffeineLimits.pregnant; // 200mg for pregnant women
-  } else if (user.isBreastfeeding) {
-    baseLimit = 300; // 300mg for breastfeeding women
-  }
-  
-  // Apply weight-based adjustment if applicable
-  let weightBasedLimit = 0;
-  if (user.weight > 0 && weightAdjustment[user.ageGroup]) {
-    // Convert weight to kg if needed
-    const weightInKg = user.weightUnit === 'kg' ? user.weight : user.weight * weightConversion.lbs.kg;
-    weightBasedLimit = weightInKg * weightAdjustment[user.ageGroup];
-    
-    // Use weight-based limit if it's lower than the standard limit
-    // or if it's the only limit available (for teens)
-    if (weightBasedLimit < baseLimit || user.ageGroup === 'teen') {
-      baseLimit = weightBasedLimit;
-    }
-  }
-  
-  // Apply sensitivity modifier (1-5 scale)
-  // Higher sensitivity (5) means LOWER tolerance, so we invert the scale
-  // 1 = Low sensitivity = Higher limit (1.3x)
-  // 5 = Extreme sensitivity = Lower limit (0.7x)
-  const sensitivityModifier = 1.3 - (user.sensitivity - 1) * 0.15;
-  const adjustedLimit = baseLimit * sensitivityModifier;
-  
-  // Update the safe limit display
-  const safeLimitValue = document.getElementById('safeLimitValue');
-  if (safeLimitValue) {
-    safeLimitValue.textContent = Math.round(adjustedLimit) + ' mg';
-    
-    // Change color based on the limit
-    if (baseLimit === 0) {
-      safeLimitValue.style.color = '#a52a2a'; // Red for children
-    } else if (baseLimit <= 100) {
-      safeLimitValue.style.color = '#d2691e'; // Orange for teens
-    } else {
-      safeLimitValue.style.color = '#6b8e23'; // Green for adults
-    }
-  }
-  
-  console.log('Adjusted safe caffeine limit:', Math.round(adjustedLimit), 'mg');
-  console.log('Weight-based limit:', Math.round(weightBasedLimit), 'mg');
-  
-  return adjustedLimit;
-}
+
 
 // Event Listeners
 
@@ -610,6 +539,85 @@ function removeConsumptionItem(id) {
   updateConsumptionTable();
 }
 
+// Calculate the user's caffeine limit consistently
+function calculateCaffeineLimit() {
+  // For children (age 0-12), always enforce a zero limit regardless of other factors
+  if (user.ageGroup === 'child') {
+    return 0;
+  }
+  
+  // Get base limit from age group
+  let baseLimit = caffeineLimits[user.ageGroup];
+  
+  // Set limits based on pregnancy/breastfeeding status (only for non-children)
+  if (user.isPregnant) {
+    baseLimit = caffeineLimits.pregnant; // 200mg for pregnant women
+  } else if (user.isBreastfeeding) {
+    baseLimit = 300; // 300mg for breastfeeding women
+  }
+  
+  // Apply weight-based adjustment if applicable
+  let weightBasedLimit = 0;
+  if (user.weight > 0 && weightAdjustment[user.ageGroup]) {
+    // Convert weight to kg if needed
+    const weightInKg = user.weightUnit === 'kg' ? user.weight : user.weight * weightConversion.lbs.kg;
+    weightBasedLimit = weightInKg * weightAdjustment[user.ageGroup];
+    
+    // Use weight-based limit if it's lower than the standard limit
+    // or if it's the only limit available (for teens)
+    if (weightBasedLimit < baseLimit || user.ageGroup === 'teen') {
+      baseLimit = weightBasedLimit;
+    }
+  }
+  
+  // Apply sensitivity modifier (1-5 scale)
+  const sensitivityModifier = 1.3 - (user.sensitivity - 1) * 0.15;
+  return baseLimit * sensitivityModifier;
+}
+
+// Update calculation
+function updateCalculation() {
+  const pregnantSwitch = document.getElementById('pregnantSwitch');
+  const breastfeedingSwitch = document.getElementById('breastfeedingSwitch');
+  
+  // Update user status based on switches (only if elements exist)
+  if (pregnantSwitch) {
+    user.isPregnant = pregnantSwitch.checked;
+  }
+  
+  if (breastfeedingSwitch) {
+    user.isBreastfeeding = breastfeedingSwitch.checked;
+  }
+  
+  // Update switch container styles (only if elements exist)
+  const femaleHealthPanel = document.getElementById('femaleHealthPanel');
+  if (femaleHealthPanel) {
+    femaleHealthPanel.classList.toggle('active', user.isPregnant || user.isBreastfeeding);
+  }
+  
+  // Get the adjusted limit using the shared calculation function
+  const adjustedLimit = calculateCaffeineLimit();
+  
+  // Update the safe limit display
+  const safeLimitValue = document.getElementById('safeLimitValue');
+  if (safeLimitValue) {
+    safeLimitValue.textContent = Math.round(adjustedLimit) + ' mg';
+    
+    // Change color based on the limit
+    if (user.ageGroup === 'child') {
+      safeLimitValue.style.color = '#a52a2a'; // Red for children
+    } else if (adjustedLimit <= 100) {
+      safeLimitValue.style.color = '#d2691e'; // Orange for teens/low limits
+    } else {
+      safeLimitValue.style.color = '#6b8e23'; // Green for adults
+    }
+  }
+  
+  console.log('Adjusted safe caffeine limit:', Math.round(adjustedLimit), 'mg');
+  
+  return adjustedLimit;
+}
+
 // Update caffeine status message
 function updateCaffeineStatus() {
   const statusElement = document.getElementById('caffeineStatus');
@@ -619,20 +627,11 @@ function updateCaffeineStatus() {
     return { percentage: 0, adjustedLimit: 0 };
   }
   
-  // Get user's safe limit based on age, pregnancy, etc.
-  let baseLimit = caffeineLimits[user.ageGroup];
-  if (user.isPregnant) baseLimit = caffeineLimits.pregnant;
-  else if (user.isBreastfeeding) baseLimit = 300;
-  
-  // Apply sensitivity modifier (1-5 scale)
-  // Higher sensitivity (5) means LOWER tolerance, so we invert the scale
-  // 1 = Low sensitivity = Higher limit (1.3x)
-  // 5 = Extreme sensitivity = Lower limit (0.7x)
-  const sensitivityModifier = 1.3 - (user.sensitivity - 1) * 0.15;
-  const adjustedLimit = baseLimit * sensitivityModifier;
+  // Use the shared calculation function for consistency
+  const adjustedLimit = calculateCaffeineLimit();
   
   // Special message for infants with zero limit
-  if (baseLimit === 0 && totalCaffeineConsumed > 0) {
+  if (user.ageGroup === 'child' && totalCaffeineConsumed > 0) {
     statusElement.classList.remove('d-none', 'alert-success', 'alert-warning');
     statusElement.classList.add('alert-danger');
     statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="pages/health-advice.html" class="alert-link">See health advice</a> for more information.`;
@@ -1256,20 +1255,63 @@ async function searchAllPages(searchTerm) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
       
-      // Search in headings and paragraphs
-      const searchableElements = doc.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th');
+      // Search in headings, paragraphs, and specific content elements
+      const searchableElements = doc.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, .panel-title, div[data-title], .section-divider');
       
       // Skip elements that are part of search UI
       const skipElements = new Set();
       doc.querySelectorAll('#searchResults *, .search-form *').forEach(el => skipElements.add(el));
       
       searchableElements.forEach(element => {
-        // Skip elements that are part of search UI
-        if (skipElements.has(element) || element.closest('#searchResults') || element.closest('.search-form')) {
+        // Helper function to check if an element is a menu item
+        const isMenuElement = (el) => {
+          // Check if element is within navigation or footer
+          if (
+            el.closest('.navbar') ||
+            el.closest('.navbar-nav') ||
+            el.closest('nav') ||
+            el.closest('.footer') ||
+            el.closest('footer') ||
+            el.closest('.footer-links') ||
+            el.closest('.nav-item')
+          ) {
+            return true;
+          }
+          
+          // Check if element itself is a navigation link
+          if (el.tagName === 'A' && (
+            el.classList.contains('nav-link') ||
+            el.classList.contains('navbar-brand') ||
+            el.closest('footer') ||
+            (el.parentElement && el.parentElement.classList.contains('footer-links'))
+          )) {
+            return true;
+          }
+          
+          // Check for exact menu item matches, but only if they're in menu context
+          // This allows section titles with same names to be found
+          const menuTexts = ['Caffeine Science', 'Overdose Symptoms', 'Health Advice', 'Calculator'];
+          if (menuTexts.includes(el.textContent.trim())) {
+            const isInNavOrFooter = el.closest('nav') || el.closest('footer') || 
+                                   el.closest('.navbar-nav') || el.closest('.footer-links');
+            if (isInNavOrFooter) {
+              return true;
+            }
+          }
+          
+          return false;
+        };
+        
+        // Skip elements that are part of search UI or navigation/footer menus
+        if (skipElements.has(element) || 
+            element.closest('#searchResults') || 
+            element.closest('.search-form') ||
+            isMenuElement(element)
+        ) {
           return;
         }
         
-        const text = element.textContent;
+        const text = extractTextFromElement(element);
         const textLower = text.toLowerCase();
         
         // Check for match in current element
@@ -1353,20 +1395,63 @@ function searchPageContent(searchTerm) {
     const results = [];
     const searchTermLower = searchTerm.toLowerCase();
     
-    // Search in headings and paragraphs
-    const searchableElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th');
+    // Search in headings, paragraphs, and specific content elements
+    const searchableElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, td, th, .panel-title, div[data-title], .section-divider');
     
     // Skip the search box itself and search results
     const skipElements = new Set();
     document.querySelectorAll('#searchResults *, .search-form *').forEach(el => skipElements.add(el));
     
     searchableElements.forEach(element => {
-      // Skip elements that are part of search UI
-      if (skipElements.has(element) || element.closest('#searchResults') || element.closest('.search-form')) {
+      // Helper function to check if an element is a menu item
+      const isMenuElement = (el) => {
+        // Check if element is within navigation or footer
+        if (
+          el.closest('.navbar') ||
+          el.closest('.navbar-nav') ||
+          el.closest('nav') ||
+          el.closest('.footer') ||
+          el.closest('footer') ||
+          el.closest('.footer-links') ||
+          el.closest('.nav-item')
+        ) {
+          return true;
+        }
+        
+        // Check if element itself is a navigation link
+        if (el.tagName === 'A' && (
+          el.classList.contains('nav-link') ||
+          el.classList.contains('navbar-brand') ||
+          el.closest('footer') ||
+          (el.parentElement && el.parentElement.classList.contains('footer-links'))
+        )) {
+          return true;
+        }
+        
+        // Check for exact menu item matches, but only if they're in menu context
+        // This allows section titles with same names to be found
+        const menuTexts = ['Caffeine Science', 'Overdose Symptoms', 'Health Advice', 'Calculator'];
+        if (menuTexts.includes(el.textContent.trim())) {
+          const isInNavOrFooter = el.closest('nav') || el.closest('footer') || 
+                                 el.closest('.navbar-nav') || el.closest('.footer-links');
+          if (isInNavOrFooter) {
+            return true;
+          }
+        }
+        
+        return false;
+      };
+      
+      // Skip elements that are part of search UI or navigation/footer menus
+      if (skipElements.has(element) || 
+          element.closest('#searchResults') || 
+          element.closest('.search-form') ||
+          isMenuElement(element)
+      ) {
         return;
       }
       
-      const text = element.textContent;
+      const text = extractTextFromElement(element);
       const textLower = text.toLowerCase();
       
       // Check for match in current element
@@ -1428,6 +1513,29 @@ function searchPageContent(searchTerm) {
     
     resolve(results);
   });
+}
+
+// Extract text content from section names and data attributes to improve search
+function extractTextFromElement(element) {
+  let text = element.textContent || '';
+  
+  // For section dividers with data-title attributes
+  if (element.hasAttribute('data-title')) {
+    text += ' ' + element.getAttribute('data-title');
+  }
+  
+  // For elements that might have titles in attributes
+  if (element.hasAttribute('aria-label')) {
+    text += ' ' + element.getAttribute('aria-label');
+  }
+  
+  // For panel titles and sections that might use special classes
+  if (element.classList.contains('panel-title') || element.parentElement?.classList.contains('panel-title')) {
+    // Make sure panel titles get higher search priority
+    text = text.trim(); // Ensure clean text
+  }
+  
+  return text;
 }
 
 // Function to get context with highlighting
