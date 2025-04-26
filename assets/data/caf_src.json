@@ -1,105 +1,158 @@
 {
-    "coffee": {
-        "espresso": {
-            "sizes": {
-                "single": 63,
-                "double": 126
-            }
-        },
-        "cappuccino": {
-            "sizes": {
-                "small": 75,
-                "medium": 150,
-                "large": 225
-            }
-        },
-        "latte": {
-            "sizes": {
-                "small": 75,
-                "medium": 150,
-                "large": 225
-            }
-        },
-        "americano": {
-            "sizes": {
-                "small": 75,
-                "medium": 150,
-                "large": 225
-            }
-        },
-        "mocha": {
-            "sizes": {
-                "small": 95,
-                "medium": 190,
-                "large": 285
-            }
-        },
-        "drip": {
-            "sizes": {
-                "small": 95,
-                "medium": 150,
-                "large": 200
-            }
-        },
-        "instant": {
-            "sizes": {
-                "small": 30,
-                "medium": 60,
-                "large": 90
-            }
-        },
-        "decaf": {
-            "sizes": {
-                "small": 2,
-                "medium": 4,
-                "large": 6
-            }
-        }
+  "coffee": {
+    "espresso": {
+      "sizes": {
+        "30 ml (single shot)": 63,
+        "60 ml (double shot)": 126
+      }
     },
-    "tea": {
-        "blackTea": {
-            "sizes": {
-                "small": 40,
-                "medium": 80,
-                "large": 120
-            }
-        },
-        "greenTea": {
-            "sizes": {
-                "small": 30,
-                "medium": 60,
-                "large": 90
-            }
-        },
-        "herbalTea": {
-            "sizes": {
-                "small": 0,
-                "medium": 0,
-                "large": 0
-            }
-        }
+    "macchiato": {
+      "sizes": {
+        "60 ml": 80
+      }
     },
-    "energyDrink": {
-        "redBull": {
-            "sizes": {
-                "small": 80,
-                "medium": 160,
-                "large": 240
-            }
-        },
-        "monster": {
-            "sizes": {
-                "small": 160,
-                "medium": 320,
-                "large": 480
-            }
-        },
-        "rockstar": {
-            "sizes": {
-                "small": 160,
-                "medium": 320,
-                "large": 480
-            }
-        }
+    "cappuccino": {
+      "sizes": {
+        "150 ml (small)": 75,
+        "240 ml (medium)": 120,
+        "350 ml (large)": 175
+      }
+    },
+    "flat white": {
+      "sizes": {
+        "160 ml": 130,
+        "240 ml": 195
+      }
+    },
+    "latte": {
+      "sizes": {
+        "240 ml (small)": 75,
+        "350 ml (medium)": 120,
+        "470 ml (large)": 160
+      }
+    },
+    "americano": {
+      "sizes": {
+        "240 ml (small)": 95,
+        "350 ml (medium)": 142,
+        "470 ml (large)": 190
+      }
+    },
+    "cold brew": {
+      "sizes": {
+        "240 ml": 200,
+        "350 ml": 290,
+        "470 ml": 390
+      }
+    },
+    "instant coffee": {
+      "sizes": {
+        "240 ml": 60,
+        "350 ml": 88
+      }
+    },
+    "decaf": {
+      "sizes": {
+        "240 ml": 2,
+        "350 ml": 3
+      }
     }
+  },
+  "tea": {
+    "black tea": {
+      "sizes": {
+        "240 ml (small)": 47,
+        "350 ml (medium)": 70,
+        "470 ml (large)": 94
+      }
+    },
+    "green tea": {
+      "sizes": {
+        "240 ml (small)": 29,
+        "350 ml (medium)": 42,
+        "470 ml (large)": 56
+      }
+    },
+    "oolong tea": {
+      "sizes": {
+        "240 ml": 37,
+        "350 ml": 55,
+        "470 ml": 74
+      }
+    },
+    "yerba mate": {
+      "sizes": {
+        "240 ml": 78,
+        "350 ml": 114,
+        "470 ml": 153
+      }
+    },
+    "matcha latte": {
+      "sizes": {
+        "240 ml": 70,
+        "350 ml": 100,
+        "470 ml": 135
+      }
+    },
+    "herbal tea": {
+      "sizes": {
+        "240 ml": 0,
+        "350 ml": 0,
+        "470 ml": 0
+      }
+    }
+  },
+  "energyDrink": {
+    "red bull": {
+      "sizes": {
+        "250 ml can": 80,
+        "355 ml can": 111,
+        "500 ml can": 160
+      }
+    },
+    "monster": {
+      "sizes": {
+        "473 ml can": 160,
+        "550 ml can": 185
+      }
+    },
+    "rockstar": {
+      "sizes": {
+        "473 ml can": 160,
+        "550 ml can": 185
+      }
+    },
+    "bang": {
+      "sizes": {
+        "473 ml can": 300
+      }
+    }
+  },
+  "soda": {
+    "cola": {
+      "sizes": {
+        "330 ml can": 34,
+        "500 ml bottle": 52
+      }
+    },
+    "diet cola": {
+      "sizes": {
+        "330 ml can": 46,
+        "500 ml bottle": 68
+      }
+    }
+  },
+  "chocolate": {
+    "dark chocolate": {
+      "sizes": {
+        "30 g square": 20,
+        "50 g bar": 33
+      }
+    },
+    "hot chocolate": {
+      "sizes": {
+        "240 ml": 5
+      }
+    }
+  }
 }

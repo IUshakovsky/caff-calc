@@ -290,14 +290,14 @@ function populateTypeDropdown(category) {
     typeSelect.appendChild(option);
   });
   
-  typeSelect.disabled = false;
 }
 
 // Populate size dropdown based on selected category and type
 function populateSizeDropdown(category, type) {
-  const sizeOptions = document.getElementById('caffeineSizeOptions');
+  // Get DOM elements
   const sizeButton = document.getElementById('caffeineSizeButton');
   const sizeButtonText = document.getElementById('caffeineSizeButtonText');
+  const sizeOptions = document.getElementById('caffeineSizeOptions');
   const sizeInput = document.getElementById('caffeineSize');
   
   // Clear previous options
@@ -310,35 +310,46 @@ function populateSizeDropdown(category, type) {
     return;
   }
   
+  // Get available sizes for the selected beverage
   const sizes = Object.keys(caffeineData[category][type].sizes);
-  const volumeUnit = user.volumeUnit; // Get current volume unit
+  const volumeUnit = user.volumeUnit; // Get user's preferred volume unit (ml or oz)
   
+  // Create an option for each size
   sizes.forEach(size => {
     const option = document.createElement('div');
     option.className = 'custom-select-option';
     option.dataset.value = size;
     
-    // Format display text with volume unit when appropriate
-    let displayText = size.charAt(0).toUpperCase() + size.slice(1);
+    // Extract volume information and create display text with correct units
+    let displayText = size;
     
-    // For drinks, add volume unit if size is small/medium/large
-    if (['small', 'medium', 'large'].includes(size)) {
-      // Define approximate volumes for each size
-      const volumeMap = {
-        small: { ml: '250ml', oz: '8oz' },
-        medium: { ml: '350ml', oz: '12oz' },
-        large: { ml: '500ml', oz: '16oz' }
-      };
+    // Extract values if the size contains a volume in ml
+    const mlRegex = /(\d+)\s*ml\b/i;
+    const mlMatch = size.match(mlRegex);
+    
+    if (mlMatch && volumeUnit === 'oz') {
+      // Convert ml to oz for display if user prefers oz
+      const mlValue = parseInt(mlMatch[1]);
+      const ozValue = (mlValue / 29.574).toFixed(1); // Convert ml to oz and round to 1 decimal
       
-      // Add volume to display text
-      if (volumeMap[size]) {
-        displayText += ` (${volumeMap[size][volumeUnit]})`;
-      }
+      // Replace ml with oz in the display text
+      displayText = displayText.replace(mlMatch[0], `${ozValue} oz`);
+    }
+    
+    // Format display text for easier reading
+    if (displayText.includes('(')) {
+      // If it has a description in parentheses, capitalize the first part
+      const parts = displayText.split('(');
+      parts[0] = parts[0].trim().charAt(0).toUpperCase() + parts[0].trim().slice(1);
+      displayText = `${parts[0]} (${parts[1]}`;
+    } else {
+      // Otherwise just capitalize the first letter
+      displayText = displayText.charAt(0).toUpperCase() + displayText.slice(1);
     }
     
     option.textContent = displayText;
     
-    // Add click event
+    // Add click event listener
     option.addEventListener('click', function() {
       selectSize(this.dataset.value, this.textContent);
     });
@@ -346,6 +357,7 @@ function populateSizeDropdown(category, type) {
     sizeOptions.appendChild(option);
   });
   
+  // Enable the buttons
   sizeButton.disabled = false;
   document.getElementById('caffeineQuantity').disabled = false;
   initSizeDropdown();
