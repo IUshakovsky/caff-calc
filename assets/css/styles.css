@@ -976,6 +976,37 @@ option.energy-item {
   flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
+/* Mobile styles */
+@media (max-width: 991px) {
+  /* Arrange elements in order: sandwich menu, logo, empty space */
+  .navbar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .navbar-toggler {
+    order: 1;
+  }
+  
+  .navbar-brand {
+    order: 2;
+    margin-right: auto; /* Pushes everything else to the right */
+  }
+  
+  /* Hide search form completely in mobile view */
+  .search-form {
+    display: none !important;
+  }
+  
+  /* Fix dropdown menu behavior */
+  .navbar-collapse {
+    order: 3;
+    width: 100%;
+    z-index: 1030;
+  }
+}
+
 /* Mobile footer styles */
 @media (max-width: 767px) {
   .footer {
