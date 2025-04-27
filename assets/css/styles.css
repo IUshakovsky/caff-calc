@@ -765,6 +765,8 @@ option.energy-item {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand img.coffee-icon {
@@ -978,7 +980,7 @@ option.energy-item {
 
 /* Mobile styles */
 @media (max-width: 991px) {
-  /* Arrange elements in order: sandwich menu, logo, empty space */
+  /* Arrange elements in order: sandwich menu, empty space, logo */
   .navbar .container {
     display: flex;
     flex-wrap: wrap;
@@ -987,11 +989,23 @@ option.energy-item {
   
   .navbar-toggler {
     order: 1;
+    margin-right: auto; /* Push everything else to the right */
   }
   
   .navbar-brand {
     order: 2;
-    margin-right: auto; /* Pushes everything else to the right */
+    margin-right: 0; /* Remove auto margin */
+    margin-left: auto; /* Push to the right */
+    flex-direction: row-reverse; /* Reverse order for mobile only */
+  }
+  
+  .navbar-brand .brand-icon {
+    margin-left: 4px; /* Add space between text and icon when reversed */
+    margin-right: 0;
+  }
+  
+  .navbar-brand .brand-icon img {
+    margin-right: 0; /* Override desktop margin */
   }
   
   /* Hide search form completely in mobile view */
