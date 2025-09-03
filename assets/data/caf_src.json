@@ -8,20 +8,22 @@
     },
     "macchiato": {
       "sizes": {
-        "60 ml": 80
+        "30 ml (single)": 40,
+        "60 ml (double)": 80
       }
     },
     "cappuccino": {
       "sizes": {
-        "150 ml (small)": 75,
-        "240 ml (medium)": 120,
-        "350 ml (large)": 175
+        "240 ml (small)": 75,
+        "350 ml (medium)": 120,
+        "470 ml (large)": 175
       }
     },
     "flat white": {
       "sizes": {
-        "160 ml": 130,
-        "240 ml": 195
+        "160 ml (small)": 130,
+        "240 ml (medium)": 195,
+        "350 ml (large)": 260
       }
     },
     "latte": {
@@ -40,21 +42,56 @@
     },
     "cold brew": {
       "sizes": {
-        "240 ml": 200,
-        "350 ml": 290,
-        "470 ml": 390
+        "240 ml (small)": 100,
+        "350 ml (medium)": 150,
+        "470 ml (large)": 200
       }
     },
     "instant coffee": {
       "sizes": {
-        "240 ml": 60,
-        "350 ml": 88
+        "240 ml (small)": 60,
+        "350 ml (medium)": 88,
+        "470 ml (large)": 118
       }
     },
     "decaf": {
       "sizes": {
-        "240 ml": 2,
-        "350 ml": 3
+        "240 ml (small)": 2,
+        "350 ml (medium)": 3,
+        "470 ml (large)": 4
+      }
+    },
+    "mocha": {
+      "sizes": {
+        "240 ml (small)": 90,
+        "350 ml (medium)": 135,
+        "470 ml (large)": 175
+      }
+    },
+    "frappuccino": {
+      "sizes": {
+        "350 ml (small)": 65,
+        "470 ml (large)": 95
+      }
+    },
+    "turkish coffee": {
+      "sizes": {
+        "60 ml (small cup)": 50,
+        "90 ml (medium cup)": 75
+      }
+    },
+    "french press": {
+      "sizes": {
+        "240 ml (small)": 107,
+        "350 ml (medium)": 157,
+        "470 ml (large)": 210
+      }
+    },
+    "bottled coffee": {
+      "sizes": {
+        "250 ml (can)": 80,
+        "330 ml (bottle)": 120,
+        "500 ml (bottle)": 180
       }
     }
   },
@@ -75,83 +112,184 @@
     },
     "oolong tea": {
       "sizes": {
-        "240 ml": 37,
-        "350 ml": 55,
-        "470 ml": 74
+        "240 ml (small)": 37,
+        "350 ml (medium)": 55,
+        "470 ml (large)": 74
       }
     },
     "yerba mate": {
       "sizes": {
-        "240 ml": 78,
-        "350 ml": 114,
-        "470 ml": 153
+        "240 ml (small)": 78,
+        "350 ml (medium)": 114,
+        "470 ml (large)": 153
       }
     },
     "matcha latte": {
       "sizes": {
-        "240 ml": 70,
-        "350 ml": 100,
-        "470 ml": 135
+        "240 ml (small)": 70,
+        "350 ml (medium)": 100,
+        "470 ml (large)": 135
       }
     },
     "herbal tea": {
       "sizes": {
-        "240 ml": 0,
-        "350 ml": 0,
-        "470 ml": 0
+        "240 ml (small)": 0,
+        "350 ml (medium)": 0,
+        "470 ml (large)": 0
+      }
+    },
+    "chai tea": {
+      "sizes": {
+        "240 ml (small)": 40,
+        "350 ml (medium)": 60,
+        "470 ml (large)": 80
+      }
+    },
+    "white tea": {
+      "sizes": {
+        "240 ml (small)": 15,
+        "350 ml (medium)": 22,
+        "470 ml (large)": 30
+      }
+    },
+    "bottled tea": {
+      "sizes": {
+        "330 ml (bottle)": 25,
+        "500 ml (bottle)": 38
+      }
+    },
+    "kombucha": {
+      "sizes": {
+        "330 ml (bottle)": 15,
+        "475 ml (bottle)": 25
       }
     }
   },
   "energyDrink": {
     "red bull": {
       "sizes": {
-        "250 ml can": 80,
-        "355 ml can": 111,
-        "500 ml can": 160
+        "250 ml (can)": 80,
+        "355 ml (can)": 111,
+        "500 ml (can)": 160
       }
     },
     "monster": {
       "sizes": {
-        "473 ml can": 160,
-        "550 ml can": 185
+        "250 ml (can)": 80,
+        "473 ml (can)": 160,
+        "550 ml (can)": 185
       }
     },
     "rockstar": {
       "sizes": {
-        "473 ml can": 160,
-        "550 ml can": 185
+        "250 ml (can)": 80,
+        "473 ml (can)": 160,
+        "550 ml (can)": 185
       }
     },
     "bang": {
       "sizes": {
-        "473 ml can": 300
+        "473 ml (can)": 300
+      }
+    },
+    "energy shot": {
+      "sizes": {
+        "60 ml (shot)": 200
       }
     }
   },
   "soda": {
     "cola": {
       "sizes": {
-        "330 ml can": 34,
-        "500 ml bottle": 52
+        "330 ml (can)": 34,
+        "355 ml (can)": 37,
+        "500 ml (bottle)": 52,
+        "1L (bottle)": 104,
+        "2L (bottle)": 208
       }
     },
     "diet cola": {
       "sizes": {
-        "330 ml can": 46,
-        "500 ml bottle": 68
+        "330 ml (can)": 46,
+        "355 ml (can)": 49,
+        "500 ml (bottle)": 68,
+        "1L (bottle)": 136,
+        "2L (bottle)": 272
+      }
+    },
+    "mountain dew": {
+      "sizes": {
+        "330 ml (can)": 54,
+        "500 ml (bottle)": 82,
+        "1L (bottle)": 164
+      }
+    },
+    "dr pepper": {
+      "sizes": {
+        "330 ml (can)": 41,
+        "500 ml (bottle)": 62,
+        "1L (bottle)": 124
+      }
+    },
+    "pepsi": {
+      "sizes": {
+        "330 ml (can)": 38,
+        "500 ml (bottle)": 58,
+        "1L (bottle)": 116
       }
     }
   },
   "chocolate": {
     "dark chocolate": {
       "sizes": {
-        "30 g square": 20,
-        "50 g bar": 33
+        "30 g (square)": 20,
+        "50 g (bar)": 33
+      }
+    },
+    "milk chocolate": {
+      "sizes": {
+        "30 g (square)": 9,
+        "50 g (bar)": 15
+      }
+    },
+    "white chocolate": {
+      "sizes": {
+        "30 g (square)": 0,
+        "50 g (bar)": 0
       }
     },
     "hot chocolate": {
       "sizes": {
-        "240 ml": 5
+        "240 ml (small)": 5,
+        "350 ml (medium)": 8,
+        "470 ml (large)": 10
+      }
+    }
+  },
+  "specialtyCaffeine": {
+    "pre-workout supplement": {
+      "sizes": {
+        "1 serving (scoop)": 225
+      }
+    },
+    "caffeine pill": {
+      "sizes": {
+        "1 tablet": 200
+      }
+    },
+    "caffeinated water": {
+      "sizes": {
+        "500 ml (bottle)": 100
+      }
+    },
+    "caffeinated mint": {
+      "sizes": {
+        "1 piece": 40
+      }
+    },
+    "caffeinated protein bar": {
+      "sizes": {
+        "60 g (bar)": 65
       }
     }
   }

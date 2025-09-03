@@ -26,3 +26,5 @@ Thumbs.db
 # Optional: ignore SEO/build/test artifacts
 seo/
 coverage/
+
+__caf_src.json
