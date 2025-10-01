@@ -28,3 +28,15 @@ seo/
 coverage/
 
 __caf_src.json
+
+# Jekyll specific
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+.bundle/
+vendor/
+
+# Documentation/Guide files
+BLOG_GUIDE.md

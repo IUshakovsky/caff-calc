@@ -1,0 +1,38 @@
+<!-- Navigation bar with hamburger menu -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="{{ '/' | relative_url }}">
+      <span class="brand-icon"><img src="{{ '/assets/images/image.svg' | relative_url }}" alt="Coffee icon" class="me-1 coffee-icon" width="24" height="24"></span><span class="brand-text">Caff Calc</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        {% for item in site.navigation %}
+        {% unless item.title == 'Blog' %}
+        <li class="nav-item">
+          <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url | relative_url }}">
+            <i class="fas fa-{{ item.icon }} me-1"></i>{{ item.title }}
+          </a>
+        </li>
+        {% endunless %}
+        {% endfor %}
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link {% if page.url contains '/blog' %}active{% endif %}" href="{{ '/blog' | relative_url }}">
+            <i class="fas fa-blog me-1"></i>Blog
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex search-form ms-2" onsubmit="return performSearch(event)">
+        <div class="input-group input-group-sm">
+          <input type="search" id="siteSearch" class="form-control form-control-sm" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>

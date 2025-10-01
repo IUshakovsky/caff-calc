@@ -965,6 +965,20 @@ option.energy-item {
   font-weight: 700;
 }
 
+.header-area .title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.header-area .subtitle {
+  font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.4;
+  text-align: center;
+}
+
 .header-area .lead {
   color: rgba(255, 255, 255, 0.9);
 }

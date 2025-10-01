@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<!-- Header Area -->
+<header class="header-area py-4">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center">
+      <div>
+        <h1 class="title">{{ page.title }}</h1>
+        {% if page.subtitle %}
+        <p class="lead subtitle">{{ page.subtitle }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container main-content">
+  {{ content }}
+</div>

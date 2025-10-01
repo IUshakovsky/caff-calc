@@ -1,0 +1,72 @@
+# Site settings
+title: "Caffeine Overdose Calculator"
+description: "Calculate your safe caffeine intake based on personal factors. Know your safe limits and avoid dangerous caffeine consumption."
+url: "https://caffcalc.com"
+baseurl: ""
+
+# Author
+author: "Caffeine Overdose Prevention Calculator"
+email: "salmorejo2024@outlook.com"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .DS_Store
+  - .git
+  - .gitignore
+  - BLOG_GUIDE.md
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /pages/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# SEO settings
+google_analytics: "G-GC8Z5975WV"
+
+# Navigation
+navigation:
+  - title: "Calculator"
+    url: /
+    icon: "calculator"
+  - title: "Blog"
+    url: /blog
+    icon: "blog"
+  - title: "Caffeine Science"
+    url: /pages/caffeine-science
+    icon: "flask"
+  - title: "Overdose Symptoms"
+    url: /pages/overdose-symptoms
+    icon: "exclamation-triangle"
+  - title: "Health Advice"
+    url: /pages/health-advice
+    icon: "heartbeat"
+
+# Social media
+og_image: "assets/images/caffeine-calculator-social.jpg"
+twitter_image: "assets/images/caffeine-calculator-social.jpg"
+
+# Performance
+sass:
+  style: compressed

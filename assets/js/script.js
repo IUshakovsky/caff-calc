@@ -191,7 +191,7 @@ let totalCaffeineConsumed = 0;
 // Load caffeine data and populate beverage dropdown
 async function loadCaffeineData() {
   try {
-    const response = await fetch('../assets/data/caf_src.json');
+    const response = await fetch('/assets/data/caf_src.json');
     caffeineData = await response.json();
     console.log('Caffeine data loaded successfully');
     
@@ -205,6 +205,7 @@ async function loadCaffeineData() {
 // Populate the beverage dropdown based on JSON data
 function populateBeverageDropdown() {
   const optionsContainer = document.getElementById('caffeineOptions');
+  if (!optionsContainer) return; // Exit if element doesn't exist
   optionsContainer.innerHTML = '';
   
   // Process each category
@@ -759,15 +760,15 @@ function clearTracker() {
   // Reset all form inputs
   document.getElementById('caffeineBeverage').value = '';
   document.getElementById('caffeineButtonText').textContent = 'Select beverage';
-  document.getElementById('caffeineSize').innerHTML = '<option value="">Size</option>';
-  document.getElementById('caffeineSize').disabled = true;
+  document.getElementById('caffeineSize').value = '';
+  document.getElementById('caffeineSizeButtonText').textContent = 'Size';
+  document.getElementById('caffeineSizeButton').disabled = true;
   document.getElementById('caffeineQuantity').value = '1';
   document.getElementById('caffeineQuantity').disabled = true;
   document.getElementById('addCaffeineBtn').disabled = true;
   
   // Reset custom field
   document.getElementById('customCaffeine').value = '';
-  document.getElementById('customSize').value = '';
   
   // Reset classes
   document.querySelector('.custom-fields').classList.add('d-none');
@@ -984,9 +985,16 @@ window.selectSize = function(value, text) {
 
 // Initialize the application
 async function initApp() {
-  // Hide status message and meter by default
-  document.getElementById('caffeineStatus').classList.add('d-none');
-  document.getElementById('caffeineMeter').classList.add('d-none');
+  // Hide status message and meter by default (only on pages that have them)
+  const statusElement = document.getElementById('caffeineStatus');
+  const meterElement = document.getElementById('caffeineMeter');
+  
+  if (statusElement) {
+    statusElement.classList.add('d-none');
+  }
+  if (meterElement) {
+    meterElement.classList.add('d-none');
+  }
   
   // Load caffeine data
   await loadCaffeineData();
@@ -1039,18 +1047,31 @@ async function initApp() {
     }
   };
   
-  document.getElementById('caffeineSize').addEventListener('change', function() {
-    document.getElementById('caffeineQuantity').disabled = false;
-    document.getElementById('addCaffeineBtn').disabled = !this.value;
-  });
+  const caffeineSizeElement = document.getElementById('caffeineSize');
+  const addCaffeineBtnElement = document.getElementById('addCaffeineBtn');
+  const calculateBtnElement = document.getElementById('calculateBtn');
+  const clearTrackerBtnElement = document.getElementById('clearTrackerBtn');
   
-  document.getElementById('addCaffeineBtn').addEventListener('click', addConsumptionItem);
+  if (caffeineSizeElement) {
+    caffeineSizeElement.addEventListener('change', function() {
+      document.getElementById('caffeineQuantity').disabled = false;
+      document.getElementById('addCaffeineBtn').disabled = !this.value;
+    });
+  }
+  
+  if (addCaffeineBtnElement) {
+    addCaffeineBtnElement.addEventListener('click', addConsumptionItem);
+  }
   
   // Add event listener for calculate button
-  document.getElementById('calculateBtn').addEventListener('click', calculateCaffeineIntake);
+  if (calculateBtnElement) {
+    calculateBtnElement.addEventListener('click', calculateCaffeineIntake);
+  }
   
   // Add event listener for clear tracker button
-  document.getElementById('clearTrackerBtn').addEventListener('click', clearTracker);
+  if (clearTrackerBtnElement) {
+    clearTrackerBtnElement.addEventListener('click', clearTracker);
+  }
   
   // Initialize Bootstrap toast
   const toastElement = document.getElementById('notificationToast');
@@ -1241,16 +1262,16 @@ async function searchAllPages(searchTerm) {
     return [];
   }
 
-  // Get all page URLs
+  // Get all page URLs - use absolute paths from root
   const pages = [
-    'index.html',
-    'pages/caffeine-science.html',
-    'pages/overdose-symptoms.html',
-    'pages/health-advice.html'
+    '/index.html',
+    '/pages/caffeine-science',
+    '/pages/overdose-symptoms',
+    '/pages/health-advice'
   ];
 
   // First search current page
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPath = window.location.pathname;
   const currentPageResults = await searchPageContent(searchTerm);
   
   // Add results with current page flag to prevent duplicates
@@ -1263,17 +1284,13 @@ async function searchAllPages(searchTerm) {
   // Then search other pages using Fetch API
   for (const page of pages) {
     // Skip current page as we've already searched it
-    if (page === currentPath || (currentPath === '/' && page === 'index.html')) {
+    if (currentPath === page || currentPath === page + '/' || currentPath.includes(page)) {
       continue;
     }
 
     try {
-      // Check if we're in a subpage and need to adjust the path
-      const isInPagesDir = window.location.pathname.includes('/pages/');
-      const pagePath = isInPagesDir ? 
-        (page === 'index.html' ? '../index.html' : 
-         page.startsWith('pages/') ? page.replace('pages/', '') : 
-         '../' + page) : page;
+      // Use absolute path from root
+      const pagePath = page;
       
       const response = await fetch(pagePath);
       if (!response.ok) continue;

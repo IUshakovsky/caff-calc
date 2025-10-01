@@ -1,0 +1,104 @@
+<head>
+  <!-- Defer non-critical third-party scripts on mobile -->
+  <script>
+    // Conditionally load analytics based on device
+    if (window.innerWidth <= 768) {
+      // For mobile: Delay analytics to improve FCP and LCP
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '{{ site.google_analytics }}');
+        }, 1000); // Delay by 1 second on mobile to prioritize content
+      });
+    } else {
+      // For desktop: Load normally
+      document.write('<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}">\<\/script>');
+      document.write('<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'{{ site.google_analytics }}\');\<\/script>');
+    }
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}caffeine overdose calculator, caffeine toxicity, caffeine safety limits, prevent caffeine overdose, safe caffeine levels, coffee overdose{% endif %}">
+  <meta name="author" content="{{ site.author }}">
+  <!-- Performance hints for all devices -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Mobile specific resource hints -->
+  <link rel="preload" href="{{ '/assets/css/styles.css' | relative_url }}" as="style">
+  <link rel="preload" href="{{ '/assets/images/image.svg' | relative_url }}" as="image" media="(max-width: 768px)">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.og_image | absolute_url }}">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
+  <!-- Critical CSS for faster rendering across devices -->
+  <style>
+    /* Cross-device styles that improve rendering performance */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    .title {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    /* Desktop-specific optimizations */
+    @media (min-width: 769px) {
+      .header-area {
+        min-height: 120px;
+      }
+      .navbar-brand {
+        padding: 0.3125rem;
+      }
+    }
+    
+    /* Mobile-specific optimizations */
+    @media (max-width: 768px) {
+      /* Critical mobile styles for faster FCP/LCP */
+      .header-area {
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        line-height: 1.2;
+      }
+      .subtitle {
+        font-size: 0.9rem;
+      }
+      
+      /* Help prevent layout shifts */
+      .navbar {
+        min-height: 56px;
+      }
+      .brand-icon img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+  
+  <!-- Optimized CSS loading -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="{{ '/assets/css/styles.css' | relative_url }}" rel="stylesheet" />
+</head>
