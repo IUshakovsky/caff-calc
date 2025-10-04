@@ -40,3 +40,8 @@ vendor/
 
 # Documentation/Guide files
 BLOG_GUIDE.md
+SEARCH_IMPLEMENTATION.md
+Documentation
+
+# Test blog posts
+_posts/*test*

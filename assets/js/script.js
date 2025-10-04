@@ -1200,18 +1200,38 @@ async function performSearch(event) {
         // Add page indicator only for non-current page results
         let pageIndicator = '';
         if (!result.isCurrentPage) {
-          const pageName = result.url.replace('.html', '').replace('pages/', '');
-          pageIndicator = `<div class="result-page">Page: ${pageName}</div>`;
+          let pageName = result.url.replace('.html', '').replace('pages/', '');
+          
+          // Format blog post URLs nicely (e.g., /2025/09/29/coffee-vs-tea-caffeine-content/)
+          if (pageName.includes('/20')) {
+            const parts = pageName.split('/').filter(p => p);
+            if (parts.length >= 4) {
+              // Extract the post title from the URL
+              pageName = parts[3].replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+              pageIndicator = `<div class="result-page">Blog Post: ${pageName}</div>`;
+            } else {
+              pageIndicator = `<div class="result-page">Blog Post</div>`;
+            }
+          } else if (pageName === 'blog') {
+            pageIndicator = `<div class="result-page">Blog</div>`;
+          } else {
+            pageIndicator = `<div class="result-page">Page: ${pageName}</div>`;
+          }
         }
         
         // Fix URL path resolution to prevent '/pages/pages' issue
         let correctUrl = result.url;
         // Check if we're in a subpage and need to adjust the path
         const isInPagesDir = window.location.pathname.includes('/pages/');
-        if (isInPagesDir && result.url.startsWith('pages/')) {
+        const isBlogPost = result.url.includes('/20'); // Blog posts have year in URL
+        
+        // Blog posts and /blog/ always use absolute paths from root
+        if (isBlogPost || result.url === '/blog/' || result.url.startsWith('/blog')) {
+          correctUrl = result.url;
+        } else if (isInPagesDir && result.url.startsWith('pages/')) {
           // If we're in /pages/ and the result URL also starts with pages/, use just the filename
           correctUrl = result.url.replace('pages/', '');
-        } else if (!isInPagesDir && result.url !== 'index.html' && !result.url.startsWith('pages/')) {
+        } else if (!isInPagesDir && result.url !== 'index.html' && !result.url.startsWith('pages/') && !result.url.startsWith('/')) {
           // If we're in root and result URL doesn't have proper path, add 'pages/' prefix
           correctUrl = 'pages/' + result.url;
         }
@@ -1267,8 +1287,30 @@ async function searchAllPages(searchTerm) {
     '/index.html',
     '/pages/caffeine-science',
     '/pages/overdose-symptoms',
-    '/pages/health-advice'
+    '/pages/health-advice',
+    '/blog/'
   ];
+  
+  // Dynamically fetch blog posts from the blog page
+  try {
+    const blogResponse = await fetch('/blog/');
+    if (blogResponse.ok) {
+      const blogHtml = await blogResponse.text();
+      const blogParser = new DOMParser();
+      const blogDoc = blogParser.parseFromString(blogHtml, 'text/html');
+      
+      // Extract blog post URLs from the blog index page
+      const blogLinks = blogDoc.querySelectorAll('a[href*="/2025/"], a[href*="/2024/"], a[href*="/2026/"]');
+      blogLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && !pages.includes(href)) {
+          pages.push(href);
+        }
+      });
+    }
+  } catch (error) {
+    console.warn('Could not fetch blog posts list:', error);
+  }
 
   // First search current page
   const currentPath = window.location.pathname;
