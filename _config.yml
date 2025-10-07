@@ -1,7 +1,7 @@
 # Site settings
 title: "Caffeine Overdose Calculator"
 description: "Calculate your safe caffeine intake based on personal factors. Know your safe limits and avoid dangerous caffeine consumption."
-url: "https://iushakovsky.github.io"
+url: "https://caffcalc.com"
 baseurl: "/caff-calc"
 
 # Author
