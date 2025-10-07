@@ -2,7 +2,7 @@
 title: "Caffeine Overdose Calculator"
 description: "Calculate your safe caffeine intake based on personal factors. Know your safe limits and avoid dangerous caffeine consumption."
 url: "https://caffcalc.com"
-baseurl: "/caff-calc"
+baseurl: ""
 
 # Author
 author: "Caffeine Overdose Prevention Calculator"
