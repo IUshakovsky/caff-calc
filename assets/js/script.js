@@ -191,7 +191,8 @@ let totalCaffeineConsumed = 0;
 // Load caffeine data and populate beverage dropdown
 async function loadCaffeineData() {
   try {
-    const response = await fetch('/assets/data/caf_src.json');
+    const baseurl = window.SITE_BASEURL || '';
+    const response = await fetch(`${baseurl}/assets/data/caf_src.json`);
     caffeineData = await response.json();
     console.log('Caffeine data loaded successfully');
     
@@ -1283,17 +1284,18 @@ async function searchAllPages(searchTerm) {
   }
 
   // Get all page URLs - use absolute paths from root
+  const baseurl = window.SITE_BASEURL || '';
   const pages = [
-    '/index.html',
-    '/pages/caffeine-science',
-    '/pages/overdose-symptoms',
-    '/pages/health-advice',
-    '/blog/'
+    `${baseurl}/index.html`,
+    `${baseurl}/pages/caffeine-science`,
+    `${baseurl}/pages/overdose-symptoms`,
+    `${baseurl}/pages/health-advice`,
+    `${baseurl}/blog/`
   ];
   
   // Dynamically fetch blog posts from the blog page
   try {
-    const blogResponse = await fetch('/blog/');
+    const blogResponse = await fetch(`${baseurl}/blog/`);
     if (blogResponse.ok) {
       const blogHtml = await blogResponse.text();
       const blogParser = new DOMParser();
