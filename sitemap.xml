@@ -13,17 +13,20 @@ layout: null
   
   <!-- Static Pages -->
   <url>
-    <loc>{{ site.url }}/pages/caffeine-science.html</loc>
+    <loc>{{ site.url }}/pages/caffeine-science</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{ site.url }}/pages/overdose-symptoms.html</loc>
+    <loc>{{ site.url }}/pages/overdose-symptoms</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{ site.url }}/pages/health-advice.html</loc>
+    <loc>{{ site.url }}/pages/health-advice</loc>
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -41,7 +44,7 @@ layout: null
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   {% endfor %}

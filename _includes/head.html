@@ -37,6 +37,8 @@
   <!-- Mobile specific resource hints -->
   <link rel="preload" href="{{ '/assets/css/styles.css' | relative_url }}" as="style">
   <link rel="preload" href="{{ '/assets/images/image.svg' | relative_url }}" as="image" media="(max-width: 768px)">
+  <!-- Canonical URL - tells Google the preferred URL for this page -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
