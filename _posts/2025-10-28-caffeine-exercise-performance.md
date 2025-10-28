@@ -6,7 +6,6 @@ author: "CaffCalc Team"
 tags: [caffeine, exercise, performance, sports-nutrition, ergogenic-aids, caffeine-safety]
 excerpt: "Explore how caffeine can safely enhance athletic performance, the best dosing strategies, timing tips, and realistic limits you can trust with a science-backed guide."
 image: "/assets/images/blog/caff-performance.jpg"
-image_alt: "A dynamic scene of a runner mid-stride with a subtle glow around energized muscles, symbolizing caffeine-enhanced performance"
 ---
 
 # Caffeine and Exercise: Safe, Proven Ways to Boost Performance
