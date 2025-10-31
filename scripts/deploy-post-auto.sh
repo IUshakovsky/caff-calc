@@ -81,7 +81,8 @@ echo -e "${GREEN}✓ Found 1 .jpg file: $(basename "$JPG_FILE")${NC}\n"
 
 # Step 3 & 4: Extract image filename from markdown frontmatter
 echo "Step 3: Extracting image path from markdown file..."
-IMAGE_PATH=$(grep -E '^\s*image:\s*"' "$MD_FILE" | head -n 1 | sed -E 's/.*image:\s*"([^"]+)".*/\1/')
+IMAGE_LINE=$(grep -E '^\s*image:\s*"' "$MD_FILE" | head -n 1)
+IMAGE_PATH=$(echo "$IMAGE_LINE" | sed -E 's/^[^"]*"([^"]+)".*$/\1/')
 
 if [ -z "$IMAGE_PATH" ]; then
     echo -e "${RED}Error: Could not find image path in format 'image: \"/path/to/image.jpg\"'${NC}"

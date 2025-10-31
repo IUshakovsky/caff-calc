@@ -46,7 +46,8 @@ POST_NAME=$(echo "$POST_FILENAME" | sed -E 's/^[0-9]{4}-[0-9]{2}-[0-9]{2}-(.*)\.
 POST_TITLE=$(echo "$POST_NAME" | tr '-' ' ')
 
 # Extract image path from the post
-IMAGE_PATH=$(grep -E '^\s*image:\s*"' "$LATEST_POST" | head -n 1 | sed -E 's/.*image:\s*"([^"]+)".*/\1/')
+IMAGE_LINE=$(grep -E '^\s*image:\s*"' "$LATEST_POST" | head -n 1)
+IMAGE_PATH=$(echo "$IMAGE_LINE" | sed -E 's/^[^"]*"([^"]+)".*$/\1/')
 
 if [ -z "$IMAGE_PATH" ]; then
     echo -e "${YELLOW}Warning: No image path found in post${NC}"
