@@ -1476,6 +1476,18 @@ option.energy-item {
   margin-bottom: 10px;
 }
 
+.myth-item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(139, 90, 43, 0.1);
+}
+
+.myth-item h5 {
+  color: #8b5a2b;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
 .source-list {
   list-style-type: none;
   padding-left: 0;
