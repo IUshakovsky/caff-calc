@@ -24,6 +24,9 @@ pagination:
 
 plugins:
   - jekyll-paginate-v2
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing
 exclude:
@@ -35,6 +38,7 @@ exclude:
   - .DS_Store
   - .git
   - .gitignore
+  - .github
   - BLOG_GUIDE.md
 
 # Collections
