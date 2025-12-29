@@ -193,14 +193,14 @@ Scientific sources supporting this article:
 - [Caffeine intake during pregnancy and adverse birth outcomes: systematic review and dose-response meta-analysis](https://pubmed.ncbi.nlm.nih.gov/25179792/)  
 - [Maternal caffeine intake during pregnancy is associated with risk of low birth weight: systematic review and dose-response meta-analysis](https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-014-0174-6)  
 - [Maternal caffeine consumption and pregnancy outcomes: a narrative review](https://pubmed.ncbi.nlm.nih.gov/32843532/)  
-- [Mayo Clinic: Caffeine intake during pregnancy](https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-depth/pregnant-and-caffeine/art-20048412)  
-- [Johns Hopkins Medicine: Caffeine and pregnancy](https://www.hopkinsmedicine.org/health/wellness-and-prevention/caffeine-pregnancy)  
+- [Mayo Clinic: Pregnancy nutrition - Foods to avoid during pregnancy](https://www.mayoclinic.org/healthy-lifestyle/pregnancy-week-by-week/in-depth/pregnancy-nutrition/art-20043844)  
+- [Johns Hopkins Medicine: Nutrition During Pregnancy](https://www.hopkinsmedicine.org/health/wellness-and-prevention/nutrition-during-pregnancy)  
 - [American Pregnancy Association: Caffeine During Pregnancy](https://americanpregnancy.org/healthy-pregnancy/pregnancy-health-wellness/caffeine-intake-during-pregnancy/)  
 - [FDA: Spilling the Beans - How Much Caffeine is Too Much?](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much)  
 - [Sleep Foundation: Caffeine and Sleep](https://www.sleepfoundation.org/nutrition/caffeine-and-sleep)  
-- [PubMed: Caffeine metabolism in pregnancy](https://pubmed.ncbi.nlm.nih.gov/11817524/)  
-- [European Food Safety Authority: Scientific Opinion on the safety of caffeine](https://www.efsa.europa.eu/en/efsajournal/pub/4102)  
-- [PubMed Central: Caffeine intake during pregnancy and risk of problem behavior in 5- to 6-year-old children](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3625078/)  
+- [PubMed: The disposition of caffeine during and after pregnancy](https://pubmed.ncbi.nlm.nih.gov/7302604/)  
+- [European Food Safety Authority: Scientific Opinion on the safety of caffeine](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2015.4102)  
+- [PubMed Central: Is caffeine consumption safe during pregnancy?](https://pmc.ncbi.nlm.nih.gov/articles/PMC3625078/)  
 
 ---
 
