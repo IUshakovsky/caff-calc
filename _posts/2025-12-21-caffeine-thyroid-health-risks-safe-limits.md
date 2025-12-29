@@ -152,15 +152,15 @@ Your thyroid deserves evidence-based care—and your coffee ritual doesn't have 
 
 Scientific sources supporting this article:
 
-- [Coffee consumption and thyroid function: NHANES 2007-2012 and Mendelian randomization - Frontiers in Endocrinology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10282749/)  
+- [Coffee consumption and thyroid function: NHANES 2007-2012 and Mendelian randomization - Frontiers in Endocrinology](https://pmc.ncbi.nlm.nih.gov/articles/PMC10282749/)  
 - [Relationship between caffeine intake and thyroid function: NHANES 2007–2012 - Nutrition Journal](https://nutritionj.biomedcentral.com/articles/10.1186/s12937-023-00866-5)  
 - [EFSA Scientific Opinion on the safety of caffeine - EFSA Journal](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2015.4102)  
-- [Coffee consumption and health: umbrella review of meta-analyses - BMJ](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5481995/)  
+- [Coffee consumption and health: umbrella review of meta-analyses - BMJ](https://pmc.ncbi.nlm.nih.gov/articles/PMC5696634/)  
 - [Effect of coffee on levothyroxine absorption - PubMed](https://pubmed.ncbi.nlm.nih.gov/37351106/)  
 - [Caffeine and thyroid medication interactions - PubMed](https://pubmed.ncbi.nlm.nih.gov/24235903/)  
 - [Sleep Foundation: Caffeine and Sleep](https://www.sleepfoundation.org/nutrition/caffeine-and-sleep)  
-- [Coffee consumption and thyroid cancer risk: systematic review - PubMed](https://pubmed.ncbi.nlm.nih.gov/)  
-- [EFSA Panel on caffeine safety around exercise and sleep - EFSA](https://www.efsa.europa.eu/en/efsajournal/pub/4102)  
+- [Coffee consumption and thyroid cancer risk: systematic review - PubMed](https://pubmed.ncbi.nlm.nih.gov/29167102/)  
+- [EFSA Panel on caffeine safety around exercise and sleep - EFSA](https://efsa.onlinelibrary.wiley.com/doi/10.2903/j.efsa.2015.4102)  
 
 ---
 
