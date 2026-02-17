@@ -117,19 +117,6 @@ Log the time, type, size, and temperature of every caffeinated drink alongside h
 
 ---
 
-## Quick-Reference Checklist
-
-- [ ] Last caffeinated drink at least 8 hours before bed
-- [ ] Single doses at or below 200 mg
-- [ ] Total daily caffeine under 400 mg
-- [ ] Water with every cup of coffee or tea
-- [ ] Caffeine paired with food, not on an empty stomach
-- [ ] Iced or cooled drinks on hot-flash days
-- [ ] 1,200 mg calcium daily from food (supplement if needed)
-- [ ] Two-week trigger log started
-
----
-
 ## Frequently Asked Questions
 
 **Q: Do I need to quit caffeine completely during menopause?**  
