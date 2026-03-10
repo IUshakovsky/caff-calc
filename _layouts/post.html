@@ -35,18 +35,77 @@ layout: default
         </div>
       </div>
 
-      <!-- Previous/Next Post Navigation -->
-      <div class="row mb-4">
-        <div class="col-6">
+      <!-- Previous/Next Post Navigation + Share -->
+      <div class="row mb-4 align-items-stretch">
+        <div class="col-12 col-md-5 mb-2 mb-md-0 d-flex">
           {% if page.previous.url %}
-          <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-secondary">
+          <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center text-start">
             <i class="fas fa-arrow-left me-2"></i>{{ page.previous.title | truncate: 30 }}
           </a>
           {% endif %}
         </div>
-        <div class="col-6 text-end">
+        <div class="col-12 col-md-2 mb-2 mb-md-0 d-flex justify-content-center">
+          <!-- Native Share (Web Share API) -->
+          <button id="share-native" class="btn btn-outline-secondary d-none w-100 h-100" type="button">
+            <i class="fas fa-share-alt me-2"></i>Share
+          </button>
+          <!-- Fallback for browsers without Web Share API -->
+          <div id="share-fallback" class="dropdown d-none w-100">
+            <button class="btn btn-outline-secondary dropdown-toggle w-100 h-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-share-alt me-2"></i>Share
+            </button>
+            <ul class="dropdown-menu dropdown-menu-center">
+              <li>
+                <a class="dropdown-item" href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener">
+                  <i class="fab fa-twitter me-2"></i>Twitter / X
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">
+                  <i class="fab fa-facebook me-2"></i>Facebook
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener">
+                  <i class="fab fa-linkedin me-2"></i>LinkedIn
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="mailto:?subject={{ page.title | url_encode }}&body={{ page.url | absolute_url | url_encode }}" target="_blank">
+                  <i class="fas fa-envelope me-2"></i>Email
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="#" onclick="navigator.clipboard.writeText('{{ page.url | absolute_url }}');this.innerHTML='<i class=\'fas fa-check me-2\'></i>Link copied!';setTimeout(()=>{this.innerHTML='<i class=\'fas fa-link me-2\'></i>Copy link'},2000);return false;">
+                  <i class="fas fa-link me-2"></i>Copy link
+                </a>
+              </li>
+            </ul>
+          </div>
+          <script>
+            (function() {
+              var shareData = {
+                title: {{ page.title | jsonify }},
+                text: {{ page.description | default: page.excerpt | strip_html | truncate: 150 | jsonify }},
+                url: '{{ page.url | absolute_url }}'
+              };
+              if (navigator.share) {
+                var btn = document.getElementById('share-native');
+                btn.classList.remove('d-none');
+                btn.addEventListener('click', function() {
+                  navigator.share(shareData).catch(function() {});
+                });
+              } else {
+                var fb = document.getElementById('share-fallback');
+                fb.classList.remove('d-none');
+              }
+            })();
+          </script>
+        </div>
+        <div class="col-12 col-md-5 d-flex">
           {% if page.next.url %}
-          <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-secondary">
+          <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-between text-start">
             {{ page.next.title | truncate: 30 }}<i class="fas fa-arrow-right ms-2"></i>
           </a>
           {% endif %}
