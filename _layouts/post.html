@@ -39,12 +39,12 @@ layout: default
       <div class="row mb-4 align-items-stretch">
         <div class="col-12 col-md-5 mb-2 mb-md-0 d-flex">
           {% if page.previous.url %}
-          <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center text-start">
-            <i class="fas fa-arrow-left me-2"></i>{{ page.previous.title | truncate: 30 }}
+          <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-start text-start text-nowrap px-2 px-md-3">
+            <i class="fas fa-arrow-left me-2"></i><span class="d-md-none">Previous: {{ page.previous.title | truncate: 32 }}</span><span class="d-none d-md-inline">{{ page.previous.title | truncate: 30 }}</span>
           </a>
           {% endif %}
         </div>
-        <div class="col-12 col-md-2 mb-2 mb-md-0 d-flex justify-content-center">
+        <div class="col-12 col-md-2 order-2 order-md-2 mb-2 mb-md-0 d-flex justify-content-center">
           <!-- Native Share (Web Share API) -->
           <button id="share-native" class="btn btn-outline-secondary d-none w-100 h-100" type="button">
             <i class="fas fa-share-alt me-2"></i>Share
@@ -103,10 +103,10 @@ layout: default
             })();
           </script>
         </div>
-        <div class="col-12 col-md-5 d-flex">
+        <div class="col-12 col-md-5 order-3 order-md-3 d-flex justify-content-end">
           {% if page.next.url %}
-          <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-between text-start">
-            {{ page.next.title | truncate: 30 }}<i class="fas fa-arrow-right ms-2"></i>
+          <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-secondary w-100 h-100 d-flex align-items-center justify-content-end text-end text-nowrap px-2 px-md-3">
+            <span class="d-md-none">Next: {{ page.next.title | truncate: 32 }}</span><span class="d-none d-md-inline">{{ page.next.title | truncate: 30 }}</span><i class="fas fa-arrow-right ms-2"></i>
           </a>
           {% endif %}
         </div>
