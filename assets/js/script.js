@@ -216,16 +216,16 @@ function populateBeverageDropdown() {
     categoryHeader.className = 'custom-select-optgroup';
     
     // Add icon based on category
-    let iconClass = '';
+    let iconName = 'coffee';
     if (category === 'coffee') {
-      iconClass = 'fa-coffee';
+      iconName = 'coffee';
     } else if (category === 'tea') {
-      iconClass = 'fa-mug-hot';
+      iconName = 'leaf';
     } else if (category === 'energyDrink') {
-      iconClass = 'fa-bolt';
+      iconName = 'zap';
     }
-    
-    categoryHeader.innerHTML = `<i class="fas ${iconClass} me-2"></i>${formatDisplayName(category)}`;
+
+    categoryHeader.innerHTML = `<i data-lucide="${iconName}" class="me-2" aria-hidden="true"></i>${formatDisplayName(category)}`;
     optionsContainer.appendChild(categoryHeader);
     
     // Add beverage types for this category
@@ -248,14 +248,17 @@ function populateBeverageDropdown() {
   const option = document.createElement('div');
   option.className = 'custom-select-option';
   option.dataset.value = 'custom';
-  option.innerHTML = '<i class="fas fa-plus-circle me-2"></i>Custom Item';
-  
+  option.innerHTML = '<i data-lucide="circle-plus" class="me-2" aria-hidden="true"></i>Custom Item';
+
   option.addEventListener('click', function() {
     selectBeverage('custom', 'Custom Item');
   });
-  
+
   optionsContainer.appendChild(option);
-  
+
+  // Render the freshly injected Lucide icons
+  if (window.renderIcons) window.renderIcons();
+
   // Initialize dropdown toggle functionality
   initCustomDropdown();
 }
@@ -533,7 +536,7 @@ function updateConsumptionTable() {
     const actionCell = document.createElement('td');
     const deleteBtn = document.createElement('button');
     deleteBtn.className = 'btn btn-sm btn-delete';
-    deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+    deleteBtn.innerHTML = '<i data-lucide="trash-2" aria-hidden="true"></i>';
     deleteBtn.onclick = () => removeConsumptionItem(item.id);
     actionCell.appendChild(deleteBtn);
     row.appendChild(actionCell);
@@ -543,9 +546,12 @@ function updateConsumptionTable() {
     totalCaffeineConsumed += item.totalCaffeine;
   });
   
+  // Render freshly injected row icons (delete buttons)
+  if (window.renderIcons) window.renderIcons();
+
   // Update total
   document.getElementById('totalCaffeine').textContent = totalCaffeineConsumed + ' mg';
-  
+
   // Update status
   updateCaffeineStatus();
   
@@ -790,12 +796,22 @@ function showNotification(title, message, type = 'info') {
   toast.classList.add(type);
   
   // Set icon based on type
-  let iconClass = 'fa-info-circle';
-  if (type === 'warning') iconClass = 'fa-exclamation-triangle';
-  if (type === 'error') iconClass = 'fa-exclamation-circle';
-  if (type === 'success') iconClass = 'fa-check-circle';
-  
-  toastIcon.className = `fas ${iconClass} me-2`;
+  let iconName = 'info';
+  if (type === 'warning') iconName = 'triangle-alert';
+  if (type === 'error') iconName = 'circle-alert';
+  if (type === 'success') iconName = 'circle-check';
+
+  // toastIcon may already be an <svg> from a previous render, so swap the
+  // whole element for a fresh Lucide placeholder and re-render.
+  if (toastIcon) {
+    const fresh = document.createElement('i');
+    fresh.id = 'toastIcon';
+    fresh.setAttribute('data-lucide', iconName);
+    fresh.className = 'me-2';
+    fresh.setAttribute('aria-hidden', 'true');
+    toastIcon.replaceWith(fresh);
+    if (window.renderIcons) window.renderIcons();
+  }
   toastTitle.textContent = title;
   toastMessage.textContent = message;
   
@@ -1134,10 +1150,11 @@ async function performSearch(event) {
   header.className = 'search-results-header';
   header.innerHTML = `
     <h5>Searching across all pages for "${searchTerm}"...</h5>
-    <button class="close-btn" onclick="closeSearchResults()"><i class="fas fa-times"></i></button>
+    <button class="close-btn" onclick="closeSearchResults()" aria-label="Close"><i data-lucide="x" aria-hidden="true"></i></button>
   `;
   searchResults.appendChild(header);
-  
+  if (window.renderIcons) window.renderIcons();
+
   // Create body
   const body = document.createElement('div');
   body.className = 'search-results-body';
@@ -1161,9 +1178,10 @@ async function performSearch(event) {
     // Update header after search completes
     header.innerHTML = `
       <h5>Search Results for "${searchTerm}"</h5>
-      <button class="close-btn" onclick="closeSearchResults()"><i class="fas fa-times"></i></button>
+      <button class="close-btn" onclick="closeSearchResults()" aria-label="Close"><i data-lucide="x" aria-hidden="true"></i></button>
     `;
-    
+    if (window.renderIcons) window.renderIcons();
+
     // Clear loading message
     body.innerHTML = '';
     

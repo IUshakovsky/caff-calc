@@ -23,7 +23,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
         <!-- Personal Info Panel -->
         <div class="panel">
           <div class="panel-title">
-            <i class="fas fa-user-circle me-2"></i>
+            <i data-lucide="circle-user" class="me-2" aria-hidden="true"></i>
             Personal Info & Preferences
           </div>
 
@@ -57,7 +57,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
       <div class="section-divider" data-title="Personal"></div>
       <!-- Age Groups -->
       <label class="form-label">
-        <i class="fas fa-birthday-cake me-1 text-secondary"></i>
+        <i data-lucide="cake" class="me-1 text-secondary" aria-hidden="true"></i>
         Age Group
       </label>
       <div class="btn-group w-100 mb-3" role="group">
@@ -77,15 +77,15 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
 
       <!-- Gender -->
       <label class="form-label">
-        <i class="fas fa-venus-mars me-1 text-secondary"></i>
+        <i data-lucide="venus-and-mars" class="me-1 text-secondary" aria-hidden="true"></i>
         Gender
       </label>
       <div class="btn-group w-100 mb-3" role="group">
         <button type="button" class="btn btn-outline-primary" id="maleBtn" onclick="updateGender('Male')">
-          <i class="fas fa-male"></i> Male
+          <i data-lucide="mars" aria-hidden="true"></i> Male
         </button>
         <button type="button" class="btn btn-outline-primary" id="femaleBtn" onclick="updateGender('Female')">
-          <i class="fas fa-female"></i> Female
+          <i data-lucide="venus" aria-hidden="true"></i> Female
         </button>
       </div>
 
@@ -93,13 +93,13 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
       <div id="femaleHealthPanel" class="health-status-panel d-none mb-3">
         <div class="card">
           <div class="card-body p-2">
-            <h6 class="mb-2"><i class="fas fa-venus me-1"></i>Female Health Status</h6>
+            <h6 class="mb-2"><i data-lucide="venus" class="me-1" aria-hidden="true"></i>Female Health Status</h6>
             <div class="d-flex flex-wrap justify-content-between">
               <!-- Pregnant Switch -->
               <div class="form-check form-switch mb-0 me-3">
                 <input class="form-check-input" type="checkbox" id="pregnantSwitch" />
                 <label class="form-check-label" for="pregnantSwitch">
-                  <i class="fas fa-baby me-1"></i>Pregnant
+                  <i data-lucide="baby" class="me-1" aria-hidden="true"></i>Pregnant
                 </label>
               </div>
               
@@ -107,7 +107,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
               <div class="form-check form-switch mb-0">
                 <input class="form-check-input" type="checkbox" id="breastfeedingSwitch" />
                 <label class="form-check-label" for="breastfeedingSwitch">
-                  <i class="fas fa-baby-carriage me-1"></i>Breastfeeding
+                  <i data-lucide="baby" class="me-1" aria-hidden="true"></i>Breastfeeding
                 </label>
               </div>
             </div>
@@ -117,7 +117,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
 
       <!-- Weight Input -->
       <label class="form-label">
-        <i class="fas fa-weight me-1 text-secondary"></i>
+        <i data-lucide="scale" class="me-1 text-secondary" aria-hidden="true"></i>
         Weight (<span id="weightUnit">kg</span>)
       </label>
       <input type="number" class="form-control mb-3" id="weightInput" placeholder="Enter your weight" value="70"
@@ -125,10 +125,10 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
 
       <!-- Sensitivity Buttons -->
       <label class="form-label">
-        <i class="fas fa-heartbeat me-1 text-secondary"></i>
+        <i data-lucide="heart-pulse" class="me-1 text-secondary" aria-hidden="true"></i>
         Caffeine Sensitivity
         <span class="tooltip-element" data-tooltip="Caffeine sensitivity refers to how your body metabolizes and responds to caffeine intake. People with higher sensitivity experience stronger effects from smaller amounts and may feel jittery or anxious more easily. Your age, weight, genetics, and overall health all contribute to your personal sensitivity level.">
-          <i class="fas fa-info-circle ms-1 text-muted tooltip-icon"></i>
+          <i data-lucide="info" class="ms-1 text-muted tooltip-icon" aria-hidden="true"></i>
         </span>
       </label>
       <div class="btn-group w-100 mb-3" role="group">
@@ -156,7 +156,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
         <!-- Caffeine Consumption Tracker Panel -->
         <div class="panel panel-wide">
           <div class="panel-title">
-            <i class="fas fa-mug-hot me-2"></i>
+            <i data-lucide="coffee" class="me-2" aria-hidden="true"></i>
             Daily Caffeine Consumption Tracker
           </div>
 
@@ -164,13 +164,13 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
         <div class="row g-2">
           <div class="col-md-5">
             <label class="form-label small">
-              <i class="fas fa-coffee me-1 text-secondary"></i>
+              <i data-lucide="coffee" class="me-1 text-secondary" aria-hidden="true"></i>
               Beverage Type
             </label>
             <div class="custom-select-container">
               <button id="caffeineButton" class="form-select form-select-sm custom-select-button">
                 <span id="caffeineButtonText">Select beverage</span>
-                <i class="fas fa-chevron-down"></i>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
               </button>
               <div id="caffeineDropdown" class="custom-select-dropdown">
                 <div class="custom-select-search">
@@ -185,13 +185,13 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
           </div>
           <div class="col-md-4 regular-fields">
             <label class="form-label small">
-              <i class="fas fa-ruler me-1 text-secondary"></i>
+              <i data-lucide="ruler" class="me-1 text-secondary" aria-hidden="true"></i>
               Size
             </label>
             <div class="custom-select-container">
               <button id="caffeineSizeButton" class="form-select form-select-sm custom-select-button" disabled>
                 <span id="caffeineSizeButtonText">Size</span>
-                <i class="fas fa-chevron-down"></i>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
               </button>
               <div id="caffeineSizeDropdown" class="custom-select-dropdown">
                 <div id="caffeineSizeOptions" class="custom-select-options">
@@ -203,14 +203,14 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
           </div>
           <div class="col-md-4 custom-fields d-none">
             <label class="form-label small">
-              <i class="fas fa-flask me-1 text-secondary"></i>
+              <i data-lucide="flask-conical" class="me-1 text-secondary" aria-hidden="true"></i>
               Caffeine mg
             </label>
             <input type="number" id="customCaffeine" class="form-control form-control-sm" value="0" min="0">
           </div>
           <div class="col-md-2">
             <label class="form-label small">
-              <i class="fas fa-hashtag text-secondary"></i> Qty
+              <i data-lucide="hash" class="text-secondary" aria-hidden="true"></i> Qty
             </label>
             <input type="number" id="caffeineQuantity" class="form-control form-control-sm" value="1" min="1" max="10"
               disabled>
@@ -218,7 +218,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
           <div class="col-md-1">
             <label class="form-label small">&nbsp;</label>
             <button id="addCaffeineBtn" class="btn btn-primary form-control" disabled>
-              <i class="fas fa-plus"></i>
+              <i data-lucide="plus" aria-hidden="true"></i>
             </button>
           </div>
         </div>
@@ -228,7 +228,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
       <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
         <h6 class="mb-0">Tracked Items</h6>
         <button id="clearTrackerBtn" class="btn btn-sm btn-outline-secondary">
-          <i class="fas fa-trash-alt me-1"></i>Clear All
+          <i data-lucide="trash-2" class="me-1" aria-hidden="true"></i>Clear All
         </button>
       </div>
 
@@ -258,7 +258,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
 
       <div class="d-flex justify-content-center my-4">
         <button id="calculateBtn" class="btn btn-calculate">
-          <i class="fas fa-calculator me-2"></i> Calculate Caffeine Intake
+          <i data-lucide="calculator" class="me-2" aria-hidden="true"></i> Calculate Caffeine Intake
         </button>
       </div>
 
@@ -283,7 +283,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
       <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
         <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-header">
-            <i id="toastIcon" class="fas fa-info-circle me-2"></i>
+            <i id="toastIcon" data-lucide="info" class="me-2" aria-hidden="true"></i>
             <strong class="me-auto" id="toastTitle">Notification</strong>
             <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
           </div>
@@ -294,7 +294,7 @@ description: "Prevent caffeine overdose with our personalized calculator. Know y
       </div>
 
       <div class="disclaimer mt-3">
-        <i class="fas fa-info-circle me-1"></i>
+        <i data-lucide="info" class="me-1" aria-hidden="true"></i>
         Recommendations vary by health status. Consult a doctor for personal advice.
       </div>
         </div>

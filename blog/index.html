@@ -28,12 +28,12 @@ pagination:
             </h2>
             
             <div class="text-muted mb-3">
-              <i class="fas fa-calendar me-2"></i>
+              <i data-lucide="calendar" class="me-2" aria-hidden="true"></i>
               <time datetime="{{ post.date | date_to_xmlschema }}">
                 {{ post.date | date: "%B %d, %Y" }}
               </time>
               {% if post.author %}
-              <i class="fas fa-user ms-3 me-2"></i>{{ post.author }}
+              <i data-lucide="user" class="ms-3 me-2" aria-hidden="true"></i>{{ post.author }}
               {% endif %}
             </div>
 
@@ -50,7 +50,7 @@ pagination:
             {% endif %}
 
             <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary btn-sm">
-              Read More <i class="fas fa-arrow-right ms-1"></i>
+              Read More <i data-lucide="arrow-right" class="ms-1" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -59,7 +59,7 @@ pagination:
         <!-- No Posts Message -->
         <div class="card">
           <div class="card-body text-center py-5">
-            <i class="fas fa-coffee fa-3x text-muted mb-3"></i>
+            <i data-lucide="coffee" class="fa-3x text-muted mb-3" aria-hidden="true"></i>
             <h3>No blog posts yet</h3>
             <p class="text-muted">Check back soon for caffeine-related articles and tips!</p>
           </div>
@@ -130,54 +130,54 @@ pagination:
 }
 
 .blog-post-card {
-  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
 
 .blog-post-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(139, 90, 43, 0.15);
+  transform: translateY(-4px);
+  box-shadow: var(--e-2);
+  border-color: var(--c-border-strong);
 }
 
-/* Pagination styling with warm brown colors */
+.blog-post-card .card-img-top {
+  transition: transform 0.4s ease;
+}
+
+.blog-post-card:hover .card-img-top {
+  transform: scale(1.03);
+}
+
+/* Pagination — flat, token-driven */
 .pagination .page-link {
-  color: #8b5a2b;
-  border-color: #8b5a2b;
-  background-color: white;
-  transition: all 0.3s ease;
+  color: var(--c-brand-strong);
+  border-color: var(--c-border-strong);
+  background-color: var(--c-surface);
+  transition: all var(--transition);
   font-weight: 500;
-  padding: 0.35rem 0.65rem;
+  padding: 0.4rem 0.7rem;
   margin: 0 0.15rem;
-  border-radius: 5px;
+  border-radius: var(--r-sm);
 }
 
 .pagination .page-link:hover {
-  background: linear-gradient(to right, #8b5a2b, #a0522d);
-  color: white;
-  border-color: #8b5a2b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(139, 90, 43, 0.3);
+  background-color: var(--c-brand-tint);
+  color: var(--c-brand-strong);
+  border-color: var(--c-brand);
 }
 
 .pagination .page-item.active .page-link {
-  background: linear-gradient(to right, #8b5a2b, #a0522d);
-  color: white;
-  border-color: #8b5a2b;
-  box-shadow: 0 2px 5px rgba(139, 90, 43, 0.3);
+  background-color: var(--c-brand);
+  color: #fff;
+  border-color: var(--c-brand);
   z-index: 3;
 }
 
 .pagination .page-item.disabled .page-link {
-  color: #d2b8a3;
-  border-color: #e5d4c1;
-  background-color: #f8f3e9;
+  color: var(--c-text-muted);
+  border-color: var(--c-border);
+  background-color: var(--c-surface-2);
   cursor: not-allowed;
-}
-
-.pagination .page-item.disabled .page-link:hover {
-  transform: none;
-  box-shadow: none;
-  background-color: #f8f3e9;
-  color: #d2b8a3;
 }
 
 .pagination {

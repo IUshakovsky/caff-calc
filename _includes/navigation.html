@@ -14,7 +14,7 @@
         {% unless item.title == 'Blog' %}
         <li class="nav-item">
           <a class="nav-link {% if page.url == item.url %}active{% endif %}" href="{{ item.url | relative_url }}">
-            <i class="fas fa-{{ item.icon }} me-1"></i>{{ item.title }}
+            <i data-lucide="{{ item.icon }}" class="me-1" aria-hidden="true"></i>{{ item.title }}
           </a>
         </li>
         {% endunless %}
@@ -23,14 +23,14 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link {% if page.url contains '/blog' %}active{% endif %}" href="{{ '/blog' | relative_url }}">
-            <i class="fas fa-blog me-1"></i>Blog
+            <i data-lucide="newspaper" class="me-1" aria-hidden="true"></i>Blog
           </a>
         </li>
       </ul>
       <form class="d-flex search-form ms-2" onsubmit="return performSearch(event)">
         <div class="input-group input-group-sm">
           <input type="search" id="siteSearch" class="form-control form-control-sm" placeholder="Search..." aria-label="Search">
-          <button class="btn btn-outline-light btn-sm" type="submit"><i class="fas fa-search"></i></button>
+          <button class="btn btn-outline-light btn-sm" type="submit" aria-label="Search"><i data-lucide="search" aria-hidden="true"></i></button>
         </div>
       </form>
     </div>

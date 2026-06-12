@@ -69,16 +69,16 @@ navigation:
     icon: "calculator"
   - title: "Blog"
     url: /blog
-    icon: "blog"
+    icon: "newspaper"
   - title: "Caffeine Science"
     url: /pages/caffeine-science
-    icon: "flask"
+    icon: "flask-conical"
   - title: "Overdose Symptoms"
     url: /pages/overdose-symptoms
-    icon: "exclamation-triangle"
+    icon: "triangle-alert"
   - title: "Health Advice"
     url: /pages/health-advice
-    icon: "heartbeat"
+    icon: "heart-pulse"
 
 # Social media
 og_image: "assets/images/caffeine-calculator-social.jpg"
