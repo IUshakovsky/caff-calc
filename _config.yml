@@ -1,5 +1,6 @@
 # Site settings
 title: "Caffeine Overdose Calculator"
+title_short: "CaffCalc"
 description: "Calculate your safe caffeine intake based on personal factors. Know your safe limits and avoid dangerous caffeine consumption."
 url: "https://caffcalc.com"
 baseurl: ""
@@ -40,6 +41,7 @@ exclude:
   - .gitignore
   - .github
   - BLOG_GUIDE.md
+  - documentation
 
 # Collections
 collections:

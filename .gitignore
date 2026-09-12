@@ -45,3 +45,7 @@ Documentation
 
 # Test blog posts
 _posts/*test*
+
+.claude/
+
+.devin/

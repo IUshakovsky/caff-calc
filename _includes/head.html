@@ -25,9 +25,12 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}caffeine overdose calculator, caffeine toxicity, caffeine safety limits, prevent caffeine overdose, safe caffeine levels, coffee overdose{% endif %}">
-  <meta name="author" content="{{ site.author }}">
+  {% assign page_description = page.description
+     | default: page.excerpt
+     | strip_html | strip_newlines | truncate: 155
+     | default: site.description %}
+  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="author" content="CaffCalc">
   <!-- Performance hints for all devices -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
@@ -40,13 +43,21 @@
   <!-- Canonical URL - tells Google the preferred URL for this page -->
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{{ page_description | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{{ site.og_image | absolute_url }}">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="twitter:description" content="{{ page_description | escape }}">
+  <title>
+    {%- if page.seo_title -%}
+      {{ page.seo_title }}
+    {%- elsif page.title and page.title != site.title -%}
+      {{ page.title }} | {{ site.title_short }}
+    {%- else -%}
+      {{ site.title }}
+    {%- endif -%}
+  </title>
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
   <!-- Critical CSS for faster rendering across devices -->
   <style>
