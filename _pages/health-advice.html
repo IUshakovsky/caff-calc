@@ -5,6 +5,15 @@ subtitle: "Smart guidelines for healthy caffeine consumption"
 description: "Get expert advice on safe caffeine consumption, health considerations, and tips for managing your caffeine intake."
 keywords: "caffeine health advice, safe caffeine consumption, caffeine guidelines, caffeine recommendations"
 permalink: /pages/health-advice
+faq:
+  - question: "How long does caffeine stay in my system?"
+    answer: "Caffeine has a half-life of 3-7 hours for most people, meaning it takes that long for your body to eliminate half the amount consumed. Complete elimination can take 10-12 hours."
+  - question: "Can I build tolerance to caffeine?"
+    answer: "Yes, regular consumption leads to tolerance within 1-4 weeks. You'll need more caffeine to achieve the same effects, which is why periodic breaks can be beneficial."
+  - question: "Is it safe to quit caffeine suddenly?"
+    answer: "While not dangerous, sudden cessation can cause withdrawal symptoms (headaches, fatigue, irritability) for 2-9 days. Gradual reduction is more comfortable."
+  - question: "Does caffeine really dehydrate you?"
+    answer: "Mild diuretic effect exists, but regular consumers develop tolerance. Coffee and tea still contribute to daily fluid intake, though water is always best for hydration."
 ---
 
 <div class="content-page">
@@ -340,25 +349,12 @@ permalink: /pages/health-advice
         <div class="card-body">
           <h2 class="card-title">Quick Questions</h2>
           
-          <div class="faq-item">
-            <h5><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>How long does caffeine stay in my system?</h5>
-            <p>Caffeine has a half-life of 3-7 hours for most people, meaning it takes that long for your body to eliminate half the amount consumed. Complete elimination can take 10-12 hours.</p>
+          {% for item in page.faq %}
+          <div class="faq-item{% if forloop.last %} mb-0{% endif %}">
+            <h5><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>{{ item.question }}</h5>
+            <p>{{ item.answer }}</p>
           </div>
-          
-          <div class="faq-item">
-            <h5><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>Can I build tolerance to caffeine?</h5>
-            <p>Yes, regular consumption leads to tolerance within 1-4 weeks. You'll need more caffeine to achieve the same effects, which is why periodic breaks can be beneficial.</p>
-          </div>
-          
-          <div class="faq-item">
-            <h5><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>Is it safe to quit caffeine suddenly?</h5>
-            <p>While not dangerous, sudden cessation can cause withdrawal symptoms (headaches, fatigue, irritability) for 2-9 days. Gradual reduction is more comfortable.</p>
-          </div>
-          
-          <div class="faq-item mb-0">
-            <h5><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>Does caffeine really dehydrate you?</h5>
-            <p>Mild diuretic effect exists, but regular consumers develop tolerance. Coffee and tea still contribute to daily fluid intake, though water is always best for hydration.</p>
-          </div>
+          {% endfor %}
         </div>
       </div>
 
