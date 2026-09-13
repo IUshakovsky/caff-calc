@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Skin Health: Real Effects, Limits, and Myths"
 date: 2026-02-22 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and skin health, acne, rosacea, hydration, sleep, sunscreen]
 excerpt: "Does caffeine help or hurt your skin? Learn what science says about acne, rosacea, puffiness, hydration, and safe limits for your complexion."
 image: "/assets/images/blog/caffeine-skin-health-effects-limits.jpg"

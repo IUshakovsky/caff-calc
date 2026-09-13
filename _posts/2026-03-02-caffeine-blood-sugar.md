@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Blood Sugar: What Really Happens"
 date: 2026-03-02 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and blood sugar, caffeine, diabetes, coffee, insulin sensitivity, nutrition]
 excerpt: "Does caffeine spike blood sugar or protect against diabetes? Learn how caffeine impacts glucose short and long term, plus simple strategies to sip smarter."
 image: "/assets/images/blog/caffeine-blood-sugar-cover.jpg"

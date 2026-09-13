@@ -2,7 +2,6 @@
 layout: post
 title: "Weirdest Caffeine Sources You Didn't Know About"
 date: 2025-10-29 12:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, caffeine-sources, health, wellness, sleep, energy]
 excerpt: "Kola nuts, guarana, yerba mate—caffeine hides in surprising places. Discover unusual sources, how much they pack, and what it means for your daily energy."
 image: "/assets/images/blog/sources.jpg"

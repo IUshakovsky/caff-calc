@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Medication Interactions: What You Need to Know"
 date: 2025-12-02 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, medication interactions, sleep, health, safety]
 excerpt: "Learn how caffeine interacts with common medications, what that means for your daily routine, and practical tips to stay safe while enjoying your coffee habit."
 image: "/assets/images/blog/caffeine-medication-interactions.jpg"

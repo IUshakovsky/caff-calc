@@ -2,7 +2,6 @@
 layout: post
 title: "Is Caffeine Addictive? Understanding Withdrawal Symptoms"
 date: 2025-11-07 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, addiction, withdrawal, health]
 excerpt: "Explore whether caffeine is addictive, how withdrawal works, and practical steps to manage cravings while using caffeine wisely."
 image: "/assets/images/blog/is-caffeine-addictive-cover.jpg"

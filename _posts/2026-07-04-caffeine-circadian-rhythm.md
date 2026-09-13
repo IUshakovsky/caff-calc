@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Your Circadian Rhythm: A Science-Backed Timing Guide"
 date: 2026-07-04 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine circadian rhythm, sleep, chronotype, timing, adenosine, melatonin]
 excerpt: "Caffeine can nudge your internal clock, delay melatonin, and fragment sleep. Learn the science and timing tips to protect your rhythm without quitting coffee."
 image: "/assets/images/blog/caffeine-circadian-rhythm.jpg"

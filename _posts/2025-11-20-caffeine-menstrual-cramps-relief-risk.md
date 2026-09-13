@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Menstrual Cramps: Relief or Risk?"
 date: 2025-11-20 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, menstrual health, cramps, PMS, health science]
 excerpt: "Does caffeine worsen menstrual cramps or could it offer relief? This science-backed guide weighs the evidence, explains mechanisms, and gives practical tips for managing period pain with caffeine in mind."
 image: "/assets/images/blog/caffeine-menstrual-cramps-relief-or-risk.jpg"

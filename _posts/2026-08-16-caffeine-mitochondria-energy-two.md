@@ -2,7 +2,6 @@
 layout: post
 title: "How Caffeine Powers Mitochondria (and When It Backfires)"
 date: 2026-08-16 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine mitochondrial function, energy production, adenosine, AMPK, sleep]
 excerpt: "Caffeine can nudge your cells' power plants to work harder—boosting alertness and energy output—yet mistimed intake can undermine sleep and recovery. Learn the science."
 image: "/assets/images/blog/caffeine-mitochondria-energy-two.jpg"

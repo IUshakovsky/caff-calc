@@ -2,7 +2,6 @@
 layout: post
 title: "Moderate Caffeine Intake: Real Benefits Within Safe Limits"
 date: 2025-11-09 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, health, sleep, energy, nutrition]
 excerpt: "Moderate caffeine intake can boost alertness and cognitive performance with fewer side effects when managed wisely. Learn the science, practical tips, and how to use CaffCalc to track your daily caffeine."
 image: "/assets/images/blog/moderate-caffeine-benefits.jpg"

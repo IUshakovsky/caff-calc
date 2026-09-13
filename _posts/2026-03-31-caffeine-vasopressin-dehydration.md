@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Vasopressin: A Practical Guide to Dehydration Risk"
 date: 2026-03-31 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and vasopressin, dehydration risk, caffeine hydration, diuretic effect, coffee]
 excerpt: "Is caffeine dehydrating? Learn how caffeine interacts with vasopressin (ADH), what the science says about hydration, and how to manage your intake to reduce dehydration risk."
 image: "/assets/images/blog/caffeine-vasopressin-dehydration.jpg"

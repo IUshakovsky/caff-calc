@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Travel: A Science-Backed Jet Lag Playbook"
 date: 2026-03-20 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and travel, jet lag, fatigue, sleep, circadian rhythm, travel tips]
 excerpt: "Flying across time zones? Learn how to use caffeine wisely to stay alert without wrecking your sleep—a practical, research-based jet lag guide."
 image: "/assets/images/blog/caffeine-travel-jet-lag.jpg"

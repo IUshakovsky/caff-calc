@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine Anxiety: Understanding the Connection and Practical Tips"
 date: 2025-10-20 12:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, anxiety, health, science, sleep, caffeine-awareness]
 excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and actionable strategies to enjoy your coffee without the jitters."
 image: "/assets/images/blog/caffeine-anxiety.jpg"

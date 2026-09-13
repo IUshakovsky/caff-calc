@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Exercise: Safe, Proven Ways to Boost Performance"
 date: 2025-10-28 10:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, exercise, performance, sports-nutrition, ergogenic-aids, caffeine-safety]
 excerpt: "Explore how caffeine can safely enhance athletic performance, the best dosing strategies, timing tips, and realistic limits you can trust with a science-backed guide."
 image: "/assets/images/blog/caff-performance.jpg"

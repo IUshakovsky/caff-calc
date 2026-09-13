@@ -2,7 +2,6 @@
 layout: post
 title: "Why Caffeine Disrupts Your Body's Natural Rhythms (And What to Do)"
 date: 2026-03-09 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and circadian rhythm, sleep, adenosine, caffeine timing, caffeine half-life, caffeine guidelines]
 excerpt: "Caffeine can shift your internal clock, mute sleepiness signals, and fragment sleep. Learn the science of how caffeine affects circadian rhythms and how to time your intake for better energy and rest."
 image: "/assets/images/blog/caffeine-natural-rhythms-cover.jpg"

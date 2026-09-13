@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Your Endocrine System: What Really Happens"
 date: 2026-06-12 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine endocrine system, hormones, cortisol, melatonin, insulin]
 excerpt: "From cortisol spikes to melatonin delays, caffeine influences key hormones that govern energy, sleep, and metabolism. Learn the science and smart habits to protect your rhythm."
 image: "/assets/images/blog/caffeine-endocrine-system-effects.jpg"

@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Mitochondrial Biogenesis: What the Science Says"
 date: 2026-09-03 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine mitochondrial biogenesis, PGC-1α, AMPK, exercise, metabolism]
 excerpt: "Can caffeine help your cells build more mitochondria? Here's the evidence on PGC-1α, AMPK, and how to use coffee smartly alongside training."
 image: "/assets/images/blog/caffeine-mitochondrial-biogenesis.jpg"

@@ -6,7 +6,13 @@ url: "https://caffcalc.com"
 baseurl: ""
 
 # Author
-author: "Caffeine Overdose Prevention Calculator"
+author:
+  name: "Ivan Ushakovsky"
+  role: "Founder and editor, CaffCalc"
+  job_title: "Software Engineer"
+  short_bio: "Software engineer. Built CaffCalc after working out that the 400 mg figure everyone repeats isn't one number for everyone. Not a medical professional — every figure here is sourced so you can check it."
+  url: "https://caffcalc.com/pages/about/"
+  github: "https://github.com/IUshakovsky"
 email: "hello@caffcalc.com"
 
 # Build settings

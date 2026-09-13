@@ -33,9 +33,7 @@ pagination:
               <time datetime="{{ post.date | date_to_xmlschema }}">
                 {{ post.date | date: "%B %d, %Y" }}
               </time>
-              {% if post.author %}
-              <i data-lucide="user" class="ms-3 me-2" aria-hidden="true"></i>{{ post.author }}
-              {% endif %}
+              <i data-lucide="user" class="ms-3 me-2" aria-hidden="true"></i>{{ post.author | default: site.author.name }}
             </div>
 
             {% if post.excerpt %}

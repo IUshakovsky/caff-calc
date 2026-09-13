@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Thyroid Health: Risks and Safe Limits"
 date: 2025-12-18 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, thyroid health, safety, guidelines, nutrition]
 excerpt: "Explore how caffeine interacts with thyroid function, what current research says about risks, and practical limits to keep your thyroid happy while enjoying your daily cup."
 image: "/assets/images/blog/caffeine-thyroid-health.jpg"

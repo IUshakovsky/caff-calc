@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Pregnancy: Safe Limits and Guidelines"
 date: 2025-11-25 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, pregnancy, guidelines, health]
 excerpt: "Learn how much caffeine is safe during pregnancy, the science behind it, and practical tips to keep you and baby healthy while still enjoying your daily caffeine routine."
 image: "/assets/images/blog/caffeine-pregnancy-guidelines.jpg"

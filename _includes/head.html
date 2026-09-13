@@ -30,7 +30,7 @@
      | strip_html | strip_newlines | truncate: 155
      | default: site.description %}
   <meta name="description" content="{{ page_description | escape }}">
-  <meta name="author" content="CaffCalc">
+  <meta name="author" content="{{ page.author | default: site.author.name | escape }}">
   <!-- Performance hints for all devices -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>

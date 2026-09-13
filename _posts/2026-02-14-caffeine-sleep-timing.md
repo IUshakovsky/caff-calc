@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Sleep: The Science of When to Avoid It"
 date: 2026-02-14 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and sleep, sleep timing, half-life, adenosine, insomnia, sleep hygiene]
 excerpt: "When should you stop drinking coffee to protect your sleep? A science-backed guide to caffeine timing, sleep stages, and practical cutoffs for real bedtimes."
 image: "/assets/images/blog/caffeine-sleep-timing.jpg"

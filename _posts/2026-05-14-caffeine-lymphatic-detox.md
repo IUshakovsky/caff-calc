@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Your Lymphatic Detox: What the Science Says"
 date: 2026-05-14 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and lymphatic system, lymphatic detox, glymphatic system, sleep and caffeine, hydration, caffeine limits]
 excerpt: "Does caffeine help or hinder your body's detox pathways? Learn how caffeine affects lymphatic and glymphatic clearance—plus 8 practical steps to optimize it."
 image: "/assets/images/blog/caffeine-lymphatic-detox-cover.jpg"

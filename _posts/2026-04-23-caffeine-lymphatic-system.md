@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Your Lymphatic System: What Science Really Says"
 date: 2026-04-23 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine lymphatic system, caffeine, lymphatics, glymphatic system, sleep, hydration]
 excerpt: "Does caffeine help or hinder your lymphatic system? Explore what research says about fluid balance, immune function, and sleep-dependent brain clearance—plus smart, practical habits."
 image: "/assets/images/blog/caffeine-lymphatic-system.jpg"

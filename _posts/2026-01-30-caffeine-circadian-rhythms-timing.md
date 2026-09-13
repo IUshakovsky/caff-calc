@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Circadian Rhythms: The Science of Smart Timing"
 date: 2026-01-30 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and circadian rhythms, caffeine timing, sleep quality, melatonin, adenosine, caffeine cutoff]
 excerpt: "Your internal clock shapes how caffeine feels—and how it hurts your sleep. Learn the science behind caffeine and circadian rhythms, plus proven timing strategies that protect your nights and power your days."
 image: "/assets/images/blog/caffeine-circadian-rhythms-timing.jpg"

@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine Around the World: Cultural Consumption Habits"
 date: 2025-11-11 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, cultural habits, global consumption, coffee culture, tea culture, health]
 excerpt: "From espresso rituals in Italy to tea ceremonies in Japan, explore how caffeine culture shapes daily life across continents—and what science says about optimizing your own habits."
 image: "/assets/images/blog/caffeine-around-the-world-cultural-consumption.jpg"

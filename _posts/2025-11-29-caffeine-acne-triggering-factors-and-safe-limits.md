@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Acne: Triggering Factors and Safe Limits"
 date: 2025-11-29 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, acne, sleep, health, skin-care]
 excerpt: "Explore how caffeine may influence acne through stress, sleep, and hormonal pathways, plus practical limits and tips to keep your skin clear."
 image: "/assets/images/blog/caffeine-acne-triggering-factors.jpg"

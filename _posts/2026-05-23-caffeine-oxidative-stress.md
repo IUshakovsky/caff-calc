@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Oxidative Stress: What the Science Really Says"
 date: 2026-05-23 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [oxidative stress, caffeine, antioxidants, Nrf2, sleep, coffee]
 excerpt: "Does caffeine raise or reduce oxidative stress? Here's a clear, research-backed guide to what happens in your body and simple habits to keep your daily buzz healthy."
 image: "/assets/images/blog/caffeine-oxidative-stress.jpg"

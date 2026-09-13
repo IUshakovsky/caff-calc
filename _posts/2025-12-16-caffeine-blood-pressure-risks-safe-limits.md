@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Blood Pressure: Risks and Safe Limits"
 date: 2025-12-16 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, blood pressure, hypertension, safety, health]
 excerpt: "Explore how caffeine affects blood pressure, who is at risk, and practical, science-backed limits to keep your daily caffeine routine safe and energizing."
 image: "/assets/images/blog/caffeine-blood-pressure.jpg"

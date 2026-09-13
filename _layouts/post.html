@@ -10,7 +10,8 @@ layout: default
           <h1 class="title">{{ page.title }}</h1>
           <p class="lead subtitle">
             <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
-            {% if page.author %} • By {{ page.author }}{% endif %}
+            {% assign post_author = page.author | default: site.author.name %}
+            • By <a href="{{ '/pages/about/' | relative_url }}">{{ post_author }}</a>
           </p>
           {% if page.tags %}
           <div class="mt-2">
@@ -32,8 +33,25 @@ layout: default
         {% endif %}
         <div class="card-body blog-content">
           {{ content }}
+          {% unless content contains "Medical Disclaimer" %}
+          <hr>
+          <p><strong>Medical Disclaimer</strong>: This article is for informational purposes only and does not constitute medical advice. Consult with a healthcare provider before making significant changes to your caffeine intake, especially if you have underlying health conditions, take medications, or are pregnant or nursing.</p>
+          {% endunless %}
         </div>
       </div>
+
+      {% if post_author == site.author.name %}
+      <!-- Author -->
+      <aside class="card mb-4 author-box" aria-label="About the author">
+        <div class="card-body">
+          <p class="small text-muted mb-1">Written by</p>
+          <p class="h5 mb-1"><a href="{{ '/pages/about/' | relative_url }}" class="text-decoration-none">{{ site.author.name }}</a></p>
+          <p class="small text-muted mb-2">{{ site.author.role }}</p>
+          <p class="mb-2">{{ site.author.short_bio }}</p>
+          <a href="{{ '/pages/about/' | relative_url }}">More about how this site works &rarr;</a>
+        </div>
+      </aside>
+      {% endif %}
 
       <!-- Previous/Next Post Navigation + Share -->
       <div class="row mb-4 align-items-stretch">

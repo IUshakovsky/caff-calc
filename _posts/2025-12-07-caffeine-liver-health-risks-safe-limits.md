@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Liver Health: Risks and Safe Limits"
 date: 2025-12-07 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, liver-health, coffee, NAFLD, liver-cancer]
 excerpt: "Understanding how caffeine and coffee impact liver health can help you enjoy your cup safely. This guide explains risks, protective effects, and practical limits, with science-backed recommendations."
 image: "/assets/images/blog/caffeine-liver-health-cover.jpg"

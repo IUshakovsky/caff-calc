@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Memory Consolidation: Timing, Sleep, and Dose"
 date: 2026-07-27 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine memory consolidation, caffeine and sleep, adenosine receptors, hippocampus, study tips, dosing]
 excerpt: "Does caffeine help or hurt memory consolidation? Learn how timing, sleep, and dose shape caffeine's effects on long-term memory—and how to use coffee strategically."
 image: "/assets/images/blog/caffeine-memory-consolidation-brain.jpg"

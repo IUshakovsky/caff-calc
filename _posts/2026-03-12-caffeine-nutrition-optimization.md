@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Nutrition: A Practical Guide to Optimize Your Diet"
 date: 2026-03-12 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and nutrition, caffeine intake, diet optimization, sleep, hydration, iron absorption]
 excerpt: "Make caffeine work for you—not against you. Learn how to pair caffeine with meals, protect sleep, avoid nutrient roadblocks, and set safe daily limits."
 image: "/assets/images/blog/caffeine-nutrition-optimization.jpg"

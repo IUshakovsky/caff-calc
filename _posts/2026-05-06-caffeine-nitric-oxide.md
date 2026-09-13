@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Nitric Oxide: What Science Says About Your Vessels"
 date: 2026-05-06 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and nitric oxide, endothelial function, coffee, chlorogenic acid, cardiovascular health, caffeine limit]
 excerpt: "Does caffeine raise or lower nitric oxide? We review the latest human research on caffeine, coffee polyphenols, endothelial function, and how to drink smarter."
 image: "/assets/images/blog/caffeine-nitric-oxide-vessels.jpg"

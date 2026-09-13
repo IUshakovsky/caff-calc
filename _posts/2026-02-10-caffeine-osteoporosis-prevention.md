@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Osteoporosis: Risks, Evidence, and Prevention"
 date: 2026-02-10 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and osteoporosis, bone health, calcium, fracture risk, prevention]
 excerpt: "Does caffeine increase osteoporosis risk? We review the latest research on coffee, tea, and bone health—and share practical ways to protect your bones."
 image: "/assets/images/blog/caffeine-osteoporosis-risks.jpg"

@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Kidney Stones: What Raises Risk and How to Prevent Them"
 date: 2026-02-24 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and kidney stones, kidney stones prevention, coffee and tea, hydration, citrate]
 excerpt: "Does caffeine raise your kidney stone risk—or lower it? Learn what the science says about coffee, tea, and energy drinks, plus evidence-based steps to prevent stones."
 image: "/assets/images/blog/caffeine-kidney-stones-prevention.jpg"

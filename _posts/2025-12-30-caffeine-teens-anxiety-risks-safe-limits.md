@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Anxiety in Teens: Risks and Safe Limits"
 date: 2025-12-30 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, teens, anxiety, caffeine-safety, health]
 excerpt: "Teen caffeine use can trigger anxiety and disrupt sleep. Discover safe limits, science-backed strategies, and how to track intake without the guesswork."
 image: "/assets/images/blog/caffeine-teens-anxiety-cover.jpg"

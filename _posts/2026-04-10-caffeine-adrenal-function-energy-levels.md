@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine, Adrenal Function, and Energy: What Science Says"
 date: 2026-04-10 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and adrenal function, energy levels, cortisol, sleep, HPA axis]
 excerpt: "Wired then tired? Learn how caffeine interacts with your adrenal hormones and sleep, why 'adrenal fatigue' isn't real, and how to keep energy steady."
 image: "/assets/images/blog/caffeine-adrenal-energy.jpg"

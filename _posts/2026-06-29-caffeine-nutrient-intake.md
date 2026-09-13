@@ -2,7 +2,6 @@
 layout: post
 title: "How Caffeine Affects Daily Nutrient Intake (And How to Fix It)"
 date: 2026-06-29 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and nutrient intake, iron absorption, calcium balance, vitamins, hydration, sleep]
 excerpt: "Caffeine can subtly change how your body absorbs iron and calcium, shift appetite and sleep, and add trace minerals. Here's how to keep nutrition on track."
 image: "/assets/images/blog/caffeine-nutrient-intake-balance.jpg"

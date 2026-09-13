@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Sleep Apnea: How It Affects Risk and Sleep Quality"
 date: 2026-09-12 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and sleep apnea, sleep quality, caffeine timing, obstructive sleep apnea, sleep hygiene, caffeine limits]
 excerpt: "Coffee doesn't appear to cause sleep apnea—but caffeine timing can wreck sleep quality. See what research shows and how to protect your nights."
 image: "/assets/images/blog/caffeine-apnea-sleep-quality.jpg"

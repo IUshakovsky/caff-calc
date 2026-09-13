@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Libido: What the Science Really Says (And How to Use It)"
 date: 2026-03-28 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and libido, sexual health, hormones, sleep, coffee, energy]
 excerpt: "Does caffeine boost or blunt your sex drive? We review current research on libido, hormones, sleep, and blood flow—then share practical tips to sip smarter without hurting your desire or performance."
 image: "/assets/images/blog/caffeine-libido-bridge.jpg"

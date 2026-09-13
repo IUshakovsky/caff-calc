@@ -3,9 +3,22 @@ layout: page
 title: "About CaffCalc"
 seo_title: "About CaffCalc"
 subtitle: "Why a caffeine calculator that doesn't just say 400 mg"
-description: "CaffCalc is an independent caffeine safety calculator that personalises limits by body weight, age, pregnancy and sensitivity — and shows its sources."
+description: "CaffCalc is built by Ivan Ushakovsky, a software engineer: an independent caffeine calculator that personalises limits and shows its sources."
 permalink: /pages/about/
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ site.author.url | jsonify }},
+  "jobTitle": {{ site.author.job_title | jsonify }},
+  "sameAs": [{{ site.author.github | jsonify }}],
+  "knowsAbout": ["Caffeine", "Caffeine metabolism", "Nutrition data"]
+}
+</script>
 
 <div class="content-page">
   <div class="row">
@@ -15,22 +28,29 @@ permalink: /pages/about/
         <div class="card-body">
           <h2 class="card-title">What CaffCalc is</h2>
           <p>CaffCalc is a free caffeine safety calculator and a small library of research-compiled articles about how caffeine behaves in the body. It exists to answer a question that most search results answer badly: <em>how much caffeine is too much — for me, specifically?</em></p>
-          <p class="mb-0">The site is independent and free to use. It has no sponsor, no affiliation with any beverage manufacturer, and at present carries no advertising.</p>
+          <p class="mb-0">It has no sponsor, no affiliation with any beverage manufacturer, and at present carries no advertising.</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-body">
-          <h2 class="card-title">Why it was built</h2>
-          <p>Almost every article about caffeine repeats the same number: 400&nbsp;mg a day. That figure comes from the <a href="https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" target="_blank" rel="noopener">FDA</a> and it is a reasonable population-level benchmark for healthy adults — but it is a single number applied to everyone.</p>
-          <p>A 50&nbsp;kg adult and a 95&nbsp;kg adult do not have the same tolerance. A pregnant reader has a materially different limit. A 15-year-old has a different one again. And people vary enormously in how quickly they clear caffeine. Repeating 400&nbsp;mg to all of them is not helpful, and in some cases it is misleading.</p>
-          <p class="mb-0">CaffCalc was built to do the arithmetic that those articles skip.</p>
+          <h2 class="card-title">Who runs this site</h2>
+          <p>CaffCalc is built and written by <strong>{{ site.author.name }}</strong>, a software engineer. It's an independent project — not a company, not a clinic, not a media brand. One person, one calculator, and a growing pile of reading about caffeine.</p>
+
+          <h3 class="h5 mt-4">Why I built it</h3>
+          <p>I wasn't sleeping well. Not dramatically — just worse than I thought I should be, for weeks at a time. Eventually I did the obvious thing and counted: five or six espressos a day, a couple of them well into the afternoon.</p>
+          <p>At <a href="https://fdc.nal.usda.gov/food-details/171891/nutrients" target="_blank" rel="noopener">63&nbsp;mg a shot</a>, that's 315 to 378&nbsp;mg. Comfortably under 400 — the figure the <a href="https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" target="_blank" rel="noopener">FDA</a> describes as not generally associated with dangerous effects in healthy adults, and the figure every article about caffeine repeats. By that number I was fine. I was not fine.</p>
+          <p>Two things are wrong with reading it that way, and between them they turned into this site.</p>
+          <p><strong>The number isn't calculated for you.</strong> 400&nbsp;mg is a population benchmark for healthy adults. The <a href="https://www.efsa.europa.eu/en/efsajournal/pub/4102" target="_blank" rel="noopener">EFSA's</a> assessment, quoted far less often, works in milligrams per kilogram of body weight instead. When I eventually built the <a href="{{ '/' | relative_url }}">calculator</a> and answered its questions honestly — including that caffeine hits me harder than average — it put my own ceiling at 340&nbsp;mg, not 400. On a six-shot day I wasn't near the limit. I was over it. Nothing I'd read would ever have told me that.</p>
+          <p><strong>And the number says nothing about <em>when</em>.</strong> Caffeine's <a href="https://www.ncbi.nlm.nih.gov/books/NBK519490/" target="_blank" rel="noopener">half-life averages around five hours</a>, so two espressos at four in the afternoon still leave something like <a href="https://fdc.nal.usda.gov/food-details/174853/nutrients" target="_blank" rel="noopener">a can of cola's worth</a> of caffeine in my blood at midnight. My daily total was defensible. My four o'clock habit was the actual problem, and no calculator I could find would tell me so, because they were all answering a different question.</p>
+          <p>There's a third thing, which I've never fully resolved. Years ago in Italy I watched people order espresso after dinner — pensioners, unhurried, clearly about to go home and sleep. It bothered me for a long time. The usual explanations are a lifetime of daily tolerance, genetic variation in the <a href="https://www.ncbi.nlm.nih.gov/books/NBK519490/" target="_blank" rel="noopener">CYP1A2 enzyme</a> that clears caffeine, and a smaller pour than most tourists picture. I suspect all three contribute and I can't prove the weighting, so I'll say plainly that I don't know. But it settled something: there is no single number that is true for everybody, and anyone who hands you one is telling you about a population, not about you.</p>
+          <p class="mb-0">These days it's espresso in the first half of the day only — no more than four shots from the office machine, or two or three from a coffee shop, where they pull them considerably stronger. Same drink, different arithmetic, and I sleep. This site is the calculator I wanted while I was working that out.</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-body">
-          <h2 class="card-title">What makes it different</h2>
+          <h2 class="card-title">What the calculator does differently</h2>
           <p>Rather than returning a flat figure, the calculator works from your own inputs:</p>
           <div class="row mt-3">
             <div class="col-md-6">
@@ -58,27 +78,27 @@ permalink: /pages/about/
               </div>
             </div>
           </div>
-          <p class="mt-3 mb-0">It also runs <strong>entirely in your browser</strong>. Your weight, age and pregnancy status are never sent to us — see the <a href="{{ '/pages/privacy-policy/' | relative_url }}">Privacy Policy</a>.</p>
+          <p class="mt-3 mb-0">It also runs <strong>entirely in your browser</strong>. Your weight, age and pregnancy status are never sent anywhere — see the <a href="{{ '/pages/privacy-policy/' | relative_url }}">Privacy Policy</a>.</p>
         </div>
       </div>
 
       <div class="card mb-4">
         <div class="card-body">
-          <h2 class="card-title">Who runs the site</h2>
-          <p>CaffCalc is an independently owned and operated project, not a company, a clinic or a medical organisation.</p>
+          <h2 class="card-title">What I'm good at, and what I'm not</h2>
           <div class="alert alert-warning">
             <i data-lucide="info" class="me-2" aria-hidden="true"></i>
-            <strong>We want to be straightforward about this:</strong> the person who runs CaffCalc is not a doctor, a dietitian or any other kind of medical professional. Nothing on this site is written by a clinician, and nothing on it has been reviewed by one. What we offer instead is transparency — every figure is traceable to a named regulator, database or peer-reviewed paper, so you can check our work rather than take it on trust.
+            <strong>I'm not a doctor, a dietitian or a nutritionist.</strong> Nothing on this site is written by a clinician, and nothing on it has been reviewed by one. If that's what you need, this isn't the site — see our <a href="{{ '/pages/terms/' | relative_url }}">Terms of Use</a>.
           </div>
-          <p class="mb-0">If you need advice about your own health, that conversation belongs with a qualified professional. See our <a href="{{ '/pages/terms/' | relative_url }}">Terms of Use</a>.</p>
-        </div>
-      </div>
-
-      <div class="card mb-4">
-        <div class="card-body">
-          <h2 class="card-title">Editorial approach</h2>
-          <p>Articles on CaffCalc are compiled from published guidelines and peer-reviewed research, and are checked against their sources before publishing. The references we work from are:</p>
-          <ul class="source-list">
+          <p>What I bring instead is the habit of checking. Professionally I'm a backend engineer — I spend my working life on systems where an unverified assumption surfaces later as a bug, and the reflex carries over. Out of work it shows up in odd places: I'll spend an evening keying out a beetle or a roadside weed against a reference until I'm actually sure which species it is rather than which one it resembles, and I'd rather take a bicycle crank apart to find out why it creaks than replace the part and hope. Chess, for whatever it's worth, rewards the same thing — working out why a move is good, not just that it worked.</p>
+          <p>Articles on CaffCalc are compiled from published guidelines and peer-reviewed research, and checked against their sources before publishing. Applied to caffeine, that means:</p>
+          <ul>
+            <li>Every number on this site traces to a named regulator, database or paper, and the link is right there.</li>
+            <li>Where studies disagree, the page says they disagree. Caffeine research is full of observational findings that get written up as though they were causal, and I'd rather bore you than overstate.</li>
+            <li>Where a caffeine figure is a range, I publish the range instead of averaging it into false precision.</li>
+            <li>If a claim is popular but I can't find the origin of it, it doesn't go on the site. A surprising amount of what "everyone knows" about caffeine traces back to nothing.</li>
+          </ul>
+          <p>The references I work from most:</p>
+          <ul class="source-list mb-0">
             <li><a href="https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" target="_blank" rel="noopener">U.S. Food &amp; Drug Administration</a> — consumer caffeine guidance</li>
             <li><a href="https://www.efsa.europa.eu/en/efsajournal/pub/4102" target="_blank" rel="noopener">European Food Safety Authority</a> — scientific opinion on the safety of caffeine</li>
             <li><a href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener">USDA FoodData Central</a> — caffeine content of foods and beverages</li>
@@ -86,23 +106,21 @@ permalink: /pages/about/
             <li><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">PubMed</a> — peer-reviewed literature on caffeine metabolism and effects</li>
             <li>Manufacturer nutrition labels, for the caffeine content of specific branded products</li>
           </ul>
+        </div>
+      </div>
 
-          <p>Our working rules:</p>
-          <ul>
-            <li>Every numeric claim is traceable to a source we link to.</li>
-            <li>Where the evidence is mixed or weak, we say so rather than picking the more dramatic side.</li>
-            <li>Where a caffeine figure is a range, we report the range instead of averaging it into false precision.</li>
-            <li>We do not claim medical review that has not happened.</li>
-          </ul>
-
-          <p class="mb-0"><strong>Found an error?</strong> We would genuinely like to know. Email <a href="mailto:{{ site.email }}">{{ site.email }}</a> with the page and the figure you are questioning — a link to a better source is especially welcome — and we will correct it or explain our reasoning.</p>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">The parts my kids are responsible for</h2>
+          <p class="mb-0">I have two sons. The calculator has separate age bands for under-13s and 13–17s because at some point I wanted to know the honest answer for them — about a cola, about an energy drink a classmate had handed round — and the honest answer turned out to be more interesting than either "it's fine" or "absolutely not". No health authority recommends caffeine for young children; the <a href="https://www.efsa.europa.eu/en/efsajournal/pub/4102" target="_blank" rel="noopener">European safety guidance</a> for children and teens is set per kilogram of body weight. That's why the tool asks the questions it asks.</p>
         </div>
       </div>
 
       <div class="card">
         <div class="card-body">
-          <h2 class="card-title">Get in touch</h2>
-          <p class="mb-0">Corrections, questions and suggestions for what to cover next: <a href="mailto:{{ site.email }}">{{ site.email }}</a>. You can also start with the <a href="{{ '/' | relative_url }}">calculator</a>, the <a href="{{ '/pages/caffeine-science' | relative_url }}">science page</a>, or the <a href="{{ '/blog' | relative_url }}">blog</a>.</p>
+          <h2 class="card-title">Corrections</h2>
+          <p>If something here is wrong, I want to know, and I'd rather hear it from you than leave it up. Email <a href="mailto:{{ site.email }}"><strong>{{ site.email }}</strong></a> with the page and the figure you're questioning. A link to a better source is especially welcome. I'll correct it or explain my reasoning, and corrections get noted on the page rather than quietly edited in.</p>
+          <p class="mb-0">You can see what else I build at <a href="{{ site.author.github }}" target="_blank" rel="noopener me">github.com/IUshakovsky</a>. Or start with the <a href="{{ '/' | relative_url }}">calculator</a>, the <a href="{{ '/pages/caffeine-science' | relative_url }}">science page</a>, or the <a href="{{ '/blog' | relative_url }}">blog</a>.</p>
         </div>
       </div>
 

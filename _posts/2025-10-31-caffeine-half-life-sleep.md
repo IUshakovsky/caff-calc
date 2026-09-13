@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine Half-Life: When Does It Really Wear Off?"
 date: 2025-10-31 03:30:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, sleep, metabolism, health, lifestyle, caffeine-timing]
 excerpt: "Caffeine can linger 5-9 hours after your last cup. Learn how half-life affects sleep, what speeds or slows metabolism, and practical timing tips for better rest."
 image: "/assets/images/blog/caffeine-half-life-sleep.jpg"

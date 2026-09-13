@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Gut Health: Effects and Safe Consumption Tips"
 date: 2025-11-18 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, gut health, coffee, microbiome, digestion, safety]
 excerpt: "Discover how caffeine affects your gut microbiome and digestion, plus 7 evidence-based tips to enjoy coffee without compromising digestive comfort."
 image: "/assets/images/blog/caffeine-gut-health-cover.jpg"

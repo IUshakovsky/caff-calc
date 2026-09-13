@@ -2,7 +2,6 @@
 layout: post
 title: "How Caffeine Affects Your Brain: Neuroscience Basics"
 date: 2025-11-15 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, brain, neuroscience, sleep, cognition]
 excerpt: "Discover how caffeine rewires your brain chemistry, blocks sleep signals, and reshapes attention—plus 5 science-backed tips to optimize intake without sabotaging sleep."
 image: "/assets/images/blog/caffeine-brain-neuroscience.jpg"

@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Cortisol: A Safe, Science-Based Stress Guide"
 date: 2026-03-01 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and cortisol, stress, caffeine safety, sleep, hormones]
 excerpt: "Caffeine and cortisol both shape how energized—or stressed—you feel. Learn how caffeine influences cortisol, plus practical ways to manage intake and sleep."
 image: "/assets/images/blog/caffeine-cortisol-stress.jpg"

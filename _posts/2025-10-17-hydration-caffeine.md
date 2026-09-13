@@ -2,7 +2,6 @@
 layout: post
 title: "Hydration and Caffeine: Do They Cancel Each Other Out?"
 date: 2025-10-17 10:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, hydration, sleep, hydration-myths, caffeine-diet]
 excerpt: "Does coffee dehydrate you or count toward daily water goals? Science reveals caffeine's surprising hydration truth and what it means for your intake."
 image: "/assets/images/blog/caffeine-dehydration.jpg"

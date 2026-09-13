@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine Pills: The Hidden Risks Nobody Tells You"
 date: 2025-10-25 09:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine, caffeine-pills, supplements, sleep, health]
 excerpt: "Caffeine pills promise energy on demand. But precise dosing cuts both ways—one miscalculation can trigger dangerous side effects. Learn the science-backed safety limits and when pills cross from helpful to harmful."
 image: "/assets/images/blog/caffeine-pills.jpg"

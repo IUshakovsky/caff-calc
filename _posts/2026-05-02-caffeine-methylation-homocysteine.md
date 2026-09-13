@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Methylation: What Coffee Does to Your One-Carbon Cycle"
 date: 2026-05-02 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [methylation, caffeine, coffee, homocysteine, genetics, one-carbon]
 excerpt: "Does caffeine change your body's methylation process? Learn how coffee and caffeine interact with one-carbon metabolism, DNA methylation, and homocysteine."
 image: "/assets/images/blog/caffeine-methylation-coffee-dna.jpg"

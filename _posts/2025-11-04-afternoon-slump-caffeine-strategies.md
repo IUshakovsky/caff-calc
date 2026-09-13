@@ -2,7 +2,6 @@
 layout: post
 title: "Afternoon Slump Solutions: Clever Caffeine Strategies that Really Work"
 date: 2025-11-04 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [afternoon slump, caffeine strategies, sleep, productivity, caffeine timing]
 excerpt: "Beat the afternoon drag with science-backed caffeine strategies. Learn when, how much, and what to pair with caffeine to stay alert without wrecking sleep."
 image: "/assets/images/blog/afternoon-slump-caffeine-strategies.jpg"

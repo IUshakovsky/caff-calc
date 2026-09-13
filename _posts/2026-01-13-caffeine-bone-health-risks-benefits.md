@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Bone Health: Risks, Benefits, and Smart Intake"
 date: 2026-01-13 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and bone health, osteoporosis, calcium, coffee, tea, fracture risk]
 excerpt: "Worried that coffee might weaken your bones? Here's what the science says about caffeine's real impact on calcium, bone density, and fracture risk—and how to sip smart."
 image: "/assets/images/blog/caffeine-bone-health.jpg"

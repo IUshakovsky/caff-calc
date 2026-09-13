@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Cardiac Health: Long-Term Risks, Benefits, and Limits"
 date: 2026-06-03 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine cardiac health, heart health, coffee, energy drinks, blood pressure, arrhythmia]
 excerpt: "What decades of research really say about caffeine and your heart—blood pressure, rhythm, cholesterol, and safe daily limits—plus practical ways to enjoy coffee wisely."
 image: "/assets/images/blog/caffeine-cardiac-health-cover.jpg"

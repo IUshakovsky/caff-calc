@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Mitochondria: How Your Coffee Drives Cellular Energy"
 date: 2026-04-07 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine mitochondrial function, energy production, AMPK, PGC-1alpha, sleep, safety]
 excerpt: "From AMPK activation to PGC-1α signaling, learn how caffeine influences mitochondrial function, energy production, and fatigue—plus practical tips to use it wisely."
 image: "/assets/images/blog/caffeine-mitochondria-energy.jpg"

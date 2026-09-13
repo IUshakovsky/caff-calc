@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Glycogen: What Really Happens Before and After Exercise"
 date: 2026-05-09 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine glycogen, caffeine and exercise, glycogen resynthesis, endurance training, recovery nutrition]
 excerpt: "Does caffeine burn through your glycogen or help you refill it? Here's the science on how caffeine affects glycogen during workouts and recovery—plus smart timing tips."
 image: "/assets/images/blog/caffeine-glycogen.jpg"

@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and the Microbiome: How Your Gut Responds"
 date: 2026-03-08 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine microbiome, gut health, coffee, polyphenols, sleep, nutrition]
 excerpt: "What does caffeine do to your gut microbiome? Here's what recent human studies reveal and practical ways to support gut health without losing your daily brew."
 image: "/assets/images/blog/caffeine-microbiome-gut.jpg"

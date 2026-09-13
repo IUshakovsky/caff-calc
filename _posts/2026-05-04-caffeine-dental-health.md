@@ -2,7 +2,6 @@
 layout: post
 title: "How Caffeine Affects Dental Health: Stains, Erosion, Tips"
 date: 2026-05-04 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and dental health, oral health, coffee, tea, energy drinks, enamel erosion]
 excerpt: "Coffee stains teeth, energy drinks erode enamel, and caffeine may worsen dry mouth. Get dentist-approved tips to protect your smile."
 image: "/assets/images/blog/caffeine-dental-health.jpg"

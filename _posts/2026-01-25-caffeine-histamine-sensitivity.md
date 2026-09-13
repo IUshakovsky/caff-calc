@@ -2,7 +2,6 @@
 layout: post
 title: "Caffeine and Histamine: What Science Says About Sensitivity"
 date: 2026-01-25 03:00:00 +0000
-author: "CaffCalc Team"
 tags: [caffeine and histamine, histamine intolerance, caffeine sensitivity, mast cells, DAO]
 excerpt: "Coffee triggers flushing or headaches? Discover how caffeine interacts with histamine, what science reveals about sensitivity, and how to find your personal limit."
 image: "/assets/images/blog/caffeine-histamine-sensitivity.jpg"
