@@ -188,6 +188,21 @@ let caffeineData = {};
 let consumptionItems = [];
 let totalCaffeineConsumed = 0;
 
+// Analytics hooks (docs/analytics-events.md). No-ops until analytics-events.js
+// has loaded, and it no-ops in turn when gtag is unavailable.
+function trackEvent(name, params) {
+  if (typeof window.caffTrack === 'function') window.caffTrack(name, params);
+}
+
+function trackTrackerSave() {
+  if (typeof window.caffTrackerSave === 'function') window.caffTrackerSave();
+}
+
+// Servings across all tracked rows (a row with Qty 3 counts as 3)
+function trackedBeverageCount() {
+  return consumptionItems.reduce((sum, item) => sum + item.quantity, 0);
+}
+
 // Load caffeine data and populate beverage dropdown
 async function loadCaffeineData() {
   try {
@@ -428,6 +443,9 @@ function addConsumptionItem() {
     // Update table
     updateConsumptionTable();
     
+    trackEvent('beverage_add', { beverage_name: 'custom', caffeine_mg: Math.round(item.totalCaffeine), source: 'custom' });
+    trackTrackerSave();
+
     // Reset fields
     document.getElementById('caffeineBeverage').selectedIndex = 0;
     document.getElementById('customCaffeine').value = 0;
@@ -498,6 +516,9 @@ function addConsumptionItem() {
   // Update table
   updateConsumptionTable();
   
+  trackEvent('beverage_add', { beverage_name: typeName.toLowerCase().trim(), caffeine_mg: Math.round(caffeineAmount * quantity), source: 'preset' });
+  trackTrackerSave();
+
   // Reset all fields
   document.getElementById('caffeineBeverage').selectedIndex = 0;
   document.getElementById('caffeineSize').innerHTML = '<option value="">Size</option>';
@@ -737,6 +758,13 @@ function calculateCaffeineIntake() {
       updateCaffeineMeter();
       // Call updateCaffeineStatus to update the message
       updateCaffeineStatus();
+
+      const limit = calculateCaffeineLimit();
+      trackEvent('calc_complete', {
+        total_mg: Math.round(totalCaffeineConsumed),
+        limit_status: totalCaffeineConsumed > limit ? 'over' : (limit > 0 && totalCaffeineConsumed >= limit * 0.9) ? 'near' : 'under',
+        beverage_count: trackedBeverageCount()
+      });
     }, 300);
   } else {
     showNotification('Warning', 'Please add at least one caffeine item to calculate your intake.', 'warning');
@@ -750,6 +778,8 @@ function clearTracker() {
     return;
   }
   
+  trackEvent('calc_reset', { beverage_count: trackedBeverageCount() });
+
   consumptionItems = [];
   updateConsumptionTable();
   

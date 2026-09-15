@@ -3,13 +3,14 @@
 
 {% include head.html %}
 
-<body>
+<body{% if page.collection == 'posts' %} data-post-slug="{{ page.slug }}"{% endif %}>
   {% include navigation.html %}
 
   {{ content }}
 
   {% include footer.html %}
   {% include scripts.html %}
+  {% include analytics-events.html %}
 </body>
 
 </html>
