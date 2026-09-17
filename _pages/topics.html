@@ -1,0 +1,91 @@
+---
+layout: page
+title: "Topics"
+seo_title: "Caffeine Topics: Browse Every Article by Subject"
+subtitle: "Every article on CaffCalc, grouped by subject"
+description: "Browse every CaffCalc article by topic - sleep, metabolism, pregnancy, energy drinks, safe limits and more - or scan the full A-Z article index."
+permalink: /pages/topics/
+excerpt_separator: ""
+---
+
+{%- comment -%}
+  Two sections on purpose:
+
+  1. "Browse by topic" only lists tags used by 2+ posts. The archive currently
+     carries 237 distinct tags across 76 posts, 186 of which are used exactly
+     once, so rendering every tag would produce ~186 single-item sections of no
+     use to a reader or a crawler.
+  2. "All articles" lists all posts unconditionally, which is what guarantees
+     every post has at least one internal inbound link regardless of how its
+     tags are spelled.
+{%- endcomment -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5">Browse by topic</h2>
+          <p class="small text-muted mb-3">Topics covering more than one article. Jump to any section.</p>
+          <div class="d-flex flex-wrap gap-2">
+            {%- assign tags = site.tags | sort -%}
+            {%- for tag in tags -%}
+              {%- if tag[1].size > 1 -%}
+              <a href="#topic-{{ tag[0] | slugify }}" class="badge bg-secondary text-decoration-none">
+                {{ tag[0] }} <span aria-hidden="true">·</span> {{ tag[1].size }}
+              </a>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+
+      {%- assign tags = site.tags | sort -%}
+      {%- for tag in tags -%}
+        {%- if tag[1].size > 1 -%}
+        <section class="card mb-3" id="topic-{{ tag[0] | slugify }}">
+          <div class="card-body">
+            <h2 class="card-title h5 mb-1">{{ tag[0] }}</h2>
+            <p class="small text-muted mb-3">{{ tag[1].size }} articles</p>
+            <ul class="list-unstyled mb-0">
+              {%- for post in tag[1] -%}
+              <li class="mb-2 pb-2 border-bottom">
+                <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+                <div class="small text-muted">
+                  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+                </div>
+              </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        </section>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <section class="card mb-4" id="all-articles">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-1">All articles</h2>
+          <p class="small text-muted mb-3">{{ site.posts.size }} articles, newest first.</p>
+          <ul class="list-unstyled mb-0">
+            {%- for post in site.posts -%}
+            <li class="mb-2 pb-2 border-bottom">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+              <div class="small text-muted">
+                <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+              </div>
+            </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      </section>
+
+      <div class="text-center mb-4">
+        <a href="{{ '/' | relative_url }}" class="btn btn-calculate">
+          <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Open the caffeine calculator
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>

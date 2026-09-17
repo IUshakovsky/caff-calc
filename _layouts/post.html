@@ -16,7 +16,7 @@ layout: default
           {% if page.tags %}
           <div class="mt-2">
             {% for tag in page.tags %}
-            <span class="badge bg-secondary me-1">{{ tag }}</span>
+            <a href="{{ '/pages/topics/' | relative_url }}#topic-{{ tag | slugify }}" class="badge bg-secondary me-1 text-decoration-none">{{ tag }}</a>
             {% endfor %}
           </div>
           {% endif %}
@@ -39,6 +39,10 @@ layout: default
           {% endunless %}
         </div>
       </div>
+
+      {% include calc-cta.html %}
+
+      {% include related-posts.html %}
 
       {% if post_author == site.author.name %}
       <!-- Author -->

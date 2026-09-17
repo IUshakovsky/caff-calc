@@ -1,0 +1,17 @@
+{%- comment -%}
+  Calculator CTA for blog posts. Every article links to the homepage tool from
+  the layout, so it no longer depends on the CTA being written into each post
+  body. data-ga-* is picked up by the delegated click handler in
+  assets/js/analytics-events.js (see docs/analytics-events.md).
+{%- endcomment -%}
+<aside class="card mb-4" aria-labelledby="calc-cta-heading">
+  <div class="card-body text-center">
+    <h2 id="calc-cta-heading" class="h5 mb-2">Calculate your daily total</h2>
+    <p class="mb-3">See how today's drinks compare against your personal safe limit, based on your weight, age and sensitivity.</p>
+    <a href="{{ '/' | relative_url }}" class="btn btn-calculate"
+       data-ga-event="blog_to_calc_click"
+       data-ga-params='{"source_post":"{{ page.slug }}"}'>
+      <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Open the caffeine calculator
+    </a>
+  </div>
+</aside>

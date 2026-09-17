@@ -1,0 +1,79 @@
+{%- comment -%}
+  Related articles by tag overlap. Pure Liquid, no plugins.
+
+  Selection order:
+    Pass 1 ("strict")  - overlap counted on topical tags only. Tags used by
+                         more than a quarter of the archive ("caffeine",
+                         "sleep") are ignored: every article here is about
+                         caffeine, so those tags match any post against any
+                         other and drown out real relatedness.
+    Pass 2 ("loose")   - only runs if pass 1 could not fill the block. Counts
+                         every shared tag, generic ones included, so a post
+                         whose tags are all generic still gets recommendations.
+
+  Within each pass the overlap threshold sweeps high to low, so a post sharing
+  3 tags always outranks one sharing 1. site.posts is newest-first, so ties
+  break on recency.
+
+  Seen URLs live in a delimited string because Liquid cannot append to an
+  array; the "|" delimiters stop one URL prefix-matching another.
+{%- endcomment -%}
+
+{%- assign max_related = 3 -%}
+{%- assign seen = '' -%}
+{%- assign related_count = 0 -%}
+{%- assign generic_cutoff = site.posts.size | divided_by: 4 -%}
+
+{%- if page.tags and page.tags.size > 0 -%}
+  {%- for pass in (1..2) -%}
+    {%- unless related_count >= max_related -%}
+      {%- for threshold in (1..4) reversed -%}
+        {%- unless related_count >= max_related -%}
+          {%- for post in site.posts -%}
+            {%- unless related_count >= max_related -%}
+              {%- assign probe = post.url | prepend: '|' | append: '|' -%}
+              {%- if post.url != page.url and post.tags.size > 0 -%}
+                {%- unless seen contains probe -%}
+                  {%- assign common = 0 -%}
+                  {%- for tag in post.tags -%}
+                    {%- if page.tags contains tag -%}
+                      {%- assign tag_posts = site.tags[tag] -%}
+                      {%- if pass == 2 or tag_posts.size <= generic_cutoff -%}
+                        {%- assign common = common | plus: 1 -%}
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                  {%- if common >= threshold -%}
+                    {%- assign seen = seen | append: probe -%}
+                    {%- assign related_count = related_count | plus: 1 -%}
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endif -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{%- if related_count > 0 -%}
+<aside class="card mb-4" aria-labelledby="related-articles-heading">
+  <div class="card-body">
+    <h2 id="related-articles-heading" class="h5 mb-3">Related articles</h2>
+    <ul class="list-unstyled mb-0">
+      {%- for post in site.posts -%}
+        {%- assign probe = post.url | prepend: '|' | append: '|' -%}
+        {%- if seen contains probe -%}
+        <li class="mb-2 pb-2 border-bottom">
+          <a href="{{ post.url | relative_url }}" class="text-decoration-none">{{ post.title }}</a>
+          <div class="small text-muted">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+          </div>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</aside>
+{%- endif -%}
