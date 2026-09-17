@@ -1,5 +1,7 @@
 ---
 layout: post
+seo_title: "Caffeine and Gut Health: Acid, Motility & IBS Effects"
+description: "Why coffee sends you to the bathroom, what caffeine does to acid reflux and IBS, and who actually needs to cut back. Evidence-based, no hype."
 title: "Caffeine and Gut Health: Effects and Safe Consumption Tips"
 date: 2025-11-18 03:00:00 +0000
 tags: [caffeine, gut health, coffee, microbiome, digestion, safety]

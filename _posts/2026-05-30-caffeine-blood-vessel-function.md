@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "How Caffeine Affects Blood Vessel Function: What Science Says"
+seo_title: "Caffeine and Blood Pressure: How Much Is Too Much?"
+description: "Caffeine raises blood pressure 5-10 mmHg for up to 3 hours. What that means if you are hypertensive, and why coffee may still help your arteries."
 date: 2026-05-30 03:00:00 +0000
 tags: [caffeine, blood vessel function, endothelial function, blood pressure, coffee, energy drinks]
 excerpt: "Caffeine briefly tightens blood vessels and raises blood pressure, yet coffee's plant compounds may improve endothelial function. Here's the balance."

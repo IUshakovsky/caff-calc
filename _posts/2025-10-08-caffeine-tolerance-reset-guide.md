@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Caffeine Tolerance: Why Your Coffee Stopped Working (And How to Fix It)"
+seo_title: "How to Reset Caffeine Tolerance (Without the Headache)"
+description: "Tolerance builds in 7-14 days. A 2-week taper plan that resets your caffeine sensitivity while keeping withdrawal headaches manageable."
 date: 2025-10-08 10:00:00 +0300
 tags: [caffeine, health, science, tolerance, coffee, alertness, productivity]
 excerpt: "Your morning coffee used to be magic. Now it barely helps. Here's the science behind caffeine tolerance and a proven 2-week reset plan to get your alertness back."

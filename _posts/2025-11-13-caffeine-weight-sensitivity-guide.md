@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Caffeine by Body Weight: A Practical Guide to Personal Sensitivity"
+seo_title: "Caffeine Dose by Body Weight: mg/kg Limits Explained"
+description: "How many mg of caffeine is safe for your body weight? EFSA's 3 mg/kg single-dose rule explained, plus a calculator for your personal daily limit."
 date: 2025-11-13 03:00:00 +0000
 tags: [caffeine, weight, sensitivity, personalized-health, sleep, nutrition]
 excerpt: "A science-informed, practical guide on how body weight and sensitivity shape caffeine effects. Learn personalized tips and how to use CaffCalc to count caffeine intake and compare with typical ranges."

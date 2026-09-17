@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Caffeine and Exercise: Safe, Proven Ways to Boost Performance"
+seo_title: "Caffeine for Exercise: Dose, Timing & Real Performance"
+description: "3-6 mg/kg taken 30-60 minutes before training is the evidence-backed protocol. What it improves, what it does not, and when it backfires."
 date: 2025-10-28 10:00:00 +0000
 tags: [caffeine, exercise, performance, sports-nutrition, ergogenic-aids, caffeine-safety]
 excerpt: "Explore how caffeine can safely enhance athletic performance, the best dosing strategies, timing tips, and realistic limits you can trust with a science-backed guide."

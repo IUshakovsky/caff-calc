@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Caffeine and Sleep: The Science of When to Avoid It"
+seo_title: "Caffeine Cut-Off Time: When to Stop for Better Sleep"
+description: "Caffeine taken 6 hours before bed still measurably cuts your sleep short. The research on caffeine timing and how to set your personal cutoff."
 date: 2026-02-14 03:00:00 +0000
 tags: [caffeine and sleep, sleep timing, half-life, adenosine, insomnia, sleep hygiene]
 excerpt: "When should you stop drinking coffee to protect your sleep? A science-backed guide to caffeine timing, sleep stages, and practical cutoffs for real bedtimes."

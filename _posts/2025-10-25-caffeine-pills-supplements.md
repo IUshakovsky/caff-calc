@@ -1,5 +1,7 @@
 ---
 layout: post
+seo_title: "Caffeine Pills: Safe Dosage, Risks & 200mg Reality"
+description: "One 200mg caffeine pill equals about two coffees with none of the volume cues, which is how overdoses happen. Safe dosing, real risks, who to avoid."
 title: "Caffeine Pills: The Hidden Risks Nobody Tells You"
 date: 2025-10-25 09:00:00 +0000
 tags: [caffeine, caffeine-pills, supplements, sleep, health]

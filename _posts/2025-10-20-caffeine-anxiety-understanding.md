@@ -1,5 +1,7 @@
 ---
 layout: post
+seo_title: "Caffeine and Anxiety: Why It Causes Jitters and Panic"
+description: "Caffeine and anxiety produce nearly identical physical symptoms. How to tell them apart, the dose where jitters start, and how to cut back safely."
 title: "Caffeine Anxiety: Understanding the Connection and Practical Tips"
 date: 2025-10-20 12:00:00 +0000
 tags: [caffeine, anxiety, health, science, sleep, caffeine-awareness]

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Caffeine Half-Life: When Does It Really Wear Off?"
+seo_title: "Caffeine Half-Life: How Long It Really Lasts (2-9 hrs)"
+description: "Caffeine's half-life averages 5 hours but runs from 2 to over 9. See how much is left in your system at bedtime, and what doubles your clearance time."
 date: 2025-10-31 03:30:00 +0000
 tags: [caffeine, sleep, metabolism, health, lifestyle, caffeine-timing]
 excerpt: "Caffeine can linger 5-9 hours after your last cup. Learn how half-life affects sleep, what speeds or slows metabolism, and practical timing tips for better rest."
