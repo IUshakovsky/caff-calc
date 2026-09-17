@@ -690,7 +690,7 @@ function updateCaffeineStatus() {
   if (user.ageGroup === 'child' && totalCaffeineConsumed > 0) {
     statusElement.classList.remove('d-none', 'alert-success', 'alert-warning');
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="pages/health-advice.html" class="alert-link">See health advice</a> for more information.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="${window.SITE_BASEURL || ''}/pages/health-advice" class="alert-link">See health advice</a> for more information.`;
     return { percentage: 100, adjustedLimit: 0 };
   }
   
@@ -704,10 +704,10 @@ function updateCaffeineStatus() {
     statusElement.innerHTML = `<strong>Safe:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg).`;
   } else if (percentage <= 100) {
     statusElement.classList.add('alert-warning');
-    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="pages/caffeine-science.html" class="alert-link">Learn more</a> about caffeine metabolism.`;
+    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="${window.SITE_BASEURL || ''}/pages/caffeine-science" class="alert-link">Learn more</a> about caffeine metabolism.`;
   } else {
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="pages/overdose-symptoms.html" class="alert-link">overdose symptoms</a> for health concerns.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="${window.SITE_BASEURL || ''}/pages/overdose-symptoms" class="alert-link">overdose symptoms</a> for health concerns.`;
   }
   
   return { percentage, adjustedLimit };
