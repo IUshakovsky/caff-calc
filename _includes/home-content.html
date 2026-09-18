@@ -1,0 +1,141 @@
+{%- comment -%}
+  B10 homepage content. Sits below the calculator so the tool stays above the
+  fold. The drink table renders from _data/beverages.yml (task C12) so every
+  figure carries a source; the FAQ renders from the page's `faq:` front matter,
+  which is the same data _includes/schema.html emits as FAQPage markup, so the
+  visible copy and the structured data cannot drift apart.
+{%- endcomment -%}
+{%- assign half_life_post = site.posts | where: "slug", "caffeine-half-life-sleep" | first -%}
+{%- assign weight_post = site.posts | where: "slug", "caffeine-weight-sensitivity-guide" | first -%}
+{%- assign pregnancy_post = site.posts | where: "slug", "caffeine-pregnancy-guidelines" | first -%}
+{%- assign meds_post = site.posts | where: "slug", "caffeine-medication-interactions" | first -%}
+{%- assign pills_post = site.posts | where: "slug", "caffeine-pills-supplements" | first -%}
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">How this calculator works</h2>
+          <p>The figure in the panel above is not the FDA's 400 mg reprinted. It is built in three steps.</p>
+
+          <p><strong>1. An age and status baseline.</strong> Adults start at 400 mg a day, the level the
+            <a href="https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" target="_blank" rel="noopener">FDA cites</a>
+            as not generally associated with negative effects. Over-65s start at 300 mg, 13-17s at 100 mg, and under-13s at zero.
+            Tick <em>Pregnant</em> and the baseline drops to 200 mg, the ceiling in
+            <a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2010/08/moderate-caffeine-consumption-during-pregnancy" target="_blank" rel="noopener">ACOG's committee opinion</a>;
+            <em>Breastfeeding</em> sets 300 mg.</p>
+
+          <p><strong>2. Your body weight.</strong> The tool multiplies your weight by 6 mg/kg for adults,
+            4.5 mg/kg for over-65s and 2.5 mg/kg for teenagers, then uses that number whenever it comes out
+            below the baseline. A 55 kg adult is capped at 330 mg rather than 400. For teenagers the
+            weight-based figure always wins. For reference,
+            <a href="https://www.efsa.europa.eu/en/efsajournal/pub/4102" target="_blank" rel="noopener">EFSA</a>
+            puts habitual daily intake at 5.7 mg/kg and single doses at 3 mg/kg, so the adult factor used
+            here is marginally the more permissive of the two.</p>
+
+          <p><strong>3. Your sensitivity.</strong> The five-point sensitivity setting applies a multiplier
+            running from 1.3x on <em>Low</em> down to 0.7x on <em>Extreme</em>. This is the one step with no
+            guideline behind it: it is a self-reported adjustment, and on <em>Low</em> it can return a number
+            above 400 mg. Read anything over 400 mg as a personal estimate, not as permission - the official
+            ceilings do not move with a slider.</p>
+
+          <p class="mb-0">The meter then scores your tracked drinks against that limit: green to 50%, amber
+            to 100%, red above it.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">How much caffeine is in your drink?</h2>
+          <p>Every figure below comes from the manufacturer's own nutrition data or from the FDA. Where a
+            brand publishes a range, the range is shown rather than an average.</p>
+
+          <div class="table-content">
+            <table class="table table-bordered align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Drink</th>
+                  <th scope="col">Serving</th>
+                  <th scope="col">Caffeine</th>
+                  <th scope="col">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for bev in site.data.beverages %}
+                {%- assign serving = bev.servings | first %}
+                <tr>
+                  <td>
+                    {{ bev.product }}
+                    {%- if bev.notes %}<br><span class="small text-muted">{{ bev.notes }}</span>{% endif %}
+                  </td>
+                  <td>{% if serving.size_oz %}{{ serving.size_oz }} fl oz ({{ serving.size_ml }} ml){% else %}1 tablet{% endif %}</td>
+                  <td>{% if serving.caffeine_mg %}{{ serving.caffeine_mg }} mg{% else %}{{ serving.caffeine_mg_low }}-{{ serving.caffeine_mg_high }} mg{% endif %}</td>
+                  <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a></td>
+                </tr>
+                {%- endfor %}
+              </tbody>
+            </table>
+          </div>
+          <p class="small text-muted mb-0">Figures verified September 2026. Brands reformulate; check the can
+            if the number matters to you.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">What this calculator does not account for</h2>
+          <p>Weight, age and a sensitivity setting are the inputs most people can supply accurately. They are
+            not the only things that decide how caffeine behaves in you.</p>
+          <ul class="mb-0">
+            <li><strong>CYP1A2 genetics.</strong> Nearly all caffeine is cleared by one liver enzyme, and its
+              activity varies across the population with a coefficient of variation of roughly 40%
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/" target="_blank" rel="noopener">clinical toxicology review</a>).
+              Two people of identical weight can clear the same cup at very different rates.</li>
+            <li><strong>Medications.</strong> Oral contraceptives, ciprofloxacin, cimetidine and fluvoxamine
+              all inhibit CYP1A2 and slow caffeine clearance
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/" target="_blank" rel="noopener">same review</a>).
+              Nothing in the form above knows what you take.</li>
+            <li><strong>Smoking.</strong> Smoking induces CYP1A2 and speeds clearance by about 40-65%, with
+              reported half-life falling from around 6 hours to 3.5
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12954933/" target="_blank" rel="noopener">2025 review</a>).</li>
+            <li><strong>Liver disease and anxiety disorders.</strong> The first slows clearance; the second
+              changes what a tolerable dose feels like, well below any toxic threshold.</li>
+            <li><strong>Timing.</strong> This is a daily total, not a timeline. 400 mg spread over a day and
+              400 mg in one sitting are not the same exposure, and caffeine's mean half-life of about five
+              hours (<a href="https://www.ncbi.nlm.nih.gov/books/NBK223808/" target="_blank" rel="noopener">NCBI</a>)
+              means an afternoon coffee is still measurably present at bedtime.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Common questions</h2>
+          {% for item in page.faq %}
+          <div class="faq-item{% if forloop.last %} mb-0{% endif %}">
+            <h3 class="h5"><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>{{ item.question }}</h3>
+            <p>{{ item.answer }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Read next</h2>
+          <ul class="mb-0">
+            {%- if weight_post %}<li><a href="{{ weight_post.url | relative_url }}">{{ weight_post.title }}</a> - the mg/kg reasoning behind the number above.</li>{% endif %}
+            {%- if half_life_post %}<li><a href="{{ half_life_post.url | relative_url }}">{{ half_life_post.title }}</a> - how much is still in you at bedtime.</li>{% endif %}
+            {%- if meds_post %}<li><a href="{{ meds_post.url | relative_url }}">{{ meds_post.title }}</a> - the drugs that change your clearance rate.</li>{% endif %}
+            {%- if pregnancy_post %}<li><a href="{{ pregnancy_post.url | relative_url }}">{{ pregnancy_post.title }}</a> - why the limit halves to 200 mg.</li>{% endif %}
+            {%- if pills_post %}<li><a href="{{ pills_post.url | relative_url }}">{{ pills_post.title }}</a> - why tablets and shots cause most accidental overdoses.</li>{% endif %}
+            <li><a href="{{ '/pages/overdose-symptoms' | relative_url }}">Caffeine overdose symptoms</a> - what to watch for, and when to call poison control.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

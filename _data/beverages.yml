@@ -1,0 +1,231 @@
+# Sourced caffeine figures. Start of task C12; the homepage table (B10) renders
+# from this file. The calculator still reads assets/data/caf_src.json until the
+# full C12 migration.
+#
+# Rules (see documentation/caffcalc-implementation-brief.md):
+#   - No entry ships without source_url + verified.
+#   - Where a brand publishes a range, record the range (caffeine_mg_low/high),
+#     do not average it.
+#   - Generic entries use the FDA's published figures rather than a single
+#     manufacturer label, because no such label exists for "a cup of coffee".
+
+- slug: brewed-coffee
+  brand: null
+  product: "Brewed coffee (generic)"
+  category: coffee
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 80
+      caffeine_mg_high: 100
+  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
+  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+  verified: 2026-09-18
+  notes: "The FDA's own working figure for one cup. Real cups vary widely with grind, dose and brew time."
+
+- slug: tea
+  brand: null
+  product: "Tea (generic, black or green)"
+  category: tea
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 30
+      caffeine_mg_high: 50
+  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
+  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+  verified: 2026-09-18
+  notes: "Steeping time moves this more than leaf type does."
+
+- slug: starbucks-pike-place-grande
+  brand: "Starbucks"
+  product: "Pike Place Roast brewed coffee, Grande"
+  category: coffee
+  servings:
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg_low: 315
+      caffeine_mg_high: 390
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/480/hot/nutrition"
+  verified: 2026-09-18
+  notes: "Starbucks publishes a range, not a point value. The top of it is most of an adult daily limit in one cup."
+
+- slug: starbucks-latte-grande
+  brand: "Starbucks"
+  product: "Caffè Latte, Grande"
+  category: coffee
+  servings:
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/407/hot/nutrition"
+  verified: 2026-09-18
+  notes: "Two espresso shots. Less than half a same-size brewed coffee, because the cup is mostly milk."
+
+- slug: starbucks-cold-brew-grande
+  brand: "Starbucks"
+  product: "Cold Brew, Grande"
+  category: coffee
+  servings:
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg: 205
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2121255/Iced/nutrition"
+  verified: 2026-09-18
+  notes: "A 20-hour cold steep extracts more than a hot brew of the same size would in minutes."
+
+- slug: red-bull
+  brand: "Red Bull"
+  product: "Red Bull Energy Drink"
+  category: energy-drink
+  servings:
+    - size_oz: 8.4
+      size_ml: 250
+      caffeine_mg: 80
+  source_name: "Red Bull product Q&A"
+  source_url: "https://www.redbull.com/us-en/energydrink/questions/how-much-caffeine-is-in-a-can-of-red-bull-energy-drink"
+  verified: 2026-09-18
+  notes: "The reference point most people misjudge: a standard can has less caffeine than a small brewed coffee."
+
+- slug: monster-energy-original
+  brand: "Monster"
+  product: "Monster Energy Original"
+  category: energy-drink
+  servings:
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg: 160
+  source_name: "Monster Energy product page"
+  source_url: "https://www.monsterenergy.com/en-us/energy-drinks/monster-energy/original-green/"
+  verified: 2026-09-18
+  notes: "Also contains guarana, which is itself a caffeine source; the 160 mg is the all-sources figure on the label."
+
+- slug: celsius-original
+  brand: "Celsius"
+  product: "Celsius Energy Drink"
+  category: energy-drink
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 200
+  source_name: "Celsius Essential Facts"
+  source_url: "https://www.celsius.com/essential-facts/"
+  verified: 2026-09-18
+  notes: "Celsius itself recommends no more than two cans a day, which is 400 mg - the entire adult guideline."
+
+- slug: celsius-essentials
+  brand: "Celsius"
+  product: "Celsius Essentials"
+  category: energy-drink
+  servings:
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg: 270
+  source_name: "Celsius Essential Facts"
+  source_url: "https://www.celsius.com/essential-facts/"
+  verified: 2026-09-18
+  notes: "Celsius recommends one can a day of this line, not two."
+
+- slug: alani-nu-energy
+  brand: "Alani Nu"
+  product: "Alani Nu Energy Drink"
+  category: energy-drink
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 200
+  source_name: "Alani Nu nutrition facts"
+  source_url: "https://www.alaninu.com/products/energy-drink-cherry-slush"
+  verified: 2026-09-18
+  notes: "200 mg in a 12 oz can that drinks like a soda. Half the adult daily guideline per can."
+
+- slug: coca-cola-classic
+  brand: "Coca-Cola"
+  product: "Coca-Cola Classic"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 34
+  source_name: "The Coca-Cola Company, ingredients FAQ"
+  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
+  verified: 2026-09-18
+
+- slug: diet-coke
+  brand: "Coca-Cola"
+  product: "Diet Coke"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 46
+  source_name: "The Coca-Cola Company, ingredients FAQ"
+  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
+  verified: 2026-09-18
+  notes: "More caffeine than regular Coke, which surprises most people."
+
+- slug: pepsi
+  brand: "Pepsi"
+  product: "Pepsi"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 38
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000133"
+  verified: 2026-09-18
+
+- slug: mountain-dew
+  brand: "Mountain Dew"
+  product: "Mountain Dew"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 54
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000850"
+  verified: 2026-09-18
+  notes: "The most caffeinated mainstream soda, and still a third of a Celsius."
+
+- slug: cola-soda
+  brand: null
+  product: "Cola soft drink (generic)"
+  category: soda
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      caffeine_mg: 40
+  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
+  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+  verified: 2026-09-18
+
+- slug: 5-hour-energy-regular
+  brand: "5-hour Energy"
+  product: "5-hour Energy, Regular Strength"
+  category: energy-shot
+  servings:
+    - size_oz: 1.93
+      size_ml: 57
+      caffeine_mg: 200
+  source_name: "5-hour Energy, Regular Strength FAQ"
+  source_url: "https://5hourenergy.com/collections/regular-strength"
+  verified: 2026-09-18
+  notes: "200 mg in under two fluid ounces. Volume tells you nothing about dose here."
+
+- slug: caffeine-pill
+  brand: null
+  product: "Caffeine tablet"
+  category: supplement
+  servings:
+    - size_oz: null
+      size_ml: null
+      caffeine_mg: 200
+  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
+  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+  verified: 2026-09-18
+  notes: "Two coffees' worth with none of the volume cues that normally pace you. This is the format most often involved in accidental overdose."

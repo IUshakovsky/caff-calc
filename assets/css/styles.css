@@ -745,6 +745,15 @@ i[data-lucide] {
   border: 1px solid var(--c-border);
 }
 
+/* Reference tables in page copy. Same frame as .table-responsive but without
+   the 300px cap, which exists for the consumption tracker and silently clips
+   any longer table it is reused for. */
+.table-content {
+  overflow-x: auto;
+  border-radius: var(--r-md);
+  border: 1px solid var(--c-border);
+}
+
 /* Responsive improvements */
 @media (max-width: 991px) {
   .panel {
