@@ -61,6 +61,7 @@
   brand: null
   product: "Espresso"
   category: coffee
+  featured: true
   usda_mg_per_100g: 212
   servings:
     - label: "Single shot"
@@ -83,6 +84,7 @@
   brand: null
   product: "Decaf coffee"
   category: coffee
+  featured: true
   servings:
     - size_oz: 8
       size_ml: 237
@@ -1002,7 +1004,6 @@
   brand: null
   product: "Black tea, brewed"
   category: tea
-  featured: true
   usda_mg_per_100g: 20
   servings:
     - size_oz: 6
@@ -1023,6 +1024,7 @@
   brand: null
   product: "Green tea, brewed"
   category: tea
+  featured: true
   usda_mg_per_100g: 12
   servings:
     - size_oz: 8
@@ -1166,6 +1168,7 @@
   brand: "Starbucks"
   product: "Starbucks Chai Latte"
   category: tea
+  featured: true
   servings:
     - label: "Short"
       size_oz: 8
@@ -1214,6 +1217,7 @@
   brand: "Starbucks"
   product: "Starbucks Matcha Latte"
   category: tea
+  featured: true
   servings:
     - label: "Short"
       size_oz: 8
@@ -1500,7 +1504,6 @@
   brand: "Celsius"
   product: "Celsius Essentials"
   category: energy-drink
-  featured: true
   servings:
     - size_oz: 16
       size_ml: 473
@@ -1528,7 +1531,6 @@
   brand: "Alani Nu"
   product: "Alani Nu Energy Drink"
   category: energy-drink
-  featured: true
   servings:
     - size_oz: 12
       size_ml: 355
@@ -1550,13 +1552,12 @@
   source_name: "PepsiCo Product Facts (Orange Citrus)"
   source_url: "https://www.pepsicoproductfacts.com/Home/Product?gtin=00012000110443"
   verified: 2026-09-19
-  notes: "The label lists two 8 oz servings of 46 mg each; the can holds 92 mg. Other flavors differ by a few mg."
+  notes: "The label lists two 8 oz servings of 46 mg each; the can holds 92 mg. Figure is for Orange Citrus."
 
 - slug: 5-hour-energy-regular
   brand: "5-hour Energy"
   product: "5-hour Energy, Regular Strength"
   category: energy-shot
-  featured: true
   servings:
     - size_oz: 1.93
       size_ml: 57
@@ -1574,6 +1575,7 @@
   brand: "Starbucks"
   product: "Starbucks Pink Drink"
   category: other
+  featured: true
   servings:
     - label: "Tall"
       size_oz: 12
@@ -1843,7 +1845,6 @@
   brand: null
   product: "Cola (generic)"
   category: soda
-  featured: true
   usda_mg_per_100g: 9
   servings:
     - label: "Can"
@@ -1893,6 +1894,7 @@
   brand: null
   product: "Dark chocolate, 70-85% cacao"
   category: chocolate
+  featured: true
   usda_mg_per_100g: 80
   servings:
     - size_oz: null
@@ -2140,6 +2142,7 @@
   brand: "Excedrin"
   product: "Excedrin Extra Strength"
   category: medicine
+  featured: true
   servings:
     - label: "1 caplet"
       size_oz: null

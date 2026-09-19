@@ -1,0 +1,204 @@
+---
+layout: default
+---
+{%- comment -%}
+  "Caffeine in X" page (task C13). Figures come from the entry in
+  _data/beverages.yml whose slug matches this file's name; the page-specific
+  copy is this document's content, wrapped in .caffeine-in-body so
+  scripts/check-caffeine-in.py can hold it to the 250-word thin-content floor.
+  Front matter: title, seo_title, description, related (2-3 slugs), article (post slug).
+{%- endcomment -%}
+{%- assign bev = site.data.beverages | where: "slug", page.slug | first -%}
+{%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+{%- assign drink_mg = serving.caffeine_mg | default: serving.caffeine_mg_high -%}
+{%- assign daily_cap = 400 -%}
+{%- assign fda_url = "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much" -%}
+{%- assign coffee = site.data.beverages | where: "slug", "brewed-coffee" | first -%}
+{%- assign coffee_serving = coffee.servings | where: "default", true | first -%}
+{%- assign redbull = site.data.beverages | where: "slug", "red-bull" | first -%}
+{%- assign redbull_serving = redbull.servings | where: "default", true | first -%}
+{%- if drink_mg > daily_cap -%}{%- assign scale = drink_mg -%}{%- else -%}{%- assign scale = daily_cap -%}{%- endif -%}
+
+<header class="header-area py-4">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="text-center">
+        <h1 class="title">{{ page.title }}</h1>
+        <p class="lead subtitle">Every size, the source, and how many fit in your day</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container main-content">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; {{ bev.product }}
+      </nav>
+
+      <section class="card mb-4 caffeine-in-headline">
+        <div class="card-body">
+          <p class="caffeine-in-figure mb-1">{% include serving-mg.html serving=serving %}</p>
+          <p class="mb-2"><strong>{{ bev.product }}</strong> &middot; {% include serving-size.html serving=serving %}</p>
+          {%- if bev.notes %}
+          <p class="mb-2">{{ bev.notes }}</p>
+          {%- endif %}
+          <p class="small text-muted mb-0">
+            Source: <a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a>,
+            checked {{ bev.verified | date: "%-d %B %Y" }}.
+          </p>
+        </div>
+      </section>
+
+      <section class="card mb-4" aria-labelledby="compare-heading">
+        <div class="card-body">
+          <h2 id="compare-heading" class="h5 mb-3">How it compares</h2>
+          <div class="compare-bars">
+            <div class="compare-row compare-row-this">
+              <span class="compare-label">{{ bev.product }}, {% include serving-size.html serving=serving %}</span>
+              <span class="compare-track"><span class="compare-fill" style="width: {{ drink_mg | times: 100.0 | divided_by: scale | round: 1 }}%"></span></span>
+              <span class="compare-value">{% include serving-mg.html serving=serving %}</span>
+            </div>
+            {%- unless bev.slug == coffee.slug %}
+            <div class="compare-row">
+              <span class="compare-label"><a href="{{ '/caffeine-in/brewed-coffee/' | relative_url }}">{{ coffee.product }}</a>, {% include serving-size.html serving=coffee_serving %}</span>
+              <span class="compare-track"><span class="compare-fill" style="width: {{ coffee_serving.caffeine_mg | times: 100.0 | divided_by: scale | round: 1 }}%"></span></span>
+              <span class="compare-value">{{ coffee_serving.caffeine_mg }} mg</span>
+            </div>
+            {%- endunless %}
+            {%- unless bev.slug == redbull.slug %}
+            <div class="compare-row">
+              <span class="compare-label"><a href="{{ '/caffeine-in/red-bull/' | relative_url }}">{{ redbull.product }}</a>, {% include serving-size.html serving=redbull_serving %}</span>
+              <span class="compare-track"><span class="compare-fill" style="width: {{ redbull_serving.caffeine_mg | times: 100.0 | divided_by: scale | round: 1 }}%"></span></span>
+              <span class="compare-value">{{ redbull_serving.caffeine_mg }} mg</span>
+            </div>
+            {%- endunless %}
+            <div class="compare-row compare-row-cap">
+              <span class="compare-label">Daily limit for most healthy adults</span>
+              <span class="compare-track"><span class="compare-fill" style="width: {{ daily_cap | times: 100.0 | divided_by: scale | round: 1 }}%"></span></span>
+              <span class="compare-value">{{ daily_cap }} mg</span>
+            </div>
+          </div>
+          <p class="small text-muted mt-3 mb-0">
+            Coffee: <a href="{{ coffee.source_url }}" target="_blank" rel="noopener">{{ coffee.source_name }}</a>.
+            Red Bull: <a href="{{ redbull.source_url }}" target="_blank" rel="noopener">{{ redbull.source_name }}</a>.
+            Daily limit: the figure the <a href="{{ fda_url }}" target="_blank" rel="noopener">FDA</a> cites as not
+            generally associated with negative effects in healthy adults.
+          </p>
+        </div>
+      </section>
+
+      <section class="card mb-4 how-many" aria-labelledby="how-many-heading" data-daily-cap="{{ daily_cap }}">
+        <div class="card-body">
+          <h2 id="how-many-heading" class="h5 mb-3">How many can I have?</h2>
+          <div class="how-many-sizes d-flex flex-wrap gap-2 mb-3" role="group" aria-label="Serving size">
+            {%- for s in bev.servings %}
+            {%- assign s_mg = s.caffeine_mg | default: s.caffeine_mg_high %}
+            <button type="button" class="btn btn-sm btn-outline-secondary{% if s == serving %} active{% endif %}"
+                    data-mg="{{ s_mg }}"
+                    data-ranged="{% if s.caffeine_mg == nil %}true{% else %}false{% endif %}"
+                    aria-pressed="{% if s == serving %}true{% else %}false{% endif %}">{% include serving-size.html serving=s %}</button>
+            {%- endfor %}
+          </div>
+          {%- comment -%} Server-rendered for no-JS readers; assets/js/caffeine-in.js writes the same sentence. {%- endcomment -%}
+          <p class="how-many-result mb-2" aria-live="polite">
+            {%- if drink_mg == 0 -%}
+            No caffeine: this size does not count toward your limit.
+            {%- else -%}
+            {%- assign fits = daily_cap | divided_by: drink_mg -%}
+            {%- if fits == 0 -%}
+            One serving of this size ({{ drink_mg }} mg) is already over your {{ daily_cap }} mg limit.
+            {%- else -%}
+            {%- assign used = fits | times: drink_mg -%}
+            {%- assign rest = daily_cap | minus: used -%}
+            {{ fits }} serving{% if fits > 1 %}s{% endif %} of this size fit{% if fits == 1 %}s{% endif %} under a {{ daily_cap }} mg day ({{ used }} mg),
+            {%- if rest == 0 %} using the whole allowance.{% else %} leaving {{ rest }} mg for anything else.{% endif -%}
+            {%- endif -%}
+            {%- if serving.caffeine_mg == nil %} This counts the top of the published range.{% endif -%}
+            {%- if drink_mg > 200 %} One serving is above the 200 mg single dose <a href="https://www.efsa.europa.eu/en/efsajournal/pub/4102" target="_blank" rel="noopener">EFSA</a> assesses as safe for healthy adults.{% endif -%}
+            {%- endif -%}
+          </p>
+          <p class="small text-muted how-many-basis mb-3">Based on {{ daily_cap }} mg, the FDA figure for healthy adults.</p>
+          <a href="{{ '/' | relative_url }}?drink={{ bev.slug }}" class="btn btn-calculate">
+            <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Add it to the calculator
+          </a>
+          <p class="small text-muted mt-2 mb-0">The calculator sets a personal limit from your weight, age, pregnancy
+            status and sensitivity, and this box uses it once you have saved it there.</p>
+        </div>
+      </section>
+
+      <section class="card mb-4" aria-labelledby="sizes-heading">
+        <div class="card-body">
+          <h2 id="sizes-heading" class="h5 mb-3">Caffeine by size</h2>
+          <div class="table-content">
+            <table class="table table-bordered align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Serving</th>
+                  <th scope="col">Caffeine</th>
+                  <th scope="col">Share of {{ daily_cap }} mg</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for s in bev.servings %}
+                {%- assign s_mg = s.caffeine_mg | default: s.caffeine_mg_high %}
+                <tr>
+                  <td>{% include serving-size.html serving=s %}</td>
+                  <td>{% include serving-mg.html serving=s %}</td>
+                  <td>{% if s.caffeine_mg == nil %}up to {% endif %}{{ s_mg | times: 100.0 | divided_by: daily_cap | round }}%</td>
+                </tr>
+                {%- endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <article class="card mb-4">
+        <div class="card-body blog-content caffeine-in-body">
+          {{ content }}
+        </div>
+      </article>
+
+      {%- if page.related %}
+      <section class="card mb-4" aria-labelledby="related-drinks-heading">
+        <div class="card-body">
+          <h2 id="related-drinks-heading" class="h5 mb-3">Related drinks</h2>
+          <ul class="list-unstyled mb-0">
+            {%- for slug in page.related %}
+            {%- assign other = site.data.beverages | where: "slug", slug | first %}
+            {%- assign other_serving = other.servings | where: "default", true | first | default: other.servings.first %}
+            {%- assign other_page = site.caffeine_in | where: "slug", slug | first %}
+            <li class="mb-2">
+              {% if other_page %}<a href="{{ other_page.url | relative_url }}">{{ other.product }}</a>{% else %}{{ other.product }}{% endif %}:
+              {% include serving-mg.html serving=other_serving %} in {% include serving-size.html serving=other_serving %}
+            </li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- assign article = site.posts | where: "slug", page.article | first %}
+      {%- if article %}
+      <section class="card mb-4" aria-labelledby="related-article-heading">
+        <div class="card-body">
+          <h2 id="related-article-heading" class="h5 mb-2">Further reading</h2>
+          <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
+        </div>
+      </section>
+      {%- endif %}
+
+      <div class="text-center mb-4">
+        <a href="{{ '/caffeine-in/' | relative_url }}" class="btn btn-outline-secondary">
+          <i data-lucide="list" class="me-2" aria-hidden="true"></i>Caffeine in other drinks
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/caffeine-in.js' | relative_url }}" defer></script>

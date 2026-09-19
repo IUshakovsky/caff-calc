@@ -1,0 +1,71 @@
+---
+layout: page
+title: "Caffeine in Drinks"
+seo_title: "Caffeine in Coffee, Tea, Soda & Energy Drinks, by Size"
+subtitle: "Every figure sourced from the manufacturer, USDA or the official label"
+description: "How much caffeine is in Starbucks drinks, energy drinks, soda, tea, chocolate and caffeine pills - every size, every figure sourced and dated."
+permalink: /caffeine-in/
+excerpt_separator: ""
+---
+
+{%- comment -%}
+  Index for the C13 "caffeine in X" pages. Lists every entry in
+  _data/beverages.yml, so drinks without a page of their own are still here with
+  their source; the ones with a page (a file in _caffeine_in/) link to it.
+{%- endcomment -%}
+{%- assign categories = "coffee:Coffee|tea:Tea|energy-drink:Energy drinks|energy-shot:Energy shots|soda:Soda|other:Other drinks|chocolate:Chocolate|supplement:Caffeine tablets and pre-workout|medicine:Medicines" | split: "|" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>Caffeine figures for {{ site.data.beverages.size }} drinks, foods and tablets, each taken from the
+            manufacturer's own nutrition data, USDA FoodData Central or the product's official drug label, with the
+            date it was last checked. Where a source publishes a range, the range is shown rather than an average.</p>
+          <p class="mb-0">Linked drinks have their own page with every size, a comparison against coffee and
+            Red Bull, and how many fit under your daily limit. To add up a whole day, use the
+            <a href="{{ '/' | relative_url }}">caffeine calculator</a>: it draws on the same figures.</p>
+        </div>
+      </div>
+
+      {%- for pair in categories %}
+      {%- assign parts = pair | split: ":" %}
+      {%- assign in_category = site.data.beverages | where: "category", parts[0] | sort: "product" %}
+      {%- if in_category.size > 0 %}
+      <section class="card mb-4" id="{{ parts[0] }}">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">{{ parts[1] }}</h2>
+          <div class="table-content">
+            <table class="table table-bordered align-middle mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Drink</th>
+                  <th scope="col">Serving</th>
+                  <th scope="col">Caffeine</th>
+                  <th scope="col">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                {%- for bev in in_category %}
+                {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first %}
+                {%- assign bev_page = site.caffeine_in | where: "slug", bev.slug | first %}
+                <tr>
+                  <td>{% if bev_page %}<a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif %}</td>
+                  <td>{% include serving-size.html serving=serving %}</td>
+                  <td>{% include serving-mg.html serving=serving %}</td>
+                  <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a></td>
+                </tr>
+                {%- endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      {%- endif %}
+      {%- endfor %}
+
+    </div>
+  </div>
+</div>

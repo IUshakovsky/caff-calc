@@ -1,0 +1,7 @@
+{%- comment -%}
+  One serving from _data/beverages.yml as text: "Grande, 16 fl oz (473 ml)",
+  "8.4 fl oz (250 ml)", "1 tablet". Usage: include serving-size.html serving=s
+{%- endcomment -%}
+{%- assign s = include.serving -%}
+{%- if s.label %}{{ s.label }}{% if s.size_oz %}, {% endif %}{% endif -%}
+{%- if s.size_oz %}{{ s.size_oz }} fl oz ({{ s.size_ml }} ml){% endif -%}

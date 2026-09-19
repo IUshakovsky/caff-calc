@@ -54,6 +54,12 @@ collections:
   pages:
     output: true
     permalink: /pages/:name/
+  # One file per beverage with a "caffeine in X" page (task C13). The file name
+  # is the beverage's slug in _data/beverages.yml, which supplies the figures;
+  # the file supplies the page-specific copy.
+  caffeine_in:
+    output: true
+    permalink: /caffeine-in/:name/
 
 # Defaults
 defaults:
@@ -62,6 +68,11 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "caffeine_in"
+    values:
+      layout: "caffeine-in"
   - scope:
       path: ""
     values:

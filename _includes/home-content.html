@@ -67,13 +67,14 @@
                 {%- assign featured = site.data.beverages | where: "featured", true %}
                 {%- for bev in featured %}
                 {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first %}
+                {%- assign bev_page = site.caffeine_in | where: "slug", bev.slug | first %}
                 <tr>
                   <td>
-                    {{ bev.product }}
+                    {% if bev_page %}<a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif %}
                     {%- if bev.notes %}<br><span class="small text-muted">{{ bev.notes }}</span>{% endif %}
                   </td>
-                  <td>{% if serving.label %}{{ serving.label }}{% if serving.size_oz %}, {% endif %}{% endif %}{% if serving.size_oz %}{{ serving.size_oz }} fl oz ({{ serving.size_ml }} ml){% endif %}</td>
-                  <td>{% if serving.caffeine_mg != nil %}{{ serving.caffeine_mg }} mg{% else %}{{ serving.caffeine_mg_low }}-{{ serving.caffeine_mg_high }} mg{% endif %}</td>
+                  <td>{% include serving-size.html serving=serving %}</td>
+                  <td>{% include serving-mg.html serving=serving %}</td>
                   <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a></td>
                 </tr>
                 {%- endfor %}
@@ -81,7 +82,7 @@
             </table>
           </div>
           <p class="small text-muted mb-0">Figures verified September 2026. Brands reformulate; check the can
-            if the number matters to you.</p>
+            if the number matters to you. <a href="{{ '/caffeine-in/' | relative_url }}">See all {{ site.data.beverages.size }} drinks</a>.</p>
         </div>
       </div>
 

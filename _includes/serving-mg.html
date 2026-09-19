@@ -1,0 +1,6 @@
+{%- comment -%}
+  One serving's caffeine as text: "150 mg", or "315-390 mg" where the source
+  publishes a range. Usage: include serving-mg.html serving=s
+{%- endcomment -%}
+{%- assign s = include.serving -%}
+{%- if s.caffeine_mg != nil %}{{ s.caffeine_mg }} mg{% else %}{{ s.caffeine_mg_low }}-{{ s.caffeine_mg_high }} mg{% endif -%}

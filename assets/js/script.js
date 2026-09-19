@@ -1026,6 +1026,17 @@ async function initApp() {
     }
   };
   
+  // A "caffeine in X" page links here as /?drink=<slug>: preselect that drink at
+  // its default size so adding it is one tap
+  const linkedDrink = caffeineData[new URLSearchParams(window.location.search).get('drink')];
+  if (linkedDrink) {
+    selectBeverage(linkedDrink.slug, linkedDrink.product);
+    const sizeIndex = Math.max(0, linkedDrink.servings.findIndex(s => s.default));
+    const sizeOption = document.querySelectorAll('#caffeineSizeOptions .custom-select-option')[sizeIndex];
+    if (sizeOption) selectSize(sizeOption.dataset.value, sizeOption.textContent);
+    document.getElementById('caffeineButton').scrollIntoView({ block: 'center' });
+  }
+
   const caffeineSizeElement = document.getElementById('caffeineSize');
   const addCaffeineBtnElement = document.getElementById('addCaffeineBtn');
   const calculateBtnElement = document.getElementById('calculateBtn');
