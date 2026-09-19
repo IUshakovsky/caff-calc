@@ -253,38 +253,51 @@ function servingSizeText(serving) {
   return serving.label || size;
 }
 
-// Populate the beverage dropdown, grouped by category
-function populateBeverageDropdown() {
-  const optionsContainer = document.getElementById('caffeineOptions');
-  if (!optionsContainer) return; // Exit if element doesn't exist
-  optionsContainer.innerHTML = '';
-
+// Grouped beverage options (category headers with icons). Shared by the tracker
+// and the half-life calculator; onSelect receives the beverage entry.
+function renderBeverageOptions(optionsContainer, beverages, onSelect) {
   const byName = (a, b) => a.product.localeCompare(b.product);
 
   beverageCategories.forEach(category => {
-    const beverages = Object.values(caffeineData)
-      .filter(bev => bev.category === category.id)
-      .sort(byName);
-    if (!beverages.length) return;
+    const inCategory = beverages.filter(bev => bev.category === category.id).sort(byName);
+    if (!inCategory.length) return;
 
     const categoryHeader = document.createElement('div');
     categoryHeader.className = 'custom-select-optgroup';
     categoryHeader.innerHTML = `<i data-lucide="${category.icon}" class="me-2" aria-hidden="true"></i>${category.label}`;
     optionsContainer.appendChild(categoryHeader);
 
-    beverages.forEach(bev => {
+    inCategory.forEach(bev => {
       const option = document.createElement('div');
       option.className = 'custom-select-option';
       option.dataset.value = bev.slug;
       option.textContent = bev.product;
-
-      option.addEventListener('click', function() {
-        selectBeverage(this.dataset.value, this.textContent);
-      });
-
+      option.addEventListener('click', () => onSelect(bev));
       optionsContainer.appendChild(option);
     });
   });
+}
+
+// Size options for one beverage; option values are indexes into its servings.
+// Shared by the tracker and the half-life calculator.
+function renderSizeOptions(optionsContainer, bev, onSelect) {
+  bev.servings.forEach((serving, index) => {
+    const option = document.createElement('div');
+    option.className = 'custom-select-option';
+    option.dataset.value = String(index);
+    option.textContent = `${servingSizeText(serving)} · ${servingCaffeineText(serving)}`;
+    option.addEventListener('click', () => onSelect(index, option.textContent));
+    optionsContainer.appendChild(option);
+  });
+}
+
+// Populate the beverage dropdown, grouped by category
+function populateBeverageDropdown() {
+  const optionsContainer = document.getElementById('caffeineOptions');
+  if (!optionsContainer) return; // Exit if element doesn't exist
+  optionsContainer.innerHTML = '';
+
+  renderBeverageOptions(optionsContainer, Object.values(caffeineData), bev => selectBeverage(bev.slug, bev.product));
 
   // Add custom option at the end
   const option = document.createElement('div');
@@ -302,7 +315,7 @@ function populateBeverageDropdown() {
   if (window.renderIcons) window.renderIcons();
 
   // Initialize dropdown toggle functionality
-  initCustomDropdown();
+  initSelectDropdown(optionsContainer.closest('.custom-select-container'));
 }
 
 // Populate size dropdown for the selected beverage. Option values are indexes
@@ -325,24 +338,12 @@ function populateSizeDropdown(slug) {
     return;
   }
 
-  bev.servings.forEach((serving, index) => {
-    const option = document.createElement('div');
-    option.className = 'custom-select-option';
-    option.dataset.value = String(index);
-    option.textContent = `${servingSizeText(serving)} · ${servingCaffeineText(serving)}`;
-
-    // Add click event listener
-    option.addEventListener('click', function() {
-      selectSize(this.dataset.value, this.textContent);
-    });
-
-    sizeOptions.appendChild(option);
-  });
+  renderSizeOptions(sizeOptions, bev, (index, text) => selectSize(String(index), text));
 
   // Enable the buttons
   sizeButton.disabled = false;
   document.getElementById('caffeineQuantity').disabled = false;
-  initSizeDropdown();
+  initSelectDropdown(sizeOptions.closest('.custom-select-container'));
 }
 
 // Add item to consumption tracker
@@ -867,30 +868,49 @@ function loadUserPreferences() {
   }
 }
 
-// Initialize custom dropdown functionality
-function initCustomDropdown() {
-  const button = document.getElementById('caffeineButton');
-  const dropdown = document.getElementById('caffeineDropdown');
-  const searchInput = document.getElementById('caffeineSearch');
-  
+// Searchable dropdown shared by the tracker and the half-life calculator.
+// `container` is a .custom-select-container holding a .custom-select-button and
+// a .custom-select-dropdown, optionally with a .custom-select-search input.
+// Safe to call again after repopulating the options.
+function initSelectDropdown(container) {
+  if (!container || container.dataset.dropdownReady) return;
+  container.dataset.dropdownReady = 'true';
+
+  const button = container.querySelector('.custom-select-button');
+  const dropdown = container.querySelector('.custom-select-dropdown');
+  const searchInput = container.querySelector('.custom-select-search input');
+
+  const setOpen = open => {
+    dropdown.classList.toggle('show', open);
+    button.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  button.setAttribute('aria-expanded', 'false');
+
   // Toggle dropdown when button is clicked
-  button.addEventListener('click', function() {
-    dropdown.classList.toggle('show');
-    if (dropdown.classList.contains('show')) {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (this.disabled) return;
+    setOpen(!dropdown.classList.contains('show'));
+    if (searchInput && dropdown.classList.contains('show')) {
       searchInput.focus();
     }
   });
-  
-  // Close dropdown when clicking outside
+
+  // Close when clicking anywhere outside this dropdown, including another one
   document.addEventListener('click', function(event) {
-    if (!event.target.closest('.custom-select-container')) {
-      dropdown.classList.remove('show');
-    }
+    if (!container.contains(event.target)) setOpen(false);
   });
-  
+
+  // Choosing an option closes the dropdown
+  dropdown.addEventListener('click', function(event) {
+    if (event.target.closest('.custom-select-option')) setOpen(false);
+  });
+
+  if (!searchInput) return;
+
   // Filter options when typing in search box
   // Accent-insensitive, so "caffe latte" finds "Caffè Latte"
-  const fold = text => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const fold = text => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 
   searchInput.addEventListener('input', function() {
     const filter = fold(this.value);
@@ -918,33 +938,6 @@ function initCustomDropdown() {
       
       category.style.display = hasVisibleOption ? '' : 'none';
     });
-  });
-}
-
-// Initialize size dropdown functionality
-function initSizeDropdown() {
-  const button = document.getElementById('caffeineSizeButton');
-  const dropdown = document.getElementById('caffeineSizeDropdown');
-  
-  if (!button || !dropdown) return;
-  
-  // Remove existing listeners to prevent duplicates
-  const newButton = button.cloneNode(true);
-  button.parentNode.replaceChild(newButton, button);
-  
-  // Toggle dropdown when button is clicked
-  newButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    if (this.disabled) return;
-    dropdown.classList.toggle('show');
-  });
-  
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('#caffeineSizeDropdown') && !event.target.closest('#caffeineSizeButton')) {
-      dropdown.classList.remove('show');
-    }
   });
 }
 

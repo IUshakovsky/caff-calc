@@ -21,7 +21,8 @@ faq:
 
 {%- comment -%}
   Task C14. The tool is assets/js/half-life.js, reading the same
-  /assets/data/beverages.json as the main calculator. The FAQ renders from the
+  /assets/data/beverages.json as the main calculator and using its dropdowns
+  (initSelectDropdown and friends in script.js). The FAQ renders from the
   front matter above, which _includes/schema.html also emits as FAQPage markup,
   alongside WebApplication markup triggered by web_app_name.
 {%- endcomment -%}
@@ -40,14 +41,37 @@ faq:
 
         <div class="row g-2 mb-2">
           <div class="col-md-6">
-            <label for="hlDrink" class="form-label small">Drink</label>
-            <select id="hlDrink" class="form-select form-select-sm">
-              <option value="">Loading drinks&hellip;</option>
-            </select>
+            <label for="hlDrinkButton" class="form-label small">
+              <i data-lucide="coffee" class="me-1 text-secondary" aria-hidden="true"></i>
+              Drink
+            </label>
+            <div class="custom-select-container">
+              <button type="button" id="hlDrinkButton" class="form-select form-select-sm custom-select-button" disabled>
+                <span id="hlDrinkButtonText">Loading drinks&hellip;</span>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="custom-select-dropdown">
+                <div class="custom-select-search">
+                  <input type="text" class="form-control form-control-sm" placeholder="Search..." aria-label="Search drinks">
+                </div>
+                <div id="hlDrinkOptions" class="custom-select-options"></div>
+              </div>
+            </div>
           </div>
           <div class="col-8 col-md-4">
-            <label for="hlSize" class="form-label small">Size</label>
-            <select id="hlSize" class="form-select form-select-sm"></select>
+            <label for="hlSizeButton" class="form-label small">
+              <i data-lucide="ruler" class="me-1 text-secondary" aria-hidden="true"></i>
+              Size
+            </label>
+            <div class="custom-select-container">
+              <button type="button" id="hlSizeButton" class="form-select form-select-sm custom-select-button" disabled>
+                <span id="hlSizeButtonText">Size</span>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="custom-select-dropdown">
+                <div id="hlSizeOptions" class="custom-select-options"></div>
+              </div>
+            </div>
           </div>
           <div class="col-4 col-md-2">
             <label for="hlQty" class="form-label small">How many</label>

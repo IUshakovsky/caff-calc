@@ -67,6 +67,9 @@
   root.CaffHalfLife = model;
 })(typeof window !== 'undefined' ? window : this);
 
+// UI. The drink and size dropdowns are the main calculator's
+// (renderBeverageOptions, renderSizeOptions and initSelectDropdown in script.js,
+// which loads on every page and has run by DOMContentLoaded).
 (function () {
   'use strict';
   if (typeof document === 'undefined') return;
@@ -74,13 +77,8 @@
   var M = window.CaffHalfLife;
   var SVG_NS = 'http://www.w3.org/2000/svg';
   var PREFS_KEY = 'caffeineCalculatorPreferences';
-  var CATEGORY_LABELS = {
-    coffee: 'Coffee', tea: 'Tea', 'energy-drink': 'Energy drinks', 'energy-shot': 'Energy shots',
-    soda: 'Soda', other: 'Other drinks', chocolate: 'Chocolate',
-    supplement: 'Caffeine tablets & pre-workout', medicine: 'Medicines'
-  };
-
   var beverages = {};
+  var selected = { slug: null, size: 0 };
   var els = {};
 
   function $(id) { return document.getElementById(id); }
@@ -97,47 +95,21 @@
     return whole + ' h' + (mins ? ' ' + mins + ' min' : '');
   }
 
-  function servingMg(s) {
-    return s.caffeine_mg != null ? s.caffeine_mg : s.caffeine_mg_high;
+  function selectSize(index, text) {
+    selected.size = index;
+    els.sizeText.textContent = text;
+    update();
   }
 
-  function servingText(s) {
-    var size = s.size_oz ? s.size_oz + ' fl oz' : '';
-    var label = s.label && size ? s.label + ', ' + size : (s.label || size);
-    var mg = s.caffeine_mg != null ? s.caffeine_mg + ' mg' : s.caffeine_mg_low + '-' + s.caffeine_mg_high + ' mg';
-    return label + ' · ' + mg;
-  }
-
-  function populateDrinks(list) {
-    els.drink.textContent = '';
-    Object.keys(CATEGORY_LABELS).forEach(function (cat) {
-      var inCat = list.filter(function (b) { return b.category === cat; })
-        .sort(function (a, b) { return a.product.localeCompare(b.product); });
-      if (!inCat.length) return;
-      var group = document.createElement('optgroup');
-      group.label = CATEGORY_LABELS[cat];
-      inCat.forEach(function (b) {
-        var opt = document.createElement('option');
-        opt.value = b.slug;
-        opt.textContent = b.product;
-        group.appendChild(opt);
-      });
-      els.drink.appendChild(group);
-    });
-    els.drink.value = beverages['brewed-coffee'] ? 'brewed-coffee' : list[0].slug;
-    populateSizes();
-  }
-
-  function populateSizes() {
-    var bev = beverages[els.drink.value];
-    els.size.textContent = '';
-    bev.servings.forEach(function (s, i) {
-      var opt = document.createElement('option');
-      opt.value = String(i);
-      opt.textContent = servingText(s);
-      if (s.default) opt.selected = true;
-      els.size.appendChild(opt);
-    });
+  // Picks the drink and its default size, as the tracker's dropdowns do
+  function selectDrink(bev) {
+    selected.slug = bev.slug;
+    els.drinkText.textContent = bev.product;
+    els.sizeOptions.textContent = '';
+    renderSizeOptions(els.sizeOptions, bev, selectSize);
+    els.sizeButton.disabled = false;
+    var index = Math.max(0, bev.servings.findIndex(function (s) { return s.default; }));
+    selectSize(index, els.sizeOptions.children[index].textContent);
   }
 
   function weightKg() {
@@ -152,14 +124,14 @@
   }
 
   function inputs() {
-    var bev = beverages[els.drink.value];
-    var serving = bev.servings[Number(els.size.value)];
+    var bev = beverages[selected.slug];
+    var serving = bev.servings[selected.size];
     var qty = Math.max(1, Math.min(10, parseInt(els.qty.value, 10) || 1));
     return {
       bev: bev,
       serving: serving,
       ranged: serving.caffeine_mg == null,
-      dose: servingMg(serving) * qty,
+      dose: servingCaffeine(serving) * qty,
       time: els.time.value || '15:00',
       bedtime: els.bedtime.value || '23:00',
       halfLife: halfLife(),
@@ -168,7 +140,7 @@
   }
 
   function update() {
-    if (!els.drink.value) return;
+    if (!selected.slug) return;
     var i = inputs();
     var hours = M.hoursUntil(i.time, i.bedtime);
     var left = M.remaining(i.dose, hours, i.halfLife);
@@ -350,31 +322,40 @@
 
   async function init() {
     els = {
-      drink: $('hlDrink'), size: $('hlSize'), qty: $('hlQty'), time: $('hlTime'), bedtime: $('hlBedtime'),
+      drinkButton: $('hlDrinkButton'), drinkText: $('hlDrinkButtonText'), drinkOptions: $('hlDrinkOptions'),
+      sizeButton: $('hlSizeButton'), sizeText: $('hlSizeButtonText'), sizeOptions: $('hlSizeOptions'),
+      qty: $('hlQty'), time: $('hlTime'), bedtime: $('hlBedtime'),
       halfLife: $('hlHalfLife'), halfLifeValue: $('hlHalfLifeValue'), modifier: $('hlModifier'),
       weight: $('hlWeight'), weightUnit: $('hlWeightUnit'),
       resultMg: $('hlResultMg'), resultWhen: $('hlResultWhen'), resultDetail: $('hlResultDetail'),
       resultSleep: $('hlResultSleep'), resultCutoff: $('hlResultCutoff'), resultCutoffWhy: $('hlResultCutoffWhy'),
       chart: $('hlChart'), tooltip: $('hlTooltip'), table: $('hlTable')
     };
-    if (!els.drink) return;
+    if (!els.drinkButton) return;
+    var list;
     try {
       var response = await fetch((window.SITE_BASEURL || '') + '/assets/data/beverages.json');
-      var list = await response.json();
-      list.forEach(function (b) { beverages[b.slug] = b; });
-      populateDrinks(list);
+      list = await response.json();
     } catch (e) {
       console.error('Error loading caffeine data:', e);
+      els.drinkText.textContent = 'Could not load drinks';
       return;
     }
+    list.forEach(function (b) { beverages[b.slug] = b; });
+
+    renderBeverageOptions(els.drinkOptions, list, selectDrink);
+    if (window.renderIcons) window.renderIcons();
+    initSelectDropdown(els.drinkButton.closest('.custom-select-container'));
+    initSelectDropdown(els.sizeButton.closest('.custom-select-container'));
+    els.drinkButton.disabled = false;
+
     prefillWeight();
-    els.drink.addEventListener('change', function () { populateSizes(); update(); });
-    ['size', 'qty', 'time', 'bedtime', 'halfLife', 'modifier', 'weight', 'weightUnit'].forEach(function (k) {
+    ['qty', 'time', 'bedtime', 'halfLife', 'modifier', 'weight', 'weightUnit'].forEach(function (k) {
       els[k].addEventListener('input', update);
       els[k].addEventListener('change', update);
     });
     window.addEventListener('resize', update);
-    update();
+    selectDrink(beverages['brewed-coffee'] || list[0]);
   }
 
   document.addEventListener('DOMContentLoaded', init);
