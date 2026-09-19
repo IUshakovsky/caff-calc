@@ -42,6 +42,7 @@ vendor/
 BLOG_GUIDE.md
 SEARCH_IMPLEMENTATION.md
 Documentation
+docs/
 
 # Test blog posts
 _posts/*test*
