@@ -1,0 +1,213 @@
+---
+layout: page
+title: "Caffeine Half-Life Calculator"
+seo_title: "Caffeine Half-Life Calculator: How Much Is Left at Bedtime?"
+subtitle: "How much caffeine is still in your system at bedtime, and when to have your last one"
+description: "Pick a drink and when you had it: see how much caffeine is left at bedtime on a decay curve, and the latest time to have it. Every figure sourced."
+permalink: /half-life/
+web_app_name: "CaffCalc Caffeine Half-Life Calculator"
+faq:
+  - question: "How long does caffeine stay in your system?"
+    answer: "Caffeine clears at a steady proportional rate: every half-life, half of what is left is gone. The average half-life in healthy adults is roughly 3 to 6 hours, and individuals have been measured from about 2 to 10 hours. On a 5-hour half-life, a 200 mg coffee at 3 pm leaves about 66 mg at 11 pm and 50 mg at 1 am. After five half-lives, about 25 hours on that setting, 3% of the dose remains."
+  - question: "When should I stop drinking caffeine before bed?"
+    answer: "At least six hours before, going by a 2013 study by Drake and colleagues in which 400 mg taken six hours before bedtime still disrupted sleep. For a strong drink, earlier still: the calculator also works out when the dose falls below 100 mg, about 1.4 mg per kg of body weight, which EFSA says may affect sleep in some adults when taken close to bedtime, and uses whichever cut-off comes first."
+  - question: "Does birth control make caffeine last longer?"
+    answer: "Yes. In a 1985 study, women taking low-dose oestrogen oral contraceptives had an average caffeine half-life of 7.9 hours, against 5.4 hours in matched women not taking them: about one and a half times as long. Choose oral contraceptives in the calculator to use that figure."
+  - question: "How long does caffeine last in pregnancy?"
+    answer: "Much longer than usual. A 1981 study measured an average half-life of 8.3 hours in pregnant women, ranging from 3 to 16 hours, against 3.4 hours in men and non-pregnant women; values mostly returned to normal within a month of delivery. The 200 mg daily limit ACOG uses in pregnancy is about the total, and this calculator shows how long each drink lingers."
+  - question: "Does smoking change how long caffeine lasts?"
+    answer: "It shortens it. A 2025 review reports caffeine clearance about 40 to 65% higher in smokers than in non-smokers, with the half-life falling from 6.0 to 3.5 hours. Choose smoking in the calculator to use that figure."
+---
+
+{%- comment -%}
+  Task C14. The tool is assets/js/half-life.js, reading the same
+  /assets/data/beverages.json as the main calculator. The FAQ renders from the
+  front matter above, which _includes/schema.html also emits as FAQPage markup,
+  alongside WebApplication markup triggered by web_app_name.
+{%- endcomment -%}
+{%- assign half_life_post = site.posts | where: "slug", "caffeine-half-life-sleep" | first -%}
+{%- assign sleep_post = site.posts | where: "slug", "caffeine-sleep-timing" | first -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <section class="panel panel-wide mb-4 half-life-tool" aria-labelledby="hl-tool-heading">
+        <div class="panel-title">
+          <i data-lucide="hourglass" class="me-2" aria-hidden="true"></i>
+          <span id="hl-tool-heading">What's left at bedtime</span>
+        </div>
+
+        <div class="row g-2 mb-2">
+          <div class="col-md-6">
+            <label for="hlDrink" class="form-label small">Drink</label>
+            <select id="hlDrink" class="form-select form-select-sm">
+              <option value="">Loading drinks&hellip;</option>
+            </select>
+          </div>
+          <div class="col-8 col-md-4">
+            <label for="hlSize" class="form-label small">Size</label>
+            <select id="hlSize" class="form-select form-select-sm"></select>
+          </div>
+          <div class="col-4 col-md-2">
+            <label for="hlQty" class="form-label small">How many</label>
+            <input type="number" id="hlQty" class="form-control form-control-sm" value="1" min="1" max="10">
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="hlTime" class="form-label small">Had it at</label>
+            <input type="time" id="hlTime" class="form-control form-control-sm" value="15:00">
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="hlBedtime" class="form-label small">Bedtime</label>
+            <input type="time" id="hlBedtime" class="form-control form-control-sm" value="23:00">
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="hlWeight" class="form-label small">Weight (optional)</label>
+            <div class="input-group input-group-sm">
+              <input type="number" id="hlWeight" class="form-control" min="20" max="300" inputmode="decimal">
+              <select id="hlWeightUnit" class="form-select hl-unit" aria-label="Weight unit">
+                <option value="kg">kg</option>
+                <option value="lbs">lb</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="hlHalfLife" class="form-label small">Half-life: <strong id="hlHalfLifeValue">5 h</strong></label>
+            <input type="range" id="hlHalfLife" class="form-range" min="4" max="6" step="0.5" value="5">
+          </div>
+          <div class="col-12">
+            <label for="hlModifier" class="form-label small">Anything that changes how fast you clear caffeine?</label>
+            <select id="hlModifier" class="form-select form-select-sm">
+              <option value="">No, use the half-life slider</option>
+              <option value="oral-contraceptives" data-half-life="7.9">Oral contraceptives (7.9 h in a 1985 study)</option>
+              <option value="ciprofloxacin" data-half-life="8.2">Ciprofloxacin (8.2 h in a 1989 study)</option>
+              <option value="pregnancy" data-half-life="8.3">Pregnant (8.3 h average in a 1981 study)</option>
+              <option value="smoking" data-half-life="3.5">I smoke (3.5 h in a 2025 review)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hl-result" aria-live="polite">
+          <p class="hl-figure mb-0" id="hlResultMg">&ndash;</p>
+          <p class="mb-2" id="hlResultWhen"></p>
+          <p class="small text-muted mb-2" id="hlResultDetail"></p>
+          <p class="mb-1" id="hlResultSleep"></p>
+          <p class="mb-1"><strong id="hlResultCutoff"></strong></p>
+          <p class="small text-muted mb-0" id="hlResultCutoffWhy"></p>
+        </div>
+
+        <figure class="hl-chart-wrap mt-3 mb-0">
+          <figcaption class="small text-muted mb-1">Caffeine remaining (mg) over time</figcaption>
+          <svg id="hlChart" class="hl-chart" role="img" tabindex="0"></svg>
+          <div id="hlTooltip" class="hl-tooltip" hidden>
+            <span class="hl-tip-value"></span>
+            <span class="hl-tip-label"></span>
+          </div>
+        </figure>
+
+        <details class="mt-2">
+          <summary class="small">Show as a table</summary>
+          <div class="table-content mt-2">
+            <table class="table table-sm mb-0">
+              <thead class="table-light"><tr><th scope="col">Time</th><th scope="col">Caffeine left</th></tr></thead>
+              <tbody id="hlTable"></tbody>
+            </table>
+          </div>
+        </details>
+
+        <noscript><p class="mt-3 mb-0">This calculator needs JavaScript. The figures it uses are listed on
+          <a href="{{ '/caffeine-in/' | relative_url }}">caffeine in drinks</a>.</p></noscript>
+      </section>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">How the calculator works</h2>
+          <p>After you drink it, caffeine reaches its peak level in the blood within 30 to 120 minutes and is then
+            cleared at a steady proportional rate
+            (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/" target="_blank" rel="noopener">clinical toxicology review</a>).
+            Every half-life, half of what is left is gone, so the amount remaining is the dose &times; 0.5 raised to
+            the hours elapsed divided by the half-life. The calculator treats the drink as absorbed at once, which
+            overstates the level for the first hour or so; after the peak, the curve follows the same decay.</p>
+          <p>A worked example: 200 mg at 3 pm on a 5-hour half-life. By 11 pm, 8 hours or 1.6 half-lives have
+            passed, and about 66 mg remains. It takes until 1 am, two full half-lives, to reach 50 mg.</p>
+          <p class="mb-0">The default is 5 hours. The same review puts the average half-life in healthy adults at
+            roughly 3 to 6 hours, and individual measurements from 2.3 to 9.9 hours. The slider covers the middle
+            of that range; if you know caffeine stays with you for a long time, or wears off fast, move it.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">What changes your half-life</h2>
+          <ul>
+            <li><strong>Oral contraceptives.</strong> Women on low-dose oestrogen pills averaged 7.9 hours against
+              5.4 in matched controls
+              (<a href="https://europepmc.org/article/MED/4029248" target="_blank" rel="noopener">Abernethy and Todd, 1985</a>),
+              about one and a half times as long.</li>
+            <li><strong>Ciprofloxacin.</strong> The antibiotic raised the half-life from 5.2 to 8.2 hours
+              (<a href="https://europepmc.org/article/MED/2729942" target="_blank" rel="noopener">Healy et al., 1989</a>).
+              Fluvoxamine and cimetidine also slow clearance
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/" target="_blank" rel="noopener">review</a>).</li>
+            <li><strong>Pregnancy.</strong> Pregnant women averaged 8.3 hours, ranging from 3 to 16, against 3.4 hours
+              in men and non-pregnant women
+              (<a href="https://europepmc.org/article/MED/7341280" target="_blank" rel="noopener">Knutti et al., 1981</a>).</li>
+            <li><strong>Smoking.</strong> Clearance runs about 40 to 65% faster in smokers, and the half-life falls
+              from 6.0 to 3.5 hours
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12954933/" target="_blank" rel="noopener">2025 review</a>).</li>
+            <li><strong>Liver disease</strong> reduces clearance too
+              (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/" target="_blank" rel="noopener">review</a>),
+              with no single figure to plug in; ask your doctor.</li>
+          </ul>
+          <p class="mb-0">Choosing one of these replaces the slider with the study's average. Individuals vary
+            widely around every one of those averages.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Where the cut-off time comes from</h2>
+          <p>Two findings set it. In a
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3805807/" target="_blank" rel="noopener">2013 study by Drake and colleagues</a>,
+            400 mg taken six hours before bedtime still disrupted sleep, and the authors recommend avoiding
+            substantial caffeine for at least six hours before bed.
+            <a href="https://www.efsa.europa.eu/en/topics/topic/caffeine" target="_blank" rel="noopener">EFSA</a>
+            adds that a single dose of 100 mg, about 1.4 mg per kg of body weight, may affect sleep in some adults
+            when taken close to bedtime.</p>
+          <p class="mb-0">The calculator gives the earlier of the two: six hours before bed, or the time your drink
+            needs to fall below that EFSA level, which for a large coffee can be much longer. A drink that starts
+            below the level gets no cut-off, though light sleepers may still want one. It works one drink at a time;
+            to add up a whole day against your limit, use the
+            <a href="{{ '/' | relative_url }}">main caffeine calculator</a>, and see
+            <a href="{{ '/caffeine-in/' | relative_url }}">caffeine in drinks</a> for every figure and its source.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Common questions</h2>
+          {% for item in page.faq %}
+          <div class="faq-item{% if forloop.last %} mb-0{% endif %}">
+            <h3 class="h5"><i data-lucide="circle-help" class="me-2 text-primary" aria-hidden="true"></i>{{ item.question }}</h3>
+            <p>{{ item.answer }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {%- if half_life_post or sleep_post %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Read next</h2>
+          <ul class="mb-0">
+            {%- if half_life_post %}<li><a href="{{ half_life_post.url | relative_url }}">{{ half_life_post.title }}</a></li>{% endif %}
+            {%- if sleep_post %}<li><a href="{{ sleep_post.url | relative_url }}">{{ sleep_post.title }}</a></li>{% endif %}
+          </ul>
+        </div>
+      </div>
+      {%- endif %}
+
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/half-life.js' | relative_url }}" defer></script>

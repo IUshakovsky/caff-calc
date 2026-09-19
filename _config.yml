@@ -86,6 +86,9 @@ navigation:
   - title: "Calculator"
     url: /
     icon: "calculator"
+  - title: "Half-Life"
+    url: /half-life/
+    icon: "hourglass"
   - title: "Blog"
     url: /blog
     icon: "newspaper"

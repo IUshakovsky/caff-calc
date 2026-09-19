@@ -37,13 +37,14 @@
 </script>
 {%- endif %}
 
-{%- if page.url == '/' %}
+{%- comment -%} The homepage calculator, and any page that sets web_app_name (the half-life tool) {%- endcomment -%}
+{%- if page.url == '/' or page.web_app_name %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "CaffCalc Caffeine Calculator",
-  "url": {{ '/' | absolute_url | jsonify }},
+  "name": {{ page.web_app_name | default: "CaffCalc Caffeine Calculator" | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
   "description": {{ schema_description | jsonify }},
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Any",

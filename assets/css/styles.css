@@ -1195,6 +1195,14 @@ option.energy-item {
   border-radius: var(--r-pill);
 }
 
+/* Six nav items: tighter padding keeps the bar on one line from 1200px, as it
+   was with five */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+  .navbar-dark .navbar-nav .nav-link {
+    padding: 0.4rem 0.55rem;
+  }
+}
+
 .navbar-dark .navbar-nav .nav-link:hover {
   color: #fff;
   background-color: rgba(255, 255, 255, 0.08);
@@ -2244,4 +2252,131 @@ button:focus-visible,
   .compare-label {
     grid-column: 1 / -1;
   }
+}
+
+/* Caffeine half-life calculator (task C14) */
+.hl-figure {
+  font-family: var(--font-body);
+  font-size: var(--fs-3xl);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--c-espresso);
+}
+
+/* Long drink and size names must never widen the page on a phone */
+.half-life-tool select,
+.half-life-tool input {
+  max-width: 100%;
+}
+
+.hl-unit {
+  max-width: 4.5rem;
+}
+
+.half-life-tool .form-range::-webkit-slider-thumb {
+  background-color: var(--c-brand);
+}
+
+.half-life-tool .form-range::-moz-range-thumb {
+  background-color: var(--c-brand);
+}
+
+.half-life-tool .form-range:disabled::-webkit-slider-thumb {
+  background-color: var(--c-text-muted);
+}
+
+.half-life-tool .form-range:disabled::-moz-range-thumb {
+  background-color: var(--c-text-muted);
+}
+
+.hl-chart-wrap {
+  position: relative;
+}
+
+.hl-chart {
+  display: block;
+  width: 100%;
+  height: 260px;
+  touch-action: pan-y;
+}
+
+.hl-chart:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--e-focus);
+  border-radius: var(--r-sm);
+}
+
+.hl-grid line {
+  stroke: var(--c-border);
+  stroke-width: 1;
+}
+
+.hl-grid text,
+.hl-ref-label {
+  fill: var(--c-text-muted);
+  font-size: 11px;
+  font-family: var(--font-body);
+}
+
+.hl-ref-label {
+  fill: var(--c-text-soft);
+  font-size: 12px;
+}
+
+.hl-area {
+  fill: var(--c-brand);
+  opacity: 0.1;
+}
+
+.hl-line {
+  fill: none;
+  stroke: var(--c-brand);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.hl-threshold {
+  stroke: var(--c-text-muted);
+  stroke-width: 1;
+}
+
+.hl-bedtime {
+  stroke: var(--c-espresso);
+  stroke-width: 1;
+}
+
+.hl-cross {
+  stroke: var(--c-text-soft);
+  stroke-width: 1;
+}
+
+.hl-dot {
+  fill: var(--c-brand);
+  stroke: var(--c-surface);
+  stroke-width: 2;
+}
+
+.hl-tooltip {
+  position: absolute;
+  top: 1.5rem;
+  transform: translateX(-50%);
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--e-2);
+  font-size: var(--fs-xs);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hl-tip-value {
+  font-weight: 600;
+  color: var(--c-text);
+  margin-right: var(--sp-1);
+}
+
+.hl-tip-label {
+  color: var(--c-text-soft);
 }
