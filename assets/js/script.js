@@ -980,8 +980,9 @@ async function initApp() {
   // Load caffeine data
   await loadCaffeineData();
   
-  // Load user preferences or initialize with defaults
-  if (!loadUserPreferences()) {
+  // Load user preferences or initialize with defaults (only the calculator page
+  // has the form that initCalculator() fills in)
+  if (!loadUserPreferences() && document.getElementById('weightInput')) {
     initCalculator();
   }
   
