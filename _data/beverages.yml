@@ -1,99 +1,1478 @@
-# Sourced caffeine figures. Start of task C12; the homepage table (B10) renders
-# from this file. The calculator still reads assets/data/caf_src.json until the
-# full C12 migration.
+# Sourced caffeine figures: the single source of truth for the calculator
+# (via assets/data/beverages.json), the homepage table (B10) and the
+# "caffeine in X" pages (C13). Validate with: python3 scripts/check-beverages.py
 #
-# Rules (see documentation/caffcalc-implementation-brief.md):
-#   - No entry ships without source_url + verified.
-#   - Where a brand publishes a range, record the range (caffeine_mg_low/high),
-#     do not average it.
-#   - Generic entries use the FDA's published figures rather than a single
-#     manufacturer label, because no such label exists for "a cup of coffee".
+# Rules (see documentation/caffcalc-implementation-brief.md, task C12):
+#   - No entry ships without source_url + verified. If a figure cannot be
+#     checked against a manufacturer label, USDA FoodData Central or the
+#     brand's own nutrition page, the entry is left out.
+#   - Where a source publishes a range, record the range (caffeine_mg_low /
+#     caffeine_mg_high), never an average. The calculator counts the top of
+#     the range, the conservative choice for a safety tool.
+#   - USDA entries record the per-100 g figure (usda_mg_per_100g) and each
+#     serving's weight in grams (size_g), both from FoodData Central, so the
+#     per-serving number can be recomputed: round(per_100g * size_g / 100).
+#
+# Fields:
+#   slug, brand (null for generic), product, category, servings[], source_name,
+#   source_url, verified, notes (optional), featured (optional: shown in the
+#   homepage table), usda_mg_per_100g (USDA entries only).
+#   servings[]: label (optional), size_oz, size_ml, size_g (optional),
+#   caffeine_mg OR caffeine_mg_low + caffeine_mg_high, default (optional: the
+#   headline serving; otherwise the first one is used).
+#
+# Categories: coffee, tea, energy-drink, energy-shot, soda, chocolate,
+#   supplement, medicine, other.
+
+# ---------------------------------------------------------------------------
+# Coffee: generic (USDA FoodData Central / FDA)
+# ---------------------------------------------------------------------------
 
 - slug: brewed-coffee
   brand: null
-  product: "Brewed coffee (generic)"
+  product: "Brewed coffee"
   category: coffee
+  featured: true
+  usda_mg_per_100g: 40
   servings:
     - size_oz: 8
       size_ml: 237
-      caffeine_mg_low: 80
-      caffeine_mg_high: 100
-  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
-  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
-  verified: 2026-09-18
-  notes: "The FDA's own working figure for one cup. Real cups vary widely with grind, dose and brew time."
-
-- slug: tea
-  brand: null
-  product: "Tea (generic, black or green)"
-  category: tea
-  servings:
-    - size_oz: 8
-      size_ml: 237
-      caffeine_mg_low: 30
-      caffeine_mg_high: 50
-  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
-  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
-  verified: 2026-09-18
-  notes: "Steeping time moves this more than leaf type does."
-
-- slug: starbucks-pike-place-grande
-  brand: "Starbucks"
-  product: "Pike Place Roast brewed coffee, Grande"
-  category: coffee
-  servings:
+      size_g: 237
+      caffeine_mg: 95
+      default: true
+    - size_oz: 12
+      size_ml: 355
+      size_g: 355.2
+      caffeine_mg: 142
     - size_oz: 16
+      size_ml: 473
+      size_g: 473.6
+      caffeine_mg: 189
+    - size_oz: 20
+      size_ml: 591
+      size_g: 592
+      caffeine_mg: 237
+  source_name: "USDA FoodData Central, coffee brewed with tap water"
+  source_url: "https://fdc.nal.usda.gov/food-details/171890/nutrients"
+  verified: 2026-09-19
+  notes: "USDA's reference value for drip coffee made with tap water. Real cups vary widely with grind, dose and brew time; chain coffee is often much stronger (compare Starbucks Pike Place)."
+
+- slug: espresso
+  brand: null
+  product: "Espresso"
+  category: coffee
+  usda_mg_per_100g: 212
+  servings:
+    - label: "Single shot"
+      size_oz: 1
+      size_ml: 30
+      size_g: 29.6
+      caffeine_mg: 63
+      default: true
+    - label: "Double shot"
+      size_oz: 2
+      size_ml: 59
+      size_g: 59.2
+      caffeine_mg: 126
+  source_name: "USDA FoodData Central, espresso, restaurant-prepared"
+  source_url: "https://fdc.nal.usda.gov/food-details/171891/nutrients"
+  verified: 2026-09-19
+  notes: "Per ounce the strongest common coffee drink, but a single shot still carries less than a mug of drip coffee."
+
+- slug: decaf-coffee
+  brand: null
+  product: "Decaf coffee"
+  category: coffee
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 2
+      caffeine_mg_high: 15
+  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
+  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
+  verified: 2026-09-19
+  notes: "Decaffeinated is not caffeine-free. Several cups a day add up, which matters in pregnancy or for anyone told to avoid caffeine entirely."
+
+- slug: instant-coffee
+  brand: null
+  product: "Instant coffee"
+  category: coffee
+  usda_mg_per_100g: 26
+  servings:
+    - size_oz: 6
+      size_ml: 177
+      size_g: 179
+      caffeine_mg: 47
+    - size_oz: 8
+      size_ml: 237
+      size_g: 238.4
+      caffeine_mg: 62
+      default: true
+  source_name: "USDA FoodData Central, instant coffee prepared with water"
+  source_url: "https://fdc.nal.usda.gov/food-details/174130/nutrients"
+  verified: 2026-09-19
+  notes: "About two thirds of the caffeine of the same cup of drip coffee, going by USDA's figures for each."
+
+- slug: latte
+  brand: null
+  product: "Latte"
+  category: coffee
+  usda_mg_per_100g: 36
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 240
+      caffeine_mg: 86
+    - label: "Small"
+      size_oz: 12
+      size_ml: 355
+      size_g: 360
+      caffeine_mg: 130
+      default: true
+    - label: "Medium"
+      size_oz: 16
+      size_ml: 473
+      size_g: 480
+      caffeine_mg: 173
+    - label: "Large"
+      size_oz: 20
+      size_ml: 591
+      size_g: 600
+      caffeine_mg: 216
+  source_name: "USDA FoodData Central (FNDDS), coffee, latte"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710386/nutrients"
+  verified: 2026-09-19
+  notes: "USDA's survey figure scales with cup size. Coffee chains usually scale by shot count instead, so a chain latte can hold less than this suggests (compare Starbucks Caffè Latte)."
+
+- slug: cappuccino
+  brand: null
+  product: "Cappuccino"
+  category: coffee
+  usda_mg_per_100g: 36
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 240
+      caffeine_mg: 86
+    - label: "Small"
+      size_oz: 12
+      size_ml: 355
+      size_g: 360
+      caffeine_mg: 130
+      default: true
+    - label: "Medium"
+      size_oz: 16
+      size_ml: 473
+      size_g: 480
+      caffeine_mg: 173
+    - label: "Large"
+      size_oz: 20
+      size_ml: 591
+      size_g: 600
+      caffeine_mg: 216
+  source_name: "USDA FoodData Central (FNDDS), coffee, cappuccino"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710472/nutrients"
+  verified: 2026-09-19
+
+- slug: cafe-mocha
+  brand: null
+  product: "Café mocha"
+  category: coffee
+  usda_mg_per_100g: 33
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 248
+      caffeine_mg: 82
+    - label: "Small"
+      size_oz: 12
+      size_ml: 355
+      size_g: 372
+      caffeine_mg: 123
+      default: true
+    - label: "Medium"
+      size_oz: 16
+      size_ml: 473
+      size_g: 496
+      caffeine_mg: 164
+    - label: "Large"
+      size_oz: 20
+      size_ml: 591
+      size_g: 620
+      caffeine_mg: 205
+  source_name: "USDA FoodData Central (FNDDS), coffee, cafe mocha"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710410/nutrients"
+  verified: 2026-09-19
+
+- slug: macchiato
+  brand: null
+  product: "Espresso macchiato"
+  category: coffee
+  usda_mg_per_100g: 142
+  servings:
+    - label: "Espresso cup"
+      size_oz: 2
+      size_ml: 59
+      size_g: 60
+      caffeine_mg: 85
+  source_name: "USDA FoodData Central (FNDDS), coffee, macchiato"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710382/nutrients"
+  verified: 2026-09-19
+
+- slug: cuban-coffee
+  brand: null
+  product: "Cuban coffee (cafecito)"
+  category: coffee
+  usda_mg_per_100g: 199
+  servings:
+    - size_oz: 1
+      size_ml: 30
+      size_g: 31
+      caffeine_mg: 62
+    - size_oz: 2
+      size_ml: 59
+      size_g: 62
+      caffeine_mg: 123
+      default: true
+  source_name: "USDA FoodData Central (FNDDS), coffee, Cuban"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710381/nutrients"
+  verified: 2026-09-19
+
+- slug: turkish-coffee
+  brand: null
+  product: "Turkish coffee"
+  category: coffee
+  usda_mg_per_100g: 37
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 248
+      caffeine_mg: 92
+  source_name: "USDA FoodData Central (FNDDS), coffee, Turkish"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710377/nutrients"
+  verified: 2026-09-19
+  notes: "USDA reports Turkish coffee per 8 fl oz. Traditional cups are far smaller, so scale down for a single demitasse."
+
+- slug: iced-coffee
+  brand: null
+  product: "Iced coffee"
+  category: coffee
+  usda_mg_per_100g: 31
+  servings:
+    - label: "Small"
+      size_oz: 12
+      size_ml: 355
+      size_g: 360
+      caffeine_mg: 112
+      default: true
+    - label: "Medium"
+      size_oz: 16
+      size_ml: 473
+      size_g: 480
+      caffeine_mg: 149
+    - label: "Large"
+      size_oz: 20
+      size_ml: 591
+      size_g: 600
+      caffeine_mg: 186
+  source_name: "USDA FoodData Central (FNDDS), iced coffee, brewed"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710428/nutrients"
+  verified: 2026-09-19
+
+- slug: bottled-coffee
+  brand: null
+  product: "Bottled or canned coffee drink"
+  category: coffee
+  usda_mg_per_100g: 28
+  servings:
+    - size_oz: 9.5
+      size_ml: 281
+      size_g: 295
+      caffeine_mg: 83
+    - size_oz: 11
+      size_ml: 325
+      size_g: 341
+      caffeine_mg: 95
+      default: true
+    - size_oz: 15
+      size_ml: 444
+      size_g: 465
+      caffeine_mg: 130
+  source_name: "USDA FoodData Central (FNDDS), coffee, bottled/canned"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710478/nutrients"
+  verified: 2026-09-19
+  notes: "A generic average. Branded cans vary a lot; check the label, or pick the brand from this list."
+
+# ---------------------------------------------------------------------------
+# Coffee: Starbucks (starbucks.com nutrition, per cup size)
+# ---------------------------------------------------------------------------
+
+- slug: starbucks-pike-place-roast
+  brand: "Starbucks"
+  product: "Starbucks Pike Place Roast brewed coffee"
+  category: coffee
+  featured: true
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 155
+      caffeine_mg_high: 195
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg_low: 235
+      caffeine_mg_high: 290
+    - label: "Grande"
+      size_oz: 16
       size_ml: 473
       caffeine_mg_low: 315
       caffeine_mg_high: 390
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg_low: 390
+      caffeine_mg_high: 490
   source_name: "Starbucks published nutrition"
   source_url: "https://www.starbucks.com/menu/product/480/hot/nutrition"
-  verified: 2026-09-18
-  notes: "Starbucks publishes a range, not a point value. The top of it is most of an adult daily limit in one cup."
+  verified: 2026-09-19
+  notes: "Starbucks publishes a range, not a point value. The top of the Venti range is above the 400 mg adult daily guideline in one cup."
 
-- slug: starbucks-latte-grande
+- slug: starbucks-blonde-roast
   brand: "Starbucks"
-  product: "Caffè Latte, Grande"
+  product: "Starbucks Blonde Roast brewed coffee (Sunsera Blend)"
   category: coffee
   servings:
-    - size_oz: 16
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 155
+      caffeine_mg_high: 195
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg_low: 235
+      caffeine_mg_high: 290
+    - label: "Grande"
+      size_oz: 16
       size_ml: 473
+      caffeine_mg_low: 315
+      caffeine_mg_high: 390
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg_low: 390
+      caffeine_mg_high: 490
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/873068625/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Starbucks currently lists the same caffeine ranges for its blonde, medium (Pike Place) and dark brewed roasts."
+
+- slug: starbucks-decaf-pike-place-roast
+  brand: "Starbucks"
+  product: "Starbucks Decaf Pike Place Roast"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 15
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 20
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 25
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 30
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/481/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Decaf is not caffeine-free: a Venti carries 30 mg."
+
+- slug: starbucks-caffe-misto
+  brand: "Starbucks"
+  product: "Starbucks Caffè Misto"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 115
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 195
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/478/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Half brewed coffee, half steamed milk. A Grande carries less than half the caffeine of a Grande Pike Place."
+
+- slug: starbucks-caffe-americano
+  brand: "Starbucks"
+  product: "Starbucks Caffè Americano"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 150
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 225
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 300
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/406/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Espresso shots topped with hot water. Every size step adds a 75 mg shot, so a Venti carries four."
+
+- slug: starbucks-caffe-latte
+  brand: "Starbucks"
+  product: "Starbucks Caffè Latte"
+  category: coffee
+  featured: true
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
       caffeine_mg: 150
   source_name: "Starbucks published nutrition"
   source_url: "https://www.starbucks.com/menu/product/407/hot/nutrition"
-  verified: 2026-09-18
-  notes: "Two espresso shots. Less than half a same-size brewed coffee, because the cup is mostly milk."
+  verified: 2026-09-19
+  notes: "Two espresso shots in a Grande, less than half a same-size brewed coffee because the cup is mostly milk. A hot Venti has the same two shots as a Grande."
 
-- slug: starbucks-cold-brew-grande
+- slug: starbucks-iced-caffe-latte
   brand: "Starbucks"
-  product: "Cold Brew, Grande"
+  product: "Starbucks Iced Caffè Latte"
   category: coffee
   servings:
-    - size_oz: 16
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 225
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/407/iced/nutrition"
+  verified: 2026-09-19
+  notes: "The iced Venti is a 24 oz cup with three shots, one more than the hot Venti."
+
+- slug: starbucks-cappuccino
+  brand: "Starbucks"
+  product: "Starbucks Cappuccino"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 150
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/409/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-caffe-mocha
+  brand: "Starbucks"
+  product: "Starbucks Caffè Mocha"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 90
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 95
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 175
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 185
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/408/hot/nutrition"
+  verified: 2026-09-19
+  notes: "A little more than a latte of the same size: the mocha sauce is chocolate, which carries some caffeine of its own."
+
+- slug: starbucks-white-chocolate-mocha
+  brand: "Starbucks"
+  product: "Starbucks White Chocolate Mocha"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 150
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/420/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-espresso
+  brand: "Starbucks"
+  product: "Starbucks Espresso"
+  category: coffee
+  servings:
+    - label: "Solo"
+      size_oz: 0.75
+      size_ml: 22
+      caffeine_mg: 75
+    - label: "Doppio"
+      size_oz: 1.5
+      size_ml: 44
+      caffeine_mg: 150
+      default: true
+    - label: "Triple"
+      size_oz: 2.25
+      size_ml: 67
+      caffeine_mg: 225
+    - label: "Quad"
+      size_oz: 3
+      size_ml: 89
+      caffeine_mg: 300
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/410/hot/nutrition"
+  verified: 2026-09-19
+  notes: "75 mg a shot, the unit most Starbucks espresso drinks are built from."
+
+- slug: starbucks-espresso-macchiato
+  brand: "Starbucks"
+  product: "Starbucks Espresso Macchiato"
+  category: coffee
+  servings:
+    - label: "Solo"
+      size_oz: 0.8
+      size_ml: 24
+      caffeine_mg: 75
+    - label: "Doppio"
+      size_oz: 1.6
+      size_ml: 47
+      caffeine_mg: 150
+      default: true
+    - label: "Triple"
+      size_oz: 2.3
+      size_ml: 68
+      caffeine_mg: 225
+    - label: "Quad"
+      size_oz: 3.1
+      size_ml: 92
+      caffeine_mg: 300
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/412/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-caramel-macchiato
+  brand: "Starbucks"
+  product: "Starbucks Caramel Macchiato"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 150
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/413/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Steamed milk and vanilla syrup marked with espresso, not an espresso macchiato. Caffeine matches a latte of the same size."
+
+- slug: starbucks-iced-caramel-macchiato
+  brand: "Starbucks"
+  product: "Starbucks Iced Caramel Macchiato"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 225
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/413/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-flat-white
+  brand: "Starbucks"
+  product: "Starbucks Flat White"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 130
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 130
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 195
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 195
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/565/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Made with ristretto shots, and more caffeine than a latte of the same size (195 mg against 150 mg in a Grande)."
+
+- slug: starbucks-cortado
+  brand: "Starbucks"
+  product: "Starbucks Cortado"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 230
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2124649/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Three ristretto shots of blonde espresso in an 8 oz cup: 230 mg, more than a Grande Flat White in half the volume."
+
+- slug: starbucks-cold-brew
+  brand: "Starbucks"
+  product: "Starbucks Cold Brew"
+  category: coffee
+  featured: true
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 155
+    - label: "Grande"
+      size_oz: 16
       size_ml: 473
       caffeine_mg: 205
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 310
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 360
   source_name: "Starbucks published nutrition"
-  source_url: "https://www.starbucks.com/menu/product/2121255/Iced/nutrition"
-  verified: 2026-09-18
-  notes: "A 20-hour cold steep extracts more than a hot brew of the same size would in minutes."
+  source_url: "https://www.starbucks.com/menu/product/2121255/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Steeped in cool water for 20 hours. Less caffeine than a hot Pike Place of the same size, but the Trenta still carries 360 mg."
+
+- slug: starbucks-nitro-cold-brew
+  brand: "Starbucks"
+  product: "Starbucks Nitro Cold Brew"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 215
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 280
+      default: true
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2121912/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Cold brew infused with nitrogen. A Grande Nitro carries 75 mg more than a Grande Cold Brew."
+
+- slug: starbucks-vanilla-sweet-cream-cold-brew
+  brand: "Starbucks"
+  product: "Starbucks Vanilla Sweet Cream Cold Brew"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 145
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 185
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 275
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 315
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2121859/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-pumpkin-cream-cold-brew
+  brand: "Starbucks"
+  product: "Starbucks Pumpkin Cream Cold Brew"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 145
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 185
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 275
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 315
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2123113/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Seasonal. Same caffeine as the Vanilla Sweet Cream Cold Brew in every size."
+
+- slug: starbucks-iced-coffee
+  brand: "Starbucks"
+  product: "Starbucks Iced Coffee"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 135
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 185
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 265
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 320
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2123863/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-iced-shaken-espresso
+  brand: "Starbucks"
+  product: "Starbucks Iced Shaken Espresso"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 150
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 225
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 300
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2123425/iced/nutrition"
+  verified: 2026-09-19
+  notes: "One shot more than an iced latte at every size, with only a splash of milk."
+
+- slug: starbucks-iced-brown-sugar-oatmilk-shaken-espresso
+  brand: "Starbucks"
+  product: "Starbucks Iced Brown Sugar Oatmilk Shaken Espresso"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 170
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 255
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 340
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2123431/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Made with blonde espresso, which is why it carries more than the standard Iced Shaken Espresso at every size."
+
+- slug: starbucks-pumpkin-spice-latte
+  brand: "Starbucks"
+  product: "Starbucks Pumpkin Spice Latte"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 75
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 75
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 150
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 150
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/418/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Seasonal. Same caffeine as a plain Caffè Latte of the same size."
+
+- slug: starbucks-blonde-vanilla-latte
+  brand: "Starbucks"
+  product: "Starbucks Blonde Vanilla Latte"
+  category: coffee
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 85
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 85
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 170
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 170
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2122164/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Blonde espresso shots carry 85 mg each against 75 mg for the signature roast."
+
+# ---------------------------------------------------------------------------
+# Coffee: bottled and canned (PepsiCo product facts)
+# ---------------------------------------------------------------------------
+
+- slug: starbucks-frappuccino-bottled-mocha
+  brand: "Starbucks"
+  product: "Starbucks Frappuccino chilled coffee drink, Mocha (bottle)"
+  category: coffee
+  servings:
+    - label: "Bottle"
+      size_oz: 13.7
+      size_ml: 405
+      caffeine_mg: 105
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000004520"
+  verified: 2026-09-19
+
+- slug: starbucks-espresso-and-cream-can
+  brand: "Starbucks"
+  product: "Starbucks Espresso & Cream (can)"
+  category: coffee
+  servings:
+    - label: "Can"
+      size_oz: 6.5
+      size_ml: 192
+      caffeine_mg: 120
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/Product?formula=STAR_DBST_32305&form=RTD&size=6.5"
+  verified: 2026-09-19
+  notes: "Small can, big dose: 120 mg in 6.5 oz."
+
+- slug: starbucks-doubleshot-energy
+  brand: "Starbucks"
+  product: "Starbucks Doubleshot Energy, Coffee"
+  category: energy-drink
+  servings:
+    - label: "Can"
+      size_oz: 15
+      size_ml: 444
+      caffeine_mg: 135
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000028472"
+  verified: 2026-09-19
+
+# ---------------------------------------------------------------------------
+# Tea: generic (USDA FoodData Central)
+# ---------------------------------------------------------------------------
+
+- slug: black-tea
+  brand: null
+  product: "Black tea, brewed"
+  category: tea
+  featured: true
+  usda_mg_per_100g: 20
+  servings:
+    - size_oz: 6
+      size_ml: 177
+      size_g: 178
+      caffeine_mg: 36
+    - size_oz: 8
+      size_ml: 237
+      size_g: 237
+      caffeine_mg: 47
+      default: true
+  source_name: "USDA FoodData Central, black tea brewed with tap water"
+  source_url: "https://fdc.nal.usda.gov/food-details/173227/nutrients"
+  verified: 2026-09-19
+  notes: "Steeping time moves this more than leaf type does."
+
+- slug: green-tea
+  brand: null
+  product: "Green tea, brewed"
+  category: tea
+  usda_mg_per_100g: 12
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 245
+      caffeine_mg: 29
+  source_name: "USDA FoodData Central, green tea, brewed"
+  source_url: "https://fdc.nal.usda.gov/food-details/171917/nutrients"
+  verified: 2026-09-19
+  notes: "Roughly a third of a cup of drip coffee, by USDA's figures for both."
+
+- slug: oolong-tea
+  brand: null
+  product: "Oolong tea, brewed"
+  category: tea
+  usda_mg_per_100g: 16
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 237
+      caffeine_mg: 38
+  source_name: "USDA FoodData Central, oolong tea, brewed"
+  source_url: "https://fdc.nal.usda.gov/food-details/174120/nutrients"
+  verified: 2026-09-19
+  notes: "USDA gives oolong per 100 g only; the 8 fl oz weight used here (237 g) is the one USDA lists for brewed black tea."
+
+- slug: decaf-black-tea
+  brand: null
+  product: "Decaf black tea, brewed"
+  category: tea
+  usda_mg_per_100g: 1
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 237
+      caffeine_mg: 2
+  source_name: "USDA FoodData Central, decaffeinated black tea"
+  source_url: "https://fdc.nal.usda.gov/food-details/174871/nutrients"
+  verified: 2026-09-19
+
+- slug: herbal-tea
+  brand: null
+  product: "Herbal tea (chamomile, peppermint and similar)"
+  category: tea
+  usda_mg_per_100g: 0
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 237
+      caffeine_mg: 0
+  source_name: "USDA FoodData Central, herb tea, brewed"
+  source_url: "https://fdc.nal.usda.gov/food-details/173232/nutrients"
+  verified: 2026-09-19
+  notes: "Caffeine-free, unless the blend contains real tea leaves, yerba mate or guayusa. Check the ingredients."
+
+- slug: iced-tea-brewed
+  brand: null
+  product: "Iced tea, brewed black, unsweetened"
+  category: tea
+  usda_mg_per_100g: 20
+  servings:
+    - label: "Small"
+      size_oz: 12
+      size_ml: 355
+      size_g: 360
+      caffeine_mg: 72
+      default: true
+    - label: "Medium"
+      size_oz: 16.5
+      size_ml: 488
+      size_g: 495
+      caffeine_mg: 99
+  source_name: "USDA FoodData Central (FNDDS), iced tea, brewed, black, unsweetened"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710517/nutrients"
+  verified: 2026-09-19
+
+- slug: bottled-iced-tea
+  brand: null
+  product: "Bottled iced tea, black"
+  category: tea
+  usda_mg_per_100g: 9
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      size_g: 372
+      caffeine_mg: 33
+    - size_oz: 16
+      size_ml: 473
+      size_g: 496
+      caffeine_mg: 45
+      default: true
+    - size_oz: 20
+      size_ml: 591
+      size_g: 620
+      caffeine_mg: 56
+  source_name: "USDA FoodData Central (FNDDS), iced tea, bottled, black"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710527/nutrients"
+  verified: 2026-09-19
+  notes: "A generic average. Branded bottles vary; check the label."
+
+- slug: kombucha
+  brand: null
+  product: "Kombucha"
+  category: tea
+  usda_mg_per_100g: 11
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      size_g: 372
+      caffeine_mg: 41
+  source_name: "USDA FoodData Central (FNDDS), tea, kombucha"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710509/nutrients"
+  verified: 2026-09-19
+  notes: "Brewed from black or green tea, so it keeps some of the tea's caffeine."
+
+- slug: bubble-tea
+  brand: null
+  product: "Bubble tea (boba)"
+  category: tea
+  usda_mg_per_100g: 8
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 240
+      caffeine_mg: 19
+    - label: "1 drink"
+      size_oz: null
+      size_ml: null
+      size_g: 435
+      caffeine_mg: 35
+      default: true
+  source_name: "USDA FoodData Central (FNDDS), tea, bubble"
+  source_url: "https://fdc.nal.usda.gov/food-details/2710508/nutrients"
+  verified: 2026-09-19
+
+# ---------------------------------------------------------------------------
+# Tea: Starbucks and bottled
+# ---------------------------------------------------------------------------
+
+- slug: starbucks-chai-latte
+  brand: "Starbucks"
+  product: "Starbucks Chai Latte"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 25
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 35
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 55
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 75
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/466/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-iced-chai-latte
+  brand: "Starbucks"
+  product: "Starbucks Iced Chai Latte"
+  category: tea
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 45
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 60
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 90
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/466/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-matcha-latte
+  brand: "Starbucks"
+  product: "Starbucks Matcha Latte"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 20
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 45
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 65
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 85
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/468/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-iced-matcha-latte
+  brand: "Starbucks"
+  product: "Starbucks Iced Matcha Latte"
+  category: tea
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 40
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 65
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 85
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/468/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-london-fog-latte
+  brand: "Starbucks"
+  product: "Starbucks London Fog Latte"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 40
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 40
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 40
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 40
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/477/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Earl Grey with milk. Starbucks lists 40 mg for every cup size, so a Venti is no stronger than a Short."
+
+- slug: starbucks-english-breakfast-tea
+  brand: "Starbucks"
+  product: "Starbucks Royal English Breakfast Tea"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 40
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 40
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 40
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 40
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/446/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-earl-grey-tea
+  brand: "Starbucks"
+  product: "Starbucks Earl Grey Tea"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 40
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 40
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 40
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 40
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/450/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-emperors-clouds-and-mist-tea
+  brand: "Starbucks"
+  product: "Starbucks Emperor's Clouds & Mist green tea"
+  category: tea
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg_low: 1
+      caffeine_mg_high: 15
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg_low: 1
+      caffeine_mg_high: 15
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg_low: 16
+      caffeine_mg_high: 25
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg_low: 16
+      caffeine_mg_high: 25
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/873068751/hot/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-iced-black-tea
+  brand: "Starbucks"
+  product: "Starbucks Iced Black Tea"
+  category: tea
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg_low: 20
+      caffeine_mg_high: 25
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg_low: 25
+      caffeine_mg_high: 30
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg_low: 40
+      caffeine_mg_high: 45
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg_low: 55
+      caffeine_mg_high: 60
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/457/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-iced-green-tea
+  brand: "Starbucks"
+  product: "Starbucks Iced Green Tea"
+  category: tea
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg_low: 20
+      caffeine_mg_high: 25
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg_low: 25
+      caffeine_mg_high: 30
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg_low: 40
+      caffeine_mg_high: 45
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg_low: 55
+      caffeine_mg_high: 60
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/459/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: pure-leaf-unsweetened-black-tea
+  brand: "Pure Leaf"
+  product: "Pure Leaf Unsweetened Black Tea"
+  category: tea
+  servings:
+    - label: "Bottle"
+      size_oz: 18.5
+      size_ml: 547
+      caffeine_mg: 54
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000286209"
+  verified: 2026-09-19
+
+# ---------------------------------------------------------------------------
+# Energy drinks and shots
+# ---------------------------------------------------------------------------
 
 - slug: red-bull
   brand: "Red Bull"
   product: "Red Bull Energy Drink"
   category: energy-drink
+  featured: true
   servings:
     - size_oz: 8.4
       size_ml: 250
       caffeine_mg: 80
+      default: true
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 114
+    - size_oz: 16
+      size_ml: 473
+      caffeine_mg: 151
+    - size_oz: 20
+      size_ml: 591
+      caffeine_mg: 198
   source_name: "Red Bull product Q&A"
   source_url: "https://www.redbull.com/us-en/energydrink/questions/how-much-caffeine-is-in-a-can-of-red-bull-energy-drink"
-  verified: 2026-09-18
-  notes: "The reference point most people misjudge: a standard can has less caffeine than a small brewed coffee."
+  verified: 2026-09-19
+  notes: "The reference point most people misjudge: a standard can has less caffeine than a cup of drip coffee."
 
 - slug: monster-energy-original
   brand: "Monster"
   product: "Monster Energy Original"
   category: energy-drink
+  featured: true
   servings:
     - size_oz: 16
       size_ml: 473
@@ -107,32 +1486,49 @@
   brand: "Celsius"
   product: "Celsius Energy Drink"
   category: energy-drink
+  featured: true
   servings:
     - size_oz: 12
       size_ml: 355
       caffeine_mg: 200
   source_name: "Celsius Essential Facts"
   source_url: "https://www.celsius.com/essential-facts/"
-  verified: 2026-09-18
+  verified: 2026-09-19
   notes: "Celsius itself recommends no more than two cans a day, which is 400 mg - the entire adult guideline."
 
 - slug: celsius-essentials
   brand: "Celsius"
   product: "Celsius Essentials"
   category: energy-drink
+  featured: true
   servings:
     - size_oz: 16
       size_ml: 473
       caffeine_mg: 270
   source_name: "Celsius Essential Facts"
   source_url: "https://www.celsius.com/essential-facts/"
-  verified: 2026-09-18
+  verified: 2026-09-19
   notes: "Celsius recommends one can a day of this line, not two."
+
+- slug: celsius-on-the-go
+  brand: "Celsius"
+  product: "Celsius On-The-Go powder"
+  category: energy-drink
+  servings:
+    - label: "1 packet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 200
+  source_name: "Celsius Essential Facts"
+  source_url: "https://www.celsius.com/essential-facts/"
+  verified: 2026-09-19
+  notes: "The same 200 mg as a can, in a stick you mix into water. Easy to double up without noticing."
 
 - slug: alani-nu-energy
   brand: "Alani Nu"
   product: "Alani Nu Energy Drink"
   category: energy-drink
+  featured: true
   servings:
     - size_oz: 12
       size_ml: 355
@@ -142,72 +1538,25 @@
   verified: 2026-09-18
   notes: "200 mg in a 12 oz can that drinks like a soda. Half the adult daily guideline per can."
 
-- slug: coca-cola-classic
-  brand: "Coca-Cola"
-  product: "Coca-Cola Classic"
-  category: soda
+- slug: mtn-dew-kickstart
+  brand: "Mtn Dew"
+  product: "Mtn Dew Kickstart"
+  category: energy-drink
   servings:
-    - size_oz: 12
-      size_ml: 355
-      caffeine_mg: 34
-  source_name: "The Coca-Cola Company, ingredients FAQ"
-  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
-  verified: 2026-09-18
-
-- slug: diet-coke
-  brand: "Coca-Cola"
-  product: "Diet Coke"
-  category: soda
-  servings:
-    - size_oz: 12
-      size_ml: 355
-      caffeine_mg: 46
-  source_name: "The Coca-Cola Company, ingredients FAQ"
-  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
-  verified: 2026-09-18
-  notes: "More caffeine than regular Coke, which surprises most people."
-
-- slug: pepsi
-  brand: "Pepsi"
-  product: "Pepsi"
-  category: soda
-  servings:
-    - size_oz: 12
-      size_ml: 355
-      caffeine_mg: 38
-  source_name: "PepsiCo Product Facts"
-  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000133"
-  verified: 2026-09-18
-
-- slug: mountain-dew
-  brand: "Mountain Dew"
-  product: "Mountain Dew"
-  category: soda
-  servings:
-    - size_oz: 12
-      size_ml: 355
-      caffeine_mg: 54
-  source_name: "PepsiCo Product Facts"
-  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000850"
-  verified: 2026-09-18
-  notes: "The most caffeinated mainstream soda, and still a third of a Celsius."
-
-- slug: cola-soda
-  brand: null
-  product: "Cola soft drink (generic)"
-  category: soda
-  servings:
-    - size_oz: 8
-      size_ml: 237
-      caffeine_mg: 40
-  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
-  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
-  verified: 2026-09-18
+    - label: "Can"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 92
+  source_name: "PepsiCo Product Facts (Orange Citrus)"
+  source_url: "https://www.pepsicoproductfacts.com/Home/Product?gtin=00012000110443"
+  verified: 2026-09-19
+  notes: "The label lists two 8 oz servings of 46 mg each; the can holds 92 mg. Other flavors differ by a few mg."
 
 - slug: 5-hour-energy-regular
   brand: "5-hour Energy"
   product: "5-hour Energy, Regular Strength"
   category: energy-shot
+  featured: true
   servings:
     - size_oz: 1.93
       size_ml: 57
@@ -217,15 +1566,664 @@
   verified: 2026-09-18
   notes: "200 mg in under two fluid ounces. Volume tells you nothing about dose here."
 
-- slug: caffeine-pill
+# ---------------------------------------------------------------------------
+# Other caffeinated drinks (Starbucks Refreshers)
+# ---------------------------------------------------------------------------
+
+- slug: starbucks-pink-drink
+  brand: "Starbucks"
+  product: "Starbucks Pink Drink"
+  category: other
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 25
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 50
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 75
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 100
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2122275/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Starbucks offers it with no caffeine, with light caffeine (the figures here, 50 mg in a Grande) or as an Energy Refresher (125 mg in a Grande)."
+
+- slug: starbucks-strawberry-acai-refresher
+  brand: "Starbucks"
+  product: "Starbucks Strawberry Açaí Refresher"
+  category: other
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 25
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 50
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 75
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 100
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/2121342/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Looks like juice, is not caffeine-free: a Trenta carries 100 mg."
+
+- slug: starbucks-strawberry-acai-energy-refresher
+  brand: "Starbucks"
+  product: "Starbucks Strawberry Açaí Energy Refresher"
+  category: other
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 100
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 125
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 150
+    - label: "Trenta"
+      size_oz: 30
+      size_ml: 887
+      caffeine_mg: 175
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/40500/iced/nutrition"
+  verified: 2026-09-19
+  notes: "The Energy version of the Refresher: 75 mg more than the standard one in a Grande."
+
+# ---------------------------------------------------------------------------
+# Frappuccino blended beverages (Starbucks)
+# ---------------------------------------------------------------------------
+
+- slug: starbucks-coffee-frappuccino
+  brand: "Starbucks"
+  product: "Starbucks Coffee Frappuccino"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 65
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 95
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 125
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/483/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Less caffeine than a latte of the same size: 95 mg in a Grande against 150 mg."
+
+- slug: starbucks-caramel-frappuccino
+  brand: "Starbucks"
+  product: "Starbucks Caramel Frappuccino"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 60
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 90
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 120
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/424/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-mocha-frappuccino
+  brand: "Starbucks"
+  product: "Starbucks Mocha Frappuccino"
+  category: coffee
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 70
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 100
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 130
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/426/iced/nutrition"
+  verified: 2026-09-19
+
+- slug: starbucks-vanilla-bean-creme-frappuccino
+  brand: "Starbucks"
+  product: "Starbucks Vanilla Bean Crème Frappuccino"
+  category: other
+  servings:
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 0
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 0
+      default: true
+    - label: "Venti"
+      size_oz: 24
+      size_ml: 710
+      caffeine_mg: 0
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/440/iced/nutrition"
+  verified: 2026-09-19
+  notes: "Caffeine-free by Starbucks' own figures. Not every Crème Frappuccino is: check the specific drink."
+
+# ---------------------------------------------------------------------------
+# Soda
+# ---------------------------------------------------------------------------
+
+- slug: coca-cola-classic
+  brand: "Coca-Cola"
+  product: "Coca-Cola Classic"
+  category: soda
+  featured: true
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 34
+  source_name: "The Coca-Cola Company, ingredients FAQ"
+  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
+  verified: 2026-09-19
+
+- slug: diet-coke
+  brand: "Coca-Cola"
+  product: "Diet Coke"
+  category: soda
+  featured: true
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 46
+  source_name: "The Coca-Cola Company, ingredients FAQ"
+  source_url: "https://www.coca-colacompany.com/about-us/faq/ingredients"
+  verified: 2026-09-19
+  notes: "More caffeine than regular Coke, which surprises most people."
+
+- slug: pepsi
+  brand: "Pepsi"
+  product: "Pepsi"
+  category: soda
+  featured: true
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 38
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000133"
+  verified: 2026-09-19
+
+- slug: pepsi-zero-sugar
+  brand: "Pepsi"
+  product: "Pepsi Zero Sugar"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 38
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/Product?gtin=00012000018770"
+  verified: 2026-09-19
+
+- slug: diet-pepsi
+  brand: "Pepsi"
+  product: "Diet Pepsi"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 35
+  source_name: "PepsiCo Product Facts (24 fl oz bottle, per 12 fl oz serving)"
+  source_url: "https://www.pepsicoproductfacts.com/Home/Product?gtin=00012000172205"
+  verified: 2026-09-19
+
+- slug: mountain-dew
+  brand: "Mountain Dew"
+  product: "Mountain Dew"
+  category: soda
+  featured: true
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 54
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/product?gtin=00012000000850"
+  verified: 2026-09-19
+  notes: "The most caffeinated mainstream soda, and still about a quarter of a Celsius."
+
+- slug: diet-mountain-dew
+  brand: "Mountain Dew"
+  product: "Diet Mountain Dew"
+  category: soda
+  servings:
+    - size_oz: 12
+      size_ml: 355
+      caffeine_mg: 54
+  source_name: "PepsiCo Product Facts"
+  source_url: "https://www.pepsicoproductfacts.com/Home/Product?formula=44316*03*01-01&form=RTD&size=12"
+  verified: 2026-09-19
+
+- slug: cola-soda
   brand: null
-  product: "Caffeine tablet"
-  category: supplement
+  product: "Cola (generic)"
+  category: soda
+  featured: true
+  usda_mg_per_100g: 9
+  servings:
+    - label: "Can"
+      size_oz: 12
+      size_ml: 355
+      size_g: 370
+      caffeine_mg: 33
+      default: true
+    - size_oz: 16
+      size_ml: 473
+      size_g: 492
+      caffeine_mg: 44
+    - label: "Large fountain"
+      size_oz: 32
+      size_ml: 946
+      size_g: 984
+      caffeine_mg: 89
+  source_name: "USDA FoodData Central, carbonated cola, regular"
+  source_url: "https://fdc.nal.usda.gov/food-details/174852/nutrients"
+  verified: 2026-09-19
+
+- slug: diet-cola
+  brand: null
+  product: "Diet cola (generic)"
+  category: soda
+  usda_mg_per_100g: 12
+  servings:
+    - label: "Can"
+      size_oz: 12
+      size_ml: 355
+      size_g: 355
+      caffeine_mg: 43
+      default: true
+    - size_oz: 16
+      size_ml: 473
+      size_g: 473
+      caffeine_mg: 57
+  source_name: "USDA FoodData Central, low-calorie cola with aspartame, contains caffeine"
+  source_url: "https://fdc.nal.usda.gov/food-details/175099/nutrients"
+  verified: 2026-09-19
+
+# ---------------------------------------------------------------------------
+# Chocolate (USDA FoodData Central unless stated)
+# ---------------------------------------------------------------------------
+
+- slug: dark-chocolate-70-85
+  brand: null
+  product: "Dark chocolate, 70-85% cacao"
+  category: chocolate
+  usda_mg_per_100g: 80
   servings:
     - size_oz: null
       size_ml: null
+      label: "1 oz"
+      size_g: 28.35
+      caffeine_mg: 23
+      default: true
+    - label: "1 bar"
+      size_oz: null
+      size_ml: null
+      size_g: 101
+      caffeine_mg: 81
+  source_name: "USDA FoodData Central, chocolate, dark, 70-85% cacao solids"
+  source_url: "https://fdc.nal.usda.gov/food-details/170273/nutrients"
+  verified: 2026-09-19
+  notes: "A whole bar approaches a cup of coffee."
+
+- slug: dark-chocolate-60-69
+  brand: null
+  product: "Dark chocolate, 60-69% cacao"
+  category: chocolate
+  usda_mg_per_100g: 86
+  servings:
+    - label: "1 oz"
+      size_oz: null
+      size_ml: null
+      size_g: 28.35
+      caffeine_mg: 24
+      default: true
+    - label: "1 bar"
+      size_oz: null
+      size_ml: null
+      size_g: 112
+      caffeine_mg: 96
+  source_name: "USDA FoodData Central, chocolate, dark, 60-69% cacao solids"
+  source_url: "https://fdc.nal.usda.gov/food-details/170272/nutrients"
+  verified: 2026-09-19
+  notes: "USDA measures this band slightly higher per gram than 70-85%, so a higher percentage does not guarantee more caffeine."
+
+- slug: dark-chocolate-45-59
+  brand: null
+  product: "Dark chocolate, 45-59% cacao"
+  category: chocolate
+  usda_mg_per_100g: 43
+  servings:
+    - label: "1 oz"
+      size_oz: null
+      size_ml: null
+      size_g: 28.35
+      caffeine_mg: 12
+  source_name: "USDA FoodData Central, chocolate, dark, 45-59% cacao solids"
+  source_url: "https://fdc.nal.usda.gov/food-details/170271/nutrients"
+  verified: 2026-09-19
+
+- slug: milk-chocolate
+  brand: null
+  product: "Milk chocolate"
+  category: chocolate
+  usda_mg_per_100g: 20
+  servings:
+    - label: "1 oz"
+      size_oz: null
+      size_ml: null
+      size_g: 28.35
+      caffeine_mg: 6
+    - label: "1 bar (1.55 oz)"
+      size_oz: null
+      size_ml: null
+      size_g: 44
+      caffeine_mg: 9
+      default: true
+  source_name: "USDA FoodData Central, candies, milk chocolate"
+  source_url: "https://fdc.nal.usda.gov/food-details/167587/nutrients"
+  verified: 2026-09-19
+
+- slug: white-chocolate
+  brand: null
+  product: "White chocolate"
+  category: chocolate
+  usda_mg_per_100g: 0
+  servings:
+    - label: "1 oz"
+      size_oz: null
+      size_ml: null
+      size_g: 28.35
+      caffeine_mg: 0
+  source_name: "USDA FoodData Central, candies, white chocolate"
+  source_url: "https://fdc.nal.usda.gov/food-details/167571/nutrients"
+  verified: 2026-09-19
+  notes: "USDA records zero caffeine, unlike milk and dark chocolate."
+
+- slug: cocoa-powder
+  brand: null
+  product: "Cocoa powder, unsweetened"
+  category: chocolate
+  usda_mg_per_100g: 230
+  servings:
+    - label: "1 tbsp"
+      size_oz: null
+      size_ml: null
+      size_g: 5.4
+      caffeine_mg: 12
+  source_name: "USDA FoodData Central, cocoa, dry powder, unsweetened"
+  source_url: "https://fdc.nal.usda.gov/food-details/169593/nutrients"
+  verified: 2026-09-19
+
+- slug: hot-chocolate
+  brand: null
+  product: "Hot chocolate made with milk"
+  category: chocolate
+  usda_mg_per_100g: 3
+  servings:
+    - size_oz: 8
+      size_ml: 237
+      size_g: 248
+      caffeine_mg: 7
+  source_name: "USDA FoodData Central (FNDDS), hot chocolate/cocoa made with milk"
+  source_url: "https://fdc.nal.usda.gov/food-details/2705473/nutrients"
+  verified: 2026-09-19
+
+- slug: starbucks-hot-chocolate
+  brand: "Starbucks"
+  product: "Starbucks Hot Chocolate"
+  category: chocolate
+  servings:
+    - label: "Short"
+      size_oz: 8
+      size_ml: 237
+      caffeine_mg: 15
+    - label: "Tall"
+      size_oz: 12
+      size_ml: 355
+      caffeine_mg: 20
+    - label: "Grande"
+      size_oz: 16
+      size_ml: 473
+      caffeine_mg: 25
+      default: true
+    - label: "Venti"
+      size_oz: 20
+      size_ml: 591
+      caffeine_mg: 35
+  source_name: "Starbucks published nutrition"
+  source_url: "https://www.starbucks.com/menu/product/471/hot/nutrition"
+  verified: 2026-09-19
+  notes: "Worth knowing before giving one to a child: a Grande carries as much caffeine as a Grande decaf Pike Place (25 mg)."
+
+- slug: dark-chocolate-covered-coffee-beans
+  brand: null
+  product: "Dark chocolate-covered coffee beans"
+  category: chocolate
+  usda_mg_per_100g: 839
+  servings:
+    - label: "28 pieces"
+      size_oz: null
+      size_ml: null
+      size_g: 40
+      caffeine_mg: 336
+  source_name: "USDA FoodData Central, candies, dark chocolate coated coffee beans"
+  source_url: "https://fdc.nal.usda.gov/food-details/169634/nutrients"
+  verified: 2026-09-19
+  notes: "USDA's serving of 28 pieces carries more caffeine than a Grande Cold Brew. About 12 mg a bean, and easy to eat by the handful."
+
+- slug: mms-milk-chocolate
+  brand: "M&M's"
+  product: "M&M's Milk Chocolate"
+  category: chocolate
+  usda_mg_per_100g: 14
+  servings:
+    - label: "1.69 oz pack"
+      size_oz: null
+      size_ml: null
+      size_g: 48
+      caffeine_mg: 7
+  source_name: "USDA FoodData Central, M&M's Milk Chocolate Candies"
+  source_url: "https://fdc.nal.usda.gov/food-details/169583/nutrients"
+  verified: 2026-09-19
+
+# ---------------------------------------------------------------------------
+# Caffeine tablets and pre-workout (DailyMed labels / manufacturer)
+# ---------------------------------------------------------------------------
+
+- slug: caffeine-pill
+  brand: null
+  product: "Caffeine tablet, 200 mg"
+  category: supplement
+  featured: true
+  servings:
+    - label: "1 tablet"
+      size_oz: null
+      size_ml: null
       caffeine_mg: 200
-  source_name: "FDA, Spilling the Beans: How Much Caffeine is Too Much?"
-  source_url: "https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much"
-  verified: 2026-09-18
-  notes: "Two coffees' worth with none of the volume cues that normally pace you. This is the format most often involved in accidental overdose."
+  source_name: "DailyMed drug label (Stay Awake, caffeine 200 mg)"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=e2ccb6c1-bb77-4692-b96d-9eb2bec52f37"
+  verified: 2026-09-19
+  notes: "Two coffees' worth with none of the volume cues that normally pace you. The label says one tablet no more often than every 3 to 4 hours."
+
+- slug: nodoz-maximum-strength
+  brand: "NoDoz"
+  product: "NoDoz Maximum Strength"
+  category: supplement
+  servings:
+    - label: "1 caplet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 200
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=54d47b7a-66a1-4f86-b478-f2f8737cd030"
+  verified: 2026-09-19
+  notes: "The label allows half to one caplet no more often than every 3 to 4 hours."
+
+- slug: vivarin
+  brand: "Vivarin"
+  product: "Vivarin"
+  category: supplement
+  servings:
+    - label: "1 tablet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 200
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4537a56b-e875-4961-9fff-3f778746f126"
+  verified: 2026-09-19
+
+- slug: c4-original-pre-workout
+  brand: "C4"
+  product: "C4 Original pre-workout"
+  category: supplement
+  servings:
+    - label: "1 scoop"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 200
+  source_name: "Cellucor product page"
+  source_url: "https://cellucor.com/products/c4-original"
+  verified: 2026-09-19
+  notes: "Pre-workouts are easy to double-scoop. Two scoops is 400 mg before anything else you drink that day."
+
+# ---------------------------------------------------------------------------
+# Medicines containing caffeine (DailyMed labels)
+# ---------------------------------------------------------------------------
+
+- slug: excedrin-extra-strength
+  brand: "Excedrin"
+  product: "Excedrin Extra Strength"
+  category: medicine
+  servings:
+    - label: "1 caplet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 65
+    - label: "1 dose (2 caplets)"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 130
+      default: true
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a71074a6-cc19-4bb3-8c84-4e82a8906801"
+  verified: 2026-09-19
+  notes: "65 mg per caplet, taken two at a time. The label's 24-hour maximum of 8 caplets is 520 mg of caffeine, above the adult daily guideline on its own."
+
+- slug: excedrin-migraine
+  brand: "Excedrin"
+  product: "Excedrin Migraine"
+  category: medicine
+  servings:
+    - label: "1 caplet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 65
+    - label: "1 dose (2 caplets)"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 130
+      default: true
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ed841fb-a61c-4868-b4e5-4f2311a5e79c"
+  verified: 2026-09-19
+
+- slug: excedrin-tension-headache
+  brand: "Excedrin"
+  product: "Excedrin Tension Headache"
+  category: medicine
+  servings:
+    - label: "1 caplet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 65
+    - label: "1 dose (2 caplets)"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 130
+      default: true
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=12c074d1-81ac-47d2-8747-b018cda0058a"
+  verified: 2026-09-19
+
+- slug: midol-complete
+  brand: "Midol"
+  product: "Midol Complete"
+  category: medicine
+  servings:
+    - label: "1 gelcap"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 60
+    - label: "1 dose (2 gelcaps)"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 120
+      default: true
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=0a4477ce-0a02-197d-e054-00144ff88e88"
+  verified: 2026-09-19
+  notes: "Caffeine is listed on the label as a diuretic. The daily maximum of 6 gelcaps is 360 mg."
+
+- slug: anacin
+  brand: "Anacin"
+  product: "Anacin"
+  category: medicine
+  servings:
+    - label: "1 tablet"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 32
+    - label: "1 dose (2 tablets)"
+      size_oz: null
+      size_ml: null
+      caffeine_mg: 64
+      default: true
+  source_name: "DailyMed drug label"
+  source_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=51ab0ee3-3c94-424d-a30a-2d6c14e3d8ff"
+  verified: 2026-09-19

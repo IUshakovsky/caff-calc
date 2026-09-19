@@ -49,8 +49,9 @@
       <div class="card mb-4">
         <div class="card-body">
           <h2 class="card-title">How much caffeine is in your drink?</h2>
-          <p>Every figure below comes from the manufacturer's own nutrition data or from the FDA. Where a
-            brand publishes a range, the range is shown rather than an average.</p>
+          <p>Every figure below comes from the manufacturer's own nutrition data, USDA FoodData Central or
+            the product's official drug label. Where a brand publishes a range, the range is shown rather than
+            an average.</p>
 
           <div class="table-content">
             <table class="table table-bordered align-middle">
@@ -63,15 +64,16 @@
                 </tr>
               </thead>
               <tbody>
-                {%- for bev in site.data.beverages %}
-                {%- assign serving = bev.servings | first %}
+                {%- assign featured = site.data.beverages | where: "featured", true %}
+                {%- for bev in featured %}
+                {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first %}
                 <tr>
                   <td>
                     {{ bev.product }}
                     {%- if bev.notes %}<br><span class="small text-muted">{{ bev.notes }}</span>{% endif %}
                   </td>
-                  <td>{% if serving.size_oz %}{{ serving.size_oz }} fl oz ({{ serving.size_ml }} ml){% else %}1 tablet{% endif %}</td>
-                  <td>{% if serving.caffeine_mg %}{{ serving.caffeine_mg }} mg{% else %}{{ serving.caffeine_mg_low }}-{{ serving.caffeine_mg_high }} mg{% endif %}</td>
+                  <td>{% if serving.label %}{{ serving.label }}{% if serving.size_oz %}, {% endif %}{% endif %}{% if serving.size_oz %}{{ serving.size_oz }} fl oz ({{ serving.size_ml }} ml){% endif %}</td>
+                  <td>{% if serving.caffeine_mg != nil %}{{ serving.caffeine_mg }} mg{% else %}{{ serving.caffeine_mg_low }}-{{ serving.caffeine_mg_high }} mg{% endif %}</td>
                   <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a></td>
                 </tr>
                 {%- endfor %}

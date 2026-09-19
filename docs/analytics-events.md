@@ -48,7 +48,7 @@ closure. Events marked "every time" are not deduplicated.
 | Event | Parameter | Type | Allowed values | Fires when | Frequency | Where |
 |---|---|---|---|---|---|---|
 | `calc_start` | `entry_point` | string | `blog` \| `home` \| `direct` \| `tracker` | First click on a button or beverage option, or first `input`/`change` on any field, inside `.calculator-layout`. Restoring saved preferences on load does not count. | Once per page load | `analytics-events.js`, "Calculator start" |
-| `beverage_add` | `beverage_name` | string | Lowercased, trimmed preset name as shown in the tracker (`espresso`, `cold brew`, or the medicine name). `custom` for Custom Item. | "+" adds an item to Tracked Items (new row or a quantity increase on an existing row). | Every time | `script.js`, `addConsumptionItem()` |
+| `beverage_add` | `beverage_name` | string | The preset's `slug` from `_data/beverages.yml` (`espresso`, `starbucks-cold-brew`, `excedrin-migraine`). `custom` for Custom Item. | "+" adds an item to Tracked Items (new row or a quantity increase on an existing row). | Every time | `script.js`, `addConsumptionItem()` |
 | | `caffeine_mg` | number | Integer mg added by this action (per serving × quantity) | | | |
 | | `source` | string | `preset` \| `custom` | | | |
 | `calc_complete` | `total_mg` | number | Integer mg across all tracked items | "Calculate Caffeine Intake" shows the meter and status message (300 ms after the click, only with at least one item). | Every time | `script.js`, `calculateCaffeineIntake()` |

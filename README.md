@@ -15,6 +15,8 @@ A Jekyll-powered web application to calculate your safe caffeine intake based on
 ## Folder Structure
 ```
 Caffeine/
+├── _data/
+│   └── beverages.yml   # Sourced caffeine figures (check: python3 scripts/check-beverages.py)
 ├── _includes/          # Reusable components
 │   ├── head.html
 │   ├── navigation.html
@@ -37,7 +39,7 @@ Caffeine/
 │   ├── css/
 │   │   └── styles.css
 │   ├── data/
-│   │   └── caf_src.json
+│   │   └── beverages.json  # Generated from _data/beverages.yml for the calculator
 │   ├── images/
 │   │   └── favicon.ico, image.svg
 │   └── js/

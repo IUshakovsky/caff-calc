@@ -113,11 +113,8 @@ window.updateUnit = function(type, unit, savePrefs = true) {
     
     if (beverageDropdown && sizeDropdown && beverageDropdown.value && 
         beverageDropdown.value !== 'custom' && !sizeDropdown.disabled) {
-      // Get currently selected beverage
-      const [category, type] = beverageDropdown.value.split('_');
-      
       // Repopulate size dropdown with new unit
-      populateSizeDropdown(category, type);
+      populateSizeDropdown(beverageDropdown.value);
     }
   }
 
@@ -184,9 +181,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Caffeine consumption tracker variables
-let caffeineData = {};
+let caffeineData = {}; // beverage slug -> entry from _data/beverages.yml
 let consumptionItems = [];
 let totalCaffeineConsumed = 0;
+
+// Dropdown groups, in display order. Keys match `category` in _data/beverages.yml.
+const beverageCategories = [
+  { id: 'coffee', label: 'Coffee', icon: 'coffee' },
+  { id: 'tea', label: 'Tea', icon: 'leaf' },
+  { id: 'energy-drink', label: 'Energy Drinks', icon: 'zap' },
+  { id: 'energy-shot', label: 'Energy Shots', icon: 'zap' },
+  { id: 'soda', label: 'Soda', icon: 'cup-soda' },
+  { id: 'other', label: 'Other Drinks', icon: 'glass-water' },
+  { id: 'chocolate', label: 'Chocolate', icon: 'candy' },
+  { id: 'supplement', label: 'Caffeine Tablets & Pre-workout', icon: 'pill' },
+  { id: 'medicine', label: 'Medicines', icon: 'pill' }
+];
 
 // Analytics hooks (docs/analytics-events.md). No-ops until analytics-events.js
 // has loaded, and it no-ops in turn when gtag is unavailable.
@@ -203,14 +213,17 @@ function trackedBeverageCount() {
   return consumptionItems.reduce((sum, item) => sum + item.quantity, 0);
 }
 
-// Load caffeine data and populate beverage dropdown
+// Load caffeine data and populate beverage dropdown. Only the calculator page
+// has the tracker, so other pages skip the download.
 async function loadCaffeineData() {
+  if (!document.getElementById('caffeineOptions')) return;
   try {
     const baseurl = window.SITE_BASEURL || '';
-    const response = await fetch(`${baseurl}/assets/data/caf_src.json`);
-    caffeineData = await response.json();
-    console.log('Caffeine data loaded successfully');
-    
+    const response = await fetch(`${baseurl}/assets/data/beverages.json`);
+    const beverages = await response.json();
+    caffeineData = {};
+    beverages.forEach(bev => { caffeineData[bev.slug] = bev; });
+
     // Populate beverage dropdown from JSON data
     populateBeverageDropdown();
   } catch (error) {
@@ -218,47 +231,61 @@ async function loadCaffeineData() {
   }
 }
 
-// Populate the beverage dropdown based on JSON data
+// Where a source publishes a range, count the top of it: this is a safety tool,
+// so it should not under-report.
+function servingCaffeine(serving) {
+  return serving.caffeine_mg != null ? serving.caffeine_mg : serving.caffeine_mg_high;
+}
+
+function servingCaffeineText(serving) {
+  return serving.caffeine_mg != null
+    ? `${serving.caffeine_mg} mg`
+    : `${serving.caffeine_mg_low}-${serving.caffeine_mg_high} mg`;
+}
+
+// "Grande (16 fl oz)" / "Grande (473 ml)" / "1 oz" / "1 tablet"
+function servingSizeText(serving) {
+  let size = '';
+  if (serving.size_oz) {
+    size = user.volumeUnit === 'oz' ? `${serving.size_oz} fl oz` : `${serving.size_ml} ml`;
+  }
+  if (serving.label && size) return `${serving.label} (${size})`;
+  return serving.label || size;
+}
+
+// Populate the beverage dropdown, grouped by category
 function populateBeverageDropdown() {
   const optionsContainer = document.getElementById('caffeineOptions');
   if (!optionsContainer) return; // Exit if element doesn't exist
   optionsContainer.innerHTML = '';
-  
-  // Process each category
-  Object.keys(caffeineData).forEach(category => {
-    // Create a category header with icon
+
+  const byName = (a, b) => a.product.localeCompare(b.product);
+
+  beverageCategories.forEach(category => {
+    const beverages = Object.values(caffeineData)
+      .filter(bev => bev.category === category.id)
+      .sort(byName);
+    if (!beverages.length) return;
+
     const categoryHeader = document.createElement('div');
     categoryHeader.className = 'custom-select-optgroup';
-    
-    // Add icon based on category
-    let iconName = 'coffee';
-    if (category === 'coffee') {
-      iconName = 'coffee';
-    } else if (category === 'tea') {
-      iconName = 'leaf';
-    } else if (category === 'energyDrink') {
-      iconName = 'zap';
-    }
-
-    categoryHeader.innerHTML = `<i data-lucide="${iconName}" class="me-2" aria-hidden="true"></i>${formatDisplayName(category)}`;
+    categoryHeader.innerHTML = `<i data-lucide="${category.icon}" class="me-2" aria-hidden="true"></i>${category.label}`;
     optionsContainer.appendChild(categoryHeader);
-    
-    // Add beverage types for this category
-    Object.keys(caffeineData[category]).forEach(type => {
+
+    beverages.forEach(bev => {
       const option = document.createElement('div');
       option.className = 'custom-select-option';
-      option.dataset.value = `${category}_${type}`;
-      option.textContent = formatDisplayName(type);
-      
-      // Add click event
+      option.dataset.value = bev.slug;
+      option.textContent = bev.product;
+
       option.addEventListener('click', function() {
         selectBeverage(this.dataset.value, this.textContent);
       });
-      
+
       optionsContainer.appendChild(option);
     });
   });
-  
+
   // Add custom option at the end
   const option = document.createElement('div');
   option.className = 'custom-select-option';
@@ -278,136 +305,44 @@ function populateBeverageDropdown() {
   initCustomDropdown();
 }
 
-// Helper function to format display names (camelCase to Title Case)
-function formatDisplayName(name) {
-  return name
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/^./, str => str.toUpperCase())
-    .trim();
-}
-
-// Populate type dropdown based on selected category
-function populateTypeDropdown(category) {
-  const typeSelect = document.getElementById('caffeineType');
-  typeSelect.innerHTML = '<option value="">Select type</option>';
-  
-  if (!category) {
-    typeSelect.disabled = true;
-    return;
-  }
-  
-  const types = Object.keys(caffeineData[category]);
-  
-  types.forEach(type => {
-    // Convert camelCase to Title Case for display
-    const displayName = type
-      .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, str => str.toUpperCase());
-      
-    const option = document.createElement('option');
-    option.value = type;
-    option.textContent = displayName;
-    typeSelect.appendChild(option);
-  });
-  
-}
-
-// Populate size dropdown based on selected category and type
-function populateSizeDropdown(category, type) {
+// Populate size dropdown for the selected beverage. Option values are indexes
+// into the beverage's servings list.
+function populateSizeDropdown(slug) {
   // Get DOM elements
   const sizeButton = document.getElementById('caffeineSizeButton');
   const sizeButtonText = document.getElementById('caffeineSizeButtonText');
   const sizeOptions = document.getElementById('caffeineSizeOptions');
   const sizeInput = document.getElementById('caffeineSize');
-  
+
   // Clear previous options
   sizeOptions.innerHTML = '';
   sizeInput.value = '';
   sizeButtonText.textContent = 'Size';
-  
-  if (!category || !type) {
+
+  const bev = caffeineData[slug];
+  if (!bev) {
     sizeButton.disabled = true;
     return;
   }
-  
-  // Get available sizes for the selected beverage
-  const sizes = Object.keys(caffeineData[category][type].sizes);
-  const volumeUnit = user.volumeUnit; // Get user's preferred volume unit (ml or oz)
-  
-  // Create an option for each size
-  sizes.forEach(size => {
+
+  bev.servings.forEach((serving, index) => {
     const option = document.createElement('div');
     option.className = 'custom-select-option';
-    option.dataset.value = size;
-    
-    // Extract volume information and create display text with correct units
-    let displayText = size;
-    
-    // Extract values if the size contains a volume in ml
-    const mlRegex = /(\d+)\s*ml\b/i;
-    const mlMatch = size.match(mlRegex);
-    
-    if (mlMatch && volumeUnit === 'oz') {
-      // Convert ml to oz for display if user prefers oz
-      const mlValue = parseInt(mlMatch[1]);
-      const ozValue = (mlValue / 29.574).toFixed(1); // Convert ml to oz and round to 1 decimal
-      
-      // Replace ml with oz in the display text
-      displayText = displayText.replace(mlMatch[0], `${ozValue} oz`);
-    }
-    
-    // Format display text for easier reading
-    if (displayText.includes('(')) {
-      // If it has a description in parentheses, capitalize the first part
-      const parts = displayText.split('(');
-      parts[0] = parts[0].trim().charAt(0).toUpperCase() + parts[0].trim().slice(1);
-      displayText = `${parts[0]} (${parts[1]}`;
-    } else {
-      // Otherwise just capitalize the first letter
-      displayText = displayText.charAt(0).toUpperCase() + displayText.slice(1);
-    }
-    
-    option.textContent = displayText;
-    
+    option.dataset.value = String(index);
+    option.textContent = `${servingSizeText(serving)} · ${servingCaffeineText(serving)}`;
+
     // Add click event listener
     option.addEventListener('click', function() {
       selectSize(this.dataset.value, this.textContent);
     });
-    
+
     sizeOptions.appendChild(option);
   });
-  
+
   // Enable the buttons
   sizeButton.disabled = false;
   document.getElementById('caffeineQuantity').disabled = false;
   initSizeDropdown();
-}
-
-// Get caffeine content based on selections
-function getCaffeineContent(beverageValue, size, quantity) {
-  if (beverageValue === 'custom') {
-    // For custom items, get caffeine content from the input field
-    const customCaffeine = parseFloat(document.getElementById('customCaffeine').value) || 0;
-    return customCaffeine * quantity;
-  }
-  
-  if (!beverageValue || !size) return 0;
-  
-  // Extract category and type from the beverage value
-  const [category, type] = beverageValue.split('_');
-  
-  if (!category || !type) return 0;
-  
-  let caffeineAmount = 0;
-  
-  if (category === 'medicine') {
-    const [medicine, dosageType] = size.split('|');
-    caffeineAmount = caffeineData[category][type][medicine][dosageType];
-  } else {
-    caffeineAmount = caffeineData[category][type].sizes[size];
-  }
-  
-  return caffeineAmount * quantity;
 }
 
 // Add item to consumption tracker
@@ -464,23 +399,17 @@ function addConsumptionItem() {
     return;
   }
   
-  // Extract category and type from the beverage value
-  const [category, type] = beverageValue.split('_');
-  
-  // Format display names
-  let typeName = type.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
-  let sizeName = '';
-  let caffeineAmount = 0;
-  
-  if (category === 'medicine') {
-    const [medicine, dosageType] = sizeValue.split('|');
-    sizeName = dosageType.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
-    typeName = medicine.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
-    caffeineAmount = caffeineData[category][type][medicine][dosageType];
-  } else {
-    sizeName = sizeValue.charAt(0).toUpperCase() + sizeValue.slice(1);
-    caffeineAmount = caffeineData[category][type].sizes[sizeValue];
+  const bev = caffeineData[beverageValue];
+  const serving = bev && bev.servings[Number(sizeValue)];
+  if (!serving) {
+    alert('Please select all options');
+    return;
   }
+
+  const typeName = bev.product;
+  const sizeName = servingSizeText(serving);
+  const caffeineAmount = servingCaffeine(serving);
+  const isRange = serving.caffeine_mg == null;
   
   // Check if this item already exists in the tracker
   const existingItemIndex = consumptionItems.findIndex(item => 
@@ -499,14 +428,15 @@ function addConsumptionItem() {
     const item = {
       id: Date.now(),
       beverageValue,
-      category,
-      type,
+      category: bev.category,
+      type: bev.slug,
       size: sizeValue,
       typeName,
       sizeName,
       quantity,
       caffeinePerItem: caffeineAmount,
-      totalCaffeine
+      totalCaffeine,
+      isRange
     };
     
     // Add to items array
@@ -516,7 +446,7 @@ function addConsumptionItem() {
   // Update table
   updateConsumptionTable();
   
-  trackEvent('beverage_add', { beverage_name: typeName.toLowerCase().trim(), caffeine_mg: Math.round(caffeineAmount * quantity), source: 'preset' });
+  trackEvent('beverage_add', { beverage_name: bev.slug, caffeine_mg: Math.round(caffeineAmount * quantity), source: 'preset' });
   trackTrackerSave();
 
   // Reset all fields
@@ -551,7 +481,8 @@ function updateConsumptionTable() {
     row.appendChild(quantityCell);
     
     const caffeineCell = document.createElement('td');
-    caffeineCell.textContent = item.totalCaffeine + ' mg';
+    // Ranged sources count the top of the range, so say so
+    caffeineCell.textContent = (item.isRange ? 'up to ' : '') + item.totalCaffeine + ' mg';
     row.appendChild(caffeineCell);
     
     const actionCell = document.createElement('td');
@@ -958,17 +889,20 @@ function initCustomDropdown() {
   });
   
   // Filter options when typing in search box
+  // Accent-insensitive, so "caffe latte" finds "Caffè Latte"
+  const fold = text => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+
   searchInput.addEventListener('input', function() {
-    const filter = this.value.toLowerCase();
-    const options = document.querySelectorAll('.custom-select-option');
-    
+    const filter = fold(this.value);
+    const options = dropdown.querySelectorAll('.custom-select-option');
+
     options.forEach(option => {
-      const text = option.textContent.toLowerCase();
+      const text = fold(option.textContent);
       option.style.display = text.includes(filter) ? '' : 'none';
     });
-    
+
     // Show/hide category headers based on visible options
-    const categories = document.querySelectorAll('.custom-select-optgroup');
+    const categories = dropdown.querySelectorAll('.custom-select-optgroup');
     categories.forEach(category => {
       const nextSibling = category.nextElementSibling;
       let hasVisibleOption = false;
@@ -1076,11 +1010,8 @@ async function initApp() {
       customFields.classList.add('d-none');
       regularFields.classList.remove('d-none');
       
-      // Extract category and type from the value (e.g., coffee_espresso -> coffee, espresso)
-      const [category, type] = value.split('_');
-      
       // Populate size dropdown directly
-      populateSizeDropdown(category, type);
+      populateSizeDropdown(value);
       document.getElementById('caffeineQuantity').disabled = true;
       document.getElementById('addCaffeineBtn').disabled = true;
     } else {
