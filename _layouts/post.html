@@ -16,7 +16,12 @@ layout: default
           {% if page.tags %}
           <div class="mt-2">
             {% for tag in page.tags %}
+            {%- comment -%} The topics hub only has sections for tags used by 2+ posts; see _pages/topics.html. {%- endcomment -%}
+            {% if site.tags[tag].size > 1 %}
             <a href="{{ '/pages/topics/' | relative_url }}#topic-{{ tag | slugify }}" class="badge bg-secondary me-1 text-decoration-none">{{ tag }}</a>
+            {% else %}
+            <span class="badge bg-secondary me-1">{{ tag }}</span>
+            {% endif %}
             {% endfor %}
           </div>
           {% endif %}
