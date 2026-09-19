@@ -78,7 +78,8 @@
   var SVG_NS = 'http://www.w3.org/2000/svg';
   var PREFS_KEY = 'caffeineCalculatorPreferences';
   var beverages = {};
-  var selected = { slug: null, size: 0 };
+  // Modifier half-life is null when the slider applies
+  var selected = { slug: null, size: 0, modifierHalfLife: null, weightUnit: 'kg' };
   var els = {};
 
   function $(id) { return document.getElementById(id); }
@@ -112,15 +113,30 @@
     selectSize(index, els.sizeOptions.children[index].textContent);
   }
 
+  function selectModifier(option) {
+    selected.modifierHalfLife = option.dataset.halfLife ? Number(option.dataset.halfLife) : null;
+    els.modifierText.textContent = option.textContent;
+    update();
+  }
+
+  // kg | lb toggle, as on the main calculator
+  function setWeightUnit(unit) {
+    selected.weightUnit = unit === 'lbs' ? 'lbs' : 'kg';
+    els.unitButtons.forEach(function (b) {
+      var on = b.dataset.hlUnit === selected.weightUnit;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
   function weightKg() {
     var w = parseFloat(els.weight.value);
     if (!(w > 0)) return 0;
-    return els.weightUnit.value === 'lbs' ? w * 0.453592 : w;
+    return selected.weightUnit === 'lbs' ? w * 0.453592 : w;
   }
 
   function halfLife() {
-    var opt = els.modifier.options[els.modifier.selectedIndex];
-    return opt.dataset.halfLife ? Number(opt.dataset.halfLife) : Number(els.halfLife.value);
+    return selected.modifierHalfLife || Number(els.halfLife.value);
   }
 
   function inputs() {
@@ -148,7 +164,7 @@
     var cut = M.cutoff(i.bedtime, i.dose, threshold, i.halfLife);
     var bedMinutes = M.toMinutes(i.bedtime);
 
-    els.halfLife.disabled = !!els.modifier.value;
+    els.halfLife.disabled = !!selected.modifierHalfLife;
     els.halfLifeValue.textContent = i.halfLife + ' h';
 
     els.resultMg.textContent = Math.round(left) + ' mg';
@@ -315,7 +331,7 @@
       var prefs = JSON.parse(localStorage.getItem(PREFS_KEY) || 'null');
       if (prefs && prefs.weight > 0 && !els.weight.value) {
         els.weight.value = prefs.weight;
-        els.weightUnit.value = prefs.weightUnit === 'lbs' ? 'lbs' : 'kg';
+        setWeightUnit(prefs.weightUnit);
       }
     } catch (e) { /* storage unavailable: leave the field empty */ }
   }
@@ -325,8 +341,9 @@
       drinkButton: $('hlDrinkButton'), drinkText: $('hlDrinkButtonText'), drinkOptions: $('hlDrinkOptions'),
       sizeButton: $('hlSizeButton'), sizeText: $('hlSizeButtonText'), sizeOptions: $('hlSizeOptions'),
       qty: $('hlQty'), time: $('hlTime'), bedtime: $('hlBedtime'),
-      halfLife: $('hlHalfLife'), halfLifeValue: $('hlHalfLifeValue'), modifier: $('hlModifier'),
-      weight: $('hlWeight'), weightUnit: $('hlWeightUnit'),
+      halfLife: $('hlHalfLife'), halfLifeValue: $('hlHalfLifeValue'),
+      modifierButton: $('hlModifierButton'), modifierText: $('hlModifierButtonText'), modifierOptions: $('hlModifierOptions'),
+      weight: $('hlWeight'), unitButtons: Array.prototype.slice.call(document.querySelectorAll('[data-hl-unit]')),
       resultMg: $('hlResultMg'), resultWhen: $('hlResultWhen'), resultDetail: $('hlResultDetail'),
       resultSleep: $('hlResultSleep'), resultCutoff: $('hlResultCutoff'), resultCutoffWhy: $('hlResultCutoffWhy'),
       chart: $('hlChart'), tooltip: $('hlTooltip'), table: $('hlTable')
@@ -347,10 +364,18 @@
     if (window.renderIcons) window.renderIcons();
     initSelectDropdown(els.drinkButton.closest('.custom-select-container'));
     initSelectDropdown(els.sizeButton.closest('.custom-select-container'));
+    initSelectDropdown(els.modifierButton.closest('.custom-select-container'));
     els.drinkButton.disabled = false;
 
+    Array.prototype.forEach.call(els.modifierOptions.querySelectorAll('.custom-select-option'), function (option) {
+      option.addEventListener('click', function () { selectModifier(option); });
+    });
+    els.unitButtons.forEach(function (b) {
+      b.addEventListener('click', function () { setWeightUnit(b.dataset.hlUnit); update(); });
+    });
+
     prefillWeight();
-    ['qty', 'time', 'bedtime', 'halfLife', 'modifier', 'weight', 'weightUnit'].forEach(function (k) {
+    ['qty', 'time', 'bedtime', 'halfLife', 'weight'].forEach(function (k) {
       els[k].addEventListener('input', update);
       els[k].addEventListener('change', update);
     });

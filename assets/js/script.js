@@ -906,6 +906,51 @@ function initSelectDropdown(container) {
     if (event.target.closest('.custom-select-option')) setOpen(false);
   });
 
+  // Keyboard: arrows move through the visible options, Enter or Space picks one,
+  // Escape closes and returns focus to the button
+  const visibleOptions = () => [...dropdown.querySelectorAll('.custom-select-option')]
+    .filter(option => option.style.display !== 'none');
+  const focusOption = index => {
+    const options = visibleOptions();
+    if (!options.length) return;
+    const option = options[Math.max(0, Math.min(options.length - 1, index))];
+    option.tabIndex = -1;
+    option.focus();
+  };
+  const choose = option => {
+    option.click();
+    button.focus();
+  };
+
+  button.addEventListener('keydown', function(e) {
+    if (e.key !== 'ArrowDown' || this.disabled) return;
+    e.preventDefault();
+    setOpen(true);
+    if (searchInput) searchInput.focus(); else focusOption(0);
+  });
+
+  dropdown.addEventListener('keydown', function(e) {
+    const options = visibleOptions();
+    const current = options.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      focusOption(current + 1);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (current <= 0 && searchInput) searchInput.focus(); else focusOption(current - 1);
+    } else if ((e.key === 'Enter' || e.key === ' ') && current >= 0) {
+      e.preventDefault();
+      choose(options[current]);
+    } else if (e.key === 'Enter' && document.activeElement === searchInput && options.length) {
+      // Enter in the search box picks the first match
+      e.preventDefault();
+      choose(options[0]);
+    } else if (e.key === 'Escape') {
+      setOpen(false);
+      button.focus();
+    }
+  });
+
   if (!searchInput) return;
 
   // Filter options when typing in search box

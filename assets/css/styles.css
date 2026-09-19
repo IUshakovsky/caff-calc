@@ -943,8 +943,10 @@ i[data-lucide] {
   align-items: center;
 }
 
-.custom-select-option:hover {
+.custom-select-option:hover,
+.custom-select-option:focus {
   background-color: var(--c-brand-tint);
+  outline: none;
 }
 
 .custom-select-option.selected {
@@ -2263,14 +2265,19 @@ button:focus-visible,
   color: var(--c-espresso);
 }
 
-/* Long drink and size names must never widen the page on a phone */
-.half-life-tool select,
+/* Inputs must never widen the page on a phone */
 .half-life-tool input {
   max-width: 100%;
 }
 
 .hl-unit {
-  max-width: 4.5rem;
+  flex-shrink: 0;
+}
+
+/* Sits beside a full-height input, so it keeps its size on phones too */
+.hl-unit.btn-group > .btn {
+  padding: 0 0.65rem;
+  font-size: var(--fs-xs);
 }
 
 .half-life-tool .form-range::-webkit-slider-thumb {

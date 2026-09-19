@@ -74,40 +74,66 @@ faq:
             </div>
           </div>
           <div class="col-4 col-md-2">
-            <label for="hlQty" class="form-label small">How many</label>
+            <label for="hlQty" class="form-label small">
+              <i data-lucide="hash" class="me-1 text-secondary" aria-hidden="true"></i>
+              How many
+            </label>
             <input type="number" id="hlQty" class="form-control form-control-sm" value="1" min="1" max="10">
           </div>
           <div class="col-6 col-md-3">
-            <label for="hlTime" class="form-label small">Had it at</label>
+            <label for="hlTime" class="form-label small">
+              <i data-lucide="clock" class="me-1 text-secondary" aria-hidden="true"></i>
+              Had it at
+            </label>
             <input type="time" id="hlTime" class="form-control form-control-sm" value="15:00">
           </div>
           <div class="col-6 col-md-3">
-            <label for="hlBedtime" class="form-label small">Bedtime</label>
+            <label for="hlBedtime" class="form-label small">
+              <i data-lucide="moon" class="me-1 text-secondary" aria-hidden="true"></i>
+              Bedtime
+            </label>
             <input type="time" id="hlBedtime" class="form-control form-control-sm" value="23:00">
           </div>
           <div class="col-6 col-md-3">
-            <label for="hlWeight" class="form-label small">Weight (optional)</label>
-            <div class="input-group input-group-sm">
-              <input type="number" id="hlWeight" class="form-control" min="20" max="300" inputmode="decimal">
-              <select id="hlWeightUnit" class="form-select hl-unit" aria-label="Weight unit">
-                <option value="kg">kg</option>
-                <option value="lbs">lb</option>
-              </select>
+            <label for="hlWeight" class="form-label small">
+              <i data-lucide="weight" class="me-1 text-secondary" aria-hidden="true"></i>
+              Weight (optional)
+            </label>
+            <div class="d-flex gap-1">
+              <input type="number" id="hlWeight" class="form-control form-control-sm" min="20" max="300" inputmode="decimal">
+              <div class="btn-group hl-unit" role="group" aria-label="Weight unit">
+                <button type="button" class="btn btn-outline-secondary btn-xs py-0 active" data-hl-unit="kg" aria-pressed="true">kg</button>
+                <button type="button" class="btn btn-outline-secondary btn-xs py-0" data-hl-unit="lbs" aria-pressed="false">lb</button>
+              </div>
             </div>
           </div>
           <div class="col-6 col-md-3">
-            <label for="hlHalfLife" class="form-label small">Half-life: <strong id="hlHalfLifeValue">5 h</strong></label>
+            <label for="hlHalfLife" class="form-label small">
+              <i data-lucide="timer" class="me-1 text-secondary" aria-hidden="true"></i>
+              Half-life: <strong id="hlHalfLifeValue">5 h</strong>
+            </label>
             <input type="range" id="hlHalfLife" class="form-range" min="4" max="6" step="0.5" value="5">
           </div>
           <div class="col-12">
-            <label for="hlModifier" class="form-label small">Anything that changes how fast you clear caffeine?</label>
-            <select id="hlModifier" class="form-select form-select-sm">
-              <option value="">No, use the half-life slider</option>
-              <option value="oral-contraceptives" data-half-life="7.9">Oral contraceptives (7.9 h in a 1985 study)</option>
-              <option value="ciprofloxacin" data-half-life="8.2">Ciprofloxacin (8.2 h in a 1989 study)</option>
-              <option value="pregnancy" data-half-life="8.3">Pregnant (8.3 h average in a 1981 study)</option>
-              <option value="smoking" data-half-life="3.5">I smoke (3.5 h in a 2025 review)</option>
-            </select>
+            <label for="hlModifierButton" class="form-label small">
+              <i data-lucide="pill" class="me-1 text-secondary" aria-hidden="true"></i>
+              Anything that changes how fast you clear caffeine?
+            </label>
+            <div class="custom-select-container">
+              <button type="button" id="hlModifierButton" class="form-select form-select-sm custom-select-button">
+                <span id="hlModifierButtonText">No, use the half-life slider</span>
+                <i data-lucide="chevron-down" aria-hidden="true"></i>
+              </button>
+              <div class="custom-select-dropdown">
+                <div id="hlModifierOptions" class="custom-select-options">
+                  <div class="custom-select-option" data-value="">No, use the half-life slider</div>
+                  <div class="custom-select-option" data-value="oral-contraceptives" data-half-life="7.9">Oral contraceptives (7.9 h in a 1985 study)</div>
+                  <div class="custom-select-option" data-value="ciprofloxacin" data-half-life="8.2">Ciprofloxacin (8.2 h in a 1989 study)</div>
+                  <div class="custom-select-option" data-value="pregnancy" data-half-life="8.3">Pregnant (8.3 h average in a 1981 study)</div>
+                  <div class="custom-select-option" data-value="smoking" data-half-life="3.5">I smoke (3.5 h in a 2025 review)</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
