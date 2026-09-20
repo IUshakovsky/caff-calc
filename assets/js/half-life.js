@@ -110,7 +110,7 @@
     renderSizeOptions(els.sizeOptions, bev, selectSize);
     els.sizeButton.disabled = false;
     var index = Math.max(0, bev.servings.findIndex(function (s) { return s.default; }));
-    selectSize(index, els.sizeOptions.children[index].textContent);
+    selectSize(index, els.sizeOptions.children[index].dataset.short);
   }
 
   function selectModifier(option) {

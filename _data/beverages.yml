@@ -311,7 +311,7 @@
 
 - slug: starbucks-pike-place-roast
   brand: "Starbucks"
-  product: "Starbucks Pike Place Roast brewed coffee"
+  product: "Starbucks Pike Place Roast"
   category: coffee
   featured: true
   servings:
@@ -343,7 +343,7 @@
 
 - slug: starbucks-blonde-roast
   brand: "Starbucks"
-  product: "Starbucks Blonde Roast brewed coffee (Sunsera Blend)"
+  product: "Starbucks Blonde Roast (Sunsera)"
   category: coffee
   servings:
     - label: "Short"
@@ -958,7 +958,7 @@
 
 - slug: starbucks-frappuccino-bottled-mocha
   brand: "Starbucks"
-  product: "Starbucks Frappuccino chilled coffee drink, Mocha (bottle)"
+  product: "Starbucks Frappuccino Mocha (bottle)"
   category: coffee
   servings:
     - label: "Bottle"

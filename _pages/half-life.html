@@ -5,6 +5,7 @@ seo_title: "Caffeine Half-Life Calculator: How Much Is Left at Bedtime?"
 subtitle: "How much caffeine is still in your system at bedtime, and when to have your last one"
 description: "Pick a drink and when you had it: see how much caffeine is left at bedtime on a decay curve, and the latest time to have it. Every figure sourced."
 permalink: /half-life/
+wide: true
 web_app_name: "CaffCalc Caffeine Half-Life Calculator"
 faq:
   - question: "How long does caffeine stay in your system?"
@@ -31,7 +32,7 @@ faq:
 
 <div class="content-page">
   <div class="row">
-    <div class="col-lg-10 mx-auto">
+    <div class="col-12">
 
       <section class="panel panel-wide mb-4 half-life-tool" aria-labelledby="hl-tool-heading">
         <div class="panel-title">
@@ -40,7 +41,7 @@ faq:
         </div>
 
         <div class="row g-2 mb-2">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <label for="hlDrinkButton" class="form-label small">
               <i data-lucide="coffee" class="me-1 text-secondary" aria-hidden="true"></i>
               Drink
@@ -58,7 +59,7 @@ faq:
               </div>
             </div>
           </div>
-          <div class="col-8 col-md-4">
+          <div class="col-9 col-md-5">
             <label for="hlSizeButton" class="form-label small">
               <i data-lucide="ruler" class="me-1 text-secondary" aria-hidden="true"></i>
               Size
@@ -73,10 +74,9 @@ faq:
               </div>
             </div>
           </div>
-          <div class="col-4 col-md-2">
+          <div class="col-3 col-md-2">
             <label for="hlQty" class="form-label small">
-              <i data-lucide="hash" class="me-1 text-secondary" aria-hidden="true"></i>
-              How many
+              <i data-lucide="hash" class="text-secondary" aria-hidden="true"></i> Qty
             </label>
             <input type="number" id="hlQty" class="form-control form-control-sm" value="1" min="1" max="10">
           </div>
@@ -168,6 +168,13 @@ faq:
         <noscript><p class="mt-3 mb-0">This calculator needs JavaScript. The figures it uses are listed on
           <a href="{{ '/caffeine-in/' | relative_url }}">caffeine in drinks</a>.</p></noscript>
       </section>
+
+    </div>
+  </div>
+
+  {%- comment -%} The tool takes the full width; the copy stays a readable column {%- endcomment -%}
+  <div class="row">
+    <div class="col-lg-9 mx-auto">
 
       <div class="card mb-4">
         <div class="card-body">

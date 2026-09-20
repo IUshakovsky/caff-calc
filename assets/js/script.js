@@ -279,14 +279,17 @@ function renderBeverageOptions(optionsContainer, beverages, onSelect) {
 }
 
 // Size options for one beverage; option values are indexes into its servings.
+// The list shows the full size ("Grande (473 ml) · 150 mg"); onSelect gets a
+// short form for the button ("Grande · 150 mg"), also kept in data-short.
 // Shared by the tracker and the half-life calculator.
 function renderSizeOptions(optionsContainer, bev, onSelect) {
   bev.servings.forEach((serving, index) => {
     const option = document.createElement('div');
     option.className = 'custom-select-option';
     option.dataset.value = String(index);
+    option.dataset.short = `${serving.label || servingSizeText(serving)} · ${servingCaffeineText(serving)}`;
     option.textContent = `${servingSizeText(serving)} · ${servingCaffeineText(serving)}`;
-    option.addEventListener('click', () => onSelect(index, option.textContent));
+    option.addEventListener('click', () => onSelect(index, option.dataset.short));
     optionsContainer.appendChild(option);
   });
 }
@@ -872,6 +875,9 @@ function loadUserPreferences() {
 // `container` is a .custom-select-container holding a .custom-select-button and
 // a .custom-select-dropdown, optionally with a .custom-select-search input.
 // Safe to call again after repopulating the options.
+const MAX_DROPDOWN_WIDTH = 512; // px; matches the 32rem cap in styles.css
+const EDGE_GAP = 8;
+
 function initSelectDropdown(container) {
   if (!container || container.dataset.dropdownReady) return;
   container.dataset.dropdownReady = 'true';
@@ -883,6 +889,16 @@ function initSelectDropdown(container) {
   const setOpen = open => {
     dropdown.classList.toggle('show', open);
     button.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (!open) return;
+    // The list is as wide as its longest option, so it can be wider than its
+    // button: align it to whichever side has more room and cap it to that room,
+    // never narrower than the button itself
+    const rect = button.getBoundingClientRect();
+    const spaceRight = document.documentElement.clientWidth - rect.left - EDGE_GAP;
+    const spaceLeft = rect.right - EDGE_GAP;
+    const alignEnd = spaceLeft > spaceRight;
+    dropdown.classList.toggle('custom-select-dropdown-end', alignEnd);
+    dropdown.style.maxWidth = Math.max(rect.width, Math.min(MAX_DROPDOWN_WIDTH, alignEnd ? spaceLeft : spaceRight)) + 'px';
   };
   button.setAttribute('aria-expanded', 'false');
 
@@ -1071,7 +1087,7 @@ async function initApp() {
     selectBeverage(linkedDrink.slug, linkedDrink.product);
     const sizeIndex = Math.max(0, linkedDrink.servings.findIndex(s => s.default));
     const sizeOption = document.querySelectorAll('#caffeineSizeOptions .custom-select-option')[sizeIndex];
-    if (sizeOption) selectSize(sizeOption.dataset.value, sizeOption.textContent);
+    if (sizeOption) selectSize(sizeOption.dataset.value, sizeOption.dataset.short);
     document.getElementById('caffeineButton').scrollIntoView({ block: 'center' });
   }
 

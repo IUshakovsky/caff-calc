@@ -89,6 +89,9 @@ navigation:
   - title: "Half-Life"
     url: /half-life/
     icon: "hourglass"
+  - title: "Caffeine in Drinks"
+    url: /caffeine-in/
+    icon: "cup-soda"
   - title: "Blog"
     url: /blog
     icon: "newspaper"

@@ -16,6 +16,6 @@ layout: default
   </div>
 </header>
 
-<div class="container main-content">
+<div class="container main-content{% if page.wide %} main-content-wide{% endif %}">
   {{ content }}
 </div>

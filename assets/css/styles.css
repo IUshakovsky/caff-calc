@@ -551,7 +551,9 @@ i[data-lucide] {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
+  /* Hidden or not, the bubble counts toward page width, so keep it inside the
+     screen on phones */
+  width: min(300px, calc(100vw - 5rem));
   padding: 10px 14px;
   background-color: var(--c-espresso);
   color: var(--c-text-invert);
@@ -562,10 +564,10 @@ i[data-lucide] {
   margin-bottom: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   line-height: 1.4;
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s, visibility 0.3s;
+  /* display:none, not just hidden: a hidden bubble still counts toward page
+     width and pushed the layout past the viewport on small phones */
+  display: none;
 }
 
 .tooltip-element[data-tooltip]::before {
@@ -578,16 +580,16 @@ i[data-lucide] {
   border-style: solid;
   border-color: transparent transparent var(--c-espresso) transparent;
   z-index: 100;
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s, visibility 0.3s;
+  display: none;
 }
 
+/* :focus as well as :hover, so a tap opens it on a touch screen */
 .tooltip-element[data-tooltip]:hover::after,
-.tooltip-element[data-tooltip]:hover::before {
-  opacity: 1;
-  visibility: visible;
+.tooltip-element[data-tooltip]:hover::before,
+.tooltip-element[data-tooltip]:focus::after,
+.tooltip-element[data-tooltip]:focus::before {
+  display: block;
 }
 
 /* Tooltip icon styling */
@@ -797,9 +799,30 @@ i[data-lucide] {
   }
   
   .main-content {
-    padding: 1.5rem 0; /* Reduced padding */
+    /* Vertical only: the container's own side padding has to stay, or the
+       negative margins on .row spill 12px past the viewport */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     margin: 0 auto;
     max-width: 1000px; /* Center content with max width */
+  }
+
+  /* The calculators (homepage, /half-life/) use the full container width,
+     following Bootstrap's own breakpoints */
+  .main-content.main-content-wide {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-content.main-content-wide {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-content.main-content-wide {
+    max-width: 1320px;
   }
 }
 
@@ -895,7 +918,11 @@ i[data-lucide] {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  width: 100%;
+  /* As wide as the longest option, so options don't break mid-line, but never
+     narrower than the button or wider than the screen */
+  width: max-content;
+  min-width: 100%;
+  max-width: min(32rem, calc(100vw - 2rem));
   max-height: 300px;
   overflow-y: auto;
   background-color: var(--c-surface);
@@ -904,6 +931,20 @@ i[data-lucide] {
   box-shadow: var(--e-3);
   z-index: 1000;
   display: none;
+}
+
+/* Set by initSelectDropdown when opening rightwards would leave the screen */
+.custom-select-dropdown.custom-select-dropdown-end {
+  left: auto;
+  right: 0;
+}
+
+/* The button stays one line; the list shows full names */
+.custom-select-button > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .custom-select-dropdown.show {
@@ -1069,6 +1110,7 @@ option.energy-item {
   top: 60px;
   right: 10px;
   width: 300px;
+  max-width: calc(100vw - 20px);
   max-height: 400px;
   overflow-y: auto;
   background-color: #fff;
@@ -1197,11 +1239,23 @@ option.energy-item {
   border-radius: var(--r-pill);
 }
 
-/* Six nav items: tighter padding keeps the bar on one line from 1200px, as it
-   was with five */
-@media (min-width: 992px) and (max-width: 1399.98px) {
+/* Seven nav items on one line. The bar expands at 1200px (navbar-expand-xl in
+   navigation.html; below that is the hamburger menu) with tighter link
+   padding. Between 1200px and 1400px, where the container is 1140px, the link
+   icons go and the search box narrows so the labels never wrap. */
+@media (min-width: 1200px) {
   .navbar-dark .navbar-nav .nav-link {
     padding: 0.4rem 0.55rem;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .navbar-dark .navbar-nav .nav-link svg {
+    display: none;
+  }
+
+  .search-form {
+    max-width: 150px;
   }
 }
 
@@ -1275,8 +1329,8 @@ option.energy-item {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Mobile styles */
-@media (max-width: 991px) {
+/* Collapsed (hamburger) navbar, matching navbar-expand-xl in navigation.html */
+@media (max-width: 1199.98px) {
   /* Arrange elements in order: sandwich menu, empty space, logo */
   .navbar .container {
     display: flex;
@@ -1305,9 +1359,14 @@ option.energy-item {
     margin-right: 0; /* Override desktop margin */
   }
   
-  /* Hide search form completely in mobile view */
+  /* Search sits at the bottom of the open menu, full width */
   .search-form {
-    display: none !important;
+    max-width: none;
+    margin: 0.5rem 0 0.75rem !important;
+  }
+
+  .search-form .input-group {
+    width: 100%;
   }
   
   /* Fix dropdown menu behavior */
@@ -2386,4 +2445,24 @@ button:focus-visible,
 
 .hl-tip-label {
   color: var(--c-text-soft);
+}
+
+/* Reference tables on small phones: smaller type and tighter cells so the
+   common ones fit without sideways scrolling */
+@media (max-width: 575.98px) {
+  .table-content table {
+    font-size: var(--fs-xs);
+  }
+
+  .table-content th,
+  .table-content td {
+    padding: 0.45rem 0.4rem;
+  }
+}
+
+/* Bootstrap gives .toast a 350px minimum, which is wider than the narrowest
+   phones; keep the notification inside the screen */
+.toast {
+  min-width: 0;
+  max-width: calc(100vw - 2rem);
 }

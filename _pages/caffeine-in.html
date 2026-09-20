@@ -55,7 +55,7 @@ excerpt_separator: ""
                   <td>{% if bev_page %}<a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif %}</td>
                   <td>{% include serving-size.html serving=serving %}</td>
                   <td>{% include serving-mg.html serving=serving %}</td>
-                  <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a></td>
+                  <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener" title="{{ bev.source_name }}"><span class="d-none d-md-inline">{{ bev.source_name }}</span><span class="d-md-none">Source</span></a></td>
                 </tr>
                 {%- endfor %}
               </tbody>

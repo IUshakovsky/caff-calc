@@ -28,7 +28,7 @@ faq:
   </div>
 </header>
 
-  <div class="container main-content">
+  <div class="container main-content main-content-wide">
 
     <div class="row calculator-layout">
       <div class="col-lg-4">
@@ -139,7 +139,7 @@ faq:
       <label class="form-label">
         <i data-lucide="heart-pulse" class="me-1 text-secondary" aria-hidden="true"></i>
         Caffeine Sensitivity
-        <span class="tooltip-element" data-tooltip="Caffeine sensitivity refers to how your body metabolizes and responds to caffeine intake. People with higher sensitivity experience stronger effects from smaller amounts and may feel jittery or anxious more easily. Your age, weight, genetics, and overall health all contribute to your personal sensitivity level.">
+        <span class="tooltip-element" tabindex="0" role="note" data-tooltip="Caffeine sensitivity refers to how your body metabolizes and responds to caffeine intake. People with higher sensitivity experience stronger effects from smaller amounts and may feel jittery or anxious more easily. Your age, weight, genetics, and overall health all contribute to your personal sensitivity level.">
           <i data-lucide="info" class="ms-1 text-muted tooltip-icon" aria-hidden="true"></i>
         </span>
       </label>
@@ -195,7 +195,7 @@ faq:
             </div>
             <input type="hidden" id="caffeineBeverage" value="">
           </div>
-          <div class="col-md-4 regular-fields">
+          <div class="col-md-5 regular-fields">
             <label class="form-label small">
               <i data-lucide="ruler" class="me-1 text-secondary" aria-hidden="true"></i>
               Size
@@ -213,14 +213,14 @@ faq:
             </div>
             <input type="hidden" id="caffeineSize" value="">
           </div>
-          <div class="col-md-4 custom-fields d-none">
+          <div class="col-md-5 custom-fields d-none">
             <label class="form-label small">
               <i data-lucide="flask-conical" class="me-1 text-secondary" aria-hidden="true"></i>
               Caffeine mg
             </label>
             <input type="number" id="customCaffeine" class="form-control form-control-sm" value="0" min="0">
           </div>
-          <div class="col-md-2">
+          <div class="col-md-1">
             <label class="form-label small">
               <i data-lucide="hash" class="text-secondary" aria-hidden="true"></i> Qty
             </label>
@@ -234,9 +234,8 @@ faq:
             </button>
           </div>
         </div>
-        </div>
       </div>
-      
+
       <div class="d-flex justify-content-between align-items-center mb-2 mt-3">
         <h6 class="mb-0">Tracked Items</h6>
         <button id="clearTrackerBtn" class="btn btn-sm btn-outline-secondary">
@@ -291,19 +290,6 @@ faq:
         <!-- Status message will appear here -->
       </div>
       
-      <!-- Toast notification for alerts -->
-      <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-        <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <i id="toastIcon" data-lucide="info" class="me-2" aria-hidden="true"></i>
-            <strong class="me-auto" id="toastTitle">Notification</strong>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body" id="toastMessage">
-            <!-- Toast message will appear here -->
-          </div>
-        </div>
-      </div>
 
       <div class="disclaimer mt-3">
         <i data-lucide="info" class="me-1" aria-hidden="true"></i>
@@ -313,5 +299,19 @@ faq:
       </div>
     </div>
   </div>
+
+      <!-- Toast notification for alerts -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+  <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <i id="toastIcon" data-lucide="info" class="me-2" aria-hidden="true"></i>
+      <strong class="me-auto" id="toastTitle">Notification</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="toastMessage">
+      <!-- Toast message will appear here -->
+    </div>
+  </div>
+</div>
 
 {% include home-content.html %}
