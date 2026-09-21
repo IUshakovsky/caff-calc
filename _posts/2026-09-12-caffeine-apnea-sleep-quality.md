@@ -7,7 +7,6 @@ excerpt: "Coffee doesn't appear to cause sleep apnea—but caffeine timing can w
 image: "/assets/images/blog/caffeine-apnea-sleep-quality.jpg"
 ---
 
-# Caffeine and Sleep Apnea: How It Affects Risk and Sleep Quality
 
 You count on coffee to survive the day—but could it be sabotaging your nights? If you snore, wake up groggy, or suspect sleep apnea, the caffeine question gets complicated. Some people worry coffee might cause apnea. Others use caffeine to fight the next-day fog that apnea creates.
 

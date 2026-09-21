@@ -7,7 +7,6 @@ excerpt: "Wondering if caffeine helps or hurts ADHD? Here's a research-backed lo
 image: "/assets/images/blog/caffeine-adhd-risks-benefits.jpg"
 ---
 
-# Caffeine and ADHD: Risks, Benefits, and Safe Limits (What Science Says)
 
 If you live with ADHD, you've probably wondered: does that morning coffee actually help, or am I just fooling myself?
 

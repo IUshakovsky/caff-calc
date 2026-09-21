@@ -7,7 +7,6 @@ excerpt: "Does caffeine boost or suppress immunity? Learn how coffee and tea inf
 image: "/assets/images/blog/caffeine-immune-system.jpg"
 ---
 
-# Caffeine and Your Immune System: Boost or Suppress?
 
 You reach for coffee to feel sharper. But what is caffeine doing to your immune system in the background?
 

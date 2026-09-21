@@ -7,7 +7,6 @@ excerpt: "Does caffeine increase osteoporosis risk? We review the latest researc
 image: "/assets/images/blog/caffeine-osteoporosis-risks.jpg"
 ---
 
-# Caffeine and Osteoporosis: Risks, Evidence, and Prevention
 
 Your morning coffee isn't dissolving your skeleton. But the relationship between caffeine and bone health is more interesting—and more nuanced—than most headlines suggest.
 

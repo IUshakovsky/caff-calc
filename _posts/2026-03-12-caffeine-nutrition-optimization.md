@@ -7,7 +7,6 @@ excerpt: "Make caffeine work for you—not against you. Learn how to pair caffei
 image: "/assets/images/blog/caffeine-nutrition-optimization.jpg"
 ---
 
-# Caffeine and Nutrition: A Practical Guide to Optimize Your Diet
 
 Your morning coffee might be stealing your iron. It sharpens focus and lifts mood, sure—but the same cup can blunt mineral absorption at breakfast, hijack your sleep hours later, or push you past safe daily limits without a single warning sign. The good news: you don't have to quit. By aligning caffeine with smart nutrition moves—what you eat, when you sip, and how much you pour—you can keep the benefits while trimming the downsides. This guide translates current evidence into simple, actionable steps so your caffeine and nutrition work together, not at odds.
 

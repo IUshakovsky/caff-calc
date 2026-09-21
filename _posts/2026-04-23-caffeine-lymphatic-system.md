@@ -7,7 +7,6 @@ excerpt: "Does caffeine help or hinder your lymphatic system? Explore what resea
 image: "/assets/images/blog/caffeine-lymphatic-system.jpg"
 ---
 
-# Caffeine and Your Lymphatic System: What Science Really Says
 
 Your legs feel puffy after a long flight. Your brain feels foggy despite eight hours in bed. You reach for coffee, hoping it'll fix everything. But what if that cup is quietly affecting the very systems meant to clear waste and keep you sharp? Your lymphatic system—a network moving fluid, clearing toxins, and supporting immune function—works 24/7 in the background. Caffeine, meanwhile, tweaks adenosine signaling, blood flow, and sleep quality. Those changes can help or hinder lymphatic drainage depending on how you time and dose your intake. Here's what science actually shows about caffeine and your body's drainage network.
 

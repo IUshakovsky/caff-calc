@@ -7,7 +7,6 @@ excerpt: "Learn how much caffeine is safe during pregnancy, the science behind i
 image: "/assets/images/blog/caffeine-pregnancy-guidelines.jpg"
 ---
 
-# Caffeine and Pregnancy: Safe Limits and Guidelines
 
 You're pregnant and staring at your morning coffee. Should you drink it? Skip it? Feel guilty about it?
 

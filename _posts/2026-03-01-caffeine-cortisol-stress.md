@@ -7,7 +7,6 @@ excerpt: "Caffeine and cortisol both shape how energized—or stressed—you fee
 image: "/assets/images/blog/caffeine-cortisol-stress.jpg"
 ---
 
-# Caffeine and Cortisol: Managing Stress Safely
 
 Your morning coffee wakes you up—but so does your own body. Cortisol, your main stress hormone, surges naturally each morning to get you moving. Caffeine adds a second jolt on top. Together, they can sharpen your focus or, if mistimed, leave you jittery and wired by noon.
 

@@ -7,7 +7,6 @@ excerpt: "Does caffeine raise or lower nitric oxide? We review the latest human 
 image: "/assets/images/blog/caffeine-nitric-oxide-vessels.jpg"
 ---
 
-# Caffeine and Nitric Oxide: What Science Says About Your Vessels
 
 Your morning coffee might be flexing your blood vessels in two directions at once. Nitric oxide (NO)—the tiny gas your arteries release to relax and widen—controls blood flow, blood pressure, and exercise pumps. So does caffeine help it or hurt it? The honest answer: both, depending on the dose, the timing, and whether you're sipping pure caffeine or whole coffee with its polyphenols. Research suggests the beverage matrix often matters more than the caffeine itself. In this guide, we unpack the science and give you practical ways to enjoy caffeine while protecting your vascular health.
 

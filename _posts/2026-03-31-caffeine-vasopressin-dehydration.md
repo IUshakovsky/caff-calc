@@ -7,7 +7,6 @@ excerpt: "Is caffeine dehydrating? Learn how caffeine interacts with vasopressin
 image: "/assets/images/blog/caffeine-vasopressin-dehydration.jpg"
 ---
 
-# Caffeine and Vasopressin: Managing Dehydration Risks
 
 You've heard it a thousand times: "Coffee dehydrates you." Yet most of us feel fine after a morning cup—and our daily fluids add up just fine. Where does the truth land?
 

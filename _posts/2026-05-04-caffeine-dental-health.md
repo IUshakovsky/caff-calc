@@ -7,7 +7,6 @@ excerpt: "Coffee stains teeth, energy drinks erode enamel, and caffeine may wors
 image: "/assets/images/blog/caffeine-dental-health.jpg"
 ---
 
-# How Caffeine Affects Dental Health: Stains, Erosion, Tips
 
 Your morning coffee might be quietly reshaping your smile. Not through caffeine itself—but through pigments, acids, sugars, and the way you sip throughout the day. Studies suggest that frequent exposure to acidic beverages can soften enamel within minutes, while dark chromogens in coffee and tea bind to teeth and build visible stains over weeks.
 

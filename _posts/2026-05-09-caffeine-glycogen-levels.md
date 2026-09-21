@@ -7,7 +7,6 @@ excerpt: "Does caffeine burn through your glycogen or help you refill it? Here's
 image: "/assets/images/blog/caffeine-glycogen.jpg"
 ---
 
-# Caffeine and Glycogen: What Really Happens Before and After Exercise
 
 You've heard two opposite claims: caffeine "spares" glycogen so you go longer—or it "burns through" it so you fade. Which is true? The answer is more nuanced than either camp admits.
 

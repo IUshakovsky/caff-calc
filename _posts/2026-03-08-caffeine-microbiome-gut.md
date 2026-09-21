@@ -7,7 +7,6 @@ excerpt: "What does caffeine do to your gut microbiome? Here's what recent human
 image: "/assets/images/blog/caffeine-microbiome-gut.jpg"
 ---
 
-# Caffeine and the Microbiome: How Your Gut Responds
 
 Your morning coffee has trillions of silent critics. Every sip passes through a bustling ecosystem of gut bacteria that notice—and react to—what you drink. Recent large-scale human studies now confirm that coffee habits correlate with specific microbial species, and the plot twist might surprise you: caffeine itself is absorbed long before it reaches most of your microbes. The real gut players may be coffee's polyphenols and other compounds that survive the journey to your colon.
 

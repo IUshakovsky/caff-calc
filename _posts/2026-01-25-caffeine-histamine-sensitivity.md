@@ -7,7 +7,6 @@ excerpt: "Coffee triggers flushing or headaches? Discover how caffeine interacts
 image: "/assets/images/blog/caffeine-histamine-sensitivity.jpg"
 ---
 
-# Caffeine and Histamine: What Science Says About Sensitivity
 
 Coffee feels energizing one day, anxiety-inducing the next. Your afternoon latte leaves you flushed and headachy. You wonder: is this caffeine sensitivity—or something stranger?
 

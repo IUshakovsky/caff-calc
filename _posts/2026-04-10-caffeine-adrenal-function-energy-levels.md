@@ -7,7 +7,6 @@ excerpt: "Wired then tired? Learn how caffeine interacts with your adrenal hormo
 image: "/assets/images/blog/caffeine-adrenal-energy.jpg"
 ---
 
-# Caffeine, Adrenal Function, and Energy: What Science Says
 
 Wired at 9 AM, exhausted by 3 PM. Sound familiar?
 

@@ -9,7 +9,6 @@ excerpt: "Caffeine can both help and hurt migraine. Learn how dose, timing, and 
 image: "/assets/images/blog/caffeine-migraine-triggers.jpg"
 ---
 
-# Caffeine and Migraine: The Double-Edged Sword
 
 Your morning coffee stops a migraine before it starts. Then Saturday hits—you sleep in, skip that cup, and wake up with a pounding headache. Sound familiar?
 

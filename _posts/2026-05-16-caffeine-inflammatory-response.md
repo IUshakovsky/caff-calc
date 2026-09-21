@@ -7,7 +7,6 @@ excerpt: "Caffeine doesn't just wake you up—it nudges your immune system too. 
 image: "/assets/images/blog/caffeine-inflammation-immune-response.jpg"
 ---
 
-# How Caffeine Affects Your Inflammatory Response
 
 Your morning coffee is having a quiet conversation with your immune system. The same molecule that blocks adenosine—your brain's natural "slow down" signal—also tugs on inflammatory pathways that shape how you recover, respond to stress, and sleep. Depending on dose, timing, and your biology, caffeine may dampen certain inflammatory messengers or nudge them higher. Coffee drinkers often show slightly lower levels of C-reactive protein, a key inflammation marker, but pure caffeine doesn't always behave the same way as a whole cup. In this guide, we translate the latest science on caffeine and inflammation into simple steps you can use today.
 

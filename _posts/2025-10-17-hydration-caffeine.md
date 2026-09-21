@@ -8,7 +8,6 @@ image: "/assets/images/blog/caffeine-dehydration.jpg"
 image_alt: "A glass of water beside a steaming cup of coffee, symbolizing hydration and caffeine interplay"
 ---
 
-# Hydration and Caffeine: Do They Cancel Each Other Out?
 
 You finish your third cup of coffee and suddenly feel parched. Does caffeine drain your fluids like a bathroom faucet left running?
 

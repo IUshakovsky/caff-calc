@@ -9,7 +9,6 @@ excerpt: "Caffeine briefly tightens blood vessels and raises blood pressure, yet
 image: "/assets/images/blog/caffeine-blood-vessels-function.jpg"
 ---
 
-# How Caffeine Affects Blood Vessel Function: What Science Says
 
 Your morning coffee wakes up your brain—but what's it doing to your arteries? Caffeine can temporarily tighten blood vessels and nudge blood pressure upward within 30 minutes of your first sip. Yet coffee itself carries hundreds of plant compounds that may actually help your vessels relax and function better hours later. This two-sided story matters because endothelial health is one of the strongest predictors of long-term cardiovascular risk. Here's what the research actually says—and how to enjoy caffeine without sidelining your vascular system.
 

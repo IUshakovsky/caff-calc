@@ -7,7 +7,6 @@ excerpt: "Caffeine can subtly change how your body absorbs iron and calcium, shi
 image: "/assets/images/blog/caffeine-nutrient-intake-balance.jpg"
 ---
 
-# How Caffeine Affects Daily Nutrient Intake (And How to Fix It)
 
 Your morning coffee sharpens your focus—but it may also be quietly stealing iron from your lunch. Roughly 85% of U.S. adults drink caffeine daily, yet few realize that coffee and tea can cut non-heme iron absorption by up to 60% when sipped with meals. Caffeine itself has almost no calories, but it influences how your body handles key minerals like iron and calcium, shapes your appetite and sleep, and even adds trace amounts of potassium, magnesium, and B vitamins. The good news? A few small timing tweaks let you enjoy your favorite drinks without shortchanging your nutrition.
 

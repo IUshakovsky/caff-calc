@@ -7,7 +7,6 @@ excerpt: "What decades of research really say about caffeine and your heart—bl
 image: "/assets/images/blog/caffeine-cardiac-health-cover.jpg"
 ---
 
-# Caffeine and Cardiac Health: Long-Term Risks, Benefits, and Limits
 
 Your morning coffee isn't quietly wrecking your heart. In fact, decades of research suggest the opposite for most healthy adults.
 

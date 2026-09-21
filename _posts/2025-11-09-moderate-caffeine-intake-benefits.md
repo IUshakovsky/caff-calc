@@ -7,7 +7,6 @@ excerpt: "Moderate caffeine intake can boost alertness and cognitive performance
 image: "/assets/images/blog/moderate-caffeine-benefits.jpg"
 ---
 
-# Moderate Caffeine Intake: Real Benefits Within Safe Limits
 
 You've felt it: that perfect cup of coffee that sharpens your focus without the jitters. But most days? You're either underwhelmed or bouncing off the walls. The difference isn't luck—it's understanding moderate caffeine intake and how to make it work for your body.
 

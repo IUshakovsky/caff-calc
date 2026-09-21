@@ -10,7 +10,6 @@ image: "/assets/images/blog/caff-tolerance-reset.jpg"
 
 ---
 
-# Your Coffee Stopped Working—Here's Why (And How to Fix It)
 
 **Remember when one cup of coffee could power you through the morning?** Now you're on your third cup before lunch and still feeling sluggish. You're not imagining it—and you're definitely not alone.
 

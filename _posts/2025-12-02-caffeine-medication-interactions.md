@@ -7,7 +7,6 @@ excerpt: "Learn how caffeine interacts with common medications, what that means 
 image: "/assets/images/blog/caffeine-medication-interactions.jpg"
 ---
 
-# Caffeine and Medication Interactions: What You Need to Know
 
 Your morning coffee might be sabotaging your medication. Over 64% of Americans drink coffee daily, yet most never ask their pharmacist about interactions. That oversight can mean your thyroid medication isn't working, your anxiety pills make you jittery, or your antibiotics take longer to clear an infection. The paradox: caffeine is so common we forget it's a drug that affects how your body processes other drugs. Understanding these interactions isn't about giving up coffee—it's about timing it right.
 

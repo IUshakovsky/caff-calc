@@ -7,7 +7,6 @@ excerpt: "Kola nuts, guarana, yerba mate—caffeine hides in surprising places. 
 image: "/assets/images/blog/sources.jpg"
 ---
 
-# Weirdest Caffeine Sources You Didn't Know About
 
 Your afternoon energy crash might not be from coffee alone.
 

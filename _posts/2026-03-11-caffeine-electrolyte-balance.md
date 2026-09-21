@@ -7,7 +7,6 @@ excerpt: "Does caffeine dehydrate you or drain electrolytes? Learn how caffeine 
 image: "/assets/images/blog/caffeine-electrolyte-balance.jpg"
 ---
 
-# Caffeine and Electrolytes: What It Does and How to Balance
 
 Your morning coffee might be stealing your minerals. Not dramatically—no one's collapsing over a latte—but caffeine quietly nudges your kidneys to flush more sodium, calcium, and water than they otherwise would. For most people most of the time, this barely matters. At higher doses, in heat, or during long workouts, the effect can tip from trivial to noticeable.
 

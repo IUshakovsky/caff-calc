@@ -7,7 +7,6 @@ excerpt: "Does caffeine cause hair loss? Here's what research shows about oral a
 image: "/assets/images/blog/caffeine-hair-loss-safe-limits.jpg"
 ---
 
-# Caffeine and Hair Loss: What the Science Says and Safe Limits
 
 You're staring at your hairbrush again. More strands than yesterday. Could your coffee habit be the culprit?
 

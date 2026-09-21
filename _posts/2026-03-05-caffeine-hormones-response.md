@@ -7,7 +7,6 @@ excerpt: "From cortisol spikes to delayed melatonin, caffeine nudges key hormone
 image: "/assets/images/blog/caffeine-hormones-response.jpg"
 ---
 
-# Caffeine and Hormones: How Your Body Responds
 
 That morning cup isn't just waking you up—it's rewriting your hormone script.
 

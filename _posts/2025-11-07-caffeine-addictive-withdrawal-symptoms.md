@@ -7,7 +7,6 @@ excerpt: "Explore whether caffeine is addictive, how withdrawal works, and pract
 image: "/assets/images/blog/is-caffeine-addictive-cover.jpg"
 ---
 
-# Is Caffeine Addictive? Understanding Withdrawal Symptoms
 
 You skip your morning coffee. Two hours later, a dull headache creeps in. By afternoon, you're exhausted and irritable despite getting enough sleep.
 

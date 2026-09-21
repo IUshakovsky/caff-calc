@@ -7,7 +7,6 @@ excerpt: "Explore how caffeine affects blood pressure, who is at risk, and pract
 image: "/assets/images/blog/caffeine-blood-pressure.jpg"
 ---
 
-# Caffeine and Blood Pressure: Risks and Safe Limits
 
 Your morning coffee ritual might be silently raising your blood pressure right now.
 

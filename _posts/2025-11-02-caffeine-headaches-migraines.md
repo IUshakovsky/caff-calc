@@ -7,7 +7,6 @@ excerpt: "Caffeine can relieve migraines or trigger them—it depends on your do
 image: "/assets/images/blog/caffeine-headaches-migraines-cover.jpg"
 ---
 
-# Caffeine and Headaches: Friend or Foe for Migraines?
 
 Your morning coffee saves you from grogginess—but could it be causing your afternoon migraine?
 

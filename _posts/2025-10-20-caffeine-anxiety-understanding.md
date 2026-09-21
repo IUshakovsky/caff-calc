@@ -9,7 +9,6 @@ excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and action
 image: "/assets/images/blog/caffeine-anxiety.jpg"
 ---
 
-# Caffeine Anxiety: Understanding the Connection and Practical Tips
 
 Your heart races. Your thoughts spiral. You can't sit still.
 

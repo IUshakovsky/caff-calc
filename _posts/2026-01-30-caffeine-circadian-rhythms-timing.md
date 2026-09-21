@@ -7,7 +7,6 @@ excerpt: "Your internal clock shapes how caffeine feels—and how it hurts your 
 image: "/assets/images/blog/caffeine-circadian-rhythms-timing.jpg"
 ---
 
-# Caffeine and Circadian Rhythms: The Science of Smart Timing
 
 Ever notice how your morning coffee feels like rocket fuel, but that 4 p.m. cup leaves you staring at the ceiling at midnight?
 

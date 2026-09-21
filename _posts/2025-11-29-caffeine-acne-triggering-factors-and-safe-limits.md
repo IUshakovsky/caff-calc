@@ -7,7 +7,6 @@ excerpt: "Explore how caffeine may influence acne through stress, sleep, and hor
 image: "/assets/images/blog/caffeine-acne-triggering-factors.jpg"
 ---
 
-# Caffeine and Acne: The Hidden Connection Nobody Talks About
 
 Your morning latte might be sabotaging your skin—but not how you think.
 

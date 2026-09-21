@@ -7,7 +7,6 @@ excerpt: "Does caffeine heighten or dull nerve sensitivity? Explore how adenosin
 image: "/assets/images/blog/caffeine-nerve-sensitivity.jpg"
 ---
 
-# Caffeine and Nerve Sensitivity: What Science Really Says
 
 Ever wonder why a strong coffee can make you feel razor-alert to every sound, touch, or twinge—while at other times it seems to blunt a headache? The way caffeine affects nerve sensitivity isn't simple. It depends on timing, dose, sleep, and your baseline habits. This guide breaks down the biology in plain language and shows you how to use caffeine without turning the volume knob on your nervous system up too high.
 

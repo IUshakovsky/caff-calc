@@ -7,7 +7,6 @@ excerpt: "From cortisol spikes to melatonin delays, caffeine influences key horm
 image: "/assets/images/blog/caffeine-endocrine-system-effects.jpg"
 ---
 
-# Caffeine and Your Endocrine System: What Really Happens
 
 Your morning coffee isn't just waking you up—it's rewiring your hormones. Caffeine nudges your endocrine system, the network of hormones that controls energy, stress, sleep, blood sugar, and more. That's why a 2 pm latte can leave you wired at 11 pm, or why one espresso before a meeting sharpens focus but spikes anxiety. In this guide, we'll translate the latest science on how caffeine affects cortisol, adrenaline, melatonin, and insulin—plus practical steps to enjoy caffeine while protecting your sleep, mood, and metabolic health.
 

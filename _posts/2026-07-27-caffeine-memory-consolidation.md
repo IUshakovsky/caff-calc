@@ -7,7 +7,6 @@ excerpt: "Does caffeine help or hurt memory consolidation? Learn how timing, sle
 image: "/assets/images/blog/caffeine-memory-consolidation-brain.jpg"
 ---
 
-# Caffeine and Memory Consolidation: Timing, Sleep, and Dose
 
 Slam a coffee after studying and you might be locking memories in—or scrambling them by wrecking your sleep. Caffeine is the world's favorite stimulant, but its impact on memory consolidation—the process that turns fresh learning into long-term storage—is surprisingly nuanced. Research suggests caffeine can strengthen consolidation in some cases, and sabotage it in others, especially when it disrupts the deep sleep your brain uses to file away what you learned. In this guide, we unpack what the science actually says, and how to time your intake to help your brain instead of hindering it.
 

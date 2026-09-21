@@ -7,7 +7,6 @@ excerpt: "Does caffeine boost or blunt your sex drive? We review current researc
 image: "/assets/images/blog/caffeine-libido-bridge.jpg"
 ---
 
-# Caffeine and Libido: What the Science Really Says (And How to Use It)
 
 If your morning coffee lifts your mood but your sex drive feels sluggish, you're not imagining the connection. Caffeine can influence libido through several pathways—arousal and mood, sleep quality, hormones, and even blood flow. The twist: the data are mixed, and the "dose + timing" matter more than any single beverage. In this evidence-based guide, we unpack what researchers know (and don't), highlight where findings conflict, and give you practical steps to enjoy caffeine without undercutting desire, arousal, or performance. We'll also show you when to measure your total daily intake so you can make smart adjustments.
 

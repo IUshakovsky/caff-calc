@@ -7,7 +7,6 @@ excerpt: "Does caffeine change your body's methylation process? Learn how coffee
 image: "/assets/images/blog/caffeine-methylation-coffee-dna.jpg"
 ---
 
-# Caffeine and Methylation: What Coffee Does to Your One-Carbon Cycle
 
 Does your morning coffee really "steal" your methyl groups? It's a claim echoing across wellness circles—and the answer is more interesting than yes or no.
 

@@ -7,7 +7,6 @@ excerpt: "Teen caffeine use can trigger anxiety and disrupt sleep. Discover safe
 image: "/assets/images/blog/caffeine-teens-anxiety-cover.jpg"
 ---
 
-# Caffeine and Anxiety in Teens: Risks and Safe Limits
 
 Your teen slams an energy drink before soccer practice. Later that night, they're wired, anxious, and can't sleep. Sound familiar?
 

@@ -7,7 +7,6 @@ excerpt: "From fast to slow metabolizers, your genes shape how caffeine affects 
 image: "/assets/images/blog/caffeine-genetics-contrasts.jpg"
 ---
 
-# Caffeine and Your Genes: Why the Same Cup Hits People Differently
 
 Your coworker downs a double espresso at 4 PM and sleeps like a baby. You sip green tea after lunch and stare at the ceiling until midnight.
 

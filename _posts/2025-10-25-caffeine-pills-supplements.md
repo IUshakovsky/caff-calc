@@ -9,7 +9,6 @@ excerpt: "Caffeine pills promise energy on demand. But precise dosing cuts both 
 image: "/assets/images/blog/caffeine-pills.jpg"
 ---
 
-# Caffeine Pills: The Hidden Risks Nobody Tells You
 
 Pop a pill, get instant alertness. It sounds perfect—except when that "precise dosing" lands you in the ER with heart palpitations.
 

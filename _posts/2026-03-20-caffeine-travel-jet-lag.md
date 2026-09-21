@@ -7,7 +7,6 @@ excerpt: "Flying across time zones? Learn how to use caffeine wisely to stay ale
 image: "/assets/images/blog/caffeine-travel-jet-lag.jpg"
 ---
 
-# Caffeine and Travel: A Science-Backed Jet Lag Playbook
 
 Jet lag turns smart people into zombies. You land in London after a red-eye, drag yourself to an 8 AM meeting, then stare at the hotel ceiling at 2 AM wondering why your brain won't shut off. The instinct is to mainline espresso—but poorly timed caffeine can actually push your internal clock *further* from local time, stretching misery by days.
 

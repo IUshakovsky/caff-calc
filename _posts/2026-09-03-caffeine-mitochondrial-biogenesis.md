@@ -7,7 +7,6 @@ excerpt: "Can caffeine help your cells build more mitochondria? Here's the evide
 image: "/assets/images/blog/caffeine-mitochondrial-biogenesis.jpg"
 ---
 
-# Caffeine and Mitochondrial Biogenesis: What the Science Says
 
 What if your morning coffee did more than wake you up—what if it helped your muscles build more power plants?
 

@@ -7,7 +7,6 @@ excerpt: "Discover how caffeine rewires your brain chemistry, blocks sleep signa
 image: "/assets/images/blog/caffeine-brain-neuroscience.jpg"
 ---
 
-# How Caffeine Affects Your Brain: Neuroscience Basics
 
 You down a coffee at 3 PM and suddenly the afternoon fog lifts. But here's the paradox: caffeine doesn't actually give you energy. It's a molecular trickster that hijacks your brain's sleep signals, making you feel alert when your biology says you should be slowing down. What starts as a simple receptor block cascades into changes across multiple brain systems—affecting not just wakefulness, but mood, motivation, and how you think under pressure.
 

@@ -7,7 +7,6 @@ excerpt: "Does caffeine help or hurt your skin? Learn what science says about ac
 image: "/assets/images/blog/caffeine-skin-health-effects-limits.jpg"
 ---
 
-# Caffeine and Skin Health: Real Effects, Limits, and Myths
 
 Your morning cup might be doing more for your face than you think. Claims range from "coffee dehydrates your skin" to "caffeine eye cream erases dark circles," but the truth is more nuanced—and more useful.
 

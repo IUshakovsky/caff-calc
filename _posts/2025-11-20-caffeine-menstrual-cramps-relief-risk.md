@@ -7,7 +7,6 @@ excerpt: "Does caffeine worsen menstrual cramps or could it offer relief? This s
 image: "/assets/images/blog/caffeine-menstrual-cramps-relief-or-risk.jpg"
 ---
 
-# Caffeine and Menstrual Cramps: Relief or Risk?
 
 You're doubled over with cramps, reaching for your third coffee of the day. But wait—could that cup be making things worse?
 

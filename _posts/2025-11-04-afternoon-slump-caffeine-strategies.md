@@ -7,7 +7,6 @@ excerpt: "Beat the afternoon drag with science-backed caffeine strategies. Learn
 image: "/assets/images/blog/afternoon-slump-caffeine-strategies.jpg"
 ---
 
-# Afternoon Slump Solutions: Clever Caffeine Strategies that Really Work
 
 Your eyes are heavy. Your brain feels foggy. It's 2:30 p.m., and you're staring at your screen wondering if anyone would notice if you just... closed your eyes for a second.
 

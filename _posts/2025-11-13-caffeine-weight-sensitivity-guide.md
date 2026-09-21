@@ -9,7 +9,6 @@ excerpt: "A science-informed, practical guide on how body weight and sensitivity
 image: "/assets/images/blog/caffeine-weight-sensitivity-guide.jpg"
 ---
 
-# Caffeine by Body Weight: A Practical Guide to Personal Sensitivity
 
 Ever wonder why your friend can down three espressos at 8 PM and sleep like a baby, while you're wired until dawn after one afternoon coffee? The answer isn't just tolerance—it's body weight, metabolism, and individual sensitivity.
 

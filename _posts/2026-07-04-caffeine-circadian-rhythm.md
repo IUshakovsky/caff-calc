@@ -7,7 +7,6 @@ excerpt: "Caffeine can nudge your internal clock, delay melatonin, and fragment 
 image: "/assets/images/blog/caffeine-circadian-rhythm.jpg"
 ---
 
-# Caffeine and Your Circadian Rhythm: A Science-Backed Timing Guide
 
 Your afternoon latte might be quietly hijacking your midnight. The same cup that rescues you from a 2 PM slump can delay melatonin, push your internal clock later, and chip away at deep sleep hours after you finish it. The good news? Small timing tweaks—aligned to your unique routine—can restore energy by day and protect sleep at night. This guide explains how caffeine affects your circadian rhythm, why some people are more sensitive than others, and how to build a coffee routine that works with (not against) your body clock.
 

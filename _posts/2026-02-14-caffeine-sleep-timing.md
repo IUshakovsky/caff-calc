@@ -9,7 +9,6 @@ excerpt: "When should you stop drinking coffee to protect your sleep? A science-
 image: "/assets/images/blog/caffeine-sleep-timing.jpg"
 ---
 
-# Caffeine and Sleep: The Science of When to Avoid It
 
 Your 3 PM coffee is quietly sabotaging tonight's sleep.
 

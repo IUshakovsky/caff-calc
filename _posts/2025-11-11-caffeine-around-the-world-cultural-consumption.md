@@ -7,7 +7,6 @@ excerpt: "From espresso rituals in Italy to tea ceremonies in Japan, explore how
 image: "/assets/images/blog/caffeine-around-the-world-cultural-consumption.jpg"
 ---
 
-# Caffeine Around the World: Cultural Consumption Habits
 
 You've probably never thought of your morning coffee as a cultural artifact. But that paper cup you're clutching? It's part of a global tapestry of rituals, traditions, and social bonds that stretch from Italian espresso bars to Japanese tea ceremonies.
 

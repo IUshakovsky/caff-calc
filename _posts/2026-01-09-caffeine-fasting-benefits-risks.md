@@ -7,7 +7,6 @@ excerpt: "Can coffee boost your fast or break it? Discover how caffeine affects 
 image: "/assets/images/blog/how-caffeine-impacts-fasting.jpg"
 ---
 
-# How Caffeine Impacts Fasting: Benefits and Risks
 
 You're halfway through your fasting window when hunger strikes. You reach for coffee, hoping it'll silence your growling stomach and keep you focused. But does that cup help your fast—or hurt it?
 

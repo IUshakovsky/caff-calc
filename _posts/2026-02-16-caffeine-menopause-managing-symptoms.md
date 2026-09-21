@@ -7,7 +7,6 @@ excerpt: "Caffeine can help you power through the day—but during menopause it 
 image: "/assets/images/blog/caffeine-menopause-managing-symptoms.jpg"
 ---
 
-# Caffeine and Menopause: Natural Ways to Ease Symptoms
 
 Your morning coffee used to be simple. Now it comes with a side of hot flashes.
 

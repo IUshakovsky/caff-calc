@@ -7,7 +7,6 @@ excerpt: "Caffeine can shift hormones, sleep, and cramps around your period. Her
 image: "/assets/images/blog/caffeine-period-connection.jpg"
 ---
 
-# Why Caffeine Can Affect Your Period (And What to Do About It)
 
 Your morning coffee shouldn't sabotage your cycle. But if you've ever felt extra jittery before your period, slept worse after an afternoon latte, or sworn that coffee made your cramps angrier, you're not imagining things.
 

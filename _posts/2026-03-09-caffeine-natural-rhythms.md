@@ -7,7 +7,6 @@ excerpt: "Caffeine can shift your internal clock, mute sleepiness signals, and f
 image: "/assets/images/blog/caffeine-natural-rhythms-cover.jpg"
 ---
 
-# Why Caffeine Disrupts Your Body's Natural Rhythms (And What to Do)
 
 Your afternoon coffee isn't just keeping you alert—it's quietly resetting your internal clock. Caffeine can delay your circadian rhythm by up to 40 minutes, blunt your natural sleep pressure, and fragment the rest you do manage to get. The result? Groggy mornings, uneven energy, and a vicious cycle of reaching for more.
 

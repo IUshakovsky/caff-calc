@@ -47,22 +47,22 @@
   {%- endcomment -%}
   {% assign canonical_path = page.url | replace: 'index.html', '' %}
   <link rel="canonical" href="{{ canonical_path | absolute_url }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  {%- assign page_title = page.seo_title -%}
+  {%- unless page_title -%}
+    {%- if page.title and page.title != site.title -%}
+      {%- assign page_title = page.title | append: ' | ' | append: site.title_short -%}
+    {%- else -%}
+      {%- assign page_title = site.title -%}
+    {%- endif -%}
+  {%- endunless -%}
+  <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description | escape }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ canonical_path | absolute_url }}">
   <meta property="og:image" content="{{ site.og_image | absolute_url }}">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:title" content="{{ page_title }}">
   <meta name="twitter:description" content="{{ page_description | escape }}">
-  <title>
-    {%- if page.seo_title -%}
-      {{ page.seo_title }}
-    {%- elsif page.title and page.title != site.title -%}
-      {{ page.title }} | {{ site.title_short }}
-    {%- else -%}
-      {{ site.title }}
-    {%- endif -%}
-  </title>
+  <title>{{ page_title }}</title>
   {% include schema.html %}
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
   <!-- Critical CSS for faster rendering across devices -->

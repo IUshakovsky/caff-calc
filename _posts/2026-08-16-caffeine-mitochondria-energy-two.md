@@ -7,7 +7,6 @@ excerpt: "Caffeine can nudge your cells' power plants to work harder—boosting 
 image: "/assets/images/blog/caffeine-mitochondria-energy-two.jpg"
 ---
 
-# How Caffeine Powers Mitochondria (and When It Backfires)
 
 Your morning coffee doesn't just wake your brain—it whispers to your cells' power plants. Deep inside nearly every cell, mitochondria churn out ATP, the molecular fuel behind every thought, heartbeat, and squat. Caffeine can nudge these tiny engines to work harder, sharpening focus and mobilizing fuel. But get the dose or timing wrong, and the same molecule that lit you up at 8 a.m. can sabotage the sleep your mitochondria need to recover. Here's how caffeine and mitochondrial function actually interact—and how to use that knowledge without burning yourself out.
 

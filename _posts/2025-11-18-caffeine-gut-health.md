@@ -9,7 +9,6 @@ excerpt: "Discover how caffeine affects your gut microbiome and digestion, plus 
 image: "/assets/images/blog/caffeine-gut-health-cover.jpg"
 ---
 
-# Caffeine and Gut Health: What Science Says About Your Morning Cup
 
 Your daily coffee might be doing more than waking you up—it's having a conversation with trillions of bacteria in your gut. Recent research from Nature Microbiology (2024) reveals that coffee drinkers show distinct gut microbiome patterns, with increased beneficial bacteria and higher microbial diversity compared to non-drinkers. But here's the paradox: while some people enjoy smoother digestion with moderate coffee, others experience heartburn, cramping, or urgent bathroom trips after a single cup.
 

@@ -7,7 +7,6 @@ excerpt: "Does caffeine help or hinder your body's detox pathways? Learn how caf
 image: "/assets/images/blog/caffeine-lymphatic-detox-cover.jpg"
 ---
 
-# How Caffeine Affects Your Lymphatic System's Detox Efficiency
 
 Caffeine doesn't "detox" your body—but it might quietly sabotage the systems that do.
 

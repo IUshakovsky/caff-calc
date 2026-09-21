@@ -7,7 +7,6 @@ excerpt: "Explore how caffeine interacts with thyroid function, what current res
 image: "/assets/images/blog/caffeine-thyroid-health.jpg"
 ---
 
-# Caffeine and Thyroid Health: Risks and Safe Limits
 
 Your morning coffee might be doing more than just waking you up—it could be influencing your thyroid.
 

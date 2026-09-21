@@ -7,7 +7,6 @@ excerpt: "Does caffeine raise your kidney stone risk—or lower it? Learn what t
 image: "/assets/images/blog/caffeine-kidney-stones-prevention.jpg"
 ---
 
-# Caffeine and Kidney Stones: What Raises Risk and How to Prevent Them
 
 If you've ever passed a kidney stone, you already know: it's pain you never forget. But should you blame your morning coffee?
 

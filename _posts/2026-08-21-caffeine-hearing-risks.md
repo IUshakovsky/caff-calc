@@ -7,7 +7,6 @@ excerpt: "Does caffeine affect your ears? Explore what science says about caffei
 image: "/assets/images/blog/caffeine-hearing-risks.jpg"
 ---
 
-# How Caffeine Affects Your Hearing: Risks and Prevention Tips
 
 Your ears are ringing after last night's concert—and your morning coffee just made it louder. Or did it? The link between caffeine and hearing is one of medicine's more confusing puzzles. Some studies clear caffeine of any role in tinnitus. Others urge people with Ménière's disease to cut back. And animal research hints that your latte might slow hearing recovery after loud noise exposure. So what's true for *your* ears? This guide translates the latest evidence into simple, practical steps—so you can protect your hearing without giving up your daily brew.
 

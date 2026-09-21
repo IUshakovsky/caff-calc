@@ -7,7 +7,6 @@ excerpt: "Does caffeine help you burn fat or store it? Learn how caffeine affect
 image: "/assets/images/blog/caffeine-fat-metabolism.jpg"
 ---
 
-# Caffeine and Fat Metabolism: What It Does to Fat Storage
 
 Your morning coffee wakes up your brain—but does it wake up your fat cells too? The short answer: caffeine can nudge your body to burn slightly more energy and use more fat for fuel, especially around exercise. But timing, dose, sleep, and what you eat with it change everything.
 

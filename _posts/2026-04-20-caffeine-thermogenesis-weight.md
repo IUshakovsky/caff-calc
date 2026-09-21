@@ -9,7 +9,6 @@ excerpt: "Can caffeine meaningfully boost thermogenesis and support weight goals
 image: "/assets/images/blog/caffeine-thermogenesis-weight.jpg"
 ---
 
-# Caffeine, Thermogenesis, and Weight: What Science Says
 
 You've probably heard that caffeine "boosts your metabolism." But what does that really mean—and can it actually help with weight management?
 

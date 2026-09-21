@@ -7,7 +7,6 @@ except: "Does caffeine help or hurt your ability to switch tasks, adapt, and thi
 image: "/assets/images/blog/caffeine-cognitive-flexibility.jpg"
 ---
 
-# Caffeine and Cognitive Flexibility: What the Latest Science Says
 
 You drink coffee to focus, but what about when your work demands rapid pivots—brainstorming ideas at 9, debugging code at 10, pitching at 11?
 

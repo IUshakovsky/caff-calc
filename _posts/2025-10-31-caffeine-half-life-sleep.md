@@ -10,7 +10,6 @@ image: "/assets/images/blog/caffeine-half-life-sleep.jpg"
 image_alt: "Close-up of a steaming mug of coffee with soft morning light and a notebook, symbolizing caffeine timing and sleep knowledge"
 ---
 
-# Caffeine Half-Life: When Does It Really Wear Off?
 
 You had an espresso at 3 p.m. At midnight, you're staring at the ceiling, wide awake. Sound familiar?
 

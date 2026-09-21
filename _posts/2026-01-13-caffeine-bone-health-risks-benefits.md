@@ -7,7 +7,6 @@ excerpt: "Worried that coffee might weaken your bones? Here's what the science s
 image: "/assets/images/blog/caffeine-bone-health.jpg"
 ---
 
-# Caffeine and Bone Health: Risks, Benefits, and Smart Intake
 
 Your morning coffee ritual feels sacred—until someone mentions "calcium leaching." Suddenly you're wondering if your daily latte is secretly sabotaging your skeleton.
 

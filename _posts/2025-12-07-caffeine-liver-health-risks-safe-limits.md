@@ -7,7 +7,6 @@ excerpt: "Understanding how caffeine and coffee impact liver health can help you
 image: "/assets/images/blog/caffeine-liver-health-cover.jpg"
 ---
 
-# Caffeine and Liver Health: Risks and Safe Limits
 
 Your morning coffee might be doing more than waking you up—it could be protecting your liver. Sounds counterintuitive, right? Most of us worry about overloading our livers, yet research consistently shows that moderate coffee consumption is linked to lower rates of liver cancer, reduced fibrosis, and better outcomes in chronic liver disease. But here's the catch: "moderate" has a specific meaning, and not everyone's liver responds the same way.
 
