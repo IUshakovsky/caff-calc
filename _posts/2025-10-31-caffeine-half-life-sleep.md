@@ -9,6 +9,7 @@ excerpt: "Caffeine can linger 5-9 hours after your last cup. Learn how half-life
 image: "/assets/images/blog/caffeine-half-life-sleep.jpg"
 image_alt: "Close-up of a steaming mug of coffee with soft morning light and a notebook, symbolizing caffeine timing and sleep knowledge"
 redirect_from: /2025/10/31/caffeine-half-life-sleep/
+redirect_to: /half-life/
 ---
 
 

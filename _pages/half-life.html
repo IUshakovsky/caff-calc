@@ -27,7 +27,6 @@ faq:
   front matter above, which _includes/schema.html also emits as FAQPage markup,
   alongside WebApplication markup triggered by web_app_name.
 {%- endcomment -%}
-{%- assign half_life_post = site.posts | where: "slug", "caffeine-half-life-sleep" | first -%}
 {%- assign sleep_post = site.posts | where: "slug", "caffeine-sleep-timing" | first -%}
 
 <div class="content-page">
@@ -246,6 +245,35 @@ faq:
 
       <div class="card mb-4">
         <div class="card-body">
+          <h2 class="card-title">Test your own half-life</h2>
+          <p>Knowing your half-life lets you predict when caffeine drops to sleep-safe levels. Use a 3-day self-test when you can control timing:</p>
+          <ol>
+            <li><strong>Day 1:</strong> Drink 200 mg caffeine (about 2 cups of coffee) at 8 a.m. Note how alert you feel at 1 p.m., 6 p.m. and bedtime.</li>
+            <li><strong>Day 2:</strong> Same 200 mg at 8 a.m., then add 100 mg at 12 p.m. Track evening alertness and sleep quality.</li>
+            <li><strong>Day 3:</strong> Same 200 mg at 8 a.m., then 100 mg at 2 p.m. Compare sleep disruption.</li>
+          </ol>
+          <p class="mb-0">If the noon dose on Day 2 does not disrupt sleep but the 2 p.m. dose on Day 3 does, your half-life is roughly 5–6 hours. Cut caffeine 2–3 hours before that cutoff for your target bedtime. For a more precise number, use the calculator above with your actual drink, dose and bedtime.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Cut-off time by bedtime (5-hour default)</h2>
+          <p>Five hours before bed is a safe starting point for most healthy adults. If sleep still suffers, move the cutoff 1–2 hours earlier.</p>
+          <table class="table table-bordered align-middle mb-0">
+            <thead class="table-light"><tr><th scope="col">Bedtime</th><th scope="col">Latest caffeine</th></tr></thead>
+            <tbody>
+              <tr><td>10 p.m.</td><td>5 p.m.</td></tr>
+              <tr><td>11 p.m.</td><td>6 p.m.</td></tr>
+              <tr><td>Midnight</td><td>7 p.m.</td></tr>
+              <tr><td>1 a.m.</td><td>8 p.m.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
           <h2 class="card-title">Common questions</h2>
           {% for item in page.faq %}
           <div class="faq-item{% if forloop.last %} mb-0{% endif %}">
@@ -256,13 +284,12 @@ faq:
         </div>
       </div>
 
-      {%- if half_life_post or sleep_post %}
+      {%- if sleep_post %}
       <div class="card mb-4">
         <div class="card-body">
           <h2 class="card-title">Read next</h2>
           <ul class="mb-0">
-            {%- if half_life_post %}<li><a href="{{ half_life_post.url | relative_url }}">{{ half_life_post.title }}</a></li>{% endif %}
-            {%- if sleep_post %}<li><a href="{{ sleep_post.url | relative_url }}">{{ sleep_post.title }}</a></li>{% endif %}
+            <li><a href="{{ sleep_post.url | relative_url }}">{{ sleep_post.title }}</a></li>
           </ul>
         </div>
       </div>
