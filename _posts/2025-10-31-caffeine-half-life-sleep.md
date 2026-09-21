@@ -173,7 +173,7 @@ You've likely developed tolerance, masking caffeine's subjective effects. Howeve
 Decaf contains 2-15mg per cup. For most people, this is negligible. However, if you're extremely sensitive or drink 4+ cups of decaf in the evening, the cumulative 40-60mg could mildly impact sleep.
 
 **Q: How does CaffCalc help with caffeine timing?**  
-CaffCalc counts your total daily caffeine from all sources and compares it to your personal safe limit. It doesn't calculate blood levels or clearance times, but knowing your daily total helps you make informed timing decisions. If you're consuming 600mg daily, you know you need to cut back overall and shift intake earlier in the day.
+CaffCalc counts your total daily caffeine from all sources and compares it to your personal safe limit. For blood levels and clearance times, use the [caffeine half-life calculator]({{ '/half-life/' | relative_url }}). If you're consuming 600mg daily, you know you need to cut back overall and shift intake earlier in the day.
 
 **Q: Are there genetic tests for caffeine metabolism?**  
 Yes. CYP1A2 genetic testing (available through companies like 23andMe or direct-to-consumer labs) identifies fast vs. slow metabolizer status. This information can guide personalized caffeine limits, though practical self-testing (tracking intake and sleep) is equally effective for most people.
@@ -184,7 +184,7 @@ Yes. CYP1A2 genetic testing (available through companies like 23andMe or direct-
 
 Caffeine half-life isn't just science trivia—it's the key to unlocking better sleep while keeping steady daytime energy. By understanding your personal metabolism, timing intake strategically, and tracking total daily consumption, you transform caffeine from a sleep disruptor into a productivity tool.
 
-**Your next step:** Calculate your total daily caffeine to see where you stand. [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from all sources and compare to recommended limits. This simple awareness is the first step to optimizing your caffeine schedule.
+**Your next step:** Calculate your total daily caffeine to see where you stand. [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from all sources and compare against your personal safe limit. This simple awareness is the first step to optimizing your caffeine schedule.
 
 For deeper scientific background, explore the peer-reviewed sources in the References section below.
 
