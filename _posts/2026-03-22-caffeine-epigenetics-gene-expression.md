@@ -5,6 +5,7 @@ date: 2026-03-22 03:00:00 +0000
 tags: [caffeine and epigenetics, gene expression, DNA methylation, circadian rhythms, pregnancy, sleep]
 excerpt: "Can your daily coffee nudge how genes turn on and off? Explore what science says about caffeine, epigenetics, and practical ways to protect sleep and health."
 image: "/assets/images/blog/caffeine-epigenetics-gene-expression.jpg"
+redirect_from: /2026/03/22/caffeine-epigenetics-gene-expression/
 ---
 
 

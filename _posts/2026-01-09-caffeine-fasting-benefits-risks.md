@@ -5,6 +5,7 @@ date: 2026-01-09 03:00:00 +0000
 tags: [caffeine, fasting, metabolism, intermittent-fasting, health]
 excerpt: "Can coffee boost your fast or break it? Discover how caffeine affects fat burning, hunger, and sleep during fasting—with science-backed tips you can use today."
 image: "/assets/images/blog/how-caffeine-impacts-fasting.jpg"
+redirect_from: /2026/01/09/caffeine-fasting-benefits-risks/
 ---
 
 
@@ -129,7 +130,7 @@ Caffeine can support your fasting routine by improving focus, slightly boosting 
 
 Start with a modest morning dose, skip the cream and sugar, and protect your sleep by cutting off caffeine early. Monitor your body's response—hunger, energy, digestion, sleep—and adjust accordingly.
 
-Curious how your daily caffeine intake stacks up? [Count your total caffeine with CaffCalc]({{ '/' | relative_url }}) to see where you stand compared to average consumption levels.
+Curious how your daily caffeine intake stacks up? [Count your total caffeine with CaffCalc]({{ '/' | relative_url }}) to see where you stand compared to your personal safe limit.
 
 Fasting and caffeine are both tools, not magic bullets. Use them strategically, individualize based on your response, and prioritize sustainable habits over quick fixes.
 

@@ -5,6 +5,7 @@ date: 2026-05-14 03:00:00 +0000
 tags: [caffeine and lymphatic system, lymphatic detox, glymphatic system, sleep and caffeine, hydration, caffeine limits]
 excerpt: "Does caffeine help or hinder your body's detox pathways? Learn how caffeine affects lymphatic and glymphatic clearance—plus 8 practical steps to optimize it."
 image: "/assets/images/blog/caffeine-lymphatic-detox-cover.jpg"
+redirect_from: /2026/05/14/caffeine-lymphatic-detox/
 ---
 
 
@@ -63,7 +64,7 @@ Use these research-aligned tactics to protect both lymphatic and glymphatic func
 
 **Why it works:** Staying within established guidance reduces side effects that can fragment sleep (like jitters or palpitations). The U.S. FDA cites up to 400 mg/day for most healthy adults as "not generally associated with negative effects." Pregnancy guidance is lower (see Tip 7).
 
-**How to do it:** Know typical amounts—8 oz brewed coffee runs 80–100 mg; 12 oz cola 30–45 mg; 16 oz energy drink 150–240 mg. When in doubt, add it up. [Use the CaffCalc calculator]({{ '/' | relative_url }}) to total your day and see how you compare to average intake.
+**How to do it:** Know typical amounts—8 oz brewed coffee runs 80–100 mg; 12 oz cola 30–45 mg; 16 oz energy drink 150–240 mg. When in doubt, add it up. [Use the CaffCalc calculator]({{ '/' | relative_url }}) to total your day and see how you compare to your personal safe limit.
 
 ### 3) Front-Load Your Caffeine Earlier in the Day
 

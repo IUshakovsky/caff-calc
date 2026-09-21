@@ -213,22 +213,23 @@ function trackedBeverageCount() {
   return consumptionItems.reduce((sum, item) => sum + item.quantity, 0);
 }
 
-// Load caffeine data and populate beverage dropdown. Only the calculator page
-// has the tracker, so other pages skip the download.
+// Load caffeine data from the server-rendered <select id="beverageData">.
+// The data is already in the DOM at build time, so no network request is needed.
 async function loadCaffeineData() {
-  if (!document.getElementById('caffeineOptions')) return;
-  try {
-    const baseurl = window.SITE_BASEURL || '';
-    const response = await fetch(`${baseurl}/assets/data/beverages.json`);
-    const beverages = await response.json();
-    caffeineData = {};
-    beverages.forEach(bev => { caffeineData[bev.slug] = bev; });
+  const dataSelect = document.getElementById('beverageData');
+  if (!dataSelect) return;
+  caffeineData = {};
+  Array.from(dataSelect.options).forEach(option => {
+    if (!option.value || !option.dataset.bev) return;
+    try {
+      caffeineData[option.value] = JSON.parse(option.dataset.bev);
+    } catch (e) {
+      console.error('Invalid beverage JSON for', option.value, e);
+    }
+  });
 
-    // Populate beverage dropdown from JSON data
-    populateBeverageDropdown();
-  } catch (error) {
-    console.error('Error loading caffeine data:', error);
-  }
+  // Populate the visible beverage dropdown from the parsed data
+  populateBeverageDropdown();
 }
 
 // Where a source publishes a range, count the top of it: this is a safety tool,

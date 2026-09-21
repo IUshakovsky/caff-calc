@@ -7,6 +7,7 @@ date: 2026-02-08 03:00:00 +0000
 tags: [caffeine and migraine, migraine triggers, caffeine withdrawal, headache management, caffeine intake]
 excerpt: "Caffeine can both help and hurt migraine. Learn how dose, timing, and consistency influence migraine risk, what science says about withdrawal and medication overuse, and how to set your personal limit."
 image: "/assets/images/blog/caffeine-migraine-triggers.jpg"
+redirect_from: /2026/02/08/caffeine-migraine-triggers/
 ---
 
 

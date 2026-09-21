@@ -5,6 +5,7 @@ date: 2026-01-25 03:00:00 +0000
 tags: [caffeine and histamine, histamine intolerance, caffeine sensitivity, mast cells, DAO]
 excerpt: "Coffee triggers flushing or headaches? Discover how caffeine interacts with histamine, what science reveals about sensitivity, and how to find your personal limit."
 image: "/assets/images/blog/caffeine-histamine-sensitivity.jpg"
+redirect_from: /2026/01/25/caffeine-histamine-sensitivity/
 ---
 
 
@@ -102,7 +103,7 @@ If you're histamine-sensitive, your functional limit may be lower. Use this syst
 **1. Map your current intake**  
 Calculate total caffeine from all sources: coffee, tea, energy drinks, soda, dark chocolate, supplements, and medications (Excedrin, Midol). Compare to the 400 mg/day ceiling.
 
-[Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to average consumption levels.
+[Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to your personal safe limit.
 
 **2. Set a caffeine curfew**  
 Stop all caffeine 8-10 hours before your target bedtime. Poor sleep mimics and amplifies histamine-like symptoms (headache, flushing, brain fog), making patterns impossible to read. If you aim for 10 PM lights-out, make 2 PM your last dose.

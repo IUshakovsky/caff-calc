@@ -8,6 +8,7 @@ tags: [caffeine, sleep, metabolism, health, lifestyle, caffeine-timing]
 excerpt: "Caffeine can linger 5-9 hours after your last cup. Learn how half-life affects sleep, what speeds or slows metabolism, and practical timing tips for better rest."
 image: "/assets/images/blog/caffeine-half-life-sleep.jpg"
 image_alt: "Close-up of a steaming mug of coffee with soft morning light and a notebook, symbolizing caffeine timing and sleep knowledge"
+redirect_from: /2025/10/31/caffeine-half-life-sleep/
 ---
 
 
@@ -172,7 +173,7 @@ You've likely developed tolerance, masking caffeine's subjective effects. Howeve
 Decaf contains 2-15mg per cup. For most people, this is negligible. However, if you're extremely sensitive or drink 4+ cups of decaf in the evening, the cumulative 40-60mg could mildly impact sleep.
 
 **Q: How does CaffCalc help with caffeine timing?**  
-CaffCalc counts your total daily caffeine from all sources and compares it to average consumption levels. It doesn't calculate blood levels or clearance times, but knowing your daily total helps you make informed timing decisions. If you're consuming 600mg daily, you know you need to cut back overall and shift intake earlier in the day.
+CaffCalc counts your total daily caffeine from all sources and compares it to your personal safe limit. It doesn't calculate blood levels or clearance times, but knowing your daily total helps you make informed timing decisions. If you're consuming 600mg daily, you know you need to cut back overall and shift intake earlier in the day.
 
 **Q: Are there genetic tests for caffeine metabolism?**  
 Yes. CYP1A2 genetic testing (available through companies like 23andMe or direct-to-consumer labs) identifies fast vs. slow metabolizer status. This information can guide personalized caffeine limits, though practical self-testing (tracking intake and sleep) is equally effective for most people.

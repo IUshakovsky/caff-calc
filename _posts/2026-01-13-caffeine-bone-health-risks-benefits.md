@@ -5,6 +5,7 @@ date: 2026-01-13 03:00:00 +0000
 tags: [caffeine and bone health, osteoporosis, calcium, coffee, tea, fracture risk]
 excerpt: "Worried that coffee might weaken your bones? Here's what the science says about caffeine's real impact on calcium, bone density, and fracture risk—and how to sip smart."
 image: "/assets/images/blog/caffeine-bone-health.jpg"
+redirect_from: /2026/01/13/caffeine-bone-health-risks-benefits/
 ---
 
 

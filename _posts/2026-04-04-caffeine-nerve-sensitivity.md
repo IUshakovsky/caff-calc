@@ -5,6 +5,7 @@ date: 2026-04-04 03:00:00 +0000
 tags: [caffeine nerve sensitivity, adenosine receptors, pain sensitivity, sleep and caffeine, migraine]
 excerpt: "Does caffeine heighten or dull nerve sensitivity? Explore how adenosine receptors, sleep, and dosing shape your sensations—from pain perception to headaches—and learn practical ways to use caffeine wisely."
 image: "/assets/images/blog/caffeine-nerve-sensitivity.jpg"
+redirect_from: /2026/04/04/caffeine-nerve-sensitivity/
 ---
 
 

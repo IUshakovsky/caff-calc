@@ -23,6 +23,7 @@
     {%- if schema_author == site.author.name %}
     "@id": {{ person_id | jsonify }},
     "url": {{ site.author.url | jsonify }},
+    "sameAs": [{{ site.author.github | jsonify }}],
     {%- endif %}
     "name": {{ schema_author | jsonify }}
   },
@@ -67,6 +68,56 @@
     }{% unless forloop.last %},{% endunless %}
     {%- endfor %}
   ]
+}
+</script>
+{%- endif %}
+
+{%- if page.collection == 'caffeine_in' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ schema_description | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "author": {
+    "@type": "Person",
+    "@id": {{ person_id | jsonify }},
+    "name": {{ site.author.name | jsonify }},
+    "url": {{ site.author.url | jsonify }},
+    "sameAs": [{{ site.author.github | jsonify }}]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title_short | jsonify }},
+    "url": {{ site.url | jsonify }},
+    "logo": { "@type": "ImageObject", "url": {{ '/assets/images/image.svg' | absolute_url | jsonify }} }
+  }
+}
+</script>
+{%- endif %}
+
+{%- if page.url == '/pages/about/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ site.title_short | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "logo": { "@type": "ImageObject", "url": {{ '/assets/images/image.svg' | absolute_url | jsonify }} }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.title_short | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ site.title_short | jsonify }},
+    "url": {{ site.url | jsonify }}
+  }
 }
 </script>
 {%- endif %}

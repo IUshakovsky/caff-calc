@@ -5,6 +5,7 @@ date: 2025-12-02 03:00:00 +0000
 tags: [caffeine, medication interactions, sleep, health, safety]
 excerpt: "Learn how caffeine interacts with common medications, what that means for your daily routine, and practical tips to stay safe while enjoying your coffee habit."
 image: "/assets/images/blog/caffeine-medication-interactions.jpg"
+redirect_from: /2025/12/02/caffeine-medication-interactions/
 ---
 
 
@@ -207,7 +208,7 @@ Yes. Some migraine medications (like Excedrin) intentionally combine caffeine wi
 
 Caffeine and medications can coexist safely in your routine with three key actions: timing separation, consistent intake levels, and professional guidance. Most interactions are manageable once you know they exist.
 
-Start by tracking your current caffeine intake for one week to establish a baseline. This simple step reveals patterns you can adjust. If you're unsure where you stand, [calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see how your intake compares to average levels.
+Start by tracking your current caffeine intake for one week to establish a baseline. This simple step reveals patterns you can adjust. If you're unsure where you stand, [calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see how your intake compares to your personal safe limit.
 
 For ongoing medication management, schedule a quarterly review with your pharmacist—bring your caffeine log and medication list. This proactive approach catches interactions before they cause problems.
 

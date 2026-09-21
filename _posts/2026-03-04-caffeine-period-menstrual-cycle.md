@@ -5,6 +5,7 @@ date: 2026-03-04 03:00:00 +0000
 tags: [caffeine and period, menstrual cycle, PMS, caffeine intake, women's health]
 excerpt: "Caffeine can shift hormones, sleep, and cramps around your period. Here's the science and simple steps to keep the energy without the blowback."
 image: "/assets/images/blog/caffeine-period-connection.jpg"
+redirect_from: /2026/03/04/caffeine-period-menstrual-cycle/
 ---
 
 

@@ -5,6 +5,7 @@ date: 2026-09-12 03:00:00 +0000
 tags: [caffeine and sleep apnea, sleep quality, caffeine timing, obstructive sleep apnea, sleep hygiene, caffeine limits]
 excerpt: "Coffee doesn't appear to cause sleep apnea—but caffeine timing can wreck sleep quality. See what research shows and how to protect your nights."
 image: "/assets/images/blog/caffeine-apnea-sleep-quality.jpg"
+redirect_from: /2026/09/12/caffeine-apnea-sleep-quality/
 ---
 
 
@@ -82,7 +83,7 @@ Why it works: Getting most of your caffeine within 1–3 hours of waking reduces
 
 ### 4) Audit Sources You Forget About
 
-Why it works: Caffeine hides in energy drinks, pre‑workouts, certain sodas, and even some pain relievers. Knowing your true total helps you time and trim. [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to average consumption levels.
+Why it works: Caffeine hides in energy drinks, pre‑workouts, certain sodas, and even some pain relievers. Knowing your true total helps you time and trim. [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to your personal safe limit.
 
 ### 5) If You Have OSA, Separate Alertness From Bedtime
 
@@ -147,7 +148,7 @@ For more on how caffeine works in the body, see our short primer on [caffeine sc
 
 Caffeine probably doesn't raise your risk of sleep apnea, but it can meaningfully erode sleep quality—especially when the dose is high or the timing is late. Treat timing as seriously as total milligrams.
 
-Start with a noon cutoff, keep daily intake within safe limits, and reassess your sleep after a week. Stop guessing how much caffeine you're really consuming—[count your total daily intake with CaffCalc]({{ '/' | relative_url }}) and see how you compare to average levels →
+Start with a noon cutoff, keep daily intake within safe limits, and reassess your sleep after a week. Stop guessing how much caffeine you're really consuming—[count your total daily intake with CaffCalc]({{ '/' | relative_url }}) and see how you compare to your personal safe limit →
 
 ---
 

@@ -6,6 +6,7 @@ tags: [caffeine, hydration, sleep, hydration-myths, caffeine-diet]
 excerpt: "Does coffee dehydrate you or count toward daily water goals? Science reveals caffeine's surprising hydration truth and what it means for your intake."
 image: "/assets/images/blog/caffeine-dehydration.jpg"
 image_alt: "A glass of water beside a steaming cup of coffee, symbolizing hydration and caffeine interplay"
+redirect_from: /2025/10/17/hydration-caffeine/
 ---
 
 
@@ -114,7 +115,7 @@ Yes. Caffeine consumed even 6 hours before bed can reduce sleep time by up to 45
 Moderate caffeine (3-6 mg/kg body weight) is compatible with hydration goals for most athletes. Prioritize water and electrolytes around training, time caffeine for performance benefits (30-60 minutes pre-exercise), and avoid late-day intake that disrupts recovery sleep.
 
 **Q: How can I track caffeine and hydration effectively?**  
-Count caffeine from all sources (coffee, tea, energy drinks, chocolate) and aim for 8-15 cups total daily fluids from all beverages and water-rich foods. [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from common sources and compare to average levels.
+Count caffeine from all sources (coffee, tea, energy drinks, chocolate) and aim for 8-15 cups total daily fluids from all beverages and water-rich foods. [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from common sources and compare to your personal safe limit.
 
 ---
 

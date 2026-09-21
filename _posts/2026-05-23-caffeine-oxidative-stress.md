@@ -5,6 +5,7 @@ date: 2026-05-23 03:00:00 +0000
 tags: [oxidative stress, caffeine, antioxidants, Nrf2, sleep, coffee]
 excerpt: "Does caffeine raise or reduce oxidative stress? Here's a clear, research-backed guide to what happens in your body and simple habits to keep your daily buzz healthy."
 image: "/assets/images/blog/caffeine-oxidative-stress.jpg"
+redirect_from: /2026/05/23/caffeine-oxidative-stress/
 ---
 
 

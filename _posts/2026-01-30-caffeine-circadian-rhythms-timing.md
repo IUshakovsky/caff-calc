@@ -5,6 +5,7 @@ date: 2026-01-30 03:00:00 +0000
 tags: [caffeine and circadian rhythms, caffeine timing, sleep quality, melatonin, adenosine, caffeine cutoff]
 excerpt: "Your internal clock shapes how caffeine feels—and how it hurts your sleep. Learn the science behind caffeine and circadian rhythms, plus proven timing strategies that protect your nights and power your days."
 image: "/assets/images/blog/caffeine-circadian-rhythms-timing.jpg"
+redirect_from: /2026/01/30/caffeine-circadian-rhythms-timing/
 ---
 
 
@@ -117,7 +118,7 @@ All of these can improve alertness without shifting your biological clock later.
 
 **Why it works:** Most people underestimate their caffeine consumption. Cup sizes vary, brew strength differs, and hidden sources (soda, chocolate, energy drinks, some medications) add up quickly.
 
-**How to implement:** Spend three days tracking everything you consume that contains caffeine. Include coffee, tea, energy drinks, soda, chocolate, pre-workout supplements, and any medications. Then [count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to average consumption levels.
+**How to implement:** Spend three days tracking everything you consume that contains caffeine. Include coffee, tea, energy drinks, soda, chocolate, pre-workout supplements, and any medications. Then [count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to your personal safe limit.
 
 **Why this matters:** If you're exceeding 400mg/day or concentrating too much in the afternoon, even the best timing strategy won't fully protect your sleep.
 

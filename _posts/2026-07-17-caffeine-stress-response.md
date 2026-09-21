@@ -5,6 +5,7 @@ date: 2026-07-17 03:00:00 +0000
 tags: [caffeine and stress, cortisol, HPA axis, anxiety, sleep, adenosine]
 excerpt: "Caffeine doesn't just wake you up—it nudges your stress systems too. Learn how it interacts with cortisol, adrenaline, and sleep, plus evidence-based tips."
 image: "/assets/images/blog/caffeine-stress-response-mechanisms.jpg"
+redirect_from: /2026/07/17/caffeine-stress-response/
 ---
 
 
@@ -64,7 +65,7 @@ Pick and choose the tactics that fit your routine. Each tip includes why it work
 
 Aim for 400 mg/day or less if you're a healthy adult. Consider 200–300 mg if you're anxiety-prone. During pregnancy, stay at or below 200 mg/day.
 
-**Why it works:** Staying within evidence-based ranges reduces excessive activation of stress hormones and blood pressure responses. Most people underestimate their intake by 30–50% because they forget about tea, sodas, chocolate, and pre-workouts. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see how your intake compares to average levels.
+**Why it works:** Staying within evidence-based ranges reduces excessive activation of stress hormones and blood pressure responses. Most people underestimate their intake by 30–50% because they forget about tea, sodas, chocolate, and pre-workouts. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see how your intake compares to your personal safe limit.
 
 ### 2) Front-Load Your Intake, Then Taper
 

@@ -5,6 +5,7 @@ date: 2025-12-16 03:00:00 +0000
 tags: [caffeine, blood pressure, hypertension, safety, health]
 excerpt: "Explore how caffeine affects blood pressure, who is at risk, and practical, science-backed limits to keep your daily caffeine routine safe and energizing."
 image: "/assets/images/blog/caffeine-blood-pressure.jpg"
+redirect_from: /2025/12/16/caffeine-blood-pressure-risks-safe-limits/
 ---
 
 
@@ -139,7 +140,7 @@ Start with these three immediate steps:
 
 3. **Set a personal daily limit based on your monitoring results.** If you show minimal response at 300mg, that becomes your ceiling. If you spike at 200mg, consider 150mg as your new target.
 
-[Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to compare your intake against average consumption levels and identify hidden sources you might be overlooking.
+[Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to compare your intake against your personal safe limit and identify hidden sources you might be overlooking.
 
 For comprehensive guidance on safe caffeine levels across different health conditions, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
 

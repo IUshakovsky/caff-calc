@@ -17,7 +17,7 @@ email: "hello@caffcalc.com"
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /blog/:title/
 
 # Pagination v2
 pagination:
@@ -34,6 +34,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Exclude from processing
 exclude:

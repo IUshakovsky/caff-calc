@@ -5,6 +5,7 @@ date: 2025-10-29 12:00:00 +0000
 tags: [caffeine, caffeine-sources, health, wellness, sleep, energy]
 excerpt: "Kola nuts, guarana, yerba mate—caffeine hides in surprising places. Discover unusual sources, how much they pack, and what it means for your daily energy."
 image: "/assets/images/blog/sources.jpg"
+redirect_from: /2025/10/29/weirdest-caffeine-sources/
 ---
 
 
@@ -237,7 +238,7 @@ Caffeine isn't the enemy—surprise overconsumption is.
 
 Now you know the weird sources hiding in your daily routine, from kola nuts to chocolate bars. The question is: what's your true total?
 
-Stop guessing. [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) and see exactly where you stand. Enter everything—coffee, tea, energy drinks, supplements, chocolate, mate, and any unusual sources you've discovered today. The calculator shows how your total compares to average consumption levels and helps you identify what's pushing you past comfortable limits.
+Stop guessing. [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) and see exactly where you stand. Enter everything—coffee, tea, energy drinks, supplements, chocolate, mate, and any unusual sources you've discovered today. The calculator shows how your total compares to your personal safe limit and helps you identify what's pushing you past comfortable limits.
 
 Start with one week of honest tracking. You might be surprised by what you find.
 

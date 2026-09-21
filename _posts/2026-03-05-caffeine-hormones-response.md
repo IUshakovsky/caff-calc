@@ -5,6 +5,7 @@ date: 2026-03-05 03:00:00 +0000
 tags: [caffeine and hormones, cortisol, melatonin, adenosine, sleep, metabolism]
 excerpt: "From cortisol spikes to delayed melatonin, caffeine nudges key hormones that govern energy, stress, and sleep. Learn the science and practical ways to time your intake."
 image: "/assets/images/blog/caffeine-hormones-response.jpg"
+redirect_from: /2026/03/05/caffeine-hormones-response/
 ---
 
 

@@ -5,6 +5,7 @@ date: 2026-08-21 03:00:00 +0000
 tags: [caffeine and hearing, tinnitus, Meniere's disease, caffeine risks, ear health, prevention]
 excerpt: "Does caffeine affect your ears? Explore what science says about caffeine's links to tinnitus, Ménière's disease, and hearing recovery—plus tips to protect hearing."
 image: "/assets/images/blog/caffeine-hearing-risks.jpg"
+redirect_from: /2026/08/21/caffeine-hearing-risks/
 ---
 
 
@@ -57,7 +58,7 @@ These steps help you protect hearing and balance without abandoning your morning
 
 Moderation helps minimize jitter, sleep disruption, and potential symptom triggers. For most healthy adults, up to about 400 mg caffeine per day is the upper safe limit cited by U.S. health authorities. Pregnant individuals should target ≤200 mg/day. If you're nursing, most guidance suggests that around 200 mg/day is unlikely to affect most infants.
 
-**Why it works:** keeping intake steady and moderate reduces swings in arousal and anxiety that can amplify tinnitus perception or balance discomfort. To see where you stand, [calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) and compare it to average intake levels.
+**Why it works:** keeping intake steady and moderate reduces swings in arousal and anxiety that can amplify tinnitus perception or balance discomfort. To see where you stand, [calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) and compare it to your personal safe limit.
 
 ### 2) If You Have Ménière's Disease, Test Your Own Triggers
 

@@ -5,6 +5,7 @@ date: 2025-11-02 03:00:00 +0000
 tags: [caffeine, headaches, migraines, withdrawal, sleep]
 excerpt: "Caffeine can relieve migraines or trigger them—it depends on your dose, timing, and withdrawal patterns. Learn science-backed strategies to use caffeine smartly."
 image: "/assets/images/blog/caffeine-headaches-migraines-cover.jpg"
+redirect_from: /2025/11/02/caffeine-headaches-migraines/
 ---
 
 
@@ -136,7 +137,7 @@ If you take caffeine-containing pain medications more than 3 days per week, you 
 
 **Specific example:** Your diary might reveal: "Every time I consume 300mg+ caffeine, I get a headache the next day if I drop to 100mg." Or: "Weekend headaches always follow 5 days of high intake—it's withdrawal, not stress."
 
-[Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your consumption compares to average levels and identify patterns more easily.
+[Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your consumption compares to your personal safe limit and identify patterns more easily.
 
 ---
 
@@ -203,7 +204,7 @@ Your action plan:
 4. **Reserve caffeine for attacks** rather than daily prevention
 5. **Maintain consistency** once you find what works
 
-Want to know exactly how much caffeine you're consuming daily? [Calculate your total caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your consumption compares to average levels and identify hidden sources you might be missing.
+Want to know exactly how much caffeine you're consuming daily? [Calculate your total caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your consumption compares to your personal safe limit and identify hidden sources you might be missing.
 
 For more detailed information on caffeine's effects and safe consumption guidelines, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
 

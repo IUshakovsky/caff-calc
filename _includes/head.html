@@ -63,6 +63,9 @@
   <meta name="twitter:title" content="{{ page_title }}">
   <meta name="twitter:description" content="{{ page_description | escape }}">
   <title>{{ page_title }}</title>
+  {%- if paginator and paginator.page > 1 -%}
+  <meta name="robots" content="noindex,follow">
+  {%- endif -%}
   {% include schema.html %}
   <link rel="icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/x-icon">
   <!-- Critical CSS for faster rendering across devices -->

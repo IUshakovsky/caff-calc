@@ -191,6 +191,11 @@ faq:
                 <div id="caffeineOptions" class="custom-select-options">
                   <!-- Populated dynamically from JSON file -->
                 </div>
+                <select id="beverageData" hidden>
+                  {%- for bev in site.data.beverages %}
+                  <option value="{{ bev.slug }}" data-bev="{{ bev | jsonify | escape }}">{{ bev.product }}</option>
+                  {%- endfor %}
+                </select>
               </div>
             </div>
             <input type="hidden" id="caffeineBeverage" value="">

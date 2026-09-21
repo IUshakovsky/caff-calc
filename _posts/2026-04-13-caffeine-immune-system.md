@@ -5,6 +5,7 @@ date: 2026-04-13 03:00:00 +0000
 tags: [caffeine and immune system, caffeine, coffee, inflammation, sleep, wellness]
 excerpt: "Does caffeine boost or suppress immunity? Learn how coffee and tea influence inflammation, stress hormones, and sleep—plus practical tips to protect your defenses while enjoying your daily brew."
 image: "/assets/images/blog/caffeine-immune-system.jpg"
+redirect_from: /2026/04/13/caffeine-immune-system/
 ---
 
 

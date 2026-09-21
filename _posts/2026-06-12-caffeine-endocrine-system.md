@@ -5,6 +5,7 @@ date: 2026-06-12 03:00:00 +0000
 tags: [caffeine endocrine system, hormones, cortisol, melatonin, insulin]
 excerpt: "From cortisol spikes to melatonin delays, caffeine influences key hormones that govern energy, sleep, and metabolism. Learn the science and smart habits to protect your rhythm."
 image: "/assets/images/blog/caffeine-endocrine-system-effects.jpg"
+redirect_from: /2026/06/12/caffeine-endocrine-system/
 ---
 
 
@@ -96,7 +97,7 @@ Some people metabolize caffeine slowly; others, quickly. Hormonal contraceptives
 
 ### 7) Use a Simple Counter to Stay Honest
 
-We're all bad at "mental math" with coffee, tea, energy drinks, and chocolate. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to tally your intake from all sources and see how it compares to average levels.
+We're all bad at "mental math" with coffee, tea, energy drinks, and chocolate. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to tally your intake from all sources and see how it compares to your personal safe limit.
 
 ### 8) Special Case: Pregnancy and Nursing
 

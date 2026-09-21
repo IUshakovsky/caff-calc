@@ -7,6 +7,7 @@ date: 2025-10-20 12:00:00 +0000
 tags: [caffeine, anxiety, health, science, sleep, caffeine-awareness]
 excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and actionable strategies to enjoy your coffee without the jitters."
 image: "/assets/images/blog/caffeine-anxiety.jpg"
+redirect_from: /2025/10/20/caffeine-anxiety-understanding/
 ---
 
 
@@ -133,7 +134,7 @@ Decaf contains 2-5mg of caffeine per 8oz cup—negligible for most people. Howev
 
 Caffeine doesn't have to be an all-or-nothing choice. Most people can find a sweet spot where they enjoy focus and energy without triggering anxiety or sacrificing sleep. The key is personalization: knowing your dose threshold, timing your intake strategically, and tracking total daily consumption.
 
-Start with the 8 strategies above. Implement caffeine curfews, count all sources, and pair consumption with food and water. If you're unsure where you stand, [use CaffCalc]({{ '/' | relative_url }}) to calculate your total daily caffeine and compare it to average levels.
+Start with the 8 strategies above. Implement caffeine curfews, count all sources, and pair consumption with food and water. If you're unsure where you stand, [use CaffCalc]({{ '/' | relative_url }}) to calculate your total daily caffeine and compare it to your personal safe limit.
 
 Small adjustments compound. Cutting one afternoon coffee might improve tonight's sleep, which reduces tomorrow's anxiety, which decreases your caffeine dependency. The cycle works both ways.
 

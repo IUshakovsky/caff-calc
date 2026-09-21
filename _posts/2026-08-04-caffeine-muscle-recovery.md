@@ -5,6 +5,7 @@ date: 2026-08-04 03:00:00 +0000
 tags: [caffeine and muscle recovery, glycogen resynthesis, DOMS, sleep, hydration, creatine]
 excerpt: "Does caffeine help or hurt muscle recovery? Learn when it aids glycogen refueling and eases soreness—and when it wrecks sleep. Science-backed tips inside."
 image: "/assets/images/blog/caffeine-muscle-recovery-cover.jpg"
+redirect_from: /2026/08/04/caffeine-muscle-recovery/
 ---
 
 

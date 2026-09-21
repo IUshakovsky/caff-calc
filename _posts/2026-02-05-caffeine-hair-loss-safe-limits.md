@@ -5,6 +5,7 @@ date: 2026-02-05 03:00:00 +0000
 tags: [caffeine and hair loss, caffeine, hair health, safe limits, sleep]
 excerpt: "Does caffeine cause hair loss? Here's what research shows about oral and topical caffeine, how sleep and nutrition play a role, and safe daily limits for most people."
 image: "/assets/images/blog/caffeine-hair-loss-safe-limits.jpg"
+redirect_from: /2026/02/05/caffeine-hair-loss-safe-limits/
 ---
 
 

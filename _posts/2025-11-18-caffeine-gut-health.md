@@ -7,6 +7,7 @@ date: 2025-11-18 03:00:00 +0000
 tags: [caffeine, gut health, coffee, microbiome, digestion, safety]
 excerpt: "Discover how caffeine affects your gut microbiome and digestion, plus 7 evidence-based tips to enjoy coffee without compromising digestive comfort."
 image: "/assets/images/blog/caffeine-gut-health-cover.jpg"
+redirect_from: /2025/11/18/caffeine-gut-health/
 ---
 
 
@@ -62,7 +63,7 @@ The science supports a nuanced view: coffee can be gut-friendly for many people,
 
 **Why it works:** Most gut issues from caffeine are dose-dependent. Consuming 400mg+ daily (roughly 4 cups of coffee) increases reflux risk and can disrupt sleep, which then impairs gut healing and immune function. Staying within moderate ranges—typically 200-300mg for most adults—reduces symptoms while maintaining benefits.
 
-**How to implement:** Log all caffeine sources for one week: coffee, tea, energy drinks, chocolate, medications (some pain relievers contain 65mg per dose). [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to average consumption levels. If you're over 400mg, taper by 50mg every 3 days to avoid withdrawal headaches.
+**How to implement:** Log all caffeine sources for one week: coffee, tea, energy drinks, chocolate, medications (some pain relievers contain 65mg per dose). [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your total compares to your personal safe limit. If you're over 400mg, taper by 50mg every 3 days to avoid withdrawal headaches.
 
 ### 2. Choose Filtered Over Unfiltered Coffee
 

@@ -56,6 +56,11 @@ faq:
                   <input type="text" class="form-control form-control-sm" placeholder="Search..." aria-label="Search drinks">
                 </div>
                 <div id="hlDrinkOptions" class="custom-select-options"></div>
+                <select id="beverageData" hidden>
+                  {%- for bev in site.data.beverages %}
+                  <option value="{{ bev.slug }}" data-bev="{{ bev | jsonify | escape }}">{{ bev.product }}</option>
+                  {%- endfor %}
+                </select>
               </div>
             </div>
           </div>

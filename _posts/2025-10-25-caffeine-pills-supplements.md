@@ -7,6 +7,7 @@ date: 2025-10-25 09:00:00 +0000
 tags: [caffeine, caffeine-pills, supplements, sleep, health]
 excerpt: "Caffeine pills promise energy on demand. But precise dosing cuts both ways—one miscalculation can trigger dangerous side effects. Learn the science-backed safety limits and when pills cross from helpful to harmful."
 image: "/assets/images/blog/caffeine-pills.jpg"
+redirect_from: /2025/10/25/caffeine-pills-supplements/
 ---
 
 
@@ -235,7 +236,7 @@ Used thoughtfully—occasional use, precise timing, careful dosing—they can be
 
 The goal isn't maximum alertness. It's sustainable energy that doesn't compromise sleep, stress your heart, or require ever-increasing doses.
 
-**Want to verify you're staying within safe limits?** [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from pills alongside coffee, tea, energy drinks, and other sources. The calculator shows how your total intake compares to average consumption levels—helping you spot potential problems before they become dangerous.
+**Want to verify you're staying within safe limits?** [Use CaffCalc]({{ '/' | relative_url }}) to count caffeine from pills alongside coffee, tea, energy drinks, and other sources. The calculator shows how your total intake compares to your personal safe limit—helping you spot potential problems before they become dangerous.
 
 ---
 

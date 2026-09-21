@@ -5,6 +5,7 @@ date: 2026-05-16 03:00:00 +0000
 tags: [caffeine and inflammation, immune response, adenosine receptors, CRP, sleep, coffee]
 excerpt: "Caffeine doesn't just wake you up—it nudges your immune system too. Learn how it dials inflammation up or down and how to sip smarter."
 image: "/assets/images/blog/caffeine-inflammation-immune-response.jpg"
+redirect_from: /2026/05/16/caffeine-inflammatory-response/
 ---
 
 

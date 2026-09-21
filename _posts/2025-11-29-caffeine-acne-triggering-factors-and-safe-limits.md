@@ -5,6 +5,7 @@ date: 2025-11-29 03:00:00 +0000
 tags: [caffeine, acne, sleep, health, skin-care]
 excerpt: "Explore how caffeine may influence acne through stress, sleep, and hormonal pathways, plus practical limits and tips to keep your skin clear."
 image: "/assets/images/blog/caffeine-acne-triggering-factors.jpg"
+redirect_from: /2025/11/29/caffeine-acne-triggering-factors-and-safe-limits/
 ---
 
 
@@ -119,7 +120,7 @@ Potentially—they often combine high caffeine doses (200-300mg) with sugar, art
 
 ## Stop Guessing. Start Tracking.
 
-You can't fix what you don't measure. Wondering if your daily Starbucks run is pushing you over the edge? [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) in 60 seconds. See how your lattes, teas, and pre-workout stack up against average intake levels.
+You can't fix what you don't measure. Wondering if your daily Starbucks run is pushing you over the edge? [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) in 60 seconds. See how your lattes, teas, and pre-workout stack up against your personal safe limit.
 
 No guesswork. No calorie counting. Just caffeine totals from all your daily sources—compared to what's typical. Finally know if you're in the safe zone or the breakout zone.
 

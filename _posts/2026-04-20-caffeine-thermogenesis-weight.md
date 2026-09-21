@@ -7,6 +7,7 @@ date: 2026-04-20 03:00:00 +0000
 tags: [caffeine thermogenesis, weight management, metabolism, brown fat, energy expenditure]
 excerpt: "Can caffeine meaningfully boost thermogenesis and support weight goals? Here's a clear, evidence-based guide to what caffeine does to your metabolism, how big the effect really is, and how to use it safely."
 image: "/assets/images/blog/caffeine-thermogenesis-weight.jpg"
+redirect_from: /2026/04/20/caffeine-thermogenesis-weight/
 ---
 
 

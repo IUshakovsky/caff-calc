@@ -8,6 +8,7 @@ tags: [caffeine, health, science, tolerance, coffee, alertness, productivity]
 excerpt: "Your morning coffee used to be magic. Now it barely helps. Here's the science behind caffeine tolerance and a proven 2-week reset plan to get your alertness back."
 image: "/assets/images/blog/caff-tolerance-reset.jpg"
 
+redirect_from: /2025/10/08/caffeine-tolerance-reset-guide/
 ---
 
 

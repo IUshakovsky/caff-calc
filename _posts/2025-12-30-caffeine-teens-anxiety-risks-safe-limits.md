@@ -5,6 +5,7 @@ date: 2025-12-30 03:00:00 +0000
 tags: [caffeine, teens, anxiety, caffeine-safety, health]
 excerpt: "Teen caffeine use can trigger anxiety and disrupt sleep. Discover safe limits, science-backed strategies, and how to track intake without the guesswork."
 image: "/assets/images/blog/caffeine-teens-anxiety-cover.jpg"
+redirect_from: /2025/12/30/caffeine-teens-anxiety-risks-safe-limits/
 ---
 
 
@@ -59,7 +60,7 @@ Practical approach:
 - **Ages 16-18**: Cap around 150mg if well-tolerated (monitor sleep and mood)
 - **Sensitive individuals**: Start at 50mg and adjust
 
-Use [CaffCalc]({{ '/' | relative_url }}) to count caffeine from all sources—coffee, tea, soda, chocolate, medications—and see how your total compares to average levels.
+Use [CaffCalc]({{ '/' | relative_url }}) to count caffeine from all sources—coffee, tea, soda, chocolate, medications—and see how your total compares to your personal safe limit.
 
 ### 2. Enforce a 6-8 Hour Caffeine Curfew Before Bedtime
 
@@ -154,7 +155,7 @@ The solution is straightforward:
 - **Avoid energy drinks** entirely
 - **Track total intake** to stay within healthy ranges
 
-Stop guessing about your teen's caffeine levels. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see exactly where you stand and make informed decisions. It's free, takes 30 seconds, and compares your intake to average consumption levels.
+Stop guessing about your teen's caffeine levels. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see exactly where you stand and make informed decisions. It's free, takes 30 seconds, and compares your intake to your personal safe limit.
 
 For more on caffeine's mechanisms and safety, explore our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page. Moderate caffeine can fit into a healthy teen lifestyle—the key is awareness, limits, and prioritizing sleep above all.
 

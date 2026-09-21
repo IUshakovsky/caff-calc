@@ -7,6 +7,7 @@ date: 2025-11-13 03:00:00 +0000
 tags: [caffeine, weight, sensitivity, personalized-health, sleep, nutrition]
 excerpt: "A science-informed, practical guide on how body weight and sensitivity shape caffeine effects. Learn personalized tips and how to use CaffCalc to count caffeine intake and compare with typical ranges."
 image: "/assets/images/blog/caffeine-weight-sensitivity-guide.jpg"
+redirect_from: /2025/11/13/caffeine-weight-sensitivity-guide/
 ---
 
 
@@ -170,7 +171,7 @@ Pregnant individuals should limit caffeine to 200 mg daily per ACOG guidelines. 
 
 Caffeine isn't one-size-fits-all. Your ideal dose depends on body weight, composition, sensitivity, and lifestyle. Start with a mg/kg calculation, monitor sleep and mood, and adjust incrementally. Small, informed tweaks deliver bigger improvements than guessing.
 
-Stop overstimulating or underperforming. Use [CaffCalc]({{ '/' | relative_url }}) to count total daily caffeine from all sources and see how you compare to average intake ranges. Track your pattern for a week, adjust your ceiling, and discover your sweet spot.
+Stop overstimulating or underperforming. Use [CaffCalc]({{ '/' | relative_url }}) to count total daily caffeine from all sources and see how you compare to your personal safe limit. Track your pattern for a week, adjust your ceiling, and discover your sweet spot.
 
 For deeper insights into caffeine's mechanisms—half-life, adenosine blocking, and metabolic pathways—explore our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page. Knowledge is power when it's applied to your daily routine.
 

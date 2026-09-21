@@ -349,16 +349,24 @@
       chart: $('hlChart'), tooltip: $('hlTooltip'), table: $('hlTable')
     };
     if (!els.drinkButton) return;
-    var list;
-    try {
-      var response = await fetch((window.SITE_BASEURL || '') + '/assets/data/beverages.json');
-      list = await response.json();
-    } catch (e) {
-      console.error('Error loading caffeine data:', e);
+    var list = [];
+    var dataSelect = document.getElementById('beverageData');
+    if (dataSelect) {
+      Array.from(dataSelect.options).forEach(function (option) {
+        if (!option.value || !option.dataset.bev) return;
+        try {
+          var b = JSON.parse(option.dataset.bev);
+          list.push(b);
+          beverages[b.slug] = b;
+        } catch (e) {
+          console.error('Invalid beverage JSON for', option.value, e);
+        }
+      });
+    }
+    if (!list.length) {
       els.drinkText.textContent = 'Could not load drinks';
       return;
     }
-    list.forEach(function (b) { beverages[b.slug] = b; });
 
     renderBeverageOptions(els.drinkOptions, list, selectDrink);
     if (window.renderIcons) window.renderIcons();
