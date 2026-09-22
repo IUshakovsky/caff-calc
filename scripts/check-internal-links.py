@@ -16,8 +16,8 @@ from collections import defaultdict
 
 SITE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "_site")
 HREF = re.compile(rb'href=["\']([^"\'#?]+)', re.I)
-# Post permalinks are /YYYY/MM/DD/slug/
-POST_URL = re.compile(r"^/\d{4}/\d{2}/\d{2}/[^/]+/$")
+# Post permalinks are now /blog/slug/ (migrated from /YYYY/MM/DD/slug/)
+POST_URL = re.compile(r"^/blog/[^/]+/$")
 
 
 def url_for(path):
