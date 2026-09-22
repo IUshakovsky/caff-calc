@@ -809,6 +809,7 @@
   source_name: Starbucks published nutrition
   source_url: https://www.starbucks.com/menu/product/2123863/iced/nutrition
   verified: 2026-09-19
+  featured: true
 - slug: starbucks-iced-shaken-espresso
   brand: Starbucks
   product: Starbucks Iced Shaken Espresso
@@ -1431,6 +1432,7 @@
   source_url: https://www.celsius.com/essential-facts/
   verified: 2026-09-19
   notes: Celsius recommends one can a day of this line, not two.
+  featured: true
 - slug: celsius-on-the-go
   brand: Celsius
   product: Celsius On-The-Go powder
@@ -1458,6 +1460,7 @@
   verified: 2026-09-18
   notes: 200 mg in a 12 oz can that drinks like a soda. Half the adult daily guideline
     per can.
+  featured: true
 - slug: mtn-dew-kickstart
   brand: Mtn Dew
   product: Mtn Dew Kickstart
@@ -1484,6 +1487,7 @@
   source_url: https://5hourenergy.com/collections/regular-strength
   verified: 2026-09-18
   notes: 200 mg in under two fluid ounces. Volume tells you nothing about dose here.
+  featured: true
 - slug: starbucks-pink-drink
   brand: Starbucks
   product: Starbucks Pink Drink
@@ -1588,6 +1592,7 @@
   verified: 2026-09-19
   notes: 'Less caffeine than a latte of the same size: 95 mg in a Grande against 150
     mg.'
+  featured: true
 - slug: starbucks-caramel-frappuccino
   brand: Starbucks
   product: Starbucks Caramel Frappuccino

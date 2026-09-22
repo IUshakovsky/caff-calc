@@ -29,7 +29,7 @@ except ImportError:
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "_site")
 MIN_WORDS = 250
-EXPECTED_PAGES = 25
+EXPECTED_PAGES = 30
 WORD = re.compile(r"[A-Za-z0-9]+(?:['’.-][A-Za-z0-9]+)*")
 
 
