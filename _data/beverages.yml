@@ -1101,6 +1101,7 @@
   source_name: USDA FoodData Central (FNDDS), tea, bubble
   source_url: https://fdc.nal.usda.gov/food-details/2710508/nutrients
   verified: 2026-09-19
+  featured: true
 - slug: starbucks-chai-latte
   brand: Starbucks
   product: Starbucks Chai Latte
@@ -1710,6 +1711,7 @@
   source_name: PepsiCo Product Facts
   source_url: https://www.pepsicoproductfacts.com/Home/Product?gtin=00012000018770
   verified: 2026-09-19
+  featured: true
 - slug: diet-pepsi
   brand: Pepsi
   product: Diet Pepsi
@@ -1951,6 +1953,7 @@
   verified: 2026-09-19
   notes: USDA's serving of 28 pieces carries more caffeine than a Grande Cold Brew.
     About 12 mg a bean, and easy to eat by the handful.
+  featured: true
 - slug: mms-milk-chocolate
   brand: M&M's
   product: M&M's Milk Chocolate
@@ -2057,6 +2060,7 @@
   source_name: DailyMed drug label
   source_url: https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ed841fb-a61c-4868-b4e5-4f2311a5e79c
   verified: 2026-09-19
+  featured: true
 - slug: excedrin-tension-headache
   brand: Excedrin
   product: Excedrin Tension Headache
