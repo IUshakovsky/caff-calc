@@ -86,6 +86,7 @@
   verified: 2026-09-19
   notes: About two thirds of the caffeine of the same cup of drip coffee, going by
     USDA's figures for each.
+  featured: true
 - slug: latte
   brand: null
   product: Latte
@@ -964,6 +965,7 @@
   source_url: https://fdc.nal.usda.gov/food-details/173227/nutrients
   verified: 2026-09-19
   notes: Steeping time moves this more than leaf type does.
+  featured: true
 - slug: green-tea
   brand: null
   product: Green tea, brewed
@@ -1079,6 +1081,7 @@
   source_url: https://fdc.nal.usda.gov/food-details/2710509/nutrients
   verified: 2026-09-19
   notes: Brewed from black or green tea, so it keeps some of the tea's caffeine.
+  featured: true
 - slug: bubble-tea
   brand: null
   product: Bubble tea (boba)
@@ -1475,6 +1478,7 @@
   verified: 2026-09-19
   notes: The label lists two 8 oz servings of 46 mg each; the can holds 92 mg. Figure
     is for Orange Citrus.
+  featured: true
 - slug: 5-hour-energy-regular
   brand: 5-hour Energy
   product: 5-hour Energy, Regular Strength
@@ -2015,6 +2019,7 @@
   verified: 2026-09-19
   notes: Pre-workouts are easy to double-scoop. Two scoops is 400 mg before anything
     else you drink that day.
+  featured: true
 - slug: excedrin-extra-strength
   brand: Excedrin
   product: Excedrin Extra Strength
