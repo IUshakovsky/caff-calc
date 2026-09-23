@@ -1322,11 +1322,79 @@ option.energy-item {
 /* Footer Styles */
 .footer {
   background-color: var(--c-espresso);
-  color: rgba(251, 247, 241, 0.85);
+  color: rgba(251, 247, 241, 0.75);
   margin-top: var(--sp-7);
-  padding: var(--sp-4) 0;
+  padding: var(--sp-7) 0 var(--sp-5);
   flex-shrink: 0; /* Prevent footer from shrinking */
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  font-size: var(--fs-sm);
+}
+
+.footer a {
+  color: rgba(251, 247, 241, 0.75);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--c-text-invert) !important;
+}
+
+.footer-tagline {
+  margin: var(--sp-2) 0 var(--sp-3);
+  max-width: 32ch;
+}
+
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.footer-heading {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-amber);
+  margin-bottom: var(--sp-3);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li + li {
+  margin-top: var(--sp-2);
+}
+
+.footer-links a {
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-5);
+  margin-top: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid rgba(251, 247, 241, 0.12);
+  font-size: var(--fs-xs);
+  color: rgba(251, 247, 241, 0.55);
 }
 
 /* Collapsed (hamburger) navbar, matching navbar-expand-xl in navigation.html */
@@ -1377,38 +1445,20 @@ option.energy-item {
   }
 }
 
-/* Mobile footer styles */
+/* Mobile footer: keep the links (comfortable tap targets), tighter padding */
 @media (max-width: 767px) {
   .footer {
-    padding: 1rem 0;
+    padding: var(--sp-6) 0 var(--sp-4);
   }
-  
-  .footer .container > div {
-    flex-direction: column !important;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .footer-links {
-    display: none !important; /* Hide footer links on mobile */
-  }
-  
-  .footer .email-link {
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    font-size: 1.2rem;
-  }
-  
-  .footer .small {
-    text-align: center;
-  }
-}
 
-.footer h6 {
-  color: white;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  .footer-links a {
+    padding: 6px 0;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    margin-top: var(--sp-5);
+  }
 }
 
 /* Search highlight animation */
@@ -1464,19 +1514,6 @@ option.energy-item {
 .health-status-panel .form-check-label {
   font-size: 0.85rem;
   color: #4a3728;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.7rem;
-  display: inline-block;
-}
-
-.email-link {
-  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 /* Delete button styling */
@@ -2470,37 +2507,16 @@ button:focus-visible,
 /* =====================================================================
    HOMEPAGE LOWER CONTENT — wide cards, readable prose
    The calculator needs the full main-content-wide container. The cards
-   below it share that width, but paragraphs and lists are capped so the
-   line length stays comfortable. Tables (.table-content) remain full width.
+   below it share that width; headings and prose sit in one centred column
+   (a fixed width, not ch, so large headings and body text share an edge).
+   The drink table (.table-content) keeps the full card width.
    ===================================================================== */
-.home-content .card-body p,
-.home-content .card-body ul,
-.home-content .card-body ol,
-.home-content .card-body h2,
-.home-content .card-body h3,
-.home-content .card-body .h5,
-.home-content .card-body .card-title {
-  max-width: 75ch;
-}
-
-.home-content .card-body p,
-.home-content .card-body ul,
-.home-content .card-body ol {
+.home-content .card-body > * {
+  max-width: 760px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.home-content .card-body h2,
-.home-content .card-body h3,
-.home-content .card-body .h5,
-.home-content .card-body .card-title {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.home-content .card-body .table-content,
-.home-content .card-body .table-content table {
+.home-content .card-body > .table-content {
   max-width: none;
-  margin-left: 0;
-  margin-right: 0;
 }
