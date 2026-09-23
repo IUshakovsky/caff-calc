@@ -2504,19 +2504,3 @@ button:focus-visible,
   max-width: calc(100vw - 2rem);
 }
 
-/* =====================================================================
-   HOMEPAGE LOWER CONTENT — wide cards, readable prose
-   The calculator needs the full main-content-wide container. The cards
-   below it share that width; headings and prose sit in one centred column
-   (a fixed width, not ch, so large headings and body text share an edge).
-   The drink table (.table-content) keeps the full card width.
-   ===================================================================== */
-.home-content .card-body > * {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.home-content .card-body > .table-content {
-  max-width: none;
-}
