@@ -107,7 +107,10 @@
     selected.slug = bev.slug;
     els.drinkText.textContent = bev.product;
     els.sizeOptions.textContent = '';
-    renderSizeOptions(els.sizeOptions, bev, selectSize);
+    renderSizeOptions(els.sizeOptions, bev, function (index, text) {
+      userTouched = true;
+      selectSize(index, text);
+    });
     els.sizeButton.disabled = false;
     var index = Math.max(0, bev.servings.findIndex(function (s) { return s.default; }));
     selectSize(index, els.sizeOptions.children[index].dataset.short);
@@ -153,6 +156,29 @@
       halfLife: halfLife(),
       weightKg: weightKg()
     };
+  }
+
+  // Analytics (docs/analytics-events.md). The tool computes live on load, so
+  // results are only sent after the visitor has touched an input, debounced
+  // to catch the settled state rather than every keystroke.
+  var userTouched = false;
+  var trackTimer;
+  function scheduleTrack() {
+    if (!userTouched) return;
+    clearTimeout(trackTimer);
+    trackTimer = setTimeout(function () {
+      var i = inputs();
+      var left = M.remaining(i.dose, M.hoursUntil(i.time, i.bedtime), i.halfLife);
+      var threshold = M.sleepThreshold(i.weightKg);
+      if (typeof trackEvent === 'function') {
+        trackEvent('hl_complete', {
+          drink: selected.slug,
+          dose_mg: Math.round(i.dose),
+          bedtime_mg: Math.round(left),
+          sleep_status: left >= threshold ? 'above' : 'below'
+        });
+      }
+    }, 1200);
   }
 
   function update() {
@@ -202,6 +228,7 @@
 
     drawChart(i, hours, threshold);
     fillTable(i);
+    scheduleTrack();
   }
 
   function svgEl(name, attrs, parent) {
@@ -368,7 +395,10 @@
       return;
     }
 
-    renderBeverageOptions(els.drinkOptions, list, selectDrink);
+    renderBeverageOptions(els.drinkOptions, list, function (bev) {
+      userTouched = true;
+      selectDrink(bev);
+    });
     if (window.renderIcons) window.renderIcons();
     initSelectDropdown(els.drinkButton.closest('.custom-select-container'));
     initSelectDropdown(els.sizeButton.closest('.custom-select-container'));
@@ -376,16 +406,17 @@
     els.drinkButton.disabled = false;
 
     Array.prototype.forEach.call(els.modifierOptions.querySelectorAll('.custom-select-option'), function (option) {
-      option.addEventListener('click', function () { selectModifier(option); });
+      option.addEventListener('click', function () { userTouched = true; selectModifier(option); });
     });
     els.unitButtons.forEach(function (b) {
-      b.addEventListener('click', function () { setWeightUnit(b.dataset.hlUnit); update(); });
+      b.addEventListener('click', function () { userTouched = true; setWeightUnit(b.dataset.hlUnit); update(); });
     });
 
     prefillWeight();
     ['qty', 'time', 'bedtime', 'halfLife', 'weight'].forEach(function (k) {
-      els[k].addEventListener('input', update);
-      els[k].addEventListener('change', update);
+      var touched = function () { userTouched = true; update(); };
+      els[k].addEventListener('input', touched);
+      els[k].addEventListener('change', touched);
     });
     window.addEventListener('resize', update);
     selectDrink(beverages['brewed-coffee'] || list[0]);

@@ -71,7 +71,14 @@
     }
 
     buttons.forEach(function (b) {
-      b.addEventListener('click', function () { show(b); });
+      b.addEventListener('click', function () {
+        show(b);
+        // /caffeine-in/<slug>/ — the slug is page content, not user input
+        var m = location.pathname.match(/\/caffeine-in\/([^/]+)\//);
+        if (typeof trackEvent === 'function' && m) {
+          trackEvent('drink_size_pick', { drink: m[1], mg: Number(b.dataset.mg) });
+        }
+      });
     });
     var active = box.querySelector('.how-many-sizes button.active') || buttons[0];
     if (active) show(active);

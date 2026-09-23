@@ -59,6 +59,7 @@
       var ref = new URL(document.referrer);
       if (ref.hostname === location.hostname) {
         if (/^\/(blog(\/|$)|\d{4}\/\d\d\/\d\d\/)/.test(ref.pathname)) return 'blog';
+        if (/^\/caffeine-in(\/|$)/.test(ref.pathname)) return 'drinks';
         if (ref.pathname === '/') return 'home';
       }
     } catch (e) {}
@@ -74,6 +75,20 @@
     };
     // Capture phase: some calculator handlers stop propagation.
     ['click', 'input', 'change'].forEach(function (t) { calc.addEventListener(t, onStart, true); });
+  }
+
+  // --- Half-life calculator start -------------------------------------------
+  // The tool recomputes on every input, so there is no "calculate" click to
+  // hook; first interaction is the start. The first result a user settles on
+  // is sent as hl_complete from half-life.js.
+  var hlTool = document.querySelector('.half-life-tool');
+  if (hlTool) {
+    var onHlStart = function (e) {
+      if (fired.hlStart || (e.type === 'click' && !e.target.closest('button, .custom-select-option'))) return;
+      fired.hlStart = true;
+      track('hl_start', { entry_point: entryPoint() });
+    };
+    ['click', 'input', 'change'].forEach(function (t) { hlTool.addEventListener(t, onHlStart, true); });
   }
 
   // --- Delegated click tracking ---------------------------------------------
@@ -99,6 +114,28 @@
       }
     });
   }
+
+  // --- External source/citation links outside post bodies -------------------
+  // Same event as post-body citations (hostname only, no path). Scopes:
+  // homepage cards, .content-page wrappers (half-life + info pages + the
+  // /caffeine-in/ hub), and every drink detail page (its .main-content).
+  var citeScopes = ['.home-content', '.content-page'];
+  if (document.querySelector('.caffeine-in-headline')) citeScopes.push('.main-content');
+  citeScopes.forEach(function (sel) {
+    var scope = document.querySelector(sel);
+    if (!scope) return;
+    scope.addEventListener('click', function (e) {
+      // One click can bubble through nested scopes (.home-content sits inside
+      // .content-page on the homepage); count it once.
+      if (e.caffCiteSeen) return;
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || a.hasAttribute('data-ga-event')) return;
+      if (a.hostname !== location.hostname && /^https?:$/.test(a.protocol)) {
+        e.caffCiteSeen = true;
+        track('citation_click', { domain: a.hostname });
+      }
+    });
+  });
 
   // --- Scroll depth + read_complete -----------------------------------------
   var docHeight = body.scrollHeight;

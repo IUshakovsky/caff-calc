@@ -58,10 +58,11 @@ closure. Events marked "every time" are not deduplicated.
 | `calc_share` | `method` | string | `copy` \| `link` \| `social` | **Not instrumented.** The calculator has no copy or share control yet. Hook it into that control when one is built. | | |
 
 `entry_point` comes from `document.referrer`. Same host with a `/blog/` path,
-`/blog/page/N/`, or a post URL (`/YYYY/MM/DD/slug/`) gives `blog`. Same host with
-`/` gives `home`. Anything else gives `direct`: no referrer, an external site,
-or other same-site pages such as `/pages/*`. `tracker` is reserved but never sent,
-because the tracker has no URL of its own (it is the Tracked Items table on `/`).
+`/blog/page/N/`, or a post URL gives `blog`. Same host with a `/caffeine-in/`
+path gives `drinks`. Same host with `/` gives `home`. Anything else gives
+`direct`: no referrer, an external site, or other same-site pages such as
+`/pages/*`. `tracker` is reserved but never sent, because the tracker has no
+URL of its own (it is the Tracked Items table on `/`).
 
 `limit_status` is measured against `calculateCaffeineLimit()`, the figure shown
 as "Your Safe Caffeine Limit":
@@ -73,6 +74,29 @@ as "Your Safe Caffeine Limit":
 When the limit is 0 (age group 0–12), any caffeine counts as `over`. These
 thresholds deliberately differ from the on-page Safe/Caution/Warning colours,
 which switch at 50% and 100%.
+
+### Half-life calculator (`/half-life/`)
+
+The tool recomputes on every input, so there is no explicit "calculate" click:
+`hl_start` marks the first interaction and `hl_complete` reports the settled
+result 1.2 s after the last input, only once the visitor has changed something
+(the defaults rendered on load do not count).
+
+| Event | Parameter | Type | Allowed values | Fires when | Frequency | Where |
+|---|---|---|---|---|---|---|
+| `hl_start` | `entry_point` | string | `blog` \| `drinks` \| `home` \| `direct` | First click on a button or beverage option, or first `input`/`change` inside `.half-life-tool`. | Once per page load | `analytics-events.js`, "Half-life calculator start" |
+| `hl_complete` | `drink` | string | The `slug` from `_data/beverages.yml` | 1.2 s after the visitor's last input, with the result that was on screen | Every settled result | `half-life.js`, `scheduleTrack()` |
+| | `dose_mg` | number | Integer mg for the selected size × quantity | | | |
+| | `bedtime_mg` | number | Integer mg remaining at bedtime | | | |
+| | `sleep_status` | string | `above` \| `below` the sleep threshold (100 mg, or 1.4 mg/kg when weight is entered). Weight itself is never sent. | | | |
+
+### Drink pages (`/caffeine-in/`)
+
+| Event | Parameter | Type | Allowed values | Fires when | Frequency | Where |
+|---|---|---|---|---|---|---|
+| `drink_size_pick` | `drink` | string | Page slug, e.g. `starbucks-nitro-cold-brew` | Click on a serving-size button in the "How many can I have?" box | Every time | `caffeine-in.js` |
+| | `mg` | number | Caffeine in the picked size (top of range for ranged values) | | | |
+| `drink_to_calc_click` | `drink` | string | Beverage `slug` | Click on "Add it to the calculator" (`?drink=<slug>` prefill) | Every time | Declarative `data-ga-event` in `_layouts/caffeine-in.html` |
 
 ### Tracker
 
@@ -91,7 +115,7 @@ item sends `beverage_add` and `tracker_entry_save` from the same click.
 | `scroll_depth` | `percent` | number | `25` \| `50` \| `75` \| `100` | `(scrollY + innerHeight) / body.scrollHeight` crosses the threshold. All pages. | Each threshold once per page load | `analytics-events.js`, "Scroll depth" |
 | `read_complete` | `post_slug` | string | Jekyll `page.slug`, e.g. `caffeine-apnea-sleep-quality` | Scroll reaches ≥75% **and** the tab has been visible for ≥45 s (hidden-tab time excluded). Fires as soon as both are true, even if the reader has stopped scrolling. Posts only. | Once per page load | `analytics-events.js`, "read_complete" |
 | `blog_to_calc_click` | `source_post` | string | Post slug | Click on a link inside the post body (`.blog-content`) that points to the calculator (same host, path `/`), or on any `data-ga-event="blog_to_calc_click"` element. Navbar and footer links are excluded. Posts only. | Every time | `analytics-events.js`, "Links inside post body"; declarative CTA in `_includes/calc-cta.html` |
-| `citation_click` | `domain` | string | Hostname only, including subdomain (e.g. `pubmed.ncbi.nlm.nih.gov`). No path or query. | Click on an `http(s)` link to another host inside the post body. The share menu, author box and prev/next links are outside the body and never count. Posts only. | Every time | `analytics-events.js`, "Links inside post body" |
+| `citation_click` | `domain` | string | Hostname only, including subdomain (e.g. `pubmed.ncbi.nlm.nih.gov`). No path or query. | Click on an `http(s)` link to another host inside the post body, the homepage cards (`.home-content`), `.content-page` wrappers (half-life page, info pages, the `/caffeine-in/` hub) or a drink detail page's `.main-content`. Navbar and footer links are outside these scopes. | Every time | `analytics-events.js`, "Links inside post body" + "External source links outside post bodies" |
 
 The scroll height is measured once when the script runs, again on `load`, and
 on every `resize`. It is not re-measured on scroll.
@@ -126,7 +150,8 @@ is never read by the analytics code.
 - Never send body weight, age group, sex, pregnancy or breastfeeding status,
   sensitivity, or any free-text input (including beverage search text) as a
   parameter.
-- `limit_status` is the only permitted health-adjacent derived value.
+- `limit_status` and `sleep_status` are the only permitted health-adjacent
+  derived values; the weight used for `sleep_status` is never sent.
 - Custom items send `beverage_name: "custom"`, never user-typed text.
 
 ## Checking events

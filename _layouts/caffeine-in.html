@@ -121,7 +121,8 @@ layout: default
             {%- endif -%}
           </p>
           <p class="small text-muted how-many-basis mb-3">Based on {{ daily_cap }} mg, the FDA figure for healthy adults.</p>
-          <a href="{{ '/' | relative_url }}?drink={{ bev.slug }}" class="btn btn-calculate">
+          <a href="{{ '/' | relative_url }}?drink={{ bev.slug }}" class="btn btn-calculate"
+             data-ga-event="drink_to_calc_click" data-ga-params='{"drink":"{{ bev.slug }}"}'>
             <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Add it to the calculator
           </a>
           <p class="small text-muted mt-2 mb-0">The calculator sets a personal limit from your weight, age, pregnancy
