@@ -2466,3 +2466,41 @@ button:focus-visible,
   min-width: 0;
   max-width: calc(100vw - 2rem);
 }
+
+/* =====================================================================
+   HOMEPAGE LOWER CONTENT — wide cards, readable prose
+   The calculator needs the full main-content-wide container. The cards
+   below it share that width, but paragraphs and lists are capped so the
+   line length stays comfortable. Tables (.table-content) remain full width.
+   ===================================================================== */
+.home-content .card-body p,
+.home-content .card-body ul,
+.home-content .card-body ol,
+.home-content .card-body h2,
+.home-content .card-body h3,
+.home-content .card-body .h5,
+.home-content .card-body .card-title {
+  max-width: 75ch;
+}
+
+.home-content .card-body p,
+.home-content .card-body ul,
+.home-content .card-body ol {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-content .card-body h2,
+.home-content .card-body h3,
+.home-content .card-body .h5,
+.home-content .card-body .card-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-content .card-body .table-content,
+.home-content .card-body .table-content table {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
