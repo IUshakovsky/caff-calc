@@ -91,6 +91,7 @@
   brand: null
   product: Latte
   category: coffee
+  featured: true
   usda_mg_per_100g: 36
   servings:
   - size_oz: 8
@@ -123,6 +124,7 @@
   brand: null
   product: Cappuccino
   category: coffee
+  featured: true
   usda_mg_per_100g: 36
   servings:
   - size_oz: 8
@@ -152,6 +154,7 @@
   brand: null
   product: Café mocha
   category: coffee
+  featured: true
   usda_mg_per_100g: 33
   servings:
   - size_oz: 8
@@ -985,6 +988,7 @@
   brand: null
   product: Oolong tea, brewed
   category: tea
+  featured: true
   usda_mg_per_100g: 16
   servings:
   - size_oz: 8
@@ -1716,6 +1720,7 @@
   brand: Pepsi
   product: Diet Pepsi
   category: soda
+  featured: true
   servings:
   - size_oz: 12
     size_ml: 355
@@ -1751,6 +1756,7 @@
   brand: null
   product: Cola (generic)
   category: soda
+  featured: true
   usda_mg_per_100g: 9
   servings:
   - label: Can
@@ -1852,6 +1858,7 @@
   brand: null
   product: Milk chocolate
   category: chocolate
+  featured: true
   usda_mg_per_100g: 20
   servings:
   - label: 1 oz
@@ -1901,6 +1908,7 @@
   brand: null
   product: Hot chocolate made with milk
   category: chocolate
+  featured: true
   usda_mg_per_100g: 3
   servings:
   - size_oz: 8
@@ -1987,6 +1995,7 @@
   brand: NoDoz
   product: NoDoz Maximum Strength
   category: supplement
+  featured: true
   servings:
   - label: 1 caplet
     size_oz: null
@@ -2000,6 +2009,7 @@
   brand: Vivarin
   product: Vivarin
   category: supplement
+  featured: true
   servings:
   - label: 1 tablet
     size_oz: null
