@@ -12,9 +12,9 @@ USDA's analysis of dark chocolate with 70 to 85% cacao solids finds 80 mg of caf
 
 ## Percentage is only a rough guide
 
-More cacao generally means more caffeine in USDA's figures. [Milk chocolate](https://fdc.nal.usda.gov/food-details/167587/nutrients) comes in at 20 mg per 100 g, [dark chocolate with 45 to 59% cacao](https://fdc.nal.usda.gov/food-details/170271/nutrients) at 43 mg, and 70 to 85% at 80 mg. USDA records no caffeine at all in [white chocolate](https://fdc.nal.usda.gov/food-details/167571/nutrients).
+More cacao generally means more caffeine in USDA's figures. [Milk chocolate]({{ '/caffeine-in/milk-chocolate/' | relative_url }}) comes in at 20 mg per 100 g, [dark chocolate with 45 to 59% cacao]({{ '/caffeine-in/dark-chocolate-45-59/' | relative_url }}) at 43 mg, and 70 to 85% at 80 mg. USDA records no caffeine at all in [white chocolate]({{ '/caffeine-in/white-chocolate/' | relative_url }}).
 
-The gradient is not strict, though. USDA's figure for the [60 to 69% band](https://fdc.nal.usda.gov/food-details/170272/nutrients) is slightly higher than for 70 to 85%, at 86 mg per 100 g, so a bigger number on the wrapper does not guarantee more caffeine. Don't expect the ingredient list to help either: the [FDA](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much) notes that when a food contains an ingredient that naturally has caffeine, such as chocolate, caffeine itself will not appear on the list.
+The gradient is not strict, though. USDA's figure for the [60 to 69% band]({{ '/caffeine-in/dark-chocolate-60-69/' | relative_url }}) is slightly higher than for 70 to 85%, at 86 mg per 100 g, so a bigger number on the wrapper does not guarantee more caffeine. Don't expect the ingredient list to help either: the [FDA](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much) notes that when a food contains an ingredient that naturally has caffeine, such as chocolate, caffeine itself will not appear on the list.
 
 ## Where it becomes significant
 

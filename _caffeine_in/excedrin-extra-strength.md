@@ -16,7 +16,7 @@ The label allows two caplets every 6 hours, up to 8 caplets in 24 hours. At that
 
 ## Excedrin Migraine and Tension Headache
 
-The other caffeinated Excedrin products use the same 65 mg per caplet, but their labels set different limits. [Excedrin Migraine](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ed841fb-a61c-4868-b4e5-4f2311a5e79c) has the same three ingredients at the same strengths; its label says to take two caplets and not more than two in 24 hours unless directed by a doctor, so at most 130 mg of caffeine a day. [Excedrin Tension Headache](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=12c074d1-81ac-47d2-8747-b018cda0058a) drops the aspirin and pairs 500 mg of acetaminophen with 65 mg of caffeine; its label allows up to six caplets in 24 hours, 390 mg of caffeine.
+The other caffeinated Excedrin products use the same 65 mg per caplet, but their labels set different limits. [Excedrin Migraine](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=7ed841fb-a61c-4868-b4e5-4f2311a5e79c) has the same three ingredients at the same strengths; its label says to take two caplets and not more than two in 24 hours unless directed by a doctor, so at most 130 mg of caffeine a day. [Excedrin Tension Headache]({{ '/caffeine-in/excedrin-tension-headache/' | relative_url }}) drops the aspirin and pairs 500 mg of acetaminophen with 65 mg of caffeine; its label allows up to six caplets in 24 hours, 390 mg of caffeine.
 
 ## Before a second dose
 

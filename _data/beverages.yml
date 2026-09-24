@@ -184,6 +184,7 @@
   brand: null
   product: Espresso macchiato
   category: coffee
+  featured: true
   usda_mg_per_100g: 142
   servings:
   - label: Espresso cup
@@ -198,6 +199,7 @@
   brand: null
   product: Cuban coffee (cafecito)
   category: coffee
+  featured: true
   usda_mg_per_100g: 199
   servings:
   - size_oz: 1
@@ -216,6 +218,7 @@
   brand: null
   product: Turkish coffee
   category: coffee
+  featured: true
   usda_mg_per_100g: 37
   servings:
   - size_oz: 8
@@ -231,6 +234,7 @@
   brand: null
   product: Iced coffee
   category: coffee
+  featured: true
   usda_mg_per_100g: 31
   servings:
   - label: Small
@@ -256,6 +260,7 @@
   brand: null
   product: Bottled or canned coffee drink
   category: coffee
+  featured: true
   usda_mg_per_100g: 28
   servings:
   - size_oz: 9.5
@@ -312,6 +317,7 @@
   brand: Starbucks
   product: Starbucks Blonde Roast (Sunsera)
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -343,6 +349,7 @@
   brand: Starbucks
   product: Starbucks Decaf Pike Place Roast
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -369,6 +376,7 @@
   brand: Starbucks
   product: Starbucks Caffè Misto
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -452,6 +460,7 @@
   brand: Starbucks
   product: Starbucks Iced Caffè Latte
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -474,6 +483,7 @@
   brand: Starbucks
   product: Starbucks Cappuccino
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -499,6 +509,7 @@
   brand: Starbucks
   product: Starbucks Caffè Mocha
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -526,6 +537,7 @@
   brand: Starbucks
   product: Starbucks White Chocolate Mocha
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -551,6 +563,7 @@
   brand: Starbucks
   product: Starbucks Espresso
   category: coffee
+  featured: true
   servings:
   - label: Solo
     size_oz: 0.75
@@ -577,6 +590,7 @@
   brand: Starbucks
   product: Starbucks Espresso Macchiato
   category: coffee
+  featured: true
   servings:
   - label: Solo
     size_oz: 0.8
@@ -630,6 +644,7 @@
   brand: Starbucks
   product: Starbucks Iced Caramel Macchiato
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -679,6 +694,7 @@
   brand: Starbucks
   product: Starbucks Cortado
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -741,6 +757,7 @@
   brand: Starbucks
   product: Starbucks Vanilla Sweet Cream Cold Brew
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -766,6 +783,7 @@
   brand: Starbucks
   product: Starbucks Pumpkin Cream Cold Brew
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -818,6 +836,7 @@
   brand: Starbucks
   product: Starbucks Iced Shaken Espresso
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -840,6 +859,7 @@
   brand: Starbucks
   product: Starbucks Iced Brown Sugar Oatmilk Shaken Espresso
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -890,6 +910,7 @@
   brand: Starbucks
   product: Starbucks Blonde Vanilla Latte
   category: coffee
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -916,6 +937,7 @@
   brand: Starbucks
   product: Starbucks Frappuccino Mocha (bottle)
   category: coffee
+  featured: true
   servings:
   - label: Bottle
     size_oz: 13.7
@@ -928,6 +950,7 @@
   brand: Starbucks
   product: Starbucks Espresso & Cream (can)
   category: coffee
+  featured: true
   servings:
   - label: Can
     size_oz: 6.5
@@ -941,6 +964,7 @@
   brand: Starbucks
   product: Starbucks Doubleshot Energy, Coffee
   category: energy-drink
+  featured: true
   servings:
   - label: Can
     size_oz: 15
@@ -1004,6 +1028,7 @@
   brand: null
   product: Decaf black tea, brewed
   category: tea
+  featured: true
   usda_mg_per_100g: 1
   servings:
   - size_oz: 8
@@ -1017,6 +1042,7 @@
   brand: null
   product: Herbal tea (chamomile, peppermint and similar)
   category: tea
+  featured: true
   usda_mg_per_100g: 0
   servings:
   - size_oz: 8
@@ -1032,6 +1058,7 @@
   brand: null
   product: Iced tea, brewed black, unsweetened
   category: tea
+  featured: true
   usda_mg_per_100g: 20
   servings:
   - label: Small
@@ -1052,6 +1079,7 @@
   brand: null
   product: Bottled iced tea, black
   category: tea
+  featured: true
   usda_mg_per_100g: 9
   servings:
   - size_oz: 12
@@ -1136,6 +1164,7 @@
   brand: Starbucks
   product: Starbucks Iced Chai Latte
   category: tea
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1183,6 +1212,7 @@
   brand: Starbucks
   product: Starbucks Iced Matcha Latte
   category: tea
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1204,6 +1234,7 @@
   brand: Starbucks
   product: Starbucks London Fog Latte
   category: tea
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -1231,6 +1262,7 @@
   brand: Starbucks
   product: Starbucks Royal English Breakfast Tea
   category: tea
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -1256,6 +1288,7 @@
   brand: Starbucks
   product: Starbucks Earl Grey Tea
   category: tea
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -1281,6 +1314,7 @@
   brand: Starbucks
   product: Starbucks Emperor's Clouds & Mist green tea
   category: tea
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -1310,6 +1344,7 @@
   brand: Starbucks
   product: Starbucks Iced Black Tea
   category: tea
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1339,6 +1374,7 @@
   brand: Starbucks
   product: Starbucks Iced Green Tea
   category: tea
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1368,6 +1404,7 @@
   brand: Pure Leaf
   product: Pure Leaf Unsweetened Black Tea
   category: tea
+  featured: true
   servings:
   - label: Bottle
     size_oz: 18.5
@@ -1445,6 +1482,7 @@
   brand: Celsius
   product: Celsius On-The-Go powder
   category: energy-drink
+  featured: true
   servings:
   - label: 1 packet
     size_oz: null
@@ -1529,6 +1567,7 @@
   brand: Starbucks
   product: Starbucks Strawberry Açaí Refresher
   category: other
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1555,6 +1594,7 @@
   brand: Starbucks
   product: Starbucks Strawberry Açaí Energy Refresher
   category: other
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1606,6 +1646,7 @@
   brand: Starbucks
   product: Starbucks Caramel Frappuccino
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1627,6 +1668,7 @@
   brand: Starbucks
   product: Starbucks Mocha Frappuccino
   category: coffee
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1648,6 +1690,7 @@
   brand: Starbucks
   product: Starbucks Vanilla Bean Crème Frappuccino
   category: other
+  featured: true
   servings:
   - label: Tall
     size_oz: 12
@@ -1745,6 +1788,7 @@
   brand: Mountain Dew
   product: Diet Mountain Dew
   category: soda
+  featured: true
   servings:
   - size_oz: 12
     size_ml: 355
@@ -1781,6 +1825,7 @@
   brand: null
   product: Diet cola (generic)
   category: soda
+  featured: true
   usda_mg_per_100g: 12
   servings:
   - label: Can
@@ -1822,6 +1867,7 @@
   brand: null
   product: Dark chocolate, 60-69% cacao
   category: chocolate
+  featured: true
   usda_mg_per_100g: 86
   servings:
   - label: 1 oz
@@ -1844,6 +1890,7 @@
   brand: null
   product: Dark chocolate, 45-59% cacao
   category: chocolate
+  featured: true
   usda_mg_per_100g: 43
   servings:
   - label: 1 oz
@@ -1879,6 +1926,7 @@
   brand: null
   product: White chocolate
   category: chocolate
+  featured: true
   usda_mg_per_100g: 0
   servings:
   - label: 1 oz
@@ -1894,6 +1942,7 @@
   brand: null
   product: Cocoa powder, unsweetened
   category: chocolate
+  featured: true
   usda_mg_per_100g: 230
   servings:
   - label: 1 tbsp
@@ -1922,6 +1971,7 @@
   brand: Starbucks
   product: Starbucks Hot Chocolate
   category: chocolate
+  featured: true
   servings:
   - label: Short
     size_oz: 8
@@ -1966,6 +2016,7 @@
   brand: M&M's
   product: M&M's Milk Chocolate
   category: chocolate
+  featured: true
   usda_mg_per_100g: 14
   servings:
   - label: 1.69 oz pack
@@ -2075,6 +2126,7 @@
   brand: Excedrin
   product: Excedrin Tension Headache
   category: medicine
+  featured: true
   servings:
   - label: 1 caplet
     size_oz: null
@@ -2092,6 +2144,7 @@
   brand: Midol
   product: Midol Complete
   category: medicine
+  featured: true
   servings:
   - label: 1 gelcap
     size_oz: null
@@ -2111,6 +2164,7 @@
   brand: Anacin
   product: Anacin
   category: medicine
+  featured: true
   servings:
   - label: 1 tablet
     size_oz: null

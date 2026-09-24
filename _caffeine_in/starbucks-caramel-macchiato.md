@@ -19,7 +19,7 @@ A Venti Caramel Macchiato at 150 mg is the same caffeine as a Grande, not double
 
 ## Ordering and customisation do not change the espresso count
 
-Asking for extra caramel drizzle, non-dairy milk or less syrup changes the flavour profile but not the caffeine number, because the caffeine is in the espresso shots. The only way the caffeine increases is to add an extra shot, which Starbucks lists at 75 mg. Iced Caramel Macchiato uses the same espresso counts as the hot version, so a Grande Iced also has 150 mg.
+Asking for extra caramel drizzle, non-dairy milk or less syrup changes the flavour profile but not the caffeine number, because the caffeine is in the espresso shots. The only way the caffeine increases is to add an extra shot, which Starbucks lists at 75 mg. [Iced Caramel Macchiato]({{ '/caffeine-in/starbucks-iced-caramel-macchiato/' | relative_url }}) matches the hot version at Tall and Grande, 75 and 150 mg, but its Venti is a bigger 24 oz cup with a third shot, 225 mg, not 150 mg.
 
 ## Source
 
