@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Validate _data/beverages.yml against the rules of task C12 in
-documentation/caffcalc-implementation-brief.md:
+docs/archive/caffcalc-implementation-brief.md:
 
   - valid YAML, at least 100 entries, unique slugs
   - every entry has a source_url and a verified date

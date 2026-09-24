@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Check the "caffeine in X" pages against the acceptance criteria of task C13
-in documentation/caffcalc-implementation-brief.md. Run after a build:
+in docs/archive/caffcalc-implementation-brief.md. Run after a build:
 
     bundle exec jekyll build && python3 scripts/check-caffeine-in.py
 

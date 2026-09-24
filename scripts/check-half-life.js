@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Verify the decay maths behind /half-life/ (task C14 in
-// documentation/caffcalc-implementation-brief.md) against worked cases:
+// docs/archive/caffcalc-implementation-brief.md) against worked cases:
 //
 //     node scripts/check-half-life.js
 //

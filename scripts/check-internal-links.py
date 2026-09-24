@@ -2,7 +2,7 @@
 """Prove no post is orphaned: every post URL in _site must be linked from at
 least one *other* page in _site.
 
-Acceptance check for task B11 in documentation/caffcalc-implementation-brief.md.
+Acceptance check for task B11 in docs/archive/caffcalc-implementation-brief.md.
 Run after `bundle exec jekyll build`:
 
     python3 scripts/check-internal-links.py
