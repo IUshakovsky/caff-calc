@@ -93,7 +93,7 @@ Needs differ across populations:
 - **Teens and children:** Medical organizations advise against energy drinks and recommend minimizing caffeine overall.
 - **Heart health:** Caffeine can cause a short-term blood pressure spike. If you have hypertension or palpitations, test your response and talk with your clinician.
 
-For broader safety guidance beyond this article, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For broader safety guidance beyond this article, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

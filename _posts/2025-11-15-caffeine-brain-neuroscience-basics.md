@@ -141,7 +141,7 @@ Caffeine is caffeine—the molecule is identical. However, delivery matters. Tea
 Not immune, but highly tolerant. With chronic high-dose use (500mg+ daily), your brain adapts to near-permanent receptor blockade. You won't feel much boost, but stopping causes severe withdrawal. The solution: planned taper over 1-2 weeks to reset sensitivity.
 
 **Q: Should people with anxiety avoid caffeine entirely?**  
-Not necessarily, but dose matters enormously. Doses above 200mg can exacerbate anxiety symptoms in sensitive individuals by increasing cortisol and heart rate. Start with 50mg or less, monitor mood/physical sensations, and avoid combining with other stimulants. For more guidance on caffeine and health, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Not necessarily, but dose matters enormously. Doses above 200mg can exacerbate anxiety symptoms in sensitive individuals by increasing cortisol and heart rate. Start with 50mg or less, monitor mood/physical sensations, and avoid combining with other stimulants. For more guidance on caffeine and health, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

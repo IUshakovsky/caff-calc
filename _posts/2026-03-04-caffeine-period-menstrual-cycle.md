@@ -108,7 +108,7 @@ Everyone's response is unique, but these science-informed tactics can help you k
 
 **What to do:** [Add up your daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see your total and how it compares to typical ranges. You might be surprised how quickly smaller sources stack up.
 
-For more on how caffeine works in the body—adenosine, half-life, and metabolism—see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+For more on how caffeine works in the body—adenosine, half-life, and metabolism—see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 ---
 

@@ -64,7 +64,7 @@ Moderation helps minimize jitter, sleep disruption, and potential symptom trigge
 
 Many clinicians suggest limiting caffeine for Ménière's, though rigorous trials are limited. Try a structured 2–4 week trial of reduced caffeine (not abrupt zero) and track vertigo, fullness, and hearing fluctuation.
 
-**Why it works:** individualized testing respects that triggers differ widely. Tip: reduce gradually to avoid withdrawal headaches and rebound tinnitus awareness. For general safety guidance, check our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**Why it works:** individualized testing respects that triggers differ widely. Tip: reduce gradually to avoid withdrawal headaches and rebound tinnitus awareness. For general safety guidance, check our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 3) Protect Ears at Loud Events—and Ease Off Caffeine for a Day After
 

@@ -157,7 +157,7 @@ Most healthy adults can consume up to about 400 mg/day without general adverse e
 
 Caffeine can fit into a skin-friendly routine when you respect dose and timing. Keep daily intake near 400 mg (about 3–4 small cups), front-load it to protect sleep, skip the sugary add-ins, and treat caffeine topicals as short-term helpers—while sunscreen does the heavy lifting.
 
-For deeper guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For deeper guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

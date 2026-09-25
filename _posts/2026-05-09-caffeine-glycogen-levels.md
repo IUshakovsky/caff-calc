@@ -31,7 +31,7 @@ We'll look at what happens before, during, and after exercise, then close with p
 
 ## The Science: How Caffeine Can Influence Glycogen
 
-Caffeine's primary action is blocking adenosine receptors in your brain and body. That lifts the "brakes" on your nervous system, raising alertness and reducing perceived effort. It's also linked to higher adrenaline (epinephrine) during exercise, which can change substrate (fuel) use. For a deeper dive into mechanisms, see our overview on [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+Caffeine's primary action is blocking adenosine receptors in your brain and body. That lifts the "brakes" on your nervous system, raising alertness and reducing perceived effort. It's also linked to higher adrenaline (epinephrine) during exercise, which can change substrate (fuel) use. For a deeper dive into mechanisms, see our overview on [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 Key takeaways from the research:
 
@@ -104,7 +104,7 @@ Cut off caffeine at least 6 hours before bedtime; many people need 8–10 hours.
 
 ### 5) Plan Your Total Daily Intake
 
-Map your typical day: morning coffee, pre‑workout, gels/cola during events, any afternoon tea. Keep the sum at or below 400 mg/day (for most healthy adults) and avoid large single doses late in the day. For more on safe limits, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Map your typical day: morning coffee, pre‑workout, gels/cola during events, any afternoon tea. Keep the sum at or below 400 mg/day (for most healthy adults) and avoid large single doses late in the day. For more on safe limits, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 **Why it works:** You capture performance benefits without drifting into doses that raise side‑effect risk or harm sleep.
 

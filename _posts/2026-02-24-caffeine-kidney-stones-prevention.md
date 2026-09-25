@@ -124,7 +124,7 @@ Three practical facts:
 
 When you're adjusting beverages, it's easy to overshoot caffeine without realizing it. [Count your daily caffeine from all sources with CaffCalc]({{ '/' | relative_url }}) to see how your intake compares to typical ranges and recommended limits.
 
-For general safety guidance on caffeine intake levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For general safety guidance on caffeine intake levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

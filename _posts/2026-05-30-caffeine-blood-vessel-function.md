@@ -86,7 +86,7 @@ Below are evidence-aligned tips to enjoy caffeine without sidelining your blood 
 - **What to do:** Avoid bulk powders or liquids with highly concentrated caffeine.
 - **Why it works:** Even small measurement errors can be dangerous with potent forms; regulators warn about serious risks, including arrhythmias. Stick to conventional beverages.
 
-For more guidance on safe consumption levels and how caffeine interacts with cardiovascular conditions, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more guidance on safe consumption levels and how caffeine interacts with cardiovascular conditions, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

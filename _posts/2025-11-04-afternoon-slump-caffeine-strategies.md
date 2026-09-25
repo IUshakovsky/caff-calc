@@ -44,7 +44,7 @@ But your brain adapts. Regular caffeine use leads to tolerance through increased
 - Breaks from caffeine (even 2-3 days monthly) can reset tolerance
 - Caffeine affects sleep even when you don't feel "wired" at bedtime
 
-The FDA recommends a 400mg daily limit for most healthy adults, but individual variation is enormous. Some people metabolize caffeine 40 times faster than others due to genetic differences. For comprehensive safety guidelines and personalized recommendations, check our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+The FDA recommends a 400mg daily limit for most healthy adults, but individual variation is enormous. Some people metabolize caffeine 40 times faster than others due to genetic differences. For comprehensive safety guidelines and personalized recommendations, check our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

@@ -93,7 +93,7 @@ Here are evidence-informed strategies that respect both performance and recovery
 
 **Why it works:** Genetics, body mass, smoking status, medications, and habitual intake all affect caffeine metabolism and response. What helps a teammate might make you edgy or sleepless.
 
-**How to apply:** Keep notes on dose, timing, workout feel, and overnight sleep. Adjust gradually. For general safety benchmarks, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**How to apply:** Keep notes on dose, timing, workout feel, and overnight sleep. Adjust gradually. For general safety benchmarks, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 7) Don't Swap Coffee for Training
 

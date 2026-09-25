@@ -109,7 +109,7 @@ Note dose, time, sleep quality, and how you feel 30–60 minutes after intake. I
 
 **Why it works:** Individual sensitivity varies with genetics (especially CYP1A2 and ADORA2A variants), sleep debt, and habit. Personal data beats guesswork every time.
 
-For more detailed guidance on safe intake ranges, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more detailed guidance on safe intake ranges, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

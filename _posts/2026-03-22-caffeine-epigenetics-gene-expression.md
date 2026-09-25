@@ -97,7 +97,7 @@ Researchers have observed correlations between maternal caffeine intake and meth
 
 **Why it works:** Caffeine crosses the placenta and has been linked to differences in newborn DNA methylation patterns. While health outcomes are still being studied, major organisations advise staying under 200 mg per day during pregnancy.
 
-**How to do it:** Cap intake at under 200 mg daily. Consider decaf or half-caf blends to hit the target while keeping the ritual. For broader safety considerations during pregnancy and other sensitive periods, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**How to do it:** Cap intake at under 200 mg daily. Consider decaf or half-caf blends to hit the target while keeping the ritual. For broader safety considerations during pregnancy and other sensitive periods, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 7. Avoid Concentrated Caffeine Powders and Large Stacks
 

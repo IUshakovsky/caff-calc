@@ -141,7 +141,7 @@ Caffeine's impact on blood sugar is genuinely nuanced: short-term spikes are pos
 
 Moderate your total intake. Mind the timing around carb-heavy meals. Favor decaf or half-caf later in the day. Keep sugary add-ins in check. And most importantly, track your own patterns—your meter or CGM tells a more useful story than any general guideline.
 
-For more on how caffeine works in your body and how to find a safe daily level, visit our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) overview.
+For more on how caffeine works in your body and how to find a safe daily level, visit our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) overview.
 
 ---
 

@@ -94,16 +94,16 @@ navigation:
     url: /caffeine-in/
     icon: "cup-soda"
   - title: "Blog"
-    url: /blog
+    url: /blog/
     icon: "newspaper"
   - title: "Caffeine Science"
-    url: /pages/caffeine-science
+    url: /pages/caffeine-science/
     icon: "flask-conical"
   - title: "Overdose Symptoms"
-    url: /pages/overdose-symptoms
+    url: /pages/overdose-symptoms/
     icon: "triangle-alert"
   - title: "Health Advice"
-    url: /pages/health-advice
+    url: /pages/health-advice/
     icon: "heart-pulse"
 
 # Social media

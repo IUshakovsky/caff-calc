@@ -154,7 +154,7 @@ The relationship is paradoxical:
 - Irregular use or sudden withdrawal triggers rebound headaches
 - Late-day caffeine that disrupts sleep can increase next-day migraine risk
 
-For more on managing caffeine-related health concerns, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more on managing caffeine-related health concerns, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### Allergies and Asthma
 

@@ -118,7 +118,7 @@ These steps focus on optimizing energy, sleep, and vascular health—core driver
 - Hypertension, arrhythmias, significant anxiety, or sleep disorders: consider lower limits and discuss with your clinician  
 - Some meds (e.g., certain antibiotics, SSRIs) can alter caffeine metabolism or interact with sexual function—review with your prescriber  
 
-**Why it works:** Individual health contexts require tailored limits. For more safety pointers, see our concise [health advice]({{ '/pages/health-advice' | relative_url }}).
+**Why it works:** Individual health contexts require tailored limits. For more safety pointers, see our concise [health advice]({{ '/pages/health-advice/' | relative_url }}).
 
 ---
 

@@ -105,7 +105,7 @@ Caffeine hides in coffee, tea, cold brew, espresso, energy drinks, sodas, pre-wo
 
 > **Key takeaway:** You don't have to give up your favorite caffeinated drinks—just time them wisely, keep totals moderate, and support your diet with smart pairings.
 
-For more safety guidelines and lifestyle tips, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more safety guidelines and lifestyle tips, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

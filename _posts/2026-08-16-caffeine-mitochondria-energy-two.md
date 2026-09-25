@@ -59,7 +59,7 @@ Caffeine exposure has been shown to promote brown/beige fat gene programs (inclu
 
 > **Takeaway:** Caffeine can nudge mitochondrial signaling toward more fuel use and, in some cases, enhanced defenses. But dose, context (especially exercise), and timing determine whether you feel a net energy gain.
 
-For a deeper look at how caffeine works in the body, see our overview on [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+For a deeper look at how caffeine works in the body, see our overview on [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 ---
 

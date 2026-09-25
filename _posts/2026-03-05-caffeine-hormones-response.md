@@ -58,7 +58,7 @@ Acute caffeine intake often reduces insulin sensitivity in the hours following c
 
 ### Clearance Across Life Stages
 
-Pregnancy and estrogen-containing oral contraceptives slow caffeine metabolism by reducing CYP1A2 enzyme activity. Smoking speeds it up. That's why the same cup can feel very different across people and phases of life. For more on how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+Pregnancy and estrogen-containing oral contraceptives slow caffeine metabolism by reducing CYP1A2 enzyme activity. Smoking speeds it up. That's why the same cup can feel very different across people and phases of life. For more on how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 ### Key Facts at a Glance
 

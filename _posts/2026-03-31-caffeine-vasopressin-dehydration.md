@@ -102,7 +102,7 @@ For most healthy adults, up to about 400 mg caffeine per day is not generally as
 
 **How to apply it**: Ask your clinician about limits and timing. Many providers recommend minimizing caffeine near your desmopressin dose and emphasizing water rather than energy drinks.
 
-> **Tip**: For more safety context if you're new to caffeine or adjusting intake, see our brief overview on [health advice]({{ '/pages/health-advice' | relative_url }}).
+> **Tip**: For more safety context if you're new to caffeine or adjusting intake, see our brief overview on [health advice]({{ '/pages/health-advice/' | relative_url }}).
 
 ---
 

@@ -58,7 +58,7 @@ However, sensitive individuals may experience effects at lower intakes, and slee
 
 **Avoid pure caffeine powders:** The FDA warns against pure or highly concentrated caffeine powders and liquids because small measurement errors can lead to dangerous overdoses. One teaspoon of pure caffeine powder equals about 28 cups of coffee.
 
-For more safety information and population-specific guidance, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more safety information and population-specific guidance, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

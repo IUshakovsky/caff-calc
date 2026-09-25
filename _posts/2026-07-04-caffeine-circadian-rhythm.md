@@ -81,7 +81,7 @@ If you need peak performance tomorrow, protect slow-wave sleep tonight. Stop caf
 
 ### 8) Special Cases: Pregnancy, Medications, and Health Conditions
 
-Pregnancy slows caffeine metabolism, so smaller, earlier doses matter even more. Some medications and health conditions also alter caffeine effects. When in doubt, ask your clinician and review safety basics on our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Pregnancy slows caffeine metabolism, so smaller, earlier doses matter even more. Some medications and health conditions also alter caffeine effects. When in doubt, ask your clinician and review safety basics on our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 > **Tip:** Track your personal "sweet spot." For one week, note the time and amount of caffeine, bedtime, time-to-sleep, nighttime awakenings, and morning alertness. Adjust your curfew and dose until sleep is smooth and consistent.
 

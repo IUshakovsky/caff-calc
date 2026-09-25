@@ -100,7 +100,7 @@ Think of adenosine as a "brake" on wakefulness and a "save" button for sodium. C
 
 ### 5. Watch for personal sensitivity signs
 
-**Why it works:** People vary in how they metabolize caffeine. If you notice racing heart, tremor, or frequent urination after modest amounts, scale back. Rarely, very high intakes are linked to low potassium (hypokalemia) that causes weakness or cramps—seek care if symptoms are severe. For more on recognizing warning signs, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**Why it works:** People vary in how they metabolize caffeine. If you notice racing heart, tremor, or frequent urination after modest amounts, scale back. Rarely, very high intakes are linked to low potassium (hypokalemia) that causes weakness or cramps—seek care if symptoms are severe. For more on recognizing warning signs, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 **How to do it:**
 

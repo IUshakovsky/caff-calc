@@ -50,7 +50,7 @@ Key facts to keep in mind:
 - Research suggests sleep can still be disrupted when caffeine is taken six hours before bedtime; sensitive individuals may need even longer buffers.
 - Health authorities consider up to 400 mg/day safe for most non-pregnant adults, but pregnancy guidance is lower (generally under 200 mg/day). Genetics doesn't change those safety guardrails—it changes where you feel best within them.
 
-For a deeper dive into how caffeine interacts with your nervous system, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) overview.
+For a deeper dive into how caffeine interacts with your nervous system, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) overview.
 
 ---
 

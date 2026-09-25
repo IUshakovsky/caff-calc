@@ -142,7 +142,7 @@ Start with these three immediate steps:
 
 [Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to compare your intake against your personal safe limit and identify hidden sources you might be overlooking.
 
-For comprehensive guidance on safe caffeine levels across different health conditions, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For comprehensive guidance on safe caffeine levels across different health conditions, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 If you have existing hypertension, cardiovascular disease, or take medications affecting heart rate or blood pressure, discuss your caffeine plan with your healthcare provider before making changes. Your heart and your energy levels both deserve an evidence-based, personalized approach.
 

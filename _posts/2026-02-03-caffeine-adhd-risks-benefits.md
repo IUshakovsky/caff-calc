@@ -157,7 +157,7 @@ Clinicians routinely ask about caffeine use during ADHD treatment visits for thi
 
 **Example:** [Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see where you stand compared to recommended ranges.
 
-> **Safety checkpoint:** For concise guidelines on caffeine safety, warning signs of excessive intake, and when to talk to your doctor, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+> **Safety checkpoint:** For concise guidelines on caffeine safety, warning signs of excessive intake, and when to talk to your doctor, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

@@ -163,7 +163,7 @@ All three provide bone-supporting compounds while keeping caffeine moderate.
 - Coffee with milk
 - Green tea
 
-For more detailed information on safe caffeine levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more detailed information on safe caffeine levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

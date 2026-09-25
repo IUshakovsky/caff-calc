@@ -105,7 +105,7 @@ Caffeine's well-known sleep disruption also loops back to gut health: poor sleep
 
 **Tips:**
 - Start low and build gradually; note any digestive changes (bloating, urgency) when changing your coffee routine.
-- For deeper background on how caffeine works in the body, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) primer.
+- For deeper background on how caffeine works in the body, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) primer.
 
 ---
 

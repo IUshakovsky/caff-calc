@@ -69,7 +69,7 @@ Bottom line: prioritize sleep, protein, and total training quality while keeping
 
 For most healthy adults, up to 400 mg of caffeine per day is considered a safe upper limit. Sensitivity varies, and some people feel sleep or anxiety effects at lower intakes. Keep your total below 400 mg/day unless your clinician advises otherwise.
 
-For context on safe intake ranges by age and health status, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For context on safe intake ranges by age and health status, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

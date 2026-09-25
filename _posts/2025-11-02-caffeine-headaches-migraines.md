@@ -206,7 +206,7 @@ Your action plan:
 
 Want to know exactly how much caffeine you're consuming daily? [Calculate your total caffeine intake with CaffCalc]({{ '/' | relative_url }}) to see how your consumption compares to your personal safe limit and identify hidden sources you might be missing.
 
-For more detailed information on caffeine's effects and safe consumption guidelines, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+For more detailed information on caffeine's effects and safe consumption guidelines, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 Remember: every migraine brain is different. These strategies provide a framework, but your personal data—tracked consistently over 30+ days—will reveal your optimal approach. When in doubt, consult a neurologist or headache specialist who can help interpret your patterns and adjust treatment accordingly.
 

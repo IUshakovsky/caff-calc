@@ -59,7 +59,7 @@ Caffeine blocks adenosine receptors—cellular "brakes" that help regulate both 
 
 Separately, caffeine can slightly reduce calcium absorption. The NIH Office of Dietary Supplements notes that net calcium absorption is reduced "to a small extent" by caffeine and phosphorus. Ensuring adequate calcium and vitamin D intake offsets this effect.
 
-For a deeper look at how caffeine interacts with your body, visit our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+For a deeper look at how caffeine interacts with your body, visit our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 ---
 

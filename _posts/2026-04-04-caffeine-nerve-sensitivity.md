@@ -139,7 +139,7 @@ If you notice rising anxiety, tremor, palpitations, or persistent headaches, red
 
 > **Key takeaway:** The same molecule can either sharpen or soften what you feel. The difference is dose, timing, sleep, and context.
 
-For guidelines on safe caffeine levels and who should be extra cautious, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For guidelines on safe caffeine levels and who should be extra cautious, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

@@ -96,7 +96,7 @@ Use these research-aligned tactics to protect both lymphatic and glymphatic func
 
 - **Pregnancy:** Most professional bodies advise keeping total caffeine under ~200 mg/day.
 - **Sleep issues or anxiety:** Smaller, earlier doses reduce sleep disruption.
-- **Certain medical conditions or medications:** Talk with your clinician. For general safety principles, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+- **Certain medical conditions or medications:** Talk with your clinician. For general safety principles, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 8) Don't Expect Caffeine to "Detox" You
 

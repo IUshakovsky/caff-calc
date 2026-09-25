@@ -135,7 +135,7 @@ There's no official FDA limit for teens, but pediatric guidance suggests minimiz
 Yes. Energy drinks pack 2-3x the caffeine of coffee per serving, plus sugar and other stimulants like guarana and taurine. This combination amplifies anxiety, heart rate, and sleep disruption. The American Academy of Pediatrics explicitly discourages energy drinks for children and adolescents. Stick to coffee or tea if caffeine is consumed.
 
 **Q: My teen gets jittery and anxious after caffeine—what should we do?**  
-Cut caffeine intake immediately, especially after 2pm. Switch to decaf or caffeine-free beverages. If anxiety symptoms persist despite eliminating caffeine, consult a pediatrician or mental health professional—underlying anxiety disorders may need separate treatment. For detailed health guidelines, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Cut caffeine intake immediately, especially after 2pm. Switch to decaf or caffeine-free beverages. If anxiety symptoms persist despite eliminating caffeine, consult a pediatrician or mental health professional—underlying anxiety disorders may need separate treatment. For detailed health guidelines, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 **Q: Can caffeine cause long-term anxiety disorders in teens?**  
 Animal research suggests adolescent caffeine exposure may alter stress response systems long-term, but human evidence is still emerging. The precautionary approach: limit caffeine during teen years to avoid potential developmental impacts. Current anxiety disorders require professional evaluation beyond caffeine management.
@@ -157,7 +157,7 @@ The solution is straightforward:
 
 Stop guessing about your teen's caffeine levels. [Count your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) to see exactly where you stand and make informed decisions. It's free, takes 30 seconds, and compares your intake to your personal safe limit.
 
-For more on caffeine's mechanisms and safety, explore our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page. Moderate caffeine can fit into a healthy teen lifestyle—the key is awareness, limits, and prioritizing sleep above all.
+For more on caffeine's mechanisms and safety, explore our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page. Moderate caffeine can fit into a healthy teen lifestyle—the key is awareness, limits, and prioritizing sleep above all.
 
 ---
 

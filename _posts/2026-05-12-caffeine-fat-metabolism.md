@@ -162,7 +162,7 @@ Stay within safe intake. Time it earlier in the day. Use it to enhance sustainab
 
 Want a clear picture of your daily caffeine from all sources? [Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) and see how your intake compares to typical levels.
 
-For a deeper dive into how caffeine works in the body, see our overview of [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+For a deeper dive into how caffeine works in the body, see our overview of [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 ---
 

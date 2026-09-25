@@ -53,7 +53,7 @@ Acute caffeine intake can temporarily reduce insulin sensitivity in healthy adul
 
 Caffeine peaks about 30–60 minutes after you drink it, and its average half-life in healthy adults is around 3–7 hours. That timing is influenced by genetics, medications, and pregnancy. Translation: a 2 pm coffee can still be "on board" at bedtime, especially if you're sensitive or pregnant.
 
-For more detailed information on safe caffeine levels and personal limits, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more detailed information on safe caffeine levels and personal limits, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

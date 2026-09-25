@@ -118,7 +118,7 @@ This matters because frequent cortisol surges can shape inflammatory responses. 
 
 ### 8) Know your personal sensitivity
 
-**Why it works:** Genetics, smoking status, body composition, and medications all affect how fast you metabolize caffeine. Track when you feel alert vs. wired, and how you sleep after specific doses and times. If side effects appear—palpitations, anxiety, insomnia—step down your dose and move it earlier. For more safety pointers, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**Why it works:** Genetics, smoking status, body composition, and medications all affect how fast you metabolize caffeine. Track when you feel alert vs. wired, and how you sleep after specific doses and times. If side effects appear—palpitations, anxiety, insomnia—step down your dose and move it earlier. For more safety pointers, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

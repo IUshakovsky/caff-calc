@@ -113,7 +113,7 @@ Below are evidence-informed strategies. They aim to leverage caffeine's signalin
 
 **How to apply**: Count everything you drink in a day. When in doubt, measure. [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) to add up your total and see how it compares to typical ranges.
 
-> Tip: Curious about the biochemistry behind adenosine, AMPK, and PGC-1α? Visit our quick primer on [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+> Tip: Curious about the biochemistry behind adenosine, AMPK, and PGC-1α? Visit our quick primer on [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 ---
 

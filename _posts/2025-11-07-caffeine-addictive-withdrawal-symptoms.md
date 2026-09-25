@@ -179,7 +179,7 @@ Yes—that's the whole point of tapering. The goal is to reduce total daily inta
 This varies. Some people report better energy stability (no afternoon crashes) after 2-4 weeks. Others miss the acute boost caffeine provides. If you were using caffeine to mask underlying sleep debt or health issues, you won't magically feel energized—you'll need to address the root causes.
 
 **Q: Does caffeine withdrawal mean I'm addicted?**  
-Not necessarily. Withdrawal indicates physical dependence—your body adapted to regular caffeine. Addiction involves compulsive use despite harmful consequences. Most caffeine users are dependent but not addicted in the clinical sense. For detailed information on safe caffeine levels and health impacts, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Not necessarily. Withdrawal indicates physical dependence—your body adapted to regular caffeine. Addiction involves compulsive use despite harmful consequences. Most caffeine users are dependent but not addicted in the clinical sense. For detailed information on safe caffeine levels and health impacts, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

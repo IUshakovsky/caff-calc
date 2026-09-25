@@ -112,7 +112,7 @@ Focus on calcium-rich foods first: dairy or fortified alternatives, leafy greens
 
 Log the time, type, size, and temperature of every caffeinated drink alongside hot flashes, sleep quality, and bladder urgency. After two weeks, adjust one variable at a time.
 
-**Why it works:** Menopause is deeply individual. Your own data beats generic advice every time. For broader guidance on safe caffeine levels, our [health advice]({{ '/pages/health-advice' | relative_url }}) page offers a concise overview.
+**Why it works:** Menopause is deeply individual. Your own data beats generic advice every time. For broader guidance on safe caffeine levels, our [health advice]({{ '/pages/health-advice/' | relative_url }}) page offers a concise overview.
 
 ---
 

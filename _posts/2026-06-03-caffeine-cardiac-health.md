@@ -122,7 +122,7 @@ Pure caffeine powders and highly concentrated liquids can be dangerous and are n
 
 **Why it works:** Diet quality, sleep, physical activity, and smoking status have far larger effects on long-term cardiac risk than coffee alone. Keep caffeine in perspective while focusing on those fundamentals.
 
-For concise do's and don'ts on safe daily intake, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For concise do's and don'ts on safe daily intake, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

@@ -73,7 +73,7 @@ Combination pain relievers (acetaminophen-aspirin-caffeine) can be lifesavers du
 
 If you're approaching these thresholds, talk to your clinician about preventive options. Breaking the MOH cycle often requires temporarily stopping the offending medication—which means you'll need a taper plan to avoid withdrawal.
 
-For more on safe caffeine levels and when to be concerned, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more on safe caffeine levels and when to be concerned, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

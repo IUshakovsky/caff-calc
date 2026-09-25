@@ -40,7 +40,7 @@ Key facts for travelers:
 
 Think of caffeine as a spotlight. Point it at your destination mornings to boost wakefulness when you need to be up. Move it away from the hours before your target bedtime so your body can produce melatonin and realign.
 
-For a deeper look at how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+For a deeper look at how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 ---
 

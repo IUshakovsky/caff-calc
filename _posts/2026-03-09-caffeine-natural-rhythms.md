@@ -116,7 +116,7 @@ Morning daylight plus morning caffeine can amplify alertness. At night, the same
 - **Smoking:** Faster clearance can tempt larger doses; still cap at 400 mg/day.
 - **Medications or liver conditions:** Talk with your clinician; caffeine can interact with common drugs and clearance can vary widely.
 
-**Why it works:** Personal factors change how long caffeine lingers and how strongly it affects rhythms. For more details on safe intake levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+**Why it works:** Personal factors change how long caffeine lingers and how strongly it affects rhythms. For more details on safe intake levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 8) Build a Non-Caffeine Wind-Down
 

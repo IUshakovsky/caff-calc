@@ -40,7 +40,7 @@ Key mechanisms and facts:
 - **Hydration:** Typical coffee and tea do not dehydrate you overall; their water content offsets mild diuretic effects at usual intakes.
 - **Iron and calcium:** Polyphenols in coffee and tea can reduce non-heme iron absorption from plant foods and fortified grains. Caffeine may have a small, short-lived effect on calcium balance. You can work around both with timing.
 
-For a deeper look at how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page.
+For a deeper look at how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
 ---
 

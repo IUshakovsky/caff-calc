@@ -98,7 +98,7 @@ This timing approach is supported by systematic review evidence on erosive tooth
 
 For most healthy adults, up to about 400 mg of caffeine per day is generally not associated with negative effects. Knowing your daily total helps you decide when to swap in decaf or water, and it may also reduce late-day caffeine that can impair sleep—a factor linked to nighttime tooth grinding for some people.
 
-Not sure how much you're really drinking? [Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) and see how your intake compares to typical ranges. For broader safety pointers, visit our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Not sure how much you're really drinking? [Calculate your total daily caffeine with CaffCalc]({{ '/' | relative_url }}) and see how your intake compares to typical ranges. For broader safety pointers, visit our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 7) Use Straw and Sequence Strategies
 

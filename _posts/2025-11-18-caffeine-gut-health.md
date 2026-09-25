@@ -46,7 +46,7 @@ People with documented GERD often find that reducing coffee strength, avoiding c
 
 ## When to get medical advice
 
-See a clinician if you have persistent heartburn more than twice a week, blood in stool, unexplained weight loss, severe cramping or diarrhea from small amounts of caffeine, or a diagnosed condition such as GERD, IBS or IBD that makes general advice unsafe. For broader safety limits, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+See a clinician if you have persistent heartburn more than twice a week, blood in stool, unexplained weight loss, severe cramping or diarrhea from small amounts of caffeine, or a diagnosed condition such as GERD, IBS or IBD that makes general advice unsafe. For broader safety limits, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ## Frequently Asked Questions
 

@@ -26,7 +26,7 @@ So where does caffeine fit in? Two places:
 - As a psychoactive compound, caffeine blocks adenosine receptors, which is why you feel alert.
 - As a dietary component of coffee and tea, it travels with other bioactives (like chlorogenic acids) that can interact indirectly with one-carbon metabolism and with DNA methylation marks measured in blood.
 
-For most healthy adults, up to 400 mg of caffeine per day is considered safe by major authorities. We'll use that ceiling as we translate the science into practical, safe habits. For broader guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For most healthy adults, up to 400 mg of caffeine per day is considered safe by major authorities. We'll use that ceiling as we translate the science into practical, safe habits. For broader guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

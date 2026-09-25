@@ -140,7 +140,7 @@ Pregnancy slows caffeine metabolism dramatically, and most guidelines advise muc
 4. If you use CPAP, pair earlier caffeine with a consistent pre‑sleep wind‑down.
 5. Reassess after 7 nights; if sleep is still rough, move the cutoff earlier and lower your total mg.
 
-For more on how caffeine works in the body, see our short primer on [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+For more on how caffeine works in the body, see our short primer on [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 ---
 

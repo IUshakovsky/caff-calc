@@ -55,7 +55,7 @@ A 10-day trial of 450 mg/day (three 150 mg servings) showed a reversible reducti
 
 > **Take-home:** Caffeine temporarily quiets parts of the DMN and rebalances background networks while boosting alertness chemistry. That's great for focus—less great near bedtime.
 
-For more on the underlying chemistry, see our guide to [caffeine science]({{ '/pages/caffeine-science' | relative_url }}).
+For more on the underlying chemistry, see our guide to [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}).
 
 ---
 
@@ -105,7 +105,7 @@ Below are science-aligned tactics to capture the upside (focus, mood) while prot
 
 > **Quick step:** Want a simple way to total your day's caffeine? [Count your daily caffeine intake with CaffCalc]({{ '/' | relative_url }}) and see how your total compares with typical ranges.
 
-For more on safe intake levels and warning signs, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more on safe intake levels and warning signs, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

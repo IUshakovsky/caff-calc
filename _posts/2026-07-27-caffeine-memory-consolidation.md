@@ -81,7 +81,7 @@ If you must choose, trade the late latte for an earlier night.
 
 For most healthy adults, up to 400 mg/day is the typical ceiling, but large single doses (300–400 mg at once) are most likely to dent sleep and next-day memory. Spread intake and avoid concentrated caffeine powders or shots, which the FDA warns can be dangerous.
 
-For detailed guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For detailed guidance on safe intake levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 6) Know Your Modifiers
 

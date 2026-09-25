@@ -61,7 +61,7 @@ What studies show about flexibility specifically:
 - **Working memory and daily use:** Short-term use often speeds reaction time; longer repeated dosing can change brain activation patterns during memory tasks, with mixed effects depending on baseline intake and withdrawal control.
 - **Sleep loss conditions:** In sleep-deprived states, caffeine reliably rescues vigilance and some executive tasks. But it cannot fully replace sleep for complex flexibility over time.
 
-If you love the deeper science, see our [Caffeine science]({{ '/pages/caffeine-science' | relative_url }}) page for mechanisms.
+If you love the deeper science, see our [Caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page for mechanisms.
 
 ---
 

@@ -87,7 +87,7 @@ Below are evidence-informed strategies you can tailor to your routine. None of t
 
 > **Tip:** Want to see how your total stacks up across coffee, tea, soda, and chocolate? [Count your daily caffeine with CaffCalc]({{ '/' | relative_url }}) and see how your intake compares to typical ranges.
 
-For more detailed information on safe daily intake and personal sensitivity, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For more detailed information on safe daily intake and personal sensitivity, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ---
 

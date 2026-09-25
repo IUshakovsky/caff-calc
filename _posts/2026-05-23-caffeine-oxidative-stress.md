@@ -71,7 +71,7 @@ For most healthy adults, up to about 400 mg of caffeine per day is generally con
 
 **Why it works:** Avoiding excessive doses reduces the chance of jitteriness, palpitations, and sleep disruption—factors that can worsen oxidative stress indirectly through stress hormones and sleep loss.
 
-For a deeper look at safe consumption ranges, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+For a deeper look at safe consumption ranges, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 2) Mind Your Timing to Protect Sleep
 

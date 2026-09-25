@@ -65,7 +65,7 @@ Research suggests caffeine consumed even six hours before bed can reduce total s
 
 For most healthy adults, keep total caffeine at or below about 400 mg per day. Spreading intake over the day—rather than a single large dose—can reduce jitteriness and cardiovascular strain, which may help keep inflammatory stress lower.
 
-If you're pregnant or nursing, the typical guidance drops to 200 mg/day or less; ask your clinician about your specific limit. For more detailed guidance on safe limits, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+If you're pregnant or nursing, the typical guidance drops to 200 mg/day or less; ask your clinician about your specific limit. For more detailed guidance on safe limits, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 **Why it works:** Staying under evidence-based thresholds limits overstimulation that can trigger downstream stress responses.
 

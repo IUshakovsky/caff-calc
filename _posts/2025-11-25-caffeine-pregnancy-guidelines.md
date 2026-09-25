@@ -140,7 +140,7 @@ Swaps that work:
 - Anxiety disorders exacerbated by stimulants
 - Medications that interact with caffeine
 
-Some clinicians recommend limits as low as 150 mg for high-risk pregnancies. For more detailed information on safe caffeine levels, see our [health advice]({{ '/pages/health-advice' | relative_url }}) page.
+Some clinicians recommend limits as low as 150 mg for high-risk pregnancies. For more detailed information on safe caffeine levels, see our [health advice]({{ '/pages/health-advice/' | relative_url }}) page.
 
 ### 8. Reassess Each Trimester
 
