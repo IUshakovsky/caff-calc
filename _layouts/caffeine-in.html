@@ -18,6 +18,9 @@ layout: default
 {%- assign redbull = site.data.beverages | where: "slug", "red-bull" | first -%}
 {%- assign redbull_serving = redbull.servings | where: "default", true | first -%}
 {%- if drink_mg > daily_cap -%}{%- assign scale = drink_mg -%}{%- else -%}{%- assign scale = daily_cap -%}{%- endif -%}
+{%- comment -%} Category/brand hub pages with a sorted comparison table (Phase 5.1) {%- endcomment -%}
+{%- assign category_hubs = "coffee:Coffee:/caffeine-in/coffee/|tea:Tea:/caffeine-in/tea/|energy-drink:Energy drinks:/caffeine-in/energy-drinks/|soda:Soda:/caffeine-in/sodas/" | split: "|" -%}
+{%- assign category_hub = category_hubs | where_exp: "h", "h contains bev.category" | first -%}
 
 <header class="header-area py-4">
   <div class="container">
@@ -37,6 +40,19 @@ layout: default
       <nav aria-label="breadcrumb" class="small mb-3">
         <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; {{ bev.product }}
       </nav>
+
+      {%- if category_hub or bev.brand == "Starbucks" %}
+      <p class="small mb-3">
+        {%- if category_hub -%}
+        {%- assign hub_parts = category_hub | split: ":" -%}
+        <a href="{{ hub_parts | last | relative_url }}">More {{ hub_parts[1] | downcase }} &rarr;</a>
+        {%- endif -%}
+        {%- if category_hub and bev.brand == "Starbucks" %} &middot; {% endif -%}
+        {%- if bev.brand == "Starbucks" -%}
+        <a href="{{ '/caffeine-in/starbucks/' | relative_url }}">More Starbucks drinks &rarr;</a>
+        {%- endif -%}
+      </p>
+      {%- endif %}
 
       <section class="card mb-4 caffeine-in-headline">
         <div class="card-body">

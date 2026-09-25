@@ -1,0 +1,42 @@
+---
+layout: page
+title: "Caffeine in Starbucks Drinks"
+seo_title: "Caffeine in Starbucks: Every Drink Size, Sorted by Strength"
+subtitle: "Every Starbucks drink on the site, sorted by caffeine per serving"
+description: "How much caffeine is in Starbucks coffee, cold brew, tea and Frappuccino drinks, every size, sorted from strongest to weakest and sourced to Starbucks' own data."
+permalink: /caffeine-in/starbucks/
+hub_title: "Starbucks"
+excerpt_separator: ""
+---
+
+{%- assign in_category = site.data.beverages | where: "brand", "Starbucks" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Starbucks
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>{{ in_category.size }} Starbucks drinks and sizes, ranked by caffeine per serving, sourced
+            directly from Starbucks' own published nutrition data. Roast, brew method and size all move
+            the number, so two drinks that taste similarly strong can carry very different amounts.</p>
+          <p class="mb-0">A Venti isn't just a bigger Grande on caffeine - check the exact size before
+            you order. Add your usual order to the <a href="{{ '/' | relative_url }}">caffeine
+            calculator</a> to see how it fits your day.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Starbucks, strongest to weakest</h2>
+          {% include caffeine-hub-table.html drinks=in_category %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

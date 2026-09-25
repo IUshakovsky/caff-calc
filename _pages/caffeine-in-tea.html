@@ -1,0 +1,43 @@
+---
+layout: page
+title: "Caffeine in Tea"
+seo_title: "Caffeine in Tea: Black, Green, Matcha & More, Sorted by Strength"
+subtitle: "Every tea drink on the site, sorted by caffeine per serving"
+description: "How much caffeine is in black tea, green tea, matcha, chai, kombucha and Starbucks tea drinks, sorted from strongest to weakest, every figure sourced."
+permalink: /caffeine-in/tea/
+hub_title: "Tea"
+excerpt_separator: ""
+---
+
+{%- assign in_category = site.data.beverages | where: "category", "tea" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Tea
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>{{ in_category.size }} tea drinks, from herbal (caffeine-free) to matcha and strong black
+            tea, ranked by caffeine per serving. Figures come from the manufacturer's own nutrition
+            data, USDA FoodData Central or the product's official label, with the date each was last
+            checked on the drink's own page.</p>
+          <p class="mb-0">Tea's caffeine range is wide: the strongest cup on this list carries several
+            times the caffeine of the weakest. To see how tea fits into a full day of caffeine against
+            your personal limit, use the <a href="{{ '/' | relative_url }}">caffeine calculator</a>.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Tea, strongest to weakest</h2>
+          {% include caffeine-hub-table.html drinks=in_category %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

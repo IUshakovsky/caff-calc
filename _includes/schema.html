@@ -110,6 +110,21 @@
 </script>
 {%- endif %}
 
+{%- comment -%} Category/brand hub pages under /caffeine-in/ (Phase 5.1) {%- endcomment -%}
+{%- if page.hub_title %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ site.url | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "Caffeine in drinks", "item": {{ '/caffeine-in/' | absolute_url | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ page.hub_title | jsonify }}, "item": {{ page.url | absolute_url | jsonify }} }
+  ]
+}
+</script>
+{%- endif %}
+
 {%- if page.url == '/pages/about/' %}
 <script type="application/ld+json">
 {

@@ -1,0 +1,42 @@
+---
+layout: page
+title: "Caffeine in Energy Drinks"
+seo_title: "Caffeine in Energy Drinks: Red Bull, Monster, Celsius & More"
+subtitle: "Every energy drink on the site, sorted by caffeine per serving"
+description: "How much caffeine is in Red Bull, Monster, Celsius, Alani Nu and other energy drinks, sorted from strongest to weakest, every figure sourced."
+permalink: /caffeine-in/energy-drinks/
+hub_title: "Energy drinks"
+excerpt_separator: ""
+---
+
+{%- assign in_category = site.data.beverages | where: "category", "energy-drink" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Energy drinks
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>{{ in_category.size }} energy drinks, ranked by caffeine per serving as sold, straight from
+            each brand's own nutrition panel or official website. Can size varies as much as strength
+            does, so two drinks with the same caffeine per ounce can differ a lot per can.</p>
+          <p class="mb-0">Energy drinks are one of the easiest ways to blow past a daily limit without
+            noticing, since several pack more than a strong cup of coffee. Add today's cans to the
+            <a href="{{ '/' | relative_url }}">caffeine calculator</a> to see where you stand.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Energy drinks, strongest to weakest</h2>
+          {% include caffeine-hub-table.html drinks=in_category %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

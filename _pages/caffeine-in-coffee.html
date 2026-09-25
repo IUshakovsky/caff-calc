@@ -1,0 +1,44 @@
+---
+layout: page
+title: "Caffeine in Coffee"
+seo_title: "Caffeine in Coffee: Every Brew, Sorted by Strength"
+subtitle: "Every coffee drink on the site, sorted by caffeine per serving"
+description: "How much caffeine is in brewed coffee, espresso, cold brew and Starbucks coffee drinks, sorted from strongest to weakest, every figure sourced."
+permalink: /caffeine-in/coffee/
+hub_title: "Coffee"
+excerpt_separator: ""
+---
+
+{%- assign in_category = site.data.beverages | where: "category", "coffee" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Coffee
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>{{ in_category.size }} coffee drinks, from a home-brewed cup to the strongest Starbucks
+            roasts, ranked by caffeine per serving. Figures come from the manufacturer's own nutrition
+            data, USDA FoodData Central or the product's official label, with the date each was last
+            checked on the drink's own page.</p>
+          <p class="mb-0">Brew strength varies more than most people expect: the gap between a light
+            drip coffee and a large cold brew is bigger than the gap between coffee and some energy
+            drinks. To see how a whole day of coffee adds up against your personal limit, use the
+            <a href="{{ '/' | relative_url }}">caffeine calculator</a>.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Coffee, strongest to weakest</h2>
+          {% include caffeine-hub-table.html drinks=in_category %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+---
+layout: page
+title: "Caffeine in Soda"
+seo_title: "Caffeine in Soda: Coca-Cola, Pepsi, Mountain Dew & More"
+subtitle: "Every soda on the site, sorted by caffeine per serving"
+description: "How much caffeine is in Coca-Cola, Diet Coke, Pepsi and Mountain Dew, sorted from strongest to weakest, every figure sourced."
+permalink: /caffeine-in/sodas/
+hub_title: "Soda"
+excerpt_separator: ""
+---
+
+{%- assign in_category = site.data.beverages | where: "category", "soda" -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Soda
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>{{ in_category.size }} sodas, ranked by caffeine per can, taken from each brand's own
+            nutrition data. Soda is the source people most often forget to count, since a can feels
+            like "just a soft drink" next to a coffee.</p>
+          <p class="mb-0">Diet and regular versions of the same brand don't always match on caffeine.
+            Add your soda to the <a href="{{ '/' | relative_url }}">caffeine calculator</a> alongside
+            everything else you drink to see your real daily total.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Soda, strongest to weakest</h2>
+          {% include caffeine-hub-table.html drinks=in_category %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

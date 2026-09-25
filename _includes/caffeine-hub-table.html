@@ -1,0 +1,45 @@
+{%- comment -%}
+  Caffeine-sorted comparison table for a category/brand hub page (Phase 5.1).
+  Usage: include caffeine-hub-table.html drinks=in_category
+  `drinks` must be a pre-filtered array of _data/beverages.yml entries.
+
+  Liquid's `sort` filter can't sort by a nested/computed field, so each
+  beverage's default-serving mg is packed into a fixed-width sort key
+  ("100080|red-bull") and the key array is sorted lexicographically, which
+  matches numeric order because every key has the same digit width. Ranged
+  figures (caffeine_mg_low/high) sort on the high end.
+{%- endcomment -%}
+{%- assign sort_keys = '' -%}
+{%- for bev in include.drinks -%}
+  {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+  {%- assign mg = serving.caffeine_mg | default: serving.caffeine_mg_high | default: 0 -%}
+  {%- assign padded = mg | plus: 100000 -%}
+  {%- assign sort_keys = sort_keys | append: padded | append: '|' | append: bev.slug | append: ',' -%}
+{%- endfor -%}
+{%- assign sorted = sort_keys | split: ',' | sort | reverse -%}
+<div class="table-content">
+  <table class="table table-bordered align-middle mb-0">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Drink</th>
+        <th scope="col">Serving</th>
+        <th scope="col">Caffeine</th>
+        <th scope="col">Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%- for key in sorted -%}
+        {%- assign parts = key | split: '|' -%}
+        {%- assign bev = site.data.beverages | where: "slug", parts[1] | first -%}
+        {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+        {%- assign bev_page = site.caffeine_in | where: "slug", bev.slug | first -%}
+        <tr>
+          <td>{% if bev_page %}<a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif %}</td>
+          <td>{% include serving-size.html serving=serving %}</td>
+          <td>{% include serving-mg.html serving=serving %}</td>
+          <td class="small"><a href="{{ bev.source_url }}" target="_blank" rel="noopener" title="{{ bev.source_name }}"><span class="d-none d-md-inline">{{ bev.source_name }}</span><span class="d-md-none">Source</span></a></td>
+        </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+</div>

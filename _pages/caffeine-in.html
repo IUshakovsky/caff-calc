@@ -14,6 +14,8 @@ excerpt_separator: ""
   their source; the ones with a page (a file in _caffeine_in/) link to it.
 {%- endcomment -%}
 {%- assign categories = "coffee:Coffee|tea:Tea|energy-drink:Energy drinks|energy-shot:Energy shots|soda:Soda|other:Other drinks|chocolate:Chocolate|supplement:Caffeine tablets and pre-workout|medicine:Medicines" | split: "|" -%}
+{%- comment -%} Category/brand hub pages with their own sorted table (Phase 5.1) {%- endcomment -%}
+{%- assign hub_urls = "coffee:/caffeine-in/coffee/|tea:/caffeine-in/tea/|energy-drink:/caffeine-in/energy-drinks/|soda:/caffeine-in/sodas/" | split: "|" -%}
 
 <div class="content-page">
   <div class="row">
@@ -30,13 +32,32 @@ excerpt_separator: ""
         </div>
       </div>
 
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">Ranked comparisons</h2>
+          <p class="mb-0">See every drink in a category sorted from strongest to weakest:
+            <a href="{{ '/caffeine-in/coffee/' | relative_url }}">Coffee</a>,
+            <a href="{{ '/caffeine-in/tea/' | relative_url }}">Tea</a>,
+            <a href="{{ '/caffeine-in/energy-drinks/' | relative_url }}">Energy drinks</a>,
+            <a href="{{ '/caffeine-in/sodas/' | relative_url }}">Soda</a>, or
+            <a href="{{ '/caffeine-in/starbucks/' | relative_url }}">Starbucks</a>.</p>
+        </div>
+      </div>
+
       {%- for pair in categories %}
       {%- assign parts = pair | split: ":" %}
       {%- assign in_category = site.data.beverages | where: "category", parts[0] | sort: "product" %}
+      {%- assign hub_pair = hub_urls | where_exp: "h", "h contains parts[0]" | first %}
       {%- if in_category.size > 0 %}
       <section class="card mb-4" id="{{ parts[0] }}">
         <div class="card-body">
-          <h2 class="card-title h5 mb-3">{{ parts[1] }}</h2>
+          <h2 class="card-title h5 mb-3">
+            {{ parts[1] }}
+            {%- if hub_pair %}
+            {%- assign hub_url = hub_pair | split: ":" | last %}
+            <a href="{{ hub_url | relative_url }}" class="small ms-2">See ranked by strength &rarr;</a>
+            {%- endif %}
+          </h2>
           <div class="table-content">
             <table class="table table-bordered align-middle mb-0">
               <thead class="table-light">
