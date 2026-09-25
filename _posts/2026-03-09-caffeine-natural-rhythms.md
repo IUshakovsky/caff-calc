@@ -62,7 +62,7 @@ A broader review confirms caffeine's robust link to poorer sleep quality and nex
 
 Caffeine's average half-life is about 5 hours, but it ranges widely—roughly 3 to 10 hours—based on genetics, smoking status, oral contraceptives, pregnancy, medications, liver function, and more.
 
-Smokers clear it faster. People who are pregnant or taking estrogen-containing birth control clear it much slower. That means the same 2 PM coffee could be mostly gone by 10 PM for one person and still half-active for another.
+Smokers clear it faster. People who are pregnant or taking estrogen-containing birth control clear it much slower. That means the same 2 PM coffee could be mostly gone by 10 PM for one person and still half-active for another. [CaffCalc's half-life calculator]({{ '/half-life/' | relative_url }}) estimates how much of a given drink is still in your system at your own bedtime, rather than relying on the 5-hour average.
 
 ---
 

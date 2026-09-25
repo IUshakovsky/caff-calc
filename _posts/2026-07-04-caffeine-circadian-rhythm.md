@@ -54,7 +54,7 @@ Below are evidence-informed strategies you can tailor to your schedule. They're 
 
 ### 1) Set a Personal Caffeine Curfew (Count Back 8–10 Hours)
 
-Because caffeine's half-life averages 3–7 hours, leaving 8–10 hours between your last dose and target bedtime minimizes residual stimulation. If you aim for a 10:00 PM bedtime, try a last dose by 12:00–2:00 PM. The well-known "6-hour" cutoff is a minimum; many sleepers benefit from a longer buffer.
+Because caffeine's half-life averages 3–7 hours, leaving 8–10 hours between your last dose and target bedtime minimizes residual stimulation. If you aim for a 10:00 PM bedtime, try a last dose by 12:00–2:00 PM. The well-known "6-hour" cutoff is a minimum; many sleepers benefit from a longer buffer. [CaffCalc's half-life calculator]({{ '/half-life/' | relative_url }}) can estimate how much caffeine from a specific drink and dose is still in your system at your own bedtime, so you can set your curfew from data rather than a rule of thumb.
 
 ### 2) Front-Load Your Intake Earlier in the Day
 

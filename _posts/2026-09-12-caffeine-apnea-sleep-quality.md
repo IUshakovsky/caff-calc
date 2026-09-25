@@ -47,7 +47,7 @@ Think of adenosine as your body's natural sleep signal. As the day goes on, aden
 Key mechanisms backed by research:
 - **Adenosine blockade:** Increases wakefulness and can fragment sleep later, cutting total sleep time and reducing deep, slow‑wave sleep.
 - **Circadian delay:** Research suggests evening caffeine can shift melatonin rhythms later by about 40 minutes, making it harder to fall asleep at your usual time.
-- **Long tail:** The average half‑life of caffeine is about 5 hours, but it varies widely (roughly 1.5–9.5 hours). That means your 3 p.m. latte can still be in your system at 10–11 p.m., especially if you metabolize caffeine slowly. Smoking can shorten, and pregnancy and some medications can lengthen, caffeine's half‑life.
+- **Long tail:** The average half‑life of caffeine is about 5 hours, but it varies widely (roughly 1.5–9.5 hours). That means your 3 p.m. latte can still be in your system at 10–11 p.m., especially if you metabolize caffeine slowly. Smoking can shorten, and pregnancy and some medications can lengthen, caffeine's half‑life. [CaffCalc's half-life calculator]({{ '/half-life/' | relative_url }}) can estimate how much of your own last drink is still active at your bedtime instead of relying on the average.
 
 What this looks like at night:
 - More time awake after sleep onset

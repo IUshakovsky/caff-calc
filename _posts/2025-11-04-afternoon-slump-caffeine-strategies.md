@@ -28,7 +28,7 @@ A 2024 randomized clinical trial found that 400mg of caffeine taken even 12 hour
 
 **The key insight:** Timing matters more than dose. A small amount of caffeine at the right time beats a large dose at the wrong time.
 
-Caffeine's half-life ranges from 3-6 hours depending on your genetics and liver metabolism. That 2 p.m. coffee? Still 50% active at 8 p.m. for many people.
+Caffeine's half-life ranges from 3-6 hours depending on your genetics and liver metabolism. That 2 p.m. coffee? Still 50% active at 8 p.m. for many people. [CaffCalc's half-life calculator]({{ '/half-life/' | relative_url }}) can estimate how much of your specific afternoon drink is still in your system by the time you go to bed.
 
 ---
 

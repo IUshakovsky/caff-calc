@@ -73,7 +73,7 @@ Below are evidence-based adjustments you can test over one to two weeks. Choose 
 
 **How to implement:** If you're more sensitive to caffeine, extend your cutoff to 10-12 hours before bed. If you metabolize caffeine quickly, you might tolerate 8 hours. Example: 10:30 p.m. bedtime → last caffeine by 1:30-2:30 p.m.
 
-**Pro tip:** Track your sleep quality for two weeks with different cutoff times. Your body will tell you what works.
+**Pro tip:** Track your sleep quality for two weeks with different cutoff times. Your body will tell you what works. [CaffCalc's half-life calculator]({{ '/half-life/' | relative_url }}) can estimate how much caffeine is still in your system at your target bedtime for a given drink and dose, so you can set that cutoff from data instead of a guess.
 
 ### 2. Front-Load Your Dose in the Morning
 
