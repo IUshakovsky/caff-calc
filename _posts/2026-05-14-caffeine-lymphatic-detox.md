@@ -6,6 +6,7 @@ tags: [caffeine and lymphatic system, lymphatic detox, glymphatic system, sleep 
 excerpt: "Does caffeine help or hinder your body's detox pathways? Learn how caffeine affects lymphatic and glymphatic clearance—plus 8 practical steps to optimize it."
 image: "/assets/images/blog/caffeine-lymphatic-detox-cover.jpg"
 redirect_from: /2026/05/14/caffeine-lymphatic-detox/
+drinks: [brewed-coffee, espresso, herbal-tea]
 ---
 
 

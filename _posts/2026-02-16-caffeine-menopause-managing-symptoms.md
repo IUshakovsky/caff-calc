@@ -6,6 +6,7 @@ tags: [caffeine and menopause, hot flashes, sleep, bladder health, caffeine limi
 excerpt: "Caffeine can help you power through the day—but during menopause it may worsen hot flashes, sleep, and bladder symptoms. Learn evidence-based ways to adjust."
 image: "/assets/images/blog/caffeine-menopause-managing-symptoms.jpg"
 redirect_from: /2026/02/16/caffeine-menopause-managing-symptoms/
+drinks: [green-tea, brewed-coffee, espresso, latte]
 ---
 
 

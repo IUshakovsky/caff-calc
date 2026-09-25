@@ -6,6 +6,7 @@ tags: [caffeine and osteoporosis, bone health, calcium, fracture risk, preventio
 excerpt: "Does caffeine increase osteoporosis risk? We review the latest research on coffee, tea, and bone health—and share practical ways to protect your bones."
 image: "/assets/images/blog/caffeine-osteoporosis-risks.jpg"
 redirect_from: /2026/02/10/caffeine-osteoporosis-prevention/
+drinks: [brewed-coffee, black-tea, espresso, green-tea]
 ---
 
 

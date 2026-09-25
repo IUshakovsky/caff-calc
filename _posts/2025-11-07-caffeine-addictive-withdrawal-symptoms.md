@@ -6,6 +6,7 @@ tags: [caffeine, addiction, withdrawal, health]
 excerpt: "Explore whether caffeine is addictive, how withdrawal works, and practical steps to manage cravings while using caffeine wisely."
 image: "/assets/images/blog/is-caffeine-addictive-cover.jpg"
 redirect_from: /2025/11/07/caffeine-addictive-withdrawal-symptoms/
+drinks: [decaf-coffee, green-tea]
 ---
 
 

@@ -6,6 +6,7 @@ tags: [caffeine genetics, CYP1A2, ADORA2A, caffeine sensitivity, sleep]
 excerpt: "From fast to slow metabolizers, your genes shape how caffeine affects energy, sleep, and anxiety. Learn the science and get practical tips to personalize your daily intake."
 image: "/assets/images/blog/caffeine-genetics-contrasts.jpg"
 redirect_from: /2026/03/13/caffeine-genetics-effects/
+drinks: [espresso, green-tea, brewed-coffee]
 ---
 
 

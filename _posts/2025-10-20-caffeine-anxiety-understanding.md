@@ -8,6 +8,7 @@ tags: [caffeine, anxiety, health, science, sleep, caffeine-awareness]
 excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and actionable strategies to enjoy your coffee without the jitters."
 image: "/assets/images/blog/caffeine-anxiety.jpg"
 redirect_from: /2025/10/20/caffeine-anxiety-understanding/
+drinks: [decaf-coffee, excedrin-extra-strength, green-tea, coca-cola-classic, herbal-tea]
 ---
 
 

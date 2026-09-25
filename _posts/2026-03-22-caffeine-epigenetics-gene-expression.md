@@ -6,6 +6,7 @@ tags: [caffeine and epigenetics, gene expression, DNA methylation, circadian rhy
 excerpt: "Can your daily coffee nudge how genes turn on and off? Explore what science says about caffeine, epigenetics, and practical ways to protect sleep and health."
 image: "/assets/images/blog/caffeine-epigenetics-gene-expression.jpg"
 redirect_from: /2026/03/22/caffeine-epigenetics-gene-expression/
+drinks: [decaf-coffee, brewed-coffee, espresso]
 ---
 
 

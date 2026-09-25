@@ -6,6 +6,7 @@ tags: [caffeine and dental health, oral health, coffee, tea, energy drinks, enam
 excerpt: "Coffee stains teeth, energy drinks erode enamel, and caffeine may worsen dry mouth. Get dentist-approved tips to protect your smile."
 image: "/assets/images/blog/caffeine-dental-health.jpg"
 redirect_from: /2026/05/04/caffeine-dental-health/
+drinks: [decaf-coffee]
 ---
 
 

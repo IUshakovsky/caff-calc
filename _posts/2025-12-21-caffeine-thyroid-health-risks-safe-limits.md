@@ -6,6 +6,7 @@ tags: [caffeine, thyroid health, safety, guidelines, nutrition]
 excerpt: "Explore how caffeine interacts with thyroid function, what current research says about risks, and practical limits to keep your thyroid happy while enjoying your daily cup."
 image: "/assets/images/blog/caffeine-thyroid-health.jpg"
 redirect_from: /2025/12/21/caffeine-thyroid-health-risks-safe-limits/
+drinks: [decaf-coffee]
 ---
 
 

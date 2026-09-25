@@ -6,6 +6,7 @@ tags: [caffeine and stress, cortisol, HPA axis, anxiety, sleep, adenosine]
 excerpt: "Caffeine doesn't just wake you up—it nudges your stress systems too. Learn how it interacts with cortisol, adrenaline, and sleep, plus evidence-based tips."
 image: "/assets/images/blog/caffeine-stress-response-mechanisms.jpg"
 redirect_from: /2026/07/17/caffeine-stress-response/
+drinks: [brewed-coffee, espresso]
 ---
 
 

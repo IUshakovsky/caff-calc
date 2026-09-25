@@ -6,6 +6,7 @@ tags: [caffeine and nitric oxide, endothelial function, coffee, chlorogenic acid
 excerpt: "Does caffeine raise or lower nitric oxide? We review the latest human research on caffeine, coffee polyphenols, endothelial function, and how to drink smarter."
 image: "/assets/images/blog/caffeine-nitric-oxide-vessels.jpg"
 redirect_from: /2026/05/06/caffeine-nitric-oxide/
+drinks: [decaf-coffee, brewed-coffee, caffeine-pill, espresso]
 ---
 
 

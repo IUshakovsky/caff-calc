@@ -8,6 +8,7 @@ tags: [caffeine, health, science, tolerance, coffee, alertness, productivity]
 excerpt: "Tolerance builds in 7-14 days. A 2-week taper plan that resets your caffeine sensitivity while keeping withdrawal headaches manageable."
 image: "/assets/images/blog/caff-tolerance-reset.jpg"
 redirect_from: /2025/10/08/caffeine-tolerance-reset-guide/
+drinks: [decaf-coffee, herbal-tea]
 ---
 
 ## Why the same cup stops working

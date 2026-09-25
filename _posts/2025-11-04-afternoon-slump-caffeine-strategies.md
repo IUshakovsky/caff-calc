@@ -6,6 +6,7 @@ tags: [afternoon slump, caffeine strategies, sleep, productivity, caffeine timin
 excerpt: "Beat the afternoon drag with science-backed caffeine strategies. Learn when, how much, and what to pair with caffeine to stay alert without wrecking sleep."
 image: "/assets/images/blog/afternoon-slump-caffeine-strategies.jpg"
 redirect_from: /2025/11/04/afternoon-slump-caffeine-strategies/
+drinks: [green-tea, black-tea]
 ---
 
 

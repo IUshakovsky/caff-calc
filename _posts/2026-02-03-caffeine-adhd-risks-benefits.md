@@ -6,6 +6,7 @@ tags: [caffeine and adhd, caffeine safety, adhd tips, sleep and caffeine, stimul
 excerpt: "Wondering if caffeine helps or hurts ADHD? Here's a research-backed look at potential benefits, real risks, and safe limits for adults and teens—plus practical timing tips."
 image: "/assets/images/blog/caffeine-adhd-risks-benefits.jpg"
 redirect_from: /2026/02/03/caffeine-adhd-risks-benefits/
+drinks: [espresso, green-tea]
 ---
 
 

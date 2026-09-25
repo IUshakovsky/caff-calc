@@ -6,6 +6,7 @@ tags: [caffeine mitochondrial function, energy production, AMPK, PGC-1alpha, sle
 excerpt: "From AMPK activation to PGC-1α signaling, learn how caffeine influences mitochondrial function, energy production, and fatigue—plus practical tips to use it wisely."
 image: "/assets/images/blog/caffeine-mitochondria-energy.jpg"
 redirect_from: /2026/04/07/caffeine-mitochondrial-function/
+drinks: [brewed-coffee, espresso, latte]
 ---
 
 

@@ -6,6 +6,7 @@ tags: [caffeine, teens, anxiety, caffeine-safety, health]
 excerpt: "Teen caffeine use can trigger anxiety and disrupt sleep. Discover safe limits, science-backed strategies, and how to track intake without the guesswork."
 image: "/assets/images/blog/caffeine-teens-anxiety-cover.jpg"
 redirect_from: /2025/12/30/caffeine-teens-anxiety-risks-safe-limits/
+drinks: [decaf-coffee, herbal-tea, latte, starbucks-pike-place-roast]
 ---
 
 

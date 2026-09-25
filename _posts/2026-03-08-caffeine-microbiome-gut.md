@@ -6,6 +6,7 @@ tags: [caffeine microbiome, gut health, coffee, polyphenols, sleep, nutrition]
 excerpt: "What does caffeine do to your gut microbiome? Here's what recent human studies reveal and practical ways to support gut health without losing your daily brew."
 image: "/assets/images/blog/caffeine-microbiome-gut.jpg"
 redirect_from: /2026/03/08/caffeine-microbiome-gut/
+drinks: [decaf-coffee, brewed-coffee, black-tea, herbal-tea]
 ---
 
 

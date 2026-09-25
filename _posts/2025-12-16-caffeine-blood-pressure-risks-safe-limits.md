@@ -6,6 +6,7 @@ tags: [caffeine, blood pressure, hypertension, safety, health]
 excerpt: "Explore how caffeine affects blood pressure, who is at risk, and practical, science-backed limits to keep your daily caffeine routine safe and energizing."
 image: "/assets/images/blog/caffeine-blood-pressure.jpg"
 redirect_from: /2025/12/16/caffeine-blood-pressure-risks-safe-limits/
+drinks: [decaf-coffee, black-tea, espresso, excedrin-extra-strength, green-tea]
 ---
 
 

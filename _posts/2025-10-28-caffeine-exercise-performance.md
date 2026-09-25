@@ -8,6 +8,7 @@ tags: [caffeine, exercise, performance, sports-nutrition, ergogenic-aids, caffei
 excerpt: "Explore how caffeine can safely enhance athletic performance, the best dosing strategies, timing tips, and realistic limits you can trust with a science-backed guide."
 image: "/assets/images/blog/caff-performance.jpg"
 redirect_from: /2025/10/28/caffeine-exercise-performance/
+drinks: [caffeine-pill, green-tea]
 ---
 
 

@@ -6,6 +6,7 @@ tags: [caffeine lymphatic system, caffeine, lymphatics, glymphatic system, sleep
 excerpt: "Does caffeine help or hinder your lymphatic system? Explore what research says about fluid balance, immune function, and sleep-dependent brain clearance—plus smart, practical habits."
 image: "/assets/images/blog/caffeine-lymphatic-system.jpg"
 redirect_from: /2026/04/23/caffeine-lymphatic-system/
+drinks: [brewed-coffee, decaf-coffee]
 ---
 
 

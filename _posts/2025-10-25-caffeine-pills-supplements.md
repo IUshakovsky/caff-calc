@@ -8,6 +8,7 @@ tags: [caffeine, caffeine-pills, supplements, sleep, health]
 excerpt: "One 200mg caffeine pill equals about two coffees with none of the volume cues, which is how overdoses happen. Safe dosing, real risks, who to avoid."
 image: "/assets/images/blog/caffeine-pills.jpg"
 redirect_from: /2025/10/25/caffeine-pills-supplements/
+drinks: [caffeine-pill, brewed-coffee, alani-nu-energy, pepsi-zero-sugar]
 ---
 
 ## The 200 mg pill problem

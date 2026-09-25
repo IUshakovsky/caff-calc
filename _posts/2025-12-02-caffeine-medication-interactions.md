@@ -6,6 +6,7 @@ tags: [caffeine, medication interactions, sleep, health, safety]
 excerpt: "Learn how caffeine interacts with common medications, what that means for your daily routine, and practical tips to stay safe while enjoying your coffee habit."
 image: "/assets/images/blog/caffeine-medication-interactions.jpg"
 redirect_from: /2025/12/02/caffeine-medication-interactions/
+drinks: [decaf-coffee, excedrin-extra-strength, herbal-tea, anacin, caffeine-pill]
 ---
 
 

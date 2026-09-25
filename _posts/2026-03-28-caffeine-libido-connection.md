@@ -6,6 +6,7 @@ tags: [caffeine and libido, sexual health, hormones, sleep, coffee, energy]
 excerpt: "Does caffeine boost or blunt your sex drive? We review current research on libido, hormones, sleep, and blood flow—then share practical tips to sip smarter without hurting your desire or performance."
 image: "/assets/images/blog/caffeine-libido-bridge.jpg"
 redirect_from: /2026/03/28/caffeine-libido-connection/
+drinks: [decaf-coffee, espresso, brewed-coffee, green-tea]
 ---
 
 

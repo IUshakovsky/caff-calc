@@ -6,6 +6,7 @@ tags: [caffeine and nutrition, caffeine intake, diet optimization, sleep, hydrat
 excerpt: "Make caffeine work for you—not against you. Learn how to pair caffeine with meals, protect sleep, avoid nutrient roadblocks, and set safe daily limits."
 image: "/assets/images/blog/caffeine-nutrition-optimization.jpg"
 redirect_from: /2026/03/12/caffeine-nutrition-optimization/
+drinks: [decaf-coffee]
 ---
 
 

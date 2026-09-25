@@ -6,6 +6,7 @@ tags: [caffeine and fat metabolism, fat oxidation, energy expenditure, insulin s
 excerpt: "Does caffeine help you burn fat or store it? Learn how caffeine affects fat oxidation, energy expenditure, insulin sensitivity, and sleep so you can use it wisely."
 image: "/assets/images/blog/caffeine-fat-metabolism.jpg"
 redirect_from: /2026/05/12/caffeine-fat-metabolism/
+drinks: [decaf-coffee, espresso, latte]
 ---
 
 

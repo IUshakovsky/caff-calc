@@ -6,6 +6,7 @@ tags: [caffeine and kidney stones, kidney stones prevention, coffee and tea, hyd
 excerpt: "Does caffeine raise your kidney stone risk—or lower it? Learn what the science says about coffee, tea, and energy drinks, plus evidence-based steps to prevent stones."
 image: "/assets/images/blog/caffeine-kidney-stones-prevention.jpg"
 redirect_from: /2026/02/24/caffeine-kidney-stones-prevention/
+drinks: [black-tea, decaf-coffee, green-tea, brewed-coffee]
 ---
 
 

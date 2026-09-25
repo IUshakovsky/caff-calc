@@ -8,6 +8,7 @@ tags: [caffeine and sleep, sleep timing, half-life, adenosine, insomnia, sleep h
 excerpt: "Caffeine taken 6 hours before bed still measurably cuts your sleep short. The research on caffeine timing and how to set your personal cutoff."
 image: "/assets/images/blog/caffeine-sleep-timing.jpg"
 redirect_from: /2026/02/14/caffeine-sleep-timing/
+drinks: [decaf-coffee, brewed-coffee, green-tea]
 ---
 
 ## Why timing is as important as dose

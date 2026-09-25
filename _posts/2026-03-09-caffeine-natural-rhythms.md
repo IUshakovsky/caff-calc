@@ -6,6 +6,7 @@ tags: [caffeine and circadian rhythm, sleep, adenosine, caffeine timing, caffein
 excerpt: "Caffeine can shift your internal clock, mute sleepiness signals, and fragment sleep. Learn the science of how caffeine affects circadian rhythms and how to time your intake for better energy and rest."
 image: "/assets/images/blog/caffeine-natural-rhythms-cover.jpg"
 redirect_from: /2026/03/09/caffeine-natural-rhythms/
+drinks: [decaf-coffee, espresso]
 ---
 
 

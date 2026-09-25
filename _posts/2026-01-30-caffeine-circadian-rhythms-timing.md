@@ -6,6 +6,7 @@ tags: [caffeine and circadian rhythms, caffeine timing, sleep quality, melatonin
 excerpt: "Your internal clock shapes how caffeine feels—and how it hurts your sleep. Learn the science behind caffeine and circadian rhythms, plus proven timing strategies that protect your nights and power your days."
 image: "/assets/images/blog/caffeine-circadian-rhythms-timing.jpg"
 redirect_from: /2026/01/30/caffeine-circadian-rhythms-timing/
+drinks: [espresso, decaf-coffee, brewed-coffee, green-tea, herbal-tea]
 ---
 
 

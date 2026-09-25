@@ -6,6 +6,7 @@ tags: [caffeine, headaches, migraines, withdrawal, sleep]
 excerpt: "Caffeine can relieve migraines or trigger them—it depends on your dose, timing, and withdrawal patterns. Learn science-backed strategies to use caffeine smartly."
 image: "/assets/images/blog/caffeine-headaches-migraines-cover.jpg"
 redirect_from: /2025/11/02/caffeine-headaches-migraines/
+drinks: [decaf-coffee, green-tea, excedrin-migraine]
 ---
 
 

@@ -6,6 +6,7 @@ tags: [caffeine and sleep apnea, sleep quality, caffeine timing, obstructive sle
 excerpt: "Coffee doesn't appear to cause sleep apnea—but caffeine timing can wreck sleep quality. See what research shows and how to protect your nights."
 image: "/assets/images/blog/caffeine-apnea-sleep-quality.jpg"
 redirect_from: /2026/09/12/caffeine-apnea-sleep-quality/
+drinks: [decaf-coffee, brewed-coffee, espresso, herbal-tea, latte]
 ---
 
 

@@ -8,6 +8,7 @@ tags: [caffeine thermogenesis, weight management, metabolism, brown fat, energy 
 excerpt: "Caffeine's thermogenic effect is real but small - roughly 4-5% of 24-hour energy expenditure in chamber studies. What that means for actual fat loss."
 image: "/assets/images/blog/caffeine-thermogenesis-weight.jpg"
 redirect_from: /2026/04/20/caffeine-thermogenesis-weight/
+drinks: [decaf-coffee, caffeine-pill, green-tea]
 ---
 
 ## Caffeine raises energy expenditure, but only a little

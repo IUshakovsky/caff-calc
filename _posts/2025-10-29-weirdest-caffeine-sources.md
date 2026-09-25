@@ -6,6 +6,7 @@ tags: [caffeine, caffeine-sources, health, wellness, sleep, energy]
 excerpt: "Kola nuts, guarana, yerba mate—caffeine hides in surprising places. Discover unusual sources, how much they pack, and what it means for your daily energy."
 image: "/assets/images/blog/sources.jpg"
 redirect_from: /2025/10/29/weirdest-caffeine-sources/
+drinks: [green-tea, espresso, latte, monster-energy-original, red-bull]
 ---
 
 

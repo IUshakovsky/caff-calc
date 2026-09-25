@@ -8,6 +8,7 @@ tags: [caffeine, gut health, coffee, microbiome, digestion, safety]
 excerpt: "Why coffee sends you to the bathroom, what caffeine does to acid reflux and IBS, and who actually needs to cut back. Evidence-based, no hype."
 image: "/assets/images/blog/caffeine-gut-health-cover.jpg"
 redirect_from: /2025/11/18/caffeine-gut-health/
+drinks: [decaf-coffee, starbucks-cold-brew, brewed-coffee, espresso]
 ---
 
 ## The two faces of coffee in the gut

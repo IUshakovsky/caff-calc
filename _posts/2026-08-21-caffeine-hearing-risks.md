@@ -6,6 +6,7 @@ tags: [caffeine and hearing, tinnitus, Meniere's disease, caffeine risks, ear he
 excerpt: "Does caffeine affect your ears? Explore what science says about caffeine's links to tinnitus, Ménière's disease, and hearing recovery—plus tips to protect hearing."
 image: "/assets/images/blog/caffeine-hearing-risks.jpg"
 redirect_from: /2026/08/21/caffeine-hearing-risks/
+drinks: [brewed-coffee, latte, black-tea]
 ---
 
 

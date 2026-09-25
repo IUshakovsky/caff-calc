@@ -6,6 +6,7 @@ tags: [caffeine and nutrient intake, iron absorption, calcium balance, vitamins,
 excerpt: "Caffeine can subtly change how your body absorbs iron and calcium, shift appetite and sleep, and add trace minerals. Here's how to keep nutrition on track."
 image: "/assets/images/blog/caffeine-nutrient-intake-balance.jpg"
 redirect_from: /2026/06/29/caffeine-nutrient-intake/
+drinks: [decaf-coffee, brewed-coffee, espresso, starbucks-cold-brew]
 ---
 
 

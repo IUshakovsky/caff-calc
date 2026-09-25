@@ -6,6 +6,7 @@ tags: [caffeine and silent brain areas, default mode network, brain connectivity
 excerpt: "Caffeine doesn't just perk up your senses—it reshapes activity in your brain's 'silent' networks. Learn how it affects connectivity, blood flow, and sleep."
 image: "/assets/images/blog/caffeine-silent-brain-areas.jpg"
 redirect_from: /2026/06/17/caffeine-silent-brain-areas/
+drinks: [brewed-coffee]
 ---
 
 

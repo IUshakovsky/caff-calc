@@ -6,6 +6,7 @@ tags: [cognitive flexibility, caffeine, executive function, task switching, crea
 except: "Does caffeine help or hurt your ability to switch tasks, adapt, and think flexibly? Here's a research-based guide to how caffeine affects cognitive flexibility—and how to use it wisely."
 image: "/assets/images/blog/caffeine-cognitive-flexibility.jpg"
 redirect_from: /2026/04/29/caffeine-cognitive-flexibility/
+drinks: [decaf-coffee]
 ---
 
 

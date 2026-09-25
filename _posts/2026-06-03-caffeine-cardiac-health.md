@@ -6,6 +6,7 @@ tags: [caffeine cardiac health, heart health, coffee, energy drinks, blood press
 excerpt: "What decades of research really say about caffeine and your heart—blood pressure, rhythm, cholesterol, and safe daily limits—plus practical ways to enjoy coffee wisely."
 image: "/assets/images/blog/caffeine-cardiac-health-cover.jpg"
 redirect_from: /2026/06/03/caffeine-cardiac-health/
+drinks: [espresso, latte]
 ---
 
 

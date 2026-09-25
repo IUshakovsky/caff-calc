@@ -6,6 +6,7 @@ tags: [caffeine and travel, jet lag, fatigue, sleep, circadian rhythm, travel ti
 excerpt: "Flying across time zones? Learn how to use caffeine wisely to stay alert without wrecking your sleep—a practical, research-based jet lag guide."
 image: "/assets/images/blog/caffeine-travel-jet-lag.jpg"
 redirect_from: /2026/03/20/caffeine-travel-jet-lag/
+drinks: [espresso, green-tea]
 ---
 
 

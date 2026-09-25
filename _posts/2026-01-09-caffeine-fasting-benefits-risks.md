@@ -6,6 +6,7 @@ tags: [caffeine, fasting, metabolism, intermittent-fasting, health]
 excerpt: "Can coffee boost your fast or break it? Discover how caffeine affects fat burning, hunger, and sleep during fasting—with science-backed tips you can use today."
 image: "/assets/images/blog/how-caffeine-impacts-fasting.jpg"
 redirect_from: /2026/01/09/caffeine-fasting-benefits-risks/
+drinks: [decaf-coffee, green-tea, herbal-tea, starbucks-cold-brew]
 ---
 
 

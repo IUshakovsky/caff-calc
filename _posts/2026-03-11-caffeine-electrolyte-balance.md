@@ -6,6 +6,7 @@ tags: [caffeine electrolyte balance, hydration, sodium potassium, magnesium, cal
 excerpt: "Does caffeine dehydrate you or drain electrolytes? Learn how caffeine affects sodium, potassium, magnesium, and calcium—and simple habits to stay balanced."
 image: "/assets/images/blog/caffeine-electrolyte-balance.jpg"
 redirect_from: /2026/03/11/caffeine-electrolyte-balance/
+drinks: [latte]
 ---
 
 

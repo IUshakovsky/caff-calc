@@ -8,6 +8,7 @@ tags: [caffeine, blood vessel function, endothelial function, blood pressure, co
 excerpt: "Caffeine briefly tightens blood vessels and raises blood pressure, yet coffee's plant compounds may improve endothelial function. Here's the balance."
 image: "/assets/images/blog/caffeine-blood-vessels-function.jpg"
 redirect_from: /2026/05/30/caffeine-blood-vessel-function/
+drinks: [decaf-coffee, brewed-coffee]
 ---
 
 

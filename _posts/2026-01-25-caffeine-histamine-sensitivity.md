@@ -6,6 +6,7 @@ tags: [caffeine and histamine, histamine intolerance, caffeine sensitivity, mast
 excerpt: "Coffee triggers flushing or headaches? Discover how caffeine interacts with histamine, what science reveals about sensitivity, and how to find your personal limit."
 image: "/assets/images/blog/caffeine-histamine-sensitivity.jpg"
 redirect_from: /2026/01/25/caffeine-histamine-sensitivity/
+drinks: [instant-coffee, starbucks-cold-brew, black-tea, espresso, excedrin-extra-strength]
 ---
 
 
