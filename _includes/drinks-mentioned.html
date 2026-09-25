@@ -1,0 +1,36 @@
+{%- comment -%}
+  "Drinks mentioned" block for posts. Set front matter `drinks: [slug, slug, ...]`
+  using slugs from _data/beverages.yml to link each drink to its /caffeine-in/
+  page (when one exists) with its default serving and caffeine figure. Renders
+  nothing if `drinks` is empty or missing. Unknown slugs are skipped; since
+  pure Liquid cannot emit a real build-time warning, they're flagged with an
+  HTML comment instead.
+{%- endcomment -%}
+{%- assign valid_slugs = '' -%}
+{%- for slug in page.drinks -%}
+  {%- assign bev = site.data.beverages | where: "slug", slug | first -%}
+  {%- if bev -%}
+    {%- assign valid_slugs = valid_slugs | append: slug | append: '|' -%}
+  {%- else -%}
+<!-- drinks-mentioned.html: unknown drink slug "{{ slug }}" in {{ page.path }} -->
+  {%- endif -%}
+{%- endfor -%}
+{%- if valid_slugs != '' -%}
+<aside class="card mb-4" aria-labelledby="drinks-mentioned-heading">
+  <div class="card-body">
+    <h2 id="drinks-mentioned-heading" class="h5 mb-3">Drinks mentioned in this article</h2>
+    <ul class="list-unstyled mb-0">
+      {%- assign slugs = valid_slugs | split: '|' -%}
+      {%- for slug in slugs -%}
+        {%- assign bev = site.data.beverages | where: "slug", slug | first -%}
+        {%- assign bev_page = site.caffeine_in | where: "slug", bev.slug | first -%}
+        {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+        <li class="mb-2 pb-2 border-bottom">
+          {%- if bev_page %}<a href="{{ bev_page.url | relative_url }}" class="text-decoration-none">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif -%}
+          <span class="small text-muted">&mdash; {% include serving-size.html serving=serving %}, {% include serving-mg.html serving=serving %}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</aside>
+{%- endif -%}
