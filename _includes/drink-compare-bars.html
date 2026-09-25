@@ -1,0 +1,27 @@
+{%- comment -%}
+  "X vs Y" bar comparison (Phase 5.2 template). Usage:
+  include drink-compare-bars.html slugs=page.compare
+  `slugs` is an array of 2+ _data/beverages.yml slugs. Reuses the
+  .compare-bars/.compare-row/.compare-track/.compare-fill styling already
+  shipped for the single-drink "How it compares" section on drink pages.
+{%- endcomment -%}
+{%- assign compare_max = 0 -%}
+{%- for slug in include.slugs -%}
+  {%- assign bev = site.data.beverages | where: "slug", slug | first -%}
+  {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+  {%- assign mg = serving.caffeine_mg | default: serving.caffeine_mg_high | default: 0 -%}
+  {%- if mg > compare_max -%}{%- assign compare_max = mg -%}{%- endif -%}
+{%- endfor -%}
+<div class="compare-bars">
+  {%- for slug in include.slugs -%}
+    {%- assign bev = site.data.beverages | where: "slug", slug | first -%}
+    {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
+    {%- assign bev_page = site.caffeine_in | where: "slug", bev.slug | first -%}
+    {%- assign mg = serving.caffeine_mg | default: serving.caffeine_mg_high | default: 0 -%}
+    <div class="compare-row{% if forloop.first %} compare-row-this{% endif %}">
+      <span class="compare-label">{% if bev_page %}<a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>{% else %}{{ bev.product }}{% endif %}, {% include serving-size.html serving=serving %}</span>
+      <span class="compare-track"><span class="compare-fill" style="width: {{ mg | times: 100.0 | divided_by: compare_max | round: 1 }}%"></span></span>
+      <span class="compare-value">{% include serving-mg.html serving=serving %}</span>
+    </div>
+  {%- endfor -%}
+</div>
