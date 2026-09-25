@@ -1,29 +1,12 @@
 <head>
-  <!-- Defer non-critical third-party scripts on mobile -->
-  <script>
-    // Conditionally load analytics based on device
-    if (window.innerWidth <= 768) {
-      // For mobile: Delay analytics to improve FCP and LCP
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}';
-          document.head.appendChild(script);
-          
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '{{ site.google_analytics }}');
-        }, 1000); // Delay by 1 second on mobile to prioritize content
-      });
-    } else {
-      // For desktop: Load normally
-      document.write('<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}">\<\/script>');
-      document.write('<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'{{ site.google_analytics }}\');\<\/script>');
-    }
-  </script>
   <meta charset="UTF-8" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   {% assign page_description = page.description
      | default: page.excerpt
