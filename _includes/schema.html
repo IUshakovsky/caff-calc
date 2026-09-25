@@ -81,6 +81,7 @@
   "headline": {{ page.title | jsonify }},
   "description": {{ schema_description | jsonify }},
   "url": {{ page.url | absolute_url | jsonify }},
+  "dateModified": {{ page.last_modified_at | default: site.time | date_to_xmlschema | jsonify }},
   "author": {
     "@type": "Person",
     "@id": {{ person_id | jsonify }},

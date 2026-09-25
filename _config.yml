@@ -35,6 +35,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-last-modified-at
 
 # Exclude from processing
 exclude:
