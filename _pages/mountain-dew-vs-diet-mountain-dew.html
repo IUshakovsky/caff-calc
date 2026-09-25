@@ -1,0 +1,57 @@
+---
+layout: page
+title: "Mountain Dew vs Diet Mountain Dew: Which Has More Caffeine?"
+seo_title: "Mountain Dew vs Diet Mountain Dew Caffeine Compared"
+subtitle: "Does going diet change the caffeine?"
+description: "Mountain Dew and Diet Mountain Dew both carry 54 mg of caffeine per 12 fl oz can - the diet version only cuts sugar and calories, not caffeine."
+permalink: /caffeine-in/mountain-dew-vs-diet-mountain-dew/
+hub_title: "Mountain Dew vs Diet Mountain Dew"
+compare: [mountain-dew, diet-mountain-dew]
+excerpt_separator: ""
+---
+
+{%- assign drink_a = site.data.beverages | where: "slug", "mountain-dew" | first -%}
+{%- assign drink_b = site.data.beverages | where: "slug", "diet-mountain-dew" | first -%}
+{%- assign serving_a = drink_a.servings | where: "default", true | first | default: drink_a.servings.first -%}
+{%- assign serving_b = drink_b.servings | where: "default", true | first | default: drink_b.servings.first -%}
+{%- assign mg_a = serving_a.caffeine_mg | default: serving_a.caffeine_mg_high -%}
+{%- assign mg_b = serving_b.caffeine_mg | default: serving_b.caffeine_mg_high -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Mountain Dew vs Diet Mountain Dew
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>Going diet doesn't change the caffeine here: a {{ serving_a.size_oz }} fl oz can of
+            {{ drink_a.product }} and the same size can of {{ drink_b.product }} both carry {{ mg_a }} mg of
+            caffeine, according to PepsiCo's own published data. The diet version cuts sugar and calories,
+            not caffeine.</p>
+          <p class="mb-0">See the source link in the table below, or add either one to the
+            <a href="{{ '/' | relative_url }}">caffeine calculator</a> to see how it fits your personal
+            daily limit.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Standard can, side by side</h2>
+          {% include drink-compare-bars.html slugs=page.compare %}
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Sources</h2>
+          {%- assign compare_drinks = site.data.beverages | where_exp: "b", "b.slug == 'mountain-dew' or b.slug == 'diet-mountain-dew'" -%}
+          {% include caffeine-hub-table.html drinks=compare_drinks %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

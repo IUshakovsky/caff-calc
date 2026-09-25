@@ -1,0 +1,58 @@
+---
+layout: page
+title: "Diet Coke vs Diet Pepsi: Which Has More Caffeine?"
+seo_title: "Diet Coke vs Diet Pepsi Caffeine: Can-by-Can Comparison"
+subtitle: "Same can size, straight from each brand's own data"
+description: "A 12 fl oz can of Diet Coke has 46 mg of caffeine; Diet Pepsi has 35 mg. See the full comparison and how each fits your daily limit."
+permalink: /caffeine-in/diet-coke-vs-diet-pepsi/
+hub_title: "Diet Coke vs Diet Pepsi"
+compare: [diet-coke, diet-pepsi]
+excerpt_separator: ""
+---
+
+{%- assign drink_a = site.data.beverages | where: "slug", "diet-coke" | first -%}
+{%- assign drink_b = site.data.beverages | where: "slug", "diet-pepsi" | first -%}
+{%- assign serving_a = drink_a.servings | where: "default", true | first | default: drink_a.servings.first -%}
+{%- assign serving_b = drink_b.servings | where: "default", true | first | default: drink_b.servings.first -%}
+{%- assign mg_a = serving_a.caffeine_mg | default: serving_a.caffeine_mg_high -%}
+{%- assign mg_b = serving_b.caffeine_mg | default: serving_b.caffeine_mg_high -%}
+{%- assign diff = mg_a | minus: mg_b -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Diet Coke vs Diet Pepsi
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>A {{ serving_a.size_oz }} fl oz can of {{ drink_a.product }} has {{ mg_a }} mg of caffeine,
+            {{ diff }} mg more than the same size can of {{ drink_b.product }} ({{ mg_b }} mg). Neither
+            is a large source of caffeine on its own; the gap matters most if you're counting every
+            milligram closely.</p>
+          <p class="mb-0">Figures are each company's own published data; see the source link in the table
+            below. Add either one to the <a href="{{ '/' | relative_url }}">caffeine calculator</a> to see
+            how it fits your personal daily limit.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Standard can, side by side</h2>
+          {% include drink-compare-bars.html slugs=page.compare %}
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Sources</h2>
+          {%- assign compare_drinks = site.data.beverages | where_exp: "b", "b.slug == 'diet-coke' or b.slug == 'diet-pepsi'" -%}
+          {% include caffeine-hub-table.html drinks=compare_drinks %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

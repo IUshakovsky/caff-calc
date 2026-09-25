@@ -1,0 +1,57 @@
+---
+layout: page
+title: "Caffeine Pill vs Vivarin: Which Has More Caffeine?"
+seo_title: "Caffeine Pill vs Vivarin: Generic vs Brand-Name Dose"
+subtitle: "A generic 200 mg tablet vs a named brand"
+description: "A standard generic caffeine tablet and a Vivarin tablet both carry 200 mg of caffeine - Vivarin is a branded product built around the same common dose."
+permalink: /caffeine-in/caffeine-pill-vs-vivarin/
+hub_title: "Caffeine Pill vs Vivarin"
+compare: [caffeine-pill, vivarin]
+excerpt_separator: ""
+---
+
+{%- assign drink_a = site.data.beverages | where: "slug", "caffeine-pill" | first -%}
+{%- assign drink_b = site.data.beverages | where: "slug", "vivarin" | first -%}
+{%- assign serving_a = drink_a.servings | where: "default", true | first | default: drink_a.servings.first -%}
+{%- assign serving_b = drink_b.servings | where: "default", true | first | default: drink_b.servings.first -%}
+{%- assign mg_a = serving_a.caffeine_mg | default: serving_a.caffeine_mg_high -%}
+{%- assign mg_b = serving_b.caffeine_mg | default: serving_b.caffeine_mg_high -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Caffeine Pill vs Vivarin
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>A generic {{ drink_a.product | downcase }} and one {{ drink_b.product }} tablet both carry
+            {{ mg_a }} mg of caffeine, per their DailyMed drug labels. Vivarin is a named over-the-counter
+            brand built around the same common 200 mg dose as the generic tablet - the active ingredient
+            and amount are the same.</p>
+          <p class="mb-0">See the source link in the table below, or add either one to the
+            <a href="{{ '/' | relative_url }}">caffeine calculator</a> to see how it fits your personal
+            daily limit.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">One tablet, side by side</h2>
+          {% include drink-compare-bars.html slugs=page.compare %}
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Sources</h2>
+          {%- assign compare_drinks = site.data.beverages | where_exp: "b", "b.slug == 'caffeine-pill' or b.slug == 'vivarin'" -%}
+          {% include caffeine-hub-table.html drinks=compare_drinks %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+---
+layout: page
+title: "Green Tea vs Black Tea: Which Has More Caffeine?"
+seo_title: "Green Tea vs Black Tea Caffeine: 8 oz Cup Compared"
+subtitle: "Same cup size, straight from USDA data"
+description: "An 8 fl oz cup of green tea has 29 mg of caffeine; black tea has 47 mg. See the full comparison and how each fits your daily limit."
+permalink: /caffeine-in/green-tea-vs-black-tea/
+hub_title: "Green Tea vs Black Tea"
+compare: [green-tea, black-tea]
+excerpt_separator: ""
+---
+
+{%- assign drink_a = site.data.beverages | where: "slug", "green-tea" | first -%}
+{%- assign drink_b = site.data.beverages | where: "slug", "black-tea" | first -%}
+{%- assign serving_a = drink_a.servings | where: "default", true | first | default: drink_a.servings.first -%}
+{%- assign serving_b = drink_b.servings | where: "default", true | first | default: drink_b.servings.first -%}
+{%- assign mg_a = serving_a.caffeine_mg | default: serving_a.caffeine_mg_high -%}
+{%- assign mg_b = serving_b.caffeine_mg | default: serving_b.caffeine_mg_high -%}
+{%- assign diff = mg_b | minus: mg_a -%}
+
+<div class="content-page">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <nav aria-label="breadcrumb" class="small mb-3">
+        <a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in drinks</a> &rsaquo; Green Tea vs Black Tea
+      </nav>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <p>An {{ serving_a.size_oz }} fl oz cup of {{ drink_a.product | downcase }} has {{ mg_a }} mg of
+            caffeine. The same size cup of {{ drink_b.product | downcase }} has {{ mg_b }} mg -
+            {{ diff }} mg more. Both come from the same plant; the difference comes down to how the leaves
+            are processed and oxidized, not a different source of caffeine.</p>
+          <p class="mb-0">Figures come from USDA FoodData Central; see the source link in the table below.
+            Add either one to the <a href="{{ '/' | relative_url }}">caffeine calculator</a> to see how it
+            fits your personal daily limit.</p>
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Standard cup, side by side</h2>
+          {% include drink-compare-bars.html slugs=page.compare %}
+        </div>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="h5 mb-3">Sources</h2>
+          {%- assign compare_drinks = site.data.beverages | where_exp: "b", "b.slug == 'green-tea' or b.slug == 'black-tea'" -%}
+          {% include caffeine-hub-table.html drinks=compare_drinks %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
