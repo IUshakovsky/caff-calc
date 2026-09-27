@@ -19,13 +19,12 @@ pluralize or change casing.** Add new events here in the same PR that ships them
 | `assets/js/script.js` | Calculator + tracker hooks, through `trackEvent()` / `trackTrackerSave()`. Both are no-ops if `analytics-events.js` hasn't loaded. |
 | `_layouts/default.html` | Adds `data-post-slug="{{ page.slug }}"` to `<body>` on posts only. |
 
-**Guard.** `caffTrack` calls `window.gtag` when it exists. Otherwise, if the head
-snippet has already created `window.dataLayer`, it pushes the same arguments
-`gtag()` would. This fallback is needed because when `window.innerWidth` is
-≤768 at the moment the head snippet runs, the snippet declares `gtag` inside a
-callback, so it never becomes global. With
-neither present (ad blocker before the snippet runs, local dev without GA), the
-call does nothing. Every call is wrapped in `try/catch`.
+**Guard.** `caffTrack` calls `window.gtag` when it exists. The head snippet
+(`_includes/head.html`) declares `gtag` synchronously as a global on every page
+and viewport width, so this is the normal path. As a fallback, if `gtag` is
+missing but `window.dataLayer` already exists, it pushes the same arguments
+`gtag()` would. With neither present (ad blocker before the snippet runs, local
+dev without GA), the call does nothing. Every call is wrapped in `try/catch`.
 
 **Declarative clicks.** Any element with `data-ga-event` sends that event on click,
 with `data-ga-params` parsed as JSON:
@@ -38,6 +37,34 @@ with `data-ga-params` parsed as JSON:
 Elements carrying `data-ga-event` are skipped by the automatic post-body link
 tracking, so they never double-count.
 
+## Content group
+
+Every page sets GA4's built-in `content_group` dimension to a page-type label,
+so reports can be split by calculator, half-life, drink pages, blog and so on
+without URL regexes. The value is computed in Liquid in `_includes/head.html`
+and sent with `gtag('set', { content_group: … })` between `gtag('js', …)` and
+`gtag('config', …)`. Because it is set before `config`, it is attached to the
+first `page_view` and to every custom event after it on the page. Nothing needs
+registering in the GA4 UI.
+
+These strings are GA4 data: **never rename them**, or the history splits in two.
+A `content_group:` value in a page's front matter overrides the rules. Rules are
+evaluated top to bottom; the first match wins.
+
+| `content_group` | Rule | Example |
+|---|---|---|
+| *front matter value* | `content_group:` set in the page's front matter | none yet |
+| `calculator` | `page.url == '/'` | `/` |
+| `half_life` | `page.url == '/half-life/'` | `/half-life/` |
+| `drink_hub` | `page.url == '/caffeine-in/'` | `/caffeine-in/` |
+| `drink_page` | `page.collection == 'caffeine_in'` | `/caffeine-in/espresso/` |
+| `comparison` | `page.compare` is present | `/caffeine-in/red-bull-vs-monster/` |
+| `category_hub` | `page.hub_title` is present | `/caffeine-in/coffee/` |
+| `blog_post` | `page.collection == 'posts'` | `/blog/caffeine-apnea-sleep-quality/` |
+| `blog_index` | URL contains `/blog/`, or `page.url == '/pages/topics/'` | `/blog/`, `/blog/page/2/`, `/pages/topics/` |
+| `not_found` | `page.url == '/404.html'` (no 404 page exists yet) | `/404.html` |
+| `info` | Everything else | `/pages/about/`, `/pages/privacy-policy/` |
+
 ## Events
 
 "Once per page load" is enforced with flags inside the `analytics-events.js`
@@ -47,7 +74,7 @@ closure. Events marked "every time" are not deduplicated.
 
 | Event | Parameter | Type | Allowed values | Fires when | Frequency | Where |
 |---|---|---|---|---|---|---|
-| `calc_start` | `entry_point` | string | `blog` \| `home` \| `direct` \| `tracker` | First click on a button or beverage option, or first `input`/`change` on any field, inside `.calculator-layout`. Restoring saved preferences on load does not count. | Once per page load | `analytics-events.js`, "Calculator start" |
+| `calc_start` | `entry_point` | string | `blog` \| `drinks` \| `home` \| `direct` \| `tracker` | First click on a button or beverage option, or first `input`/`change` on any field, inside `.calculator-layout`. Restoring saved preferences on load does not count. | Once per page load | `analytics-events.js`, "Calculator start" |
 | `beverage_add` | `beverage_name` | string | The preset's `slug` from `_data/beverages.yml` (`espresso`, `starbucks-cold-brew`, `excedrin-migraine`). `custom` for Custom Item. | "+" adds an item to Tracked Items (new row or a quantity increase on an existing row). | Every time | `script.js`, `addConsumptionItem()` |
 | | `caffeine_mg` | number | Integer mg added by this action (per serving × quantity) | | | |
 | | `source` | string | `preset` \| `custom` | | | |
