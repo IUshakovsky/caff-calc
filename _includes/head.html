@@ -1,10 +1,22 @@
 <head>
   <meta charset="UTF-8" />
+  {%- if page.content_group -%}{%- assign cg = page.content_group -%}
+  {%- elsif page.url == '/' -%}{%- assign cg = 'calculator' -%}
+  {%- elsif page.url == '/half-life/' -%}{%- assign cg = 'half_life' -%}
+  {%- elsif page.url == '/caffeine-in/' -%}{%- assign cg = 'drink_hub' -%}
+  {%- elsif page.collection == 'caffeine_in' -%}{%- assign cg = 'drink_page' -%}
+  {%- elsif page.compare -%}{%- assign cg = 'comparison' -%}
+  {%- elsif page.hub_title -%}{%- assign cg = 'category_hub' -%}
+  {%- elsif page.collection == 'posts' -%}{%- assign cg = 'blog_post' -%}
+  {%- elsif page.url contains '/blog/' or page.url == '/pages/topics/' -%}{%- assign cg = 'blog_index' -%}
+  {%- elsif page.url == '/404.html' -%}{%- assign cg = 'not_found' -%}
+  {%- else -%}{%- assign cg = 'info' -%}{%- endif %}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('set', { content_group: {{ cg | jsonify }} });
     gtag('config', '{{ site.google_analytics }}');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
