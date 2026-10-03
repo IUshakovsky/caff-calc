@@ -71,7 +71,7 @@ This matters if you're already low in iron—a known contributor to hair sheddin
 
 **Fix:** Separate coffee/tea from iron-rich meals or supplements by a couple of hours. Pair iron with vitamin C–rich foods to boost absorption.
 
-**What about dehydration?** Overstated. Moderate caffeine has at most a mild diuretic effect at rest and doesn't meaningfully dehydrate habitual drinkers.
+**What about dehydration?** Overstated. Moderate caffeine has at most a mild diuretic effect at rest and [doesn't meaningfully dehydrate habitual drinkers]({{ '/blog/caffeine-vasopressin-dehydration/' | relative_url }}).
 
 ---
 

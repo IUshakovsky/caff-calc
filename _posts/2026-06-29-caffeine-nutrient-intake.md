@@ -7,10 +7,11 @@ excerpt: "Caffeine can subtly change how your body absorbs iron and calcium, shi
 image: "/assets/images/blog/caffeine-nutrient-intake-balance.jpg"
 redirect_from: /2026/06/29/caffeine-nutrient-intake/
 drinks: [decaf-coffee, brewed-coffee, espresso, starbucks-cold-brew]
+related_posts: [caffeine-nutrition-optimization, caffeine-methylation-homocysteine, caffeine-electrolyte-balance, caffeine-bone-health-risks-benefits]
 ---
 
 
-Your morning coffee sharpens your focus—but it may also be quietly stealing iron from your lunch. Roughly 85% of U.S. adults drink caffeine daily, yet few realize that coffee and tea can cut non-heme iron absorption by up to 60% when sipped with meals. Caffeine itself has almost no calories, but it influences how your body handles key minerals like iron and calcium, shapes your appetite and sleep, and even adds trace amounts of potassium, magnesium, and B vitamins. The good news? A few small timing tweaks let you enjoy your favorite drinks without shortchanging your nutrition.
+Your morning coffee sharpens your focus—but it may also be quietly stealing iron from your lunch. Roughly 85% of U.S. adults drink caffeine daily, yet few realize that [coffee and tea can cut non-heme iron absorption]({{ '/blog/caffeine-nutrition-optimization/' | relative_url }}) by up to 60% when sipped with meals. Caffeine itself has almost no calories, but it influences how your body handles key minerals like iron and calcium, shapes your appetite and sleep, and even adds trace amounts of potassium, magnesium, and B vitamins. The good news? A few small timing tweaks let you enjoy your favorite drinks without shortchanging your nutrition.
 
 ---
 

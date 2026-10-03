@@ -7,6 +7,7 @@ excerpt: "Does caffeine dehydrate you or drain electrolytes? Learn how caffeine 
 image: "/assets/images/blog/caffeine-electrolyte-balance.jpg"
 redirect_from: /2026/03/11/caffeine-electrolyte-balance/
 drinks: [latte]
+related_posts: [hydration-caffeine, caffeine-vasopressin-dehydration, caffeine-kidney-stones-prevention, caffeine-nutrition-optimization]
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: "Caffeine and cortisol both shape how energized—or stressed—you fee
 image: "/assets/images/blog/caffeine-cortisol-stress.jpg"
 redirect_from: /2026/03/01/caffeine-cortisol-stress/
 drinks: [decaf-coffee, brewed-coffee, espresso, herbal-tea, starbucks-cold-brew]
+related_posts: [caffeine-anxiety-understanding, caffeine-stress-response, caffeine-adrenal-function-energy-levels, caffeine-hormones-response]
 ---
 
 

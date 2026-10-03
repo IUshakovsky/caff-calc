@@ -7,6 +7,7 @@ excerpt: "Make caffeine work for you—not against you. Learn how to pair caffei
 image: "/assets/images/blog/caffeine-nutrition-optimization.jpg"
 redirect_from: /2026/03/12/caffeine-nutrition-optimization/
 drinks: [decaf-coffee]
+related_posts: [caffeine-nutrient-intake, caffeine-blood-sugar, caffeine-electrolyte-balance, caffeine-bone-health-risks-benefits]
 ---
 
 
@@ -85,7 +86,7 @@ Boost absorption further by adding vitamin C-rich foods—citrus, bell pepper, s
 
 ### 5. Keep Perspective on Hydration
 
-Your daily coffees and teas count toward fluid intake for most people. Studies comparing coffee to water find no meaningful difference in hydration markers for habitual drinkers.
+[Your daily coffees and teas count toward fluid intake for most people]({{ '/blog/hydration-caffeine/' | relative_url }}). Studies comparing coffee to water find no meaningful difference in hydration markers for habitual drinkers.
 
 Still, if you notice more bathroom trips with large or especially strong caffeinated drinks, add an extra glass of water and you'll be fine.
 

@@ -6,6 +6,8 @@ tags: [caffeine and vasopressin, dehydration risk, caffeine hydration, diuretic 
 excerpt: "Is caffeine dehydrating? Learn how caffeine interacts with vasopressin (ADH), what the science says about hydration, and how to manage your intake to reduce dehydration risk."
 image: "/assets/images/blog/caffeine-vasopressin-dehydration.jpg"
 redirect_from: /2026/03/31/caffeine-vasopressin-dehydration/
+drinks: [brewed-coffee, black-tea]
+related_posts: [hydration-caffeine, caffeine-electrolyte-balance, caffeine-kidney-stones-prevention]
 ---
 
 

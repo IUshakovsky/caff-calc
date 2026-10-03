@@ -7,6 +7,7 @@ excerpt: "Caffeine can help you power through the day—but during menopause it 
 image: "/assets/images/blog/caffeine-menopause-managing-symptoms.jpg"
 redirect_from: /2026/02/16/caffeine-menopause-managing-symptoms/
 drinks: [green-tea, brewed-coffee, espresso, latte]
+related_posts: [caffeine-menstrual-cramps-relief-risk, caffeine-hormones-response, caffeine-bone-health-risks-benefits, caffeine-period-menstrual-cycle]
 ---
 
 

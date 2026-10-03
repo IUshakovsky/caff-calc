@@ -7,6 +7,7 @@ excerpt: "Caffeine can shift your internal clock, mute sleepiness signals, and f
 image: "/assets/images/blog/caffeine-natural-rhythms-cover.jpg"
 redirect_from: /2026/03/09/caffeine-natural-rhythms/
 drinks: [decaf-coffee, espresso]
+related_posts: [caffeine-circadian-rhythms-timing, caffeine-circadian-rhythm, caffeine-sleep-timing]
 ---
 
 

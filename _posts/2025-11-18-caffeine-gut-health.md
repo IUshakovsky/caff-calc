@@ -9,6 +9,7 @@ excerpt: "Why coffee sends you to the bathroom, what caffeine does to acid reflu
 image: "/assets/images/blog/caffeine-gut-health-cover.jpg"
 redirect_from: /2025/11/18/caffeine-gut-health/
 drinks: [decaf-coffee, starbucks-cold-brew, brewed-coffee, espresso]
+related_posts: [caffeine-histamine-sensitivity, caffeine-microbiome-gut, caffeine-nutrition-optimization]
 ---
 
 ## The two faces of coffee in the gut

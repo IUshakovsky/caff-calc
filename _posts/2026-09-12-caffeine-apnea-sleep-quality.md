@@ -7,6 +7,7 @@ excerpt: "Coffee doesn't appear to cause sleep apnea—but caffeine timing can w
 image: "/assets/images/blog/caffeine-apnea-sleep-quality.jpg"
 redirect_from: /2026/09/12/caffeine-apnea-sleep-quality/
 drinks: [decaf-coffee, brewed-coffee, espresso, herbal-tea, latte]
+related_posts: [caffeine-circadian-rhythms-timing, caffeine-sleep-timing, caffeine-memory-consolidation]
 ---
 
 

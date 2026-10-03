@@ -9,6 +9,7 @@ excerpt: "Caffeine can both help and hurt migraine. Learn how dose, timing, and 
 image: "/assets/images/blog/caffeine-migraine-triggers.jpg"
 redirect_from: /2026/02/08/caffeine-migraine-triggers/
 drinks: [decaf-coffee, green-tea]
+related_posts: [caffeine-headaches-migraines, caffeine-histamine-sensitivity, caffeine-menstrual-cramps-relief-risk, caffeine-hearing-risks]
 ---
 
 

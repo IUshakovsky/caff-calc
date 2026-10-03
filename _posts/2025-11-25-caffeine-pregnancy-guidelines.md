@@ -7,6 +7,7 @@ excerpt: "Learn how much caffeine is safe during pregnancy, the science behind i
 image: "/assets/images/blog/caffeine-pregnancy-guidelines.jpg"
 redirect_from: /2025/11/25/caffeine-pregnancy-guidelines/
 drinks: [decaf-coffee, black-tea, brewed-coffee, green-tea, espresso]
+related_posts: [caffeine-weight-sensitivity-guide, caffeine-medication-interactions, caffeine-epigenetics-gene-expression, caffeine-period-menstrual-cycle]
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: "Wondering if caffeine helps or hurts ADHD? Here's a research-backed lo
 image: "/assets/images/blog/caffeine-adhd-risks-benefits.jpg"
 redirect_from: /2026/02/03/caffeine-adhd-risks-benefits/
 drinks: [espresso, green-tea]
+related_posts: [caffeine-anxiety-understanding, caffeine-medication-interactions, caffeine-cognitive-flexibility, caffeine-teens-anxiety-risks-safe-limits]
 ---
 
 

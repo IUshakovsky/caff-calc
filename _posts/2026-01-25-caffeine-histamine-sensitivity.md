@@ -7,6 +7,7 @@ excerpt: "Coffee triggers flushing or headaches? Discover how caffeine interacts
 image: "/assets/images/blog/caffeine-histamine-sensitivity.jpg"
 redirect_from: /2026/01/25/caffeine-histamine-sensitivity/
 drinks: [instant-coffee, starbucks-cold-brew, black-tea, espresso, excedrin-extra-strength]
+related_posts: [caffeine-anxiety-understanding, caffeine-migraine-triggers, caffeine-skin-health-effects-limits, caffeine-gut-health]
 ---
 
 

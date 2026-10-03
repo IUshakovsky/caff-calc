@@ -7,6 +7,8 @@ excerpt: "Does coffee dehydrate you or count toward daily water goals? Science r
 image: "/assets/images/blog/caffeine-dehydration.jpg"
 image_alt: "A glass of water beside a steaming cup of coffee, symbolizing hydration and caffeine interplay"
 redirect_from: /2025/10/17/hydration-caffeine/
+drinks: [brewed-coffee, black-tea, cola-soda]
+related_posts: [caffeine-vasopressin-dehydration, caffeine-electrolyte-balance, caffeine-kidney-stones-prevention]
 ---
 
 

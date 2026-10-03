@@ -7,6 +7,7 @@ excerpt: "Caffeine can nudge your internal clock, delay melatonin, and fragment 
 image: "/assets/images/blog/caffeine-circadian-rhythm.jpg"
 redirect_from: /2026/07/04/caffeine-circadian-rhythm/
 drinks: [decaf-coffee, espresso, latte]
+related_posts: [caffeine-circadian-rhythms-timing, caffeine-natural-rhythms, caffeine-sleep-timing, caffeine-travel-jet-lag]
 ---
 
 

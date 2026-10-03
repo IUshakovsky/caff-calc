@@ -9,6 +9,7 @@ excerpt: "Explore how caffeine can safely enhance athletic performance, the best
 image: "/assets/images/blog/caff-performance.jpg"
 redirect_from: /2025/10/28/caffeine-exercise-performance/
 drinks: [caffeine-pill, green-tea]
+related_posts: [caffeine-pills-supplements, caffeine-glycogen-levels, caffeine-muscle-recovery, caffeine-weight-sensitivity-guide]
 ---
 
 
@@ -48,7 +49,7 @@ This range delivers measurable performance gains for most athletes without exces
 
 **Why this works:** Multiple studies show doses above 6 mg/kg don't provide additional performance benefits but do increase jitters, GI distress, and anxiety. Doses below 3 mg/kg often produce inconsistent results.
 
-**Implementation tip:** If you're new to pre-workout caffeine or particularly sensitive, start at 3 mg/kg. In subsequent sessions, increase by 0.5–1 mg/kg increments until you find your optimal dose—the point where you feel energized without side effects.
+**Implementation tip:** If you're new to pre-workout caffeine or particularly sensitive, [start at 3 mg/kg]({{ '/blog/caffeine-weight-sensitivity-guide/' | relative_url }}). In subsequent sessions, increase by 0.5–1 mg/kg increments until you find your optimal dose—the point where you feel energized without side effects.
 
 ### Time It 30–60 Minutes Pre-Exercise
 
@@ -71,7 +72,7 @@ Regular caffeine consumers develop tolerance, meaning you may need slightly high
 Coffee, pills, gels, and energy drinks all work. The key is total caffeine content, not the source. However:
 
 - **Coffee:** Variable caffeine content (50–200+ mg per cup). Requires experimentation to dial in dose.
-- **Caffeine pills:** Precise dosing (usually 100 or 200 mg tablets). Easiest for consistency.
+- **[Caffeine pills]({{ '/blog/caffeine-pills-supplements/' | relative_url }}):** Precise dosing (usually 100 or 200 mg tablets). Easiest for consistency.
 - **Gels/chews:** Convenient mid-race but often contain 25–100 mg. Good for topping off during long events.
 - **Energy drinks:** Often high in sugar and other stimulants. Read labels carefully.
 

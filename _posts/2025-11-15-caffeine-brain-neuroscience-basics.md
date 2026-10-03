@@ -7,6 +7,7 @@ excerpt: "Discover how caffeine rewires your brain chemistry, blocks sleep signa
 image: "/assets/images/blog/caffeine-brain-neuroscience.jpg"
 redirect_from: /2025/11/15/caffeine-brain-neuroscience-basics/
 drinks: [espresso, starbucks-cold-brew]
+related_posts: [caffeine-cognitive-flexibility, caffeine-memory-consolidation, caffeine-silent-brain-areas, caffeine-adhd-risks-benefits]
 ---
 
 
@@ -42,7 +43,7 @@ This explains why caffeine doesn't just wake you up; it makes tasks feel more en
 
 Caffeine reliably improves vigilance, reaction time, and sustained attention—particularly during boring or repetitive tasks. Multiple meta-analyses confirm moderate doses (50-300mg) reduce errors on attention-demanding work by 15-30%.
 
-But here's the catch: caffeine's effects on complex problem-solving and creative thinking are inconsistent. While it helps you stay focused on a spreadsheet, it doesn't necessarily make you better at brainstorming or strategic thinking. Some research even suggests high doses (400mg+) can impair flexible thinking in certain contexts.
+But here's the catch: caffeine's effects on [complex problem-solving and creative thinking]({{ '/blog/caffeine-cognitive-flexibility/' | relative_url }}) are inconsistent. While it helps you stay focused on a spreadsheet, it doesn't necessarily make you better at brainstorming or strategic thinking. Some research even suggests high doses (400mg+) can impair flexible thinking in certain contexts.
 
 **Practical insight:** Use caffeine for tasks requiring sustained focus, not creative breakthroughs. Save the coffee for data entry, not design work.
 

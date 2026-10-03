@@ -7,6 +7,7 @@ excerpt: "Caffeine doesn't just wake you up—it nudges your stress systems too.
 image: "/assets/images/blog/caffeine-stress-response-mechanisms.jpg"
 redirect_from: /2026/07/17/caffeine-stress-response/
 drinks: [brewed-coffee, espresso]
+related_posts: [caffeine-anxiety-understanding, caffeine-cortisol-stress, caffeine-adrenal-function-energy-levels]
 ---
 
 

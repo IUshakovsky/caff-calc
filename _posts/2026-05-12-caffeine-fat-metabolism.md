@@ -7,6 +7,7 @@ excerpt: "Does caffeine help you burn fat or store it? Learn how caffeine affect
 image: "/assets/images/blog/caffeine-fat-metabolism.jpg"
 redirect_from: /2026/05/12/caffeine-fat-metabolism/
 drinks: [decaf-coffee, espresso, latte]
+related_posts: [caffeine-blood-sugar, caffeine-thermogenesis-weight, caffeine-fasting-benefits-risks]
 ---
 
 

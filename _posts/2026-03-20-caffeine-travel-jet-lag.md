@@ -7,6 +7,7 @@ excerpt: "Flying across time zones? Learn how to use caffeine wisely to stay ale
 image: "/assets/images/blog/caffeine-travel-jet-lag.jpg"
 redirect_from: /2026/03/20/caffeine-travel-jet-lag/
 drinks: [espresso, green-tea]
+related_posts: [caffeine-circadian-rhythms-timing, caffeine-around-the-world-cultural-consumption, caffeine-circadian-rhythm, caffeine-sleep-timing]
 ---
 
 

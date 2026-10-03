@@ -7,6 +7,7 @@ except: "Does caffeine help or hurt your ability to switch tasks, adapt, and thi
 image: "/assets/images/blog/caffeine-cognitive-flexibility.jpg"
 redirect_from: /2026/04/29/caffeine-cognitive-flexibility/
 drinks: [decaf-coffee]
+related_posts: [caffeine-memory-consolidation, caffeine-adhd-risks-benefits, caffeine-brain-neuroscience-basics, caffeine-silent-brain-areas]
 ---
 
 

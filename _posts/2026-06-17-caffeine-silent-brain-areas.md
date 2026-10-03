@@ -7,6 +7,7 @@ excerpt: "Caffeine doesn't just perk up your senses—it reshapes activity in yo
 image: "/assets/images/blog/caffeine-silent-brain-areas.jpg"
 redirect_from: /2026/06/17/caffeine-silent-brain-areas/
 drinks: [brewed-coffee]
+related_posts: [caffeine-cognitive-flexibility, caffeine-memory-consolidation, caffeine-brain-neuroscience-basics]
 ---
 
 

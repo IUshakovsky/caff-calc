@@ -7,6 +7,7 @@ excerpt: "Learn how caffeine interacts with common medications, what that means 
 image: "/assets/images/blog/caffeine-medication-interactions.jpg"
 redirect_from: /2025/12/02/caffeine-medication-interactions/
 drinks: [decaf-coffee, excedrin-extra-strength, herbal-tea, anacin, caffeine-pill]
+related_posts: [caffeine-pills-supplements, caffeine-adhd-risks-benefits, caffeine-pregnancy-guidelines, caffeine-thyroid-health-risks-safe-limits]
 ---
 
 

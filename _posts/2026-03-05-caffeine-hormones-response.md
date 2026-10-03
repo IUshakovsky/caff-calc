@@ -7,6 +7,7 @@ excerpt: "From cortisol spikes to delayed melatonin, caffeine nudges key hormone
 image: "/assets/images/blog/caffeine-hormones-response.jpg"
 redirect_from: /2026/03/05/caffeine-hormones-response/
 drinks: [decaf-coffee, espresso, latte]
+related_posts: [caffeine-menstrual-cramps-relief-risk, caffeine-cortisol-stress, caffeine-endocrine-system, caffeine-blood-sugar]
 ---
 
 
@@ -22,7 +23,7 @@ The good news? Once you understand which hormones caffeine touches—and when—
 
 Caffeine is a central nervous system stimulant that blocks adenosine, a chemical that builds sleep pressure across the day. When adenosine is blocked, your brain releases more alertness signals and stress mediators. That cascade shifts hormones controlling how awake you feel, how stressed you are, and when you fall asleep.
 
-It also intersects with blood sugar control after meals and changes across life stages—like pregnancy—or with medicines such as estrogen-containing birth control.
+It also intersects with [blood sugar control after meals]({{ '/blog/caffeine-blood-sugar/' | relative_url }}) and changes across life stages—like [pregnancy]({{ '/blog/caffeine-pregnancy-guidelines/' | relative_url }})—or with medicines such as [estrogen-containing birth control]({{ '/blog/caffeine-medication-interactions/' | relative_url }}).
 
 What's at stake:
 
@@ -51,7 +52,7 @@ This contributes to the wired, heart-racy feeling some people get after a strong
 
 ### Melatonin Timing
 
-An evening dose can delay your circadian clock's melatonin rhythm by roughly 40 minutes, according to research published in *Science Translational Medicine*. That means sleepiness arrives later—and your overall sleep architecture may suffer even if you eventually drift off.
+An evening dose can [delay your circadian clock's melatonin rhythm]({{ '/blog/caffeine-circadian-rhythms-timing/' | relative_url }}) by roughly 40 minutes, according to research published in *Science Translational Medicine*. That means sleepiness arrives later—and your overall sleep architecture may suffer even if you eventually drift off.
 
 ### Insulin and Glucose
 

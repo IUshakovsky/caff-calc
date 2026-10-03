@@ -7,6 +7,7 @@ excerpt: "From espresso rituals in Italy to tea ceremonies in Japan, explore how
 image: "/assets/images/blog/caffeine-around-the-world-cultural-consumption.jpg"
 redirect_from: /2025/11/11/caffeine-around-the-world-cultural-consumption/
 drinks: [espresso, green-tea, black-tea, decaf-coffee, herbal-tea]
+related_posts: [weirdest-caffeine-sources, moderate-caffeine-intake-benefits, caffeine-travel-jet-lag]
 ---
 
 

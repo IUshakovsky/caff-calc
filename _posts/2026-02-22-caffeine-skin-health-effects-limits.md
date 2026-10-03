@@ -7,6 +7,7 @@ excerpt: "Does caffeine help or hurt your skin? Learn what science says about ac
 image: "/assets/images/blog/caffeine-skin-health-effects-limits.jpg"
 redirect_from: /2026/02/22/caffeine-skin-health-effects-limits/
 drinks: [decaf-coffee, green-tea, herbal-tea]
+related_posts: [caffeine-histamine-sensitivity, caffeine-acne-triggering-factors-and-safe-limits, caffeine-hair-loss-safe-limits]
 ---
 
 
@@ -144,7 +145,7 @@ There's no strong evidence that caffeine alone causes acne. Patterns that raise 
 They can help temporarily with puffiness by affecting small blood vessels and fluid dynamics, but results are modest and short-lived. Use them as a morning pick-me-up, not a replacement for sleep, sunscreen, or comprehensive skincare.
 
 **Q: Does coffee dehydrate my skin?**  
-In moderate amounts, especially for regular users, caffeinated beverages do not cause net dehydration and still count toward daily fluid intake. Extremely high doses may increase urine output but don't typically negate hydration when total fluids are adequate.
+In moderate amounts, especially for regular users, caffeinated beverages do not cause net dehydration and [still count toward daily fluid intake]({{ '/blog/hydration-caffeine/' | relative_url }}). Extremely high doses may increase urine output but don't typically negate hydration when total fluids are adequate.
 
 **Q: Can coffee help with rosacea?**  
 Observational data from a large cohort found lower rosacea risk among women who drank more caffeinated coffee. This doesn't prove cause and effect or replace treatment, but it suggests caffeinated coffee isn't universally a rosacea trigger.

@@ -7,6 +7,7 @@ excerpt: "From cortisol spikes to melatonin delays, caffeine influences key horm
 image: "/assets/images/blog/caffeine-endocrine-system-effects.jpg"
 redirect_from: /2026/06/12/caffeine-endocrine-system/
 drinks: [latte, decaf-coffee, espresso]
+related_posts: [caffeine-blood-sugar, caffeine-hormones-response, caffeine-thyroid-health-risks-safe-limits]
 ---
 
 

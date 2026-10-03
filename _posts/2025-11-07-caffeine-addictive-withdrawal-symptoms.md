@@ -7,6 +7,7 @@ excerpt: "Explore whether caffeine is addictive, how withdrawal works, and pract
 image: "/assets/images/blog/is-caffeine-addictive-cover.jpg"
 redirect_from: /2025/11/07/caffeine-addictive-withdrawal-symptoms/
 drinks: [decaf-coffee, green-tea]
+related_posts: [caffeine-headaches-migraines, caffeine-hearing-risks, caffeine-tolerance-reset-guide]
 ---
 
 
@@ -124,7 +125,7 @@ Whether you're cutting back for health reasons, trying to reset your tolerance, 
 
 ### 2. Hydrate Aggressively
 
-**Why it works:** Dehydration worsens headaches, and caffeine is a mild diuretic. Withdrawal headaches compound dehydration effects.
+**Why it works:** Dehydration worsens headaches, and [caffeine is a mild diuretic]({{ '/blog/hydration-caffeine/' | relative_url }}). Withdrawal headaches compound dehydration effects.
 
 **How to do it:** Drink 8-10 glasses of water daily, especially during the first week. Add electrolytes (coconut water, sports drinks, or electrolyte tablets) if headaches are severe.
 

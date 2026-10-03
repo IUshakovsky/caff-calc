@@ -7,6 +7,7 @@ excerpt: "Does caffeine affect your ears? Explore what science says about caffei
 image: "/assets/images/blog/caffeine-hearing-risks.jpg"
 redirect_from: /2026/08/21/caffeine-hearing-risks/
 drinks: [brewed-coffee, latte, black-tea]
+related_posts: [caffeine-migraine-triggers, caffeine-nerve-sensitivity, caffeine-blood-vessel-function, caffeine-addictive-withdrawal-symptoms]
 ---
 
 

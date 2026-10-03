@@ -9,6 +9,7 @@ excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and action
 image: "/assets/images/blog/caffeine-anxiety.jpg"
 redirect_from: /2025/10/20/caffeine-anxiety-understanding/
 drinks: [decaf-coffee, excedrin-extra-strength, green-tea, coca-cola-classic, herbal-tea]
+related_posts: [caffeine-adhd-risks-benefits, caffeine-histamine-sensitivity, caffeine-teens-anxiety-risks-safe-limits, caffeine-stress-response]
 ---
 
 
@@ -121,7 +122,7 @@ Yes, but dose and timing matter significantly. Many people with mild anxiety tol
 Temporarily, yes. Withdrawal symptoms peak 24-48 hours after your last dose and can include headache, fatigue, irritability, and increased anxiety. These symptoms typically resolve within 7-10 days. Gradual tapering (reducing by 25-50mg every 2-3 days) minimizes withdrawal severity.
 
 **Q: Are energy drinks worse for anxiety than coffee?**  
-Often, yes. Energy drinks frequently contain 150-300mg of caffeine per can (sometimes more), plus high sugar loads that cause blood glucose spikes and crashes—both anxiety triggers. They also may contain additional stimulants like guarana or taurine that amplify effects. Coffee offers more controlled dosing and fewer additives.
+Often, yes. Energy drinks frequently contain 150-300mg of caffeine per can (sometimes more), plus high sugar loads that cause [blood glucose spikes and crashes]({{ '/blog/caffeine-blood-sugar/' | relative_url }})—both anxiety triggers. They also may contain additional stimulants like guarana or taurine that amplify effects. Coffee offers more controlled dosing and fewer additives.
 
 **Q: Can I build tolerance to caffeine's anxiety effects?**  
 Partially. Regular users develop tolerance to some effects (like increased alertness) but may not fully adapt to anxiogenic effects, especially at high doses. Tolerance also increases dependency risk, making it harder to function without caffeine—a different problem entirely.

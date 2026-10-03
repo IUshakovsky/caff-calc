@@ -7,6 +7,7 @@ excerpt: "From fast to slow metabolizers, your genes shape how caffeine affects 
 image: "/assets/images/blog/caffeine-genetics-contrasts.jpg"
 redirect_from: /2026/03/13/caffeine-genetics-effects/
 drinks: [espresso, green-tea, brewed-coffee]
+related_posts: [caffeine-epigenetics-gene-expression, caffeine-methylation-homocysteine, caffeine-weight-sensitivity-guide, caffeine-medication-interactions]
 ---
 
 

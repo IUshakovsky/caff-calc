@@ -7,6 +7,7 @@ excerpt: "Does caffeine raise or lower nitric oxide? We review the latest human 
 image: "/assets/images/blog/caffeine-nitric-oxide-vessels.jpg"
 redirect_from: /2026/05/06/caffeine-nitric-oxide/
 drinks: [decaf-coffee, brewed-coffee, caffeine-pill, espresso]
+related_posts: [caffeine-blood-vessel-function, caffeine-blood-pressure-risks-safe-limits, caffeine-cardiac-health]
 ---
 
 

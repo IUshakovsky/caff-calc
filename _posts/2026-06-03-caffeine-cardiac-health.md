@@ -7,6 +7,7 @@ excerpt: "What decades of research really say about caffeine and your heart—bl
 image: "/assets/images/blog/caffeine-cardiac-health-cover.jpg"
 redirect_from: /2026/06/03/caffeine-cardiac-health/
 drinks: [espresso, latte]
+related_posts: [caffeine-blood-vessel-function, caffeine-blood-pressure-risks-safe-limits, caffeine-nitric-oxide]
 ---
 
 

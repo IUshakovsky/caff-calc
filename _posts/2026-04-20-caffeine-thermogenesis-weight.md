@@ -9,6 +9,7 @@ excerpt: "Caffeine's thermogenic effect is real but small - roughly 4-5% of 24-h
 image: "/assets/images/blog/caffeine-thermogenesis-weight.jpg"
 redirect_from: /2026/04/20/caffeine-thermogenesis-weight/
 drinks: [decaf-coffee, caffeine-pill, green-tea]
+related_posts: [caffeine-pills-supplements, caffeine-fat-metabolism, caffeine-weight-sensitivity-guide, caffeine-blood-sugar]
 ---
 
 ## Caffeine raises energy expenditure, but only a little

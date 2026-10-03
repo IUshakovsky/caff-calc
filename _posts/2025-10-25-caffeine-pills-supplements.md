@@ -9,6 +9,7 @@ excerpt: "One 200mg caffeine pill equals about two coffees with none of the volu
 image: "/assets/images/blog/caffeine-pills.jpg"
 redirect_from: /2025/10/25/caffeine-pills-supplements/
 drinks: [caffeine-pill, brewed-coffee, alani-nu-energy, pepsi-zero-sugar]
+related_posts: [caffeine-medication-interactions, caffeine-weight-sensitivity-guide, caffeine-exercise-performance, caffeine-pregnancy-guidelines]
 ---
 
 ## The 200 mg pill problem
@@ -39,7 +40,7 @@ Pills are not appropriate for everyone. The FDA notes that adolescents and young
 - Use of MAO inhibitors, stimulant medications or other drugs that interact with caffeine
 - Under 18
 
-Caffeine interacts with several medications. Oral contraceptives and some antibiotics can slow caffeine clearance, while smoking speeds it. If you take prescription medications, check with a clinician or pharmacist before adding caffeine pills.
+[Caffeine interacts with several medications]({{ '/blog/caffeine-medication-interactions/' | relative_url }}). Oral contraceptives and some antibiotics can slow caffeine clearance, while smoking speeds it. If you take prescription medications, check with a clinician or pharmacist before adding caffeine pills.
 
 ## Practical safety guidelines
 
@@ -71,7 +72,7 @@ Caffeine can slightly increase energy expenditure and fat oxidation, but the eff
 Jitters, rapid heartbeat, anxiety, nausea, headache, insomnia and restlessness are common early signs. Severe overdose can cause vomiting, seizures or dangerous heart rhythms and requires emergency medical care.
 
 **Q: Is it safe to take caffeine pills before a workout?**  
-Doses of 3–6 mg/kg taken 30–60 minutes before exercise are supported by research for performance. For a 70 kg adult, 3 mg/kg is 210 mg, so one 200 mg pill is at the low end of that range. Higher doses increase side effects without reliable additional benefit.
+Doses of 3–6 mg/kg taken 30–60 minutes before exercise are supported by research for performance. [For a 70 kg adult, 3 mg/kg is 210 mg]({{ '/blog/caffeine-weight-sensitivity-guide/' | relative_url }}), so one 200 mg pill is at the low end of that range. Higher doses increase side effects without reliable additional benefit.
 
 ## References & Further Reading
 

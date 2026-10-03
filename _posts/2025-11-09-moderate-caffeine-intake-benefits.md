@@ -7,6 +7,7 @@ excerpt: "Moderate caffeine intake can boost alertness and cognitive performance
 image: "/assets/images/blog/moderate-caffeine-benefits.jpg"
 redirect_from: /2025/11/09/moderate-caffeine-intake-benefits/
 drinks: [decaf-coffee, black-tea, brewed-coffee, espresso, red-bull]
+related_posts: [caffeine-around-the-world-cultural-consumption, caffeine-weight-sensitivity-guide, caffeine-pregnancy-guidelines]
 ---
 
 
@@ -129,7 +130,7 @@ Pay attention to whether your usual dose still works. If you notice diminishing 
 Caffeine can enhance endurance performance, reaction time, and focus when dosed strategically:
 
 - **For physical performance**: 3–6 mg per kg body weight, taken 30–60 minutes before exercise. For a 70 kg (154 lb) person, that's 210–420 mg—close to the daily limit.
-- **For cognitive tasks**: 40–200 mg, taken 30 minutes before studying, driving, or demanding work.
+- **For cognitive tasks**: 40–200 mg, [taken 30 minutes before studying]({{ '/blog/caffeine-memory-consolidation/' | relative_url }}), driving, or demanding work.
 
 **Why this works:** Caffeine reduces perception of effort during endurance exercise and improves attention during cognitively demanding tasks. A meta-analysis in *Sports Medicine* found a 2–4% improvement in endurance performance with caffeine supplementation.
 

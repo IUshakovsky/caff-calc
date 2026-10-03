@@ -9,6 +9,7 @@ excerpt: "Caffeine briefly tightens blood vessels and raises blood pressure, yet
 image: "/assets/images/blog/caffeine-blood-vessels-function.jpg"
 redirect_from: /2026/05/30/caffeine-blood-vessel-function/
 drinks: [decaf-coffee, brewed-coffee]
+related_posts: [caffeine-nitric-oxide, caffeine-blood-pressure-risks-safe-limits, caffeine-cardiac-health, caffeine-hearing-risks]
 ---
 
 

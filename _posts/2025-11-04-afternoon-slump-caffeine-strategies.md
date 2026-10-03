@@ -20,7 +20,7 @@ This guide reveals science-backed strategies to use caffeine strategically: the 
 
 ## Why the Afternoon Slump Hits (And Why More Coffee Isn't Always the Answer)
 
-The mid-afternoon energy crash maps directly onto your circadian rhythm. Between 1-3 p.m., your body naturally experiences a dip in alertness—the same biological system that makes you sleepy at night.
+The mid-afternoon energy crash [maps directly onto your circadian rhythm]({{ '/blog/caffeine-circadian-rhythms-timing/' | relative_url }}). Between 1-3 p.m., your body naturally experiences a dip in alertness—the same biological system that makes you sleepy at night.
 
 Caffeine blocks adenosine (the sleepiness chemical), temporarily masking fatigue. But there's a catch: caffeine consumed after 2 p.m. can disrupt sleep architecture, reducing deep sleep and creating carryover tiredness the next day.
 

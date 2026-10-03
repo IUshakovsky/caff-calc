@@ -7,6 +7,7 @@ excerpt: "Can your daily coffee nudge how genes turn on and off? Explore what sc
 image: "/assets/images/blog/caffeine-epigenetics-gene-expression.jpg"
 redirect_from: /2026/03/22/caffeine-epigenetics-gene-expression/
 drinks: [decaf-coffee, brewed-coffee, espresso]
+related_posts: [caffeine-methylation-homocysteine, caffeine-genetics-effects, caffeine-pregnancy-guidelines]
 ---
 
 
@@ -32,7 +33,7 @@ Good news: these effects are not destiny. Epigenetics is dynamic. With smart hab
 
 Epigenetics refers to chemical "switches" on DNA and on the proteins DNA wraps around. They don't change the DNA letters themselves, but they help control how loudly genes are read.
 
-- **DNA methylation:** Small methyl groups attach to DNA and can dial genes down or up, depending on location.
+- **DNA methylation:** [Small methyl groups attach to DNA]({{ '/blog/caffeine-methylation-homocysteine/' | relative_url }}) and can dial genes down or up, depending on location.
 - **Histone modifications:** Proteins called histones spool DNA tightly. Acetyl or methyl marks on histones loosen or tighten that packaging, changing gene access.
 - **Epitranscriptomics:** Chemical marks on RNA (like m6A) influence how genetic messages are processed, though this remains an emerging area relative to caffeine.
 

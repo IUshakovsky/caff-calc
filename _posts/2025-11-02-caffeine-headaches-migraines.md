@@ -7,6 +7,7 @@ excerpt: "Caffeine can relieve migraines or trigger them—it depends on your do
 image: "/assets/images/blog/caffeine-headaches-migraines-cover.jpg"
 redirect_from: /2025/11/02/caffeine-headaches-migraines/
 drinks: [decaf-coffee, green-tea, excedrin-migraine]
+related_posts: [caffeine-migraine-triggers, caffeine-addictive-withdrawal-symptoms, caffeine-medication-interactions]
 ---
 
 
@@ -41,7 +42,7 @@ However, individual responses varied dramatically. Some people tolerated 300mg w
 
 A randomized controlled trial in *Psychopharmacology* (2020) found that abrupt caffeine cessation triggered moderate-to-severe headaches in 47% of regular users within 24 hours. Symptoms peaked at 20-51 hours and could last up to 9 days. For migraine sufferers, this withdrawal can provoke full migraine attacks, not just tension headaches.
 
-The bottom line: caffeine is neither universally good nor bad for migraines. Success requires finding your personal threshold and managing it strategically.
+The bottom line: caffeine is neither universally good nor bad for migraines. Success requires [finding your personal threshold]({{ '/blog/caffeine-migraine-triggers/' | relative_url }}) and managing it strategically.
 
 ---
 
@@ -53,7 +54,7 @@ Understanding the mechanism helps you use caffeine smarter.
 
 Caffeine's primary action is blocking adenosine receptors in your brain. Adenosine normally accumulates throughout the day, making you feel tired. When caffeine blocks these receptors, you feel more alert—but there's a deeper effect relevant to migraines.
 
-During a migraine attack, blood vessels in the brain dilate abnormally. Caffeine causes mild vasoconstriction (narrowing of blood vessels), which can help counteract this dilation and reduce pain intensity. This vascular effect is why caffeine appears in medications like Excedrin Migraine.
+During a migraine attack, blood vessels in the brain dilate abnormally. Caffeine causes mild vasoconstriction ([narrowing of blood vessels]({{ '/blog/caffeine-blood-vessel-function/' | relative_url }})), which can help counteract this dilation and reduce pain intensity. This vascular effect is why caffeine appears in medications like Excedrin Migraine.
 
 **Why withdrawal triggers headaches:**
 
@@ -126,7 +127,7 @@ If you take caffeine-containing pain medications more than 3 days per week, you 
 
 **What to do:** Drink 8oz of water for every caffeinated beverage. Target 80-100oz of water daily if consuming 200mg+ caffeine.
 
-**Why it works:** Caffeine is a mild diuretic. Dehydration is a common migraine trigger—research in *The Journal of Headache and Pain* (2020) found that even mild dehydration (2% body water loss) increased headache severity by 34%. Caffeine compounds this risk.
+**Why it works:** [Caffeine is a mild diuretic]({{ '/blog/caffeine-vasopressin-dehydration/' | relative_url }}). Dehydration is a common migraine trigger—research in *The Journal of Headache and Pain* (2020) found that even mild dehydration (2% body water loss) increased headache severity by 34%. Caffeine compounds this risk.
 
 **Specific example:** Morning coffee routine? Drink 8oz water immediately after finishing your cup. Set phone reminders every 2 hours for hydration checks.
 

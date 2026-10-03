@@ -7,6 +7,7 @@ excerpt: "Does caffeine worsen menstrual cramps or could it offer relief? This s
 image: "/assets/images/blog/caffeine-menstrual-cramps-relief-or-risk.jpg"
 redirect_from: /2025/11/20/caffeine-menstrual-cramps-relief-risk/
 drinks: [green-tea, starbucks-cold-brew]
+related_posts: [caffeine-period-menstrual-cycle, caffeine-migraine-triggers, caffeine-hormones-response, caffeine-menopause-managing-symptoms]
 ---
 
 

@@ -7,6 +7,7 @@ excerpt: "Does caffeine help or hurt memory consolidation? Learn how timing, sle
 image: "/assets/images/blog/caffeine-memory-consolidation-brain.jpg"
 redirect_from: /2026/07/27/caffeine-memory-consolidation/
 drinks: [decaf-coffee, espresso, green-tea, latte]
+related_posts: [caffeine-cognitive-flexibility, caffeine-sleep-timing, caffeine-brain-neuroscience-basics, caffeine-circadian-rhythms-timing]
 ---
 
 

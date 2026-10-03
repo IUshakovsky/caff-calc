@@ -8,6 +8,8 @@ tags: [caffeine, weight, sensitivity, personalized-health, sleep, nutrition]
 excerpt: "How many mg of caffeine is safe for your body weight? EFSA's 3 mg/kg single-dose rule explained, plus a calculator for your personal daily limit."
 image: "/assets/images/blog/caffeine-weight-sensitivity-guide.jpg"
 redirect_from: /2025/11/13/caffeine-weight-sensitivity-guide/
+drinks: [brewed-coffee, black-tea, cola-soda, c4-original-pre-workout]
+related_posts: [caffeine-genetics-effects, caffeine-pregnancy-guidelines, caffeine-pills-supplements, caffeine-medication-interactions]
 ---
 
 ## Why the same cup hits people differently
@@ -75,7 +77,7 @@ Fast clearance often feels like: peak alertness in 20–30 minutes, effects fadi
 No. Doses of 6 mg/kg improve performance in research studies but also increase jitters, rapid heart rate and GI distress. Reserve 6 mg/kg for key sessions and use 3–4 mg/kg for regular training. Include caffeine-free training days to avoid tolerance build-up.
 
 **Q: What if I am pregnant or taking medication?**  
-ACOG recommends keeping caffeine under 200 mg per day during pregnancy. People with cardiovascular disease, anxiety disorders, or those taking CYP1A2-inhibiting medications such as fluvoxamine, ciprofloxacin or oral contraceptives may need stricter limits. Check with a healthcare provider.
+[ACOG recommends keeping caffeine under 200 mg per day during pregnancy]({{ '/blog/caffeine-pregnancy-guidelines/' | relative_url }}). People with cardiovascular disease, anxiety disorders, or those taking [CYP1A2-inhibiting]({{ '/blog/caffeine-medication-interactions/' | relative_url }}) medications such as fluvoxamine, ciprofloxacin or oral contraceptives may need stricter limits. Check with a healthcare provider.
 
 ## References & Further Reading
 

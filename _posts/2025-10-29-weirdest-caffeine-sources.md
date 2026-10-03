@@ -7,6 +7,7 @@ excerpt: "Kola nuts, guarana, yerba mate—caffeine hides in surprising places. 
 image: "/assets/images/blog/sources.jpg"
 redirect_from: /2025/10/29/weirdest-caffeine-sources/
 drinks: [green-tea, espresso, latte, monster-energy-original, red-bull]
+related_posts: [caffeine-around-the-world-cultural-consumption, caffeine-pills-supplements]
 ---
 
 
@@ -74,7 +75,7 @@ Guarana seeds from the Amazon rainforest contain the highest natural caffeine co
 
 **Caffeine per 8oz cup:** 30-50mg (traditional gourd) or 65-130mg (concentrated tea bags)
 
-Yerba mate isn't just caffeine—it's a cultural experience. In Argentina, Uruguay, and Paraguay, sharing mate from a communal gourd is a daily ritual. The leaves contain caffeine plus theobromine and theophylline, creating what fans describe as "smooth, alert energy without coffee jitters."
+Yerba mate isn't just caffeine—[it's a cultural experience]({{ '/blog/caffeine-around-the-world-cultural-consumption/' | relative_url }}). In Argentina, Uruguay, and Paraguay, sharing mate from a communal gourd is a daily ritual. The leaves contain caffeine plus theobromine and theophylline, creating what fans describe as "smooth, alert energy without coffee jitters."
 
 **Why the caffeine content varies so much:**
 - Traditional gourd preparation uses lukewarm water, extracting less caffeine

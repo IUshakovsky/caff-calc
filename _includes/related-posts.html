@@ -7,9 +7,20 @@
                          "sleep") are ignored: every article here is about
                          caffeine, so those tags match any post against any
                          other and drown out real relatedness.
-    Pass 2 ("loose")   - only runs if pass 1 could not fill the block. Counts
-                         every shared tag, generic ones included, so a post
-                         whose tags are all generic still gets recommendations.
+    Pass 2 ("slug")    - only runs if pass 1 could not fill the block. Counts
+                         shared words in the two slugs, minus words most slugs
+                         here share ("caffeine", "risks", "safe"...). Tags are
+                         spelled inconsistently ("sleep", "caffeine and sleep"),
+                         so slugs catch pairs the tags miss.
+    Pass 3 ("loose")   - only runs if passes 1-2 could not fill the block.
+                         Counts every shared tag, generic ones included, so a
+                         post whose tags are all generic still gets
+                         recommendations.
+
+  Pass 0 ("curated") - slugs listed in the post's `related_posts` front
+                         matter, in that order, always come first.
+
+  Posts with `redirect_to` are never picked: they are stubs, not articles.
 
   Within each pass the overlap threshold sweeps high to low, so a post sharing
   3 tags always outranks one sharing 1. site.posts is newest-first, so ties
@@ -19,30 +30,59 @@
   array; the "|" delimiters stop one URL prefix-matching another.
 {%- endcomment -%}
 
-{%- assign max_related = 3 -%}
+{%- assign max_related = 4 -%}
+{%- assign slug_stopwords = '|caffeine|and|the|of|in|a|to|for|your|how|guide|risk|benefit|safe|limit|effect|health|understanding|two|' -%}
+{%- comment -%} Slug words with a trailing "s" dropped, so "migraine" matches "migraines" {%- endcomment -%}
+{%- assign page_words = '|' -%}
+{%- for word in page.slug | split: '-' -%}
+  {%- assign last = word | slice: -1 -%}
+  {%- if last == 's' and word.size > 3 -%}{%- assign word = word | slice: 0, word.size | minus: 1 -%}{%- endif -%}
+  {%- assign page_words = page_words | append: word | append: '|' -%}
+{%- endfor -%}
 {%- assign seen = '' -%}
 {%- assign related_count = 0 -%}
+{%- for slug in page.related_posts -%}
+  {%- assign post = site.posts | where: "slug", slug | first -%}
+  {%- if post and post.url != page.url and post.redirect_to == nil and related_count < max_related -%}
+    {%- assign seen = seen | append: '|' | append: post.url | append: '|' -%}
+    {%- assign related_count = related_count | plus: 1 -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- assign generic_cutoff = site.posts.size | divided_by: 4 -%}
 
-{%- if page.tags and page.tags.size > 0 -%}
-  {%- for pass in (1..2) -%}
+{%- for pass in (1..3) -%}
+  {%- if pass == 2 or page.tags.size > 0 -%}
     {%- unless related_count >= max_related -%}
       {%- for threshold in (1..4) reversed -%}
         {%- unless related_count >= max_related -%}
           {%- for post in site.posts -%}
             {%- unless related_count >= max_related -%}
               {%- assign probe = post.url | prepend: '|' | append: '|' -%}
-              {%- if post.url != page.url and post.tags.size > 0 -%}
+              {%- if post.url != page.url and post.redirect_to == nil -%}
                 {%- unless seen contains probe -%}
                   {%- assign common = 0 -%}
+                  {%- if pass == 2 -%}
+                    {%- assign post_words = post.slug | split: '-' -%}
+                    {%- for word in post_words -%}
+                      {%- assign last = word | slice: -1 -%}
+                      {%- if last == 's' and word.size > 3 -%}{%- assign word = word | slice: 0, word.size | minus: 1 -%}{%- endif -%}
+                      {%- assign probe_word = word | prepend: '|' | append: '|' -%}
+                      {%- unless slug_stopwords contains probe_word -%}
+                        {%- if page_words contains probe_word -%}
+                          {%- assign common = common | plus: 1 -%}
+                        {%- endif -%}
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  {%- else -%}
                   {%- for tag in post.tags -%}
                     {%- if page.tags contains tag -%}
                       {%- assign tag_posts = site.tags[tag] -%}
-                      {%- if pass == 2 or tag_posts.size <= generic_cutoff -%}
+                      {%- if pass == 3 or tag_posts.size <= generic_cutoff -%}
                         {%- assign common = common | plus: 1 -%}
                       {%- endif -%}
                     {%- endif -%}
                   {%- endfor -%}
+                  {%- endif -%}
                   {%- if common >= threshold -%}
                     {%- assign seen = seen | append: probe -%}
                     {%- assign related_count = related_count | plus: 1 -%}
@@ -54,8 +94,8 @@
         {%- endunless -%}
       {%- endfor -%}
     {%- endunless -%}
-  {%- endfor -%}
-{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
 
 {%- if related_count > 0 -%}
 <aside class="card mb-4" aria-labelledby="related-articles-heading">
