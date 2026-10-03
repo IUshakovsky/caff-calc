@@ -8,7 +8,10 @@ layout: default
   scripts/check-caffeine-in.py can hold it to the 250-word thin-content floor.
   Front matter: title, seo_title, description, related (2-3 slugs), article (post slug),
   optional faq (list of question/answer, also emitted as FAQPage schema by
-  schema.html), sources (list of name/url backing the faq), articles (post slugs
+  schema.html), faq_drinks (slugs whose figures the faq quotes; their data
+  sources are listed), faq_numbers (mg figures in the faq taken from the page
+  copy rather than the data, for check-caffeine-in.py), sources (list of
+  name/url backing the faq), articles (post slugs
   to list first under "Useful articles") and last_modified_at.
 {%- endcomment -%}
 {%- assign bev = site.data.beverages | where: "slug", page.slug | first -%}
@@ -302,6 +305,12 @@ layout: default
           <ul class="mb-2">
             <li><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a>: caffeine figures on this page, checked {{ bev.verified | date: "%-d %B %Y" }}.</li>
             <li><a href="{{ fda_url }}" target="_blank" rel="noopener">FDA, Spilling the Beans: How Much Caffeine is Too Much?</a>: the {{ daily_cap }} mg daily reference for healthy adults.</li>
+            {%- for slug in page.faq_drinks %}
+            {%- assign other = site.data.beverages | where: "slug", slug | first %}
+            {%- if other %}
+            <li><a href="{{ other.source_url }}" target="_blank" rel="noopener">{{ other.source_name }}</a>: {{ other.product }} figures in the questions above.</li>
+            {%- endif %}
+            {%- endfor %}
             {%- for src in page.sources %}
             <li><a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
             {%- endfor %}

@@ -107,7 +107,9 @@
                 {%- else -%}
                   {%- assign base = nil -%}
                 {%- endif -%}
-                {%- if base -%}
+                {%- if base and s.size_ml == nil and row.usda_mg_per_100g != nil -%}
+                  {{ row.usda_mg_per_100g }} mg{{ unit }}
+                {%- elsif base -%}
                   {%- if s.caffeine_mg != nil -%}
                     {{ s.caffeine_mg | times: 100.0 | divided_by: base | round }} mg{{ unit }}
                   {%- else -%}
