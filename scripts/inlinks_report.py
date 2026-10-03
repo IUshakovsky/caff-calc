@@ -13,7 +13,7 @@ linking to it from main content ("main"), the same minus archive listings
 and separately from chrome. Several links from the same source page count once.
 The minimums apply to "main", as in the brief.
 
-Not counted as sources: jekyll-redirect-from stubs (old /YYYY/MM/DD/slug/
+Not counted as sources or targets: jekyll-redirect-from stubs (old /YYYY/MM/DD/slug/
 URLs, recognisable by their meta refresh) and the feed.
 
 Options:
@@ -84,6 +84,7 @@ def collect():
             if f.endswith(".html"):
                 pages[os.path.join(root, f)] = url_for(os.path.join(root, f))
 
+    stubs = set()
     main_in = defaultdict(set)
     chrome_in = defaultdict(set)
     bad = []
@@ -91,6 +92,7 @@ def collect():
         with open(path, encoding="utf-8", errors="replace") as fh:
             body = fh.read()
         if STUB.search(body):
+            stubs.add(src)
             continue
         body = HEAD.sub("", body)
         chrome = "".join(NAVBAR.findall(body)) + "".join(FOOTER.findall(body))
@@ -108,8 +110,8 @@ def collect():
                 if target != src:
                     bucket[target].add(src)
 
-    targets = sorted(u for u in pages.values()
-                     if BLOG.match(u) or (DRINK.match(u) and u not in DRINK_HUBS))
+    targets = sorted(u for u in pages.values() if u not in stubs and (
+                     BLOG.match(u) or (DRINK.match(u) and u not in DRINK_HUBS)))
     counts = {u: {"main": len(main_in[u]),
                   "ctx": sum(1 for s in main_in[u] if not LISTING.match(s)),
                   "chrome": len(chrome_in[u])} for u in targets}
