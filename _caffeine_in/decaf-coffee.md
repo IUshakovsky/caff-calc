@@ -4,6 +4,24 @@ seo_title: "Caffeine in Decaf Coffee: 2 to 15 mg a Cup, Not Zero"
 description: "Decaf coffee still has 2 to 15 mg of caffeine per 8 oz cup, per the FDA, and a Venti Starbucks decaf has 30 mg. When that matters, and when it doesn't."
 related: [brewed-coffee, starbucks-pike-place-roast, green-tea, decaf-black-tea]
 article: caffeine-pregnancy-guidelines
+faq_drinks:
+- starbucks-decaf-pike-place-roast
+- herbal-tea
+faq_numbers:
+- 120
+faq:
+- question: How much caffeine is in decaf coffee?
+  answer: The FDA puts a typical 8 fl oz cup of decaf at 2-15 mg. Decaffeinated coffee has most of its caffeine removed, not all of it.
+- question: How much caffeine is in Starbucks decaf?
+  answer: Starbucks lists 15 mg for a Short Decaf Pike Place Roast, 20 mg for a Tall, 25 mg for a Grande and 30 mg for a Venti, toward the top of the FDA's range for decaf.
+- question: Is decaf coffee OK during pregnancy?
+  answer: 'Switching to decaf is one of the easiest ways to stay under the 200 mg a day ACOG uses in pregnancy, but it still counts: four Venti Starbucks decafs come to 120 mg.'
+- question: Can decaf coffee keep you awake?
+  answer: For most people the caffeine in a cup of decaf is small. The FDA suggests that people who react strongly to caffeine may want to avoid decaf altogether; brewed herbal tea, which USDA records at zero, is the caffeine-free option.
+sources:
+- name: ACOG, Moderate Caffeine Consumption During Pregnancy
+  url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2010/08/moderate-caffeine-consumption-during-pregnancy
+last_modified_at: 2026-10-03
 ---
 
 ## Decaffeinated is not caffeine-free

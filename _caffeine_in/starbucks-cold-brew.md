@@ -4,6 +4,27 @@ seo_title: "Starbucks Cold Brew Caffeine: 205 mg in a Grande, by Size"
 description: "Starbucks Cold Brew has 155 mg in a Tall, 205 mg in a Grande and 360 mg in a Trenta. How it compares with hot coffee, Nitro and the sweet cream versions."
 related: [starbucks-pike-place-roast, starbucks-caffe-latte, red-bull]
 article: caffeine-sleep-timing
+faq_drinks:
+- starbucks-pike-place-roast
+- starbucks-nitro-cold-brew
+- starbucks-vanilla-sweet-cream-cold-brew
+faq:
+- question: How much caffeine is in a Grande Starbucks Cold Brew?
+  answer: 205 mg, per Starbucks. A Tall has 155 mg, a Venti (24 oz) 310 mg and a Trenta (30 oz) 360 mg.
+- question: Is cold brew stronger than hot coffee?
+  answer: Not at Starbucks. A Grande Cold Brew carries 205 mg; a Grande hot Pike Place Roast carries 315-390 mg.
+- question: 'Cold Brew vs Nitro Cold Brew: which has more caffeine?'
+  answer: Nitro. A Grande Nitro Cold Brew has 280 mg, 75 mg more than a Grande Cold Brew, though Nitro only comes in Tall and Grande.
+- question: Does sweet cream cold brew have less caffeine?
+  answer: A little. Vanilla Sweet Cream Cold Brew carries 185 mg in a Grande, 20 mg less than plain Cold Brew, because part of the cup is cream.
+- question: Is a Trenta Cold Brew too much caffeine?
+  answer: At 360 mg it is 40 mg short of the 400 mg a day the FDA cites for healthy adults, and well above the 200 mg EFSA assessed as a safe single dose. With caffeine's mean half-life of about five hours, an afternoon Trenta is still partly in your system at bedtime.
+sources:
+- name: EFSA, Scientific Opinion on the safety of caffeine (2015)
+  url: https://www.efsa.europa.eu/en/efsajournal/pub/4102
+- name: NCBI Bookshelf, Pharmacology of Caffeine (mean half-life)
+  url: https://www.ncbi.nlm.nih.gov/books/NBK223808/
+last_modified_at: 2026-10-03
 ---
 
 ## Less than hot coffee, size for size

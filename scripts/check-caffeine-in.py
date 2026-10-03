@@ -53,7 +53,7 @@ def article_href(slug):
     return f"/blog/{slug}/"
 
 
-MG = re.compile(r"(\d+(?:\.\d+)?)(?:-(\d+(?:\.\d+)?))? mg")
+MG = re.compile(r"(?<![\d,])(\d[\d,]*(?:\.\d+)?)(?:-(\d[\d,]*(?:\.\d+)?))? mg")
 SENTENCE = re.compile(r"(?<=[.!?])\s+")
 
 
@@ -88,7 +88,7 @@ def faq_errors(slug, fm, beverages):
     for item in fm.get("faq") or []:
         for m in MG.finditer(item["answer"]):
             for n in filter(None, m.groups()):
-                if float(n) not in allowed:
+                if float(n.replace(",", "")) not in allowed:
                     errors.append(f"{slug}: faq figure {m.group(0)!r} not traceable to the data ({item['question']})")
     return errors
 

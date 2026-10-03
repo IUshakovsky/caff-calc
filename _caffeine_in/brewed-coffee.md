@@ -4,6 +4,25 @@ seo_title: "Caffeine in Coffee: 95 mg per 8 oz Cup, and Why It Varies"
 description: "An 8 oz cup of brewed coffee has about 95 mg of caffeine by USDA's figures. Why real cups range far wider, and how many fit in a day."
 related: [starbucks-pike-place-roast, espresso, decaf-coffee]
 article: caffeine-half-life-sleep
+faq_drinks:
+- starbucks-blonde-roast
+- starbucks-pike-place-roast
+- instant-coffee
+faq:
+- question: How much caffeine is in a cup of coffee?
+  answer: USDA's reference value for drip coffee is 40 mg per 100 g, which gives 95 mg in an 8 fl oz cup, 142 mg in 12 oz and 189 mg in 16 oz. Real cups vary with how much ground coffee goes in and how long it brews.
+- question: How many cups of coffee a day is safe?
+  answer: The FDA describes its 400 mg daily figure for healthy adults as about two to three 12 oz cups. At USDA's reference strength that is four 8 oz cups (380 mg). In pregnancy, the 200 mg ceiling ACOG uses is two 8 oz cups.
+- question: Does dark roast have more caffeine than light roast?
+  answer: Not in Starbucks' figures, which list identical caffeine ranges for its blonde, medium and dark brewed roasts at every size. How much coffee goes into the brewer matters far more than the roast.
+- question: Why does coffee-shop coffee have more caffeine?
+  answer: Chain coffee is usually brewed much stronger than USDA's reference cup. A Grande Starbucks Pike Place Roast carries 315-390 mg, against 189 mg for 16 oz at USDA's reference strength.
+- question: Does instant coffee have less caffeine than brewed?
+  answer: 'Yes, about two thirds as much in USDA''s figures: 62 mg in an 8 oz cup of instant, against 95 mg for brewed.'
+sources:
+- name: ACOG, Moderate Caffeine Consumption During Pregnancy
+  url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2010/08/moderate-caffeine-consumption-during-pregnancy
+last_modified_at: 2026-10-03
 ---
 
 ## Why "a cup of coffee" is not one number

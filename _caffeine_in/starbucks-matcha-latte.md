@@ -4,6 +4,26 @@ seo_title: "Starbucks Matcha Latte Caffeine: 65 mg in a Grande, by Size"
 description: "A Grande Starbucks Matcha Latte has 65 mg of caffeine, from 20 mg in a Short to 85 mg in a Venti. How matcha compares with coffee, chai and green tea."
 related: [green-tea, starbucks-chai-latte, starbucks-caffe-latte]
 article: caffeine-anxiety-understanding
+faq_drinks:
+- starbucks-caffe-latte
+- starbucks-pike-place-roast
+- starbucks-iced-matcha-latte
+- starbucks-chai-latte
+faq:
+- question: How much caffeine is in a Grande matcha latte at Starbucks?
+  answer: '65 mg, per Starbucks. Unlike its espresso drinks, matcha scales with the cup: 20 mg in a Short, 45 mg in a Tall and 85 mg in a Venti.'
+- question: Does a matcha latte have more caffeine than coffee?
+  answer: No. A Grande Matcha Latte (65 mg) has less than half the caffeine of a Grande Caffè Latte (150 mg), and a fraction of a Grande Pike Place Roast (315-390 mg).
+- question: Is an iced matcha latte stronger than a hot one?
+  answer: Barely different. The iced Grande has the same 65 mg as the hot one; the iced Tall has 40 mg against 45 mg hot, and the 24 oz iced Venti matches the hot Venti at 85 mg.
+- question: 'Matcha latte or chai latte: which has more caffeine?'
+  answer: 'Matcha, slightly: a Grande Matcha Latte carries 65 mg and a Grande Chai Latte 55 mg.'
+- question: Can I drink a matcha latte while pregnant?
+  answer: By caffeine alone, a Grande (65 mg) uses about a third of the 200 mg daily ceiling ACOG uses in pregnancy. Two Ventis (170 mg) come close to all of it.
+sources:
+- name: ACOG, Moderate Caffeine Consumption During Pregnancy
+  url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2010/08/moderate-caffeine-consumption-during-pregnancy
+last_modified_at: 2026-10-03
 ---
 
 ## Less than half a latte

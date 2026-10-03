@@ -4,6 +4,20 @@ seo_title: "Caffeine Pills: 200 mg a Tablet, and Why That Matters"
 description: "A standard caffeine tablet has 200 mg, about two cups of coffee, and NoDoz and Vivarin match it. What the label says and where the risks are."
 related: [excedrin-extra-strength, brewed-coffee, celsius-original]
 article: caffeine-pills-supplements
+faq_drinks:
+- nodoz-maximum-strength
+- vivarin
+- brewed-coffee
+faq:
+- question: How much caffeine is in a caffeine pill?
+  answer: The standard over-the-counter caffeine tablet has 200 mg. NoDoz Maximum Strength and Vivarin carry 200 mg per caplet or tablet too, according to their drug labels.
+- question: Is a caffeine pill the same as a cup of coffee?
+  answer: One 200 mg tablet is about two 8 oz cups of drip coffee at USDA's reference strength (95 mg each), taken in one swallow instead of over the time it takes to drink them.
+- question: How often can you take caffeine pills?
+  answer: The labels say adults and children 12 and over take one tablet no more often than every 3 to 4 hours, and not to use them in children under 12 or as a substitute for sleep. Two tablets already make 400 mg, the whole daily figure the FDA cites for healthy adults.
+- question: How many caffeine pills is an overdose?
+  answer: The FDA estimates that toxic effects such as seizures can be seen with rapid consumption of around 1,200 mg of caffeine, the amount in six 200 mg tablets. In case of overdose, the labels say to get medical help or contact a Poison Control Center right away.
+last_modified_at: 2026-10-03
 ---
 
 ## 200 mg per tablet, across the major brands

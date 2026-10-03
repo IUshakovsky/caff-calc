@@ -4,6 +4,21 @@ seo_title: "Red Bull Caffeine: 80 mg per 8.4 oz Can, Every Can Size"
 description: "An 8.4 oz can of Red Bull has 80 mg of caffeine; 12, 16 and 20 oz cans have 114, 151 and 198 mg. How that compares with coffee and other energy drinks."
 related: [monster-energy-original, celsius-original, brewed-coffee]
 article: caffeine-exercise-performance
+faq_drinks:
+- brewed-coffee
+- monster-energy-original
+faq:
+- question: How much caffeine is in a can of Red Bull?
+  answer: '80 mg in the standard 8.4 fl oz can, by Red Bull''s own figures. The bigger cans scale with volume: 114 mg in 12 oz, 151 mg in 16 oz and 198 mg in 20 oz.'
+- question: Does Red Bull have more caffeine than coffee?
+  answer: Less than a typical cup. A standard can has 80 mg, while an 8 oz cup of drip coffee at USDA's reference strength has 95 mg.
+- question: 'Red Bull vs Monster: which has more caffeine?'
+  answer: 'Monster, by a little at the same size: a 16 oz Monster Energy Original carries 160 mg, a 16 oz Red Bull 151 mg. The standard 8.4 oz Red Bull has half a Monster''s caffeine.'
+- question: How many Red Bulls can you drink in a day?
+  answer: Five standard 8.4 oz cans reach 400 mg, the daily figure the FDA cites for healthy adults. Red Bull itself says pregnant and nursing women should stay under 200 mg a day, two and a half standard cans.
+- question: Is Red Bull OK for teenagers?
+  answer: The FDA notes that medical experts, citing the American Academy of Pediatrics, advise against energy drinks for children and teens.
+last_modified_at: 2026-10-03
 ---
 
 ## Less than most people expect

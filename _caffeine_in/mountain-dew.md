@@ -4,6 +4,27 @@ seo_title: "Mountain Dew Caffeine: 54 mg per 12 oz Can"
 description: "A 12 oz can of Mountain Dew has 54 mg of caffeine, and Diet Mountain Dew has the same. How it compares with Coke, Pepsi, Kickstart and coffee."
 related: [coca-cola-classic, pepsi, red-bull]
 article: caffeine-teens-anxiety-risks-safe-limits
+faq_drinks:
+- diet-mountain-dew
+- coca-cola-classic
+- pepsi
+- red-bull
+- mtn-dew-kickstart
+faq_numbers:
+- 125
+- 146
+faq:
+- question: How much caffeine is in a can of Mountain Dew?
+  answer: 54 mg in a 12 fl oz can, according to PepsiCo's product facts. That is the most of the mainstream sodas on this site.
+- question: Does Diet Mountain Dew have more caffeine?
+  answer: 'No, the same: Diet Mountain Dew also carries 54 mg per 12 oz can. PepsiCo sells a caffeine-free Diet Mountain Dew for no caffeine at all.'
+- question: 'Mountain Dew vs Coke: which has more caffeine?'
+  answer: 'Mountain Dew, by 20 mg a can: 54 mg against 34 mg in Coca-Cola Classic. Pepsi sits between them at 38 mg.'
+- question: Does Mountain Dew have more caffeine than Red Bull?
+  answer: No. A 12 oz can of Mountain Dew has 54 mg, about two thirds of the 80 mg in a standard 8.4 oz Red Bull.
+- question: How much Mountain Dew can a teenager have?
+  answer: This site's calculator sets 125 mg for a 50 kg teen at its default sensitivity. Two cans (108 mg) fit under that; a can plus a 16 oz Mtn Dew Kickstart (92 mg) comes to 146 mg and does not.
+last_modified_at: 2026-10-03
 ---
 
 ## The most caffeinated mainstream soda

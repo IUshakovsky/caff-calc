@@ -4,6 +4,25 @@ seo_title: "Caffeine in Espresso: 63 mg a Shot, 126 mg a Double"
 description: "A single 1 oz shot of espresso has about 63 mg of caffeine by USDA's figures; a Starbucks shot has 75 mg. Per ounce it is the strongest coffee there is."
 related: [starbucks-caffe-latte, brewed-coffee, starbucks-pike-place-roast, dark-chocolate-covered-coffee-beans]
 article: afternoon-slump-caffeine-strategies
+faq_drinks:
+- brewed-coffee
+- starbucks-espresso
+- starbucks-blonde-vanilla-latte
+faq_numbers:
+- 375
+faq:
+- question: How much caffeine is in a shot of espresso?
+  answer: About 63 mg in a 1 fl oz single shot, from USDA's figure of 212 mg per 100 g. A double shot carries 126 mg.
+- question: Does espresso have more caffeine than drip coffee?
+  answer: 'Per ounce, yes: 212 mg per 100 g against 40 mg for drip coffee. Per serving, no: a single shot (63 mg) has less than an 8 oz mug of drip (95 mg), and it takes a double to overtake it.'
+- question: How much caffeine is in a Starbucks espresso shot?
+  answer: 'Starbucks lists 75 mg for each shot of its signature espresso, a little above USDA''s generic figure: 150 mg for a Doppio and 300 mg for a Quad. Its blonde espresso shots carry 85 mg each.'
+- question: How many shots of espresso a day is too many?
+  answer: Counting Starbucks shots, five (375 mg) stay under the 400 mg a day the FDA cites for healthy adults, and a sixth goes past it. A triple shot (225 mg) in one sitting is already above the 200 mg EFSA assessed as a safe single dose.
+sources:
+- name: EFSA, Scientific Opinion on the safety of caffeine (2015)
+  url: https://www.efsa.europa.eu/en/efsajournal/pub/4102
+last_modified_at: 2026-10-03
 ---
 
 ## Strongest per ounce, modest per shot

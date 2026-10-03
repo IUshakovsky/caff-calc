@@ -4,6 +4,22 @@ seo_title: "Excedrin Caffeine: 65 mg a Caplet, 130 mg a Dose"
 description: "Excedrin Extra Strength has 65 mg of caffeine per caplet, 130 mg per two-caplet dose, and 520 mg a day at the label maximum. Migraine and Tension Headache compared."
 related: [caffeine-pill, excedrin-migraine, brewed-coffee]
 article: caffeine-headaches-migraines
+faq_drinks:
+- brewed-coffee
+- excedrin-migraine
+- excedrin-tension-headache
+faq_numbers:
+- 520
+faq:
+- question: How much caffeine is in Excedrin Extra Strength?
+  answer: 65 mg per caplet, according to its drug label. The dose is two caplets, so each dose carries 130 mg of caffeine alongside acetaminophen and aspirin.
+- question: Is the caffeine in Excedrin more than a cup of coffee?
+  answer: A little more than an average cup. One dose (130 mg) compares with 95 mg in an 8 oz cup of drip coffee at USDA's reference strength; the label itself says a dose has about as much caffeine as a cup of coffee.
+- question: Can I drink coffee while taking Excedrin Extra Strength?
+  answer: The label says to limit caffeine-containing medicines, foods and drinks while taking it. At its 24-hour maximum of 8 caplets, Excedrin alone supplies 520 mg, more than the 400 mg a day the FDA cites for healthy adults.
+- question: Do Excedrin Migraine and Tension Headache have the same caffeine?
+  answer: 'Per caplet, yes: 65 mg in each. Their labels set different daily maximums, though: Excedrin Migraine allows two caplets in 24 hours unless a doctor directs otherwise (130 mg), and Tension Headache allows six (390 mg).'
+last_modified_at: 2026-10-03
 ---
 
 ## Caffeine is one of three active ingredients
