@@ -5,6 +5,23 @@ seo_title: "Caffeine in Starbucks Caramel Macchiato: 75–150 mg"
 description: "A Grande Starbucks Caramel Macchiato has 150 mg of caffeine. It is steamed milk and vanilla syrup marked with espresso, not a traditional espresso macchiato."
 related: [starbucks-caffe-latte, starbucks-pumpkin-spice-latte, starbucks-flat-white]
 article: afternoon-slump-caffeine-strategies
+faq_drinks:
+- starbucks-iced-caramel-macchiato
+- starbucks-espresso-macchiato
+- starbucks-espresso
+faq:
+- question: How much caffeine is in a Grande Caramel Macchiato?
+  answer: 150 mg. Starbucks builds a Grande on two espresso shots; a Short or Tall gets one shot (75 mg), and a hot Venti stays at two shots, 150 mg.
+- question: Does an iced Caramel Macchiato have more caffeine than a hot one?
+  answer: Only in a Venti. The iced Venti is a 24 oz cup with three shots, 225 mg, against 150 mg for the 20 oz hot Venti. Iced Tall and Grande match the hot drink at 75 and 150 mg.
+- question: 'Caramel Macchiato vs espresso macchiato: which has more caffeine?'
+  answer: 'It depends on the shots, not the name. A Starbucks Espresso Macchiato is espresso marked with a little foam: 75 mg as a Solo, 150 mg as a Doppio. A Grande Caramel Macchiato carries the same 150 mg as a Doppio, spread through 16 oz of milk and syrup.'
+- question: How much caffeine does an extra shot add?
+  answer: Each extra Starbucks espresso shot adds 75 mg. A Grande Caramel Macchiato with one extra shot carries 225 mg, above the 200 mg EFSA assessed as a safe single dose for healthy adults.
+sources:
+- name: EFSA, Scientific Opinion on the safety of caffeine (2015)
+  url: https://www.efsa.europa.eu/en/efsajournal/pub/4102
+last_modified_at: 2026-10-03
 ---
 
 ## Not a traditional espresso macchiato
@@ -15,7 +32,7 @@ The published caffeine is 75 mg in a Short or Tall and 150 mg in a Grande or Ven
 
 ## Watch the late-day Venti
 
-A Venti Caramel Macchiato at 150 mg is the same caffeine as a Grande, not double. Starbucks uses two espresso shots for both Grande and Venti hot sizes in this drink, with the extra volume made up by milk. If you are trying to stay under a 400 mg daily total, a Grande or Venti is still a significant single drink, but it is below the 200 mg single-dose threshold EFSA says can affect sleep in some adults.
+A Venti Caramel Macchiato at 150 mg is the same caffeine as a Grande, not double. Starbucks uses two espresso shots for both Grande and Venti hot sizes in this drink, with the extra volume made up by milk. If you are trying to stay under a 400 mg daily total, a Grande or Venti is still a significant single drink, but it is below the 200 mg that [EFSA](https://www.efsa.europa.eu/en/efsajournal/pub/4102) assessed as a safe single dose for healthy adults. EFSA also notes that 100 mg close to bedtime can disturb sleep in some adults.
 
 ## Ordering and customisation do not change the espresso count
 

@@ -4,6 +4,24 @@ seo_title: "Caffeine in Green Tea: 29 mg per 8 oz Cup"
 description: "An 8 oz cup of brewed green tea has about 29 mg of caffeine by USDA's figures, a third of a cup of coffee. How it compares with black tea, matcha and Starbucks tea."
 related: [starbucks-matcha-latte, starbucks-chai-latte, decaf-coffee]
 article: caffeine-histamine-sensitivity
+faq_drinks:
+- brewed-coffee
+- black-tea
+- starbucks-matcha-latte
+- herbal-tea
+faq:
+- question: How much caffeine is in a cup of green tea?
+  answer: About 29 mg in an 8 fl oz cup, from USDA's measurement of 12 mg per 100 g of brewed green tea. How much leaf you use and how long it steeps move the real figure up or down.
+- question: Does green tea have less caffeine than coffee?
+  answer: 'Yes, roughly a third as much: 29 mg in 8 oz against 95 mg for the same cup of drip coffee at USDA''s reference strength. It also has less than brewed black tea, at 47 mg per 8 oz.'
+- question: Is matcha stronger than green tea?
+  answer: Usually, because you drink the powdered leaf instead of steeping it and throwing it away. A Grande Starbucks Matcha Latte carries 65 mg, a little over two cups of brewed green tea.
+- question: Can I drink green tea before bed?
+  answer: It is not caffeine-free. Caffeine's mean half-life is about five hours, so an evening cup is still partly in your system at bedtime. Brewed herbal teas such as chamomile have no caffeine in USDA's data.
+sources:
+- name: NCBI Bookshelf, Pharmacology of Caffeine (mean half-life)
+  url: https://www.ncbi.nlm.nih.gov/books/NBK223808/
+last_modified_at: 2026-10-03
 ---
 
 ## About a third of a cup of coffee

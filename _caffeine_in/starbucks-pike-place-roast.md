@@ -4,6 +4,21 @@ seo_title: "Starbucks Pike Place Caffeine: 315-390 mg in a Grande"
 description: "A Grande Pike Place Roast has 315 to 390 mg of caffeine, and the top of the Venti range passes 400 mg. Every size, and how blonde and dark roasts compare."
 related: [starbucks-cold-brew, starbucks-caffe-latte, brewed-coffee]
 article: caffeine-tolerance-reset-guide
+faq_drinks:
+- starbucks-blonde-roast
+- starbucks-decaf-pike-place-roast
+faq:
+- question: How much caffeine is in a Grande Pike Place?
+  answer: Starbucks lists 315-390 mg for a 16 fl oz Grande. A Short has 155-195 mg, a Tall 235-290 mg and a Venti 390-490 mg. This site counts the top of each range toward your daily limit.
+- question: Does Blonde Roast have more caffeine than Pike Place?
+  answer: Not by Starbucks' own figures. It lists the same ranges for Blonde Roast and Pike Place at every size, 315-390 mg in a Grande, so the lighter roast is not the stronger cup here.
+- question: Can one Venti Pike Place put me over 400 mg?
+  answer: Yes, at the top of its range. A Venti spans 390-490 mg, and the 400 mg a day the FDA cites for healthy adults falls inside that span.
+- question: How much caffeine is in a decaf Pike Place?
+  answer: Starbucks lists 25 mg for a Grande Decaf Pike Place Roast, from 15 mg in a Short to 30 mg in a Venti. Decaf is not caffeine-free, but a Grande has well under a tenth of the regular roast.
+- question: Why does Starbucks give a range instead of one number?
+  answer: Brewed coffee varies from batch to batch, so Starbucks publishes a range for its brewed roasts. Its espresso drinks get a single figure because their caffeine comes from a fixed number of shots.
+last_modified_at: 2026-10-03
 ---
 
 ## The strongest regular drink on the Starbucks menu

@@ -4,6 +4,24 @@ seo_title: "Caffeine in Dark Chocolate: 23 mg per Ounce, 81 mg a Bar"
 description: "An ounce of 70-85% dark chocolate has about 23 mg of caffeine, and a 101 g bar about 81 mg, by USDA's figures. How cacao percentage and milk chocolate compare."
 related: [milk-chocolate, dark-chocolate-covered-coffee-beans, green-tea]
 article: weirdest-caffeine-sources
+faq_drinks:
+- milk-chocolate
+- white-chocolate
+- red-bull
+- dark-chocolate-covered-coffee-beans
+faq:
+- question: How much caffeine is in dark chocolate?
+  answer: 'For 70-85% cacao, USDA measures 80 mg per 100 g: about 23 mg in a 1 oz (28 g) piece and 81 mg in a whole 101 g bar.'
+- question: Does dark chocolate have more caffeine than milk chocolate?
+  answer: 'Yes, about four times as much by weight in USDA''s figures: 80 mg per 100 g for 70-85% dark against 20 mg for milk chocolate. White chocolate has none.'
+- question: Can a chocolate bar keep you awake?
+  answer: A whole 70-85% bar (81 mg) has about as much caffeine as an 8.4 oz Red Bull (80 mg), and caffeine's mean half-life is about five hours, so a bar late in the evening is still partly in your system at bedtime. An ounce (23 mg) is a much smaller dose.
+- question: How much caffeine is in chocolate-covered coffee beans?
+  answer: Far more than in chocolate. USDA measures the dark-chocolate kind at 839 mg per 100 g, about 336 mg in a 40 g serving of 28 beans.
+sources:
+- name: NCBI Bookshelf, Pharmacology of Caffeine (mean half-life)
+  url: https://www.ncbi.nlm.nih.gov/books/NBK223808/
+last_modified_at: 2026-10-03
 ---
 
 ## About a quarter of a coffee per ounce

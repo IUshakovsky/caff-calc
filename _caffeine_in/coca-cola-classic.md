@@ -4,6 +4,22 @@ seo_title: "Coca-Cola Caffeine: 34 mg per 12 oz Can"
 description: "A 12 oz can of Coca-Cola has 34 mg of caffeine, about a third of a cup of coffee. How Coke compares with Diet Coke, Pepsi and Mountain Dew."
 related: [diet-coke, pepsi, mountain-dew]
 article: caffeine-dental-health
+faq_drinks:
+- pepsi
+- diet-coke
+- brewed-coffee
+faq_numbers:
+- 125
+faq:
+- question: How much caffeine is in a 12 oz can of Coke?
+  answer: A 12 fl oz can of Coca-Cola Classic has 34 mg of caffeine, the figure The Coca-Cola Company publishes. That is a little over a third of an 8 oz cup of drip coffee at USDA's reference strength (95 mg).
+- question: 'Coke vs Pepsi: which has more caffeine?'
+  answer: 'Pepsi, by 4 mg: 38 mg per 12 oz can against 34 mg in Coca-Cola Classic. Diet Coke has more than both, at 46 mg a can.'
+- question: How many cans of Coca-Cola can I drink in a day?
+  answer: 'On caffeine alone, eleven 12 oz cans (374 mg) stay under the 400 mg a day the FDA cites for healthy adults, and a twelfth takes you to 408 mg. Teenagers have far less room: three cans (102 mg) come close to the 125 mg this site''s calculator sets for a 50 kg teen.'
+- question: Is there a caffeine-free Coca-Cola?
+  answer: Yes. The Coca-Cola Company sells caffeine-free versions of Coca-Cola, Diet Coke and Coca-Cola Zero Sugar, and lists Sprite, Fresca and Fanta among its drinks with no caffeine.
+last_modified_at: 2026-10-03
 ---
 
 ## A small dose, by coffee's standards

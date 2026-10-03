@@ -5,6 +5,23 @@ seo_title: "Caffeine in Pepsi Zero Sugar: 38 mg per 12 oz"
 description: "A 12 oz Pepsi Zero Sugar has 38 mg of caffeine. It is the same caffeine as regular Pepsi and Diet Pepsi, with no sugar."
 related: [pepsi, diet-coke, coca-cola-classic]
 article: caffeine-weight-sensitivity-guide
+faq_drinks:
+- pepsi
+- diet-pepsi
+- coca-cola-classic
+- diet-coke
+faq_numbers:
+- 63
+faq:
+- question: How much caffeine is in Pepsi Zero Sugar?
+  answer: 38 mg in a 12 oz can, according to PepsiCo Product Facts. A 20 oz bottle works out to about 63 mg.
+- question: Does Pepsi Zero Sugar have more caffeine than regular Pepsi?
+  answer: No, the two are the same at 38 mg per 12 oz. Taking out the sugar did not change the caffeine.
+- question: 'Pepsi Zero Sugar vs Diet Pepsi: which has more caffeine?'
+  answer: 'Pepsi Zero Sugar, slightly: 38 mg per 12 oz can against 35 mg in Diet Pepsi.'
+- question: Does Pepsi Zero Sugar have more caffeine than Coke?
+  answer: More than Coca-Cola Classic, at 38 mg against 34 mg per 12 oz can. Diet Coke has more than either, at 46 mg.
+last_modified_at: 2026-10-03
 ---
 
 ## Same caffeine as regular Pepsi

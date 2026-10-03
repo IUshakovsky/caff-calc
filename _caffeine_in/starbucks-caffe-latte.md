@@ -4,6 +4,26 @@ seo_title: "Starbucks Latte Caffeine: 75 mg Tall, 150 mg Grande or Venti"
 description: "A Starbucks Caffè Latte has 75 mg in a Short or Tall and 150 mg in a Grande or hot Venti. Why a bigger latte isn't always stronger, and the iced exception."
 related: [starbucks-pike-place-roast, espresso, starbucks-matcha-latte]
 article: moderate-caffeine-intake-benefits
+faq_drinks:
+- starbucks-iced-caffe-latte
+- starbucks-pike-place-roast
+- starbucks-blonde-vanilla-latte
+- starbucks-flat-white
+faq:
+- question: How much caffeine is in a Starbucks Grande latte?
+  answer: '150 mg: two shots of Starbucks'' signature espresso at 75 mg each. A Short or Tall latte has one shot, 75 mg.'
+- question: Does a Venti latte have more caffeine than a Grande?
+  answer: 'Hot, no: the 20 oz hot Venti has the same two shots as a Grande, 150 mg. The iced Venti is a 24 oz cup with a third shot, 225 mg.'
+- question: Which has more caffeine at Starbucks, a latte or brewed coffee?
+  answer: Brewed coffee, by a wide margin. A Grande Pike Place Roast carries 315-390 mg, more than double the 150 mg in a Grande latte, which is mostly steamed milk.
+- question: Which Starbucks lattes have more caffeine than a regular latte?
+  answer: The ones made with different espresso. A Grande Blonde Vanilla Latte has 170 mg, because blonde shots carry 85 mg each, and a Grande Flat White, made with ristretto shots, has 195 mg.
+- question: How many Starbucks lattes a day is too many?
+  answer: Against the 400 mg a day the FDA cites for healthy adults, two Grandes (300 mg) leave 100 mg, and a third would bring the day to 450 mg. In pregnancy, at ACOG's 200 mg ceiling, one Grande leaves 50 mg.
+sources:
+- name: ACOG, Moderate Caffeine Consumption During Pregnancy
+  url: https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2010/08/moderate-caffeine-consumption-during-pregnancy
+last_modified_at: 2026-10-03
 ---
 
 ## The shot count, not the cup, sets the caffeine
