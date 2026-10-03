@@ -47,6 +47,29 @@
         </div>
       </div>
 
+      {%- comment -%}
+        Most-searched drink pages (Search Console impressions, Sept 2026). Static
+        links so they sit high on the page; the full table below lists every drink.
+      {%- endcomment -%}
+      {%- assign popular = "coca-cola-classic,starbucks-pumpkin-spice-latte,starbucks-caramel-macchiato,starbucks-pike-place-roast,starbucks-caffe-latte,green-tea,pepsi-zero-sugar,alani-nu-energy,dark-chocolate-70-85,starbucks-iced-coffee" | split: "," %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Popular drinks</h2>
+          <ul class="row list-unstyled mb-2">
+            {%- for slug in popular %}
+            {%- assign bev = site.data.beverages | where: "slug", slug | first %}
+            {%- assign bev_page = site.caffeine_in | where: "slug", slug | first %}
+            {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first %}
+            {%- if bev_page %}
+            <li class="col-12 col-md-6 mb-2"><a href="{{ bev_page.url | relative_url }}">{{ bev.product }}</a>
+              <span class="small text-muted">&mdash; {% include serving-mg.html serving=serving %}</span></li>
+            {%- endif %}
+            {%- endfor %}
+          </ul>
+          <p class="mb-0"><a href="{{ '/caffeine-in/' | relative_url }}">Caffeine in all {{ site.data.beverages.size }} drinks &rarr;</a></p>
+        </div>
+      </div>
+
       <div class="card mb-4">
         <div class="card-body">
           <h2 class="card-title">How much caffeine is in your drink?</h2>
