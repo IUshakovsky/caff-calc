@@ -2,7 +2,7 @@
 title: "How Much Caffeine Is in 45-59% Dark Chocolate?"
 seo_title: "Caffeine in 45-59% Dark Chocolate: 12 mg per Ounce"
 description: "An ounce of 45-59% dark chocolate has about 12 mg of caffeine by USDA's figures, roughly half the 60-69% and 70-85% dark chocolate bands."
-related: [dark-chocolate-60-69, dark-chocolate-70-85, milk-chocolate]
+related: [dark-chocolate-60-69, dark-chocolate-70-85, milk-chocolate, white-chocolate, dark-chocolate-covered-coffee-beans]
 ---
 
 ## The lightest dark chocolate band

@@ -2,7 +2,7 @@
 title: "How Much Caffeine Is in a Shot of Espresso?"
 seo_title: "Caffeine in Espresso: 63 mg a Shot, 126 mg a Double"
 description: "A single 1 oz shot of espresso has about 63 mg of caffeine by USDA's figures; a Starbucks shot has 75 mg. Per ounce it is the strongest coffee there is."
-related: [starbucks-caffe-latte, brewed-coffee, starbucks-pike-place-roast]
+related: [starbucks-caffe-latte, brewed-coffee, starbucks-pike-place-roast, dark-chocolate-covered-coffee-beans]
 article: afternoon-slump-caffeine-strategies
 ---
 

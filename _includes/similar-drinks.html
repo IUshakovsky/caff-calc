@@ -1,0 +1,130 @@
+{%- comment -%}
+  "Similar drinks" comparison table for a drink page: this drink plus up to 4
+  others from the same category that have a page, mg per serving and per
+  100 ml (per 100 g for chocolate), every figure from _data/beverages.yml.
+  Usage: include similar-drinks.html bev=bev
+
+  Selection: up to 2 from the same brand (Starbucks vs Starbucks, generic vs
+  generic), then the rest of the category, each pass closest in mg first.
+  Energy shots count as energy drinks and medicines as caffeine tablets, so
+  one-drink categories still get a comparison. Like caffeine-hub-table.html,
+  ordering uses fixed-width "100045|slug" keys because Liquid can't sort by a
+  computed value. Ranged figures use the top of the range.
+{%- endcomment -%}
+{%- assign this = include.bev -%}
+{%- assign group_map = "energy-shot:energy-drink|medicine:supplement" | split: "|" -%}
+{%- assign this_group = this.category -%}
+{%- for pair in group_map -%}{%- assign p = pair | split: ":" -%}{%- if p[0] == this.category -%}{%- assign this_group = p[1] -%}{%- endif -%}{%- endfor -%}
+{%- assign this_serving = this.servings | where: "default", true | first | default: this.servings.first -%}
+{%- assign this_mg = this_serving.caffeine_mg | default: this_serving.caffeine_mg_high | default: 0 -%}
+{%- assign this_brand = this.brand | default: "-" -%}
+
+{%- assign brand_keys = '' -%}
+{%- assign other_keys = '' -%}
+{%- for other in site.data.beverages -%}
+  {%- if other.slug == this.slug -%}{%- continue -%}{%- endif -%}
+  {%- assign other_group = other.category -%}
+  {%- for pair in group_map -%}{%- assign p = pair | split: ":" -%}{%- if p[0] == other.category -%}{%- assign other_group = p[1] -%}{%- endif -%}{%- endfor -%}
+  {%- if other_group != this_group -%}{%- continue -%}{%- endif -%}
+  {%- assign other_page = site.caffeine_in | where: "slug", other.slug | first -%}
+  {%- unless other_page -%}{%- continue -%}{%- endunless -%}
+  {%- assign s = other.servings | where: "default", true | first | default: other.servings.first -%}
+  {%- assign mg = s.caffeine_mg | default: s.caffeine_mg_high | default: 0 -%}
+  {%- assign key = mg | minus: this_mg | abs | plus: 100000 | append: '|' | append: other.slug | append: ',' -%}
+  {%- assign other_brand = other.brand | default: "-" -%}
+  {%- if other_brand == this_brand -%}
+    {%- assign brand_keys = brand_keys | append: key -%}
+  {%- else -%}
+    {%- assign other_keys = other_keys | append: key -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign brand_sorted = brand_keys | split: ',' | sort -%}
+{%- assign other_sorted = other_keys | split: ',' | sort -%}
+{%- assign picked = '' -%}
+{%- assign picked_count = 0 -%}
+{%- for key in brand_sorted limit: 2 -%}
+  {%- assign picked = picked | append: key | append: ',' -%}
+  {%- assign picked_count = picked_count | plus: 1 -%}
+{%- endfor -%}
+{%- assign rest = other_sorted | concat: brand_sorted -%}
+{%- for key in rest -%}
+  {%- if picked_count >= 4 -%}{%- break -%}{%- endif -%}
+  {%- unless picked contains key -%}
+    {%- assign picked = picked | append: key | append: ',' -%}
+    {%- assign picked_count = picked_count | plus: 1 -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- assign rows = picked | split: ',' | sort -%}
+{%- assign this_key = '100000|' | append: this.slug -%}
+{%- assign rows = rows | unshift: this_key -%}
+{%- comment -%} Tablets and packets have no volume: drop the per-100 column if no row has one {%- endcomment -%}
+{%- assign has_volume = false -%}
+{%- for key in rows -%}
+  {%- assign slug = key | split: '|' | last -%}
+  {%- assign row = site.data.beverages | where: "slug", slug | first -%}
+  {%- assign s = row.servings | where: "default", true | first | default: row.servings.first -%}
+  {%- if s.size_ml or s.size_g -%}{%- assign has_volume = true -%}{%- endif -%}
+{%- endfor -%}
+{%- case this_group -%}
+  {%- when "chocolate" -%}{%- assign noun = "chocolate and cocoa" -%}
+  {%- when "supplement" -%}{%- assign noun = "tablets and products" -%}
+  {%- else -%}{%- assign noun = "drinks" -%}
+{%- endcase -%}
+
+{%- if picked_count > 0 -%}
+<section class="card mb-4" aria-labelledby="similar-drinks-heading">
+  <div class="card-body">
+    <h2 id="similar-drinks-heading" class="h5 mb-3">Similar {{ noun }} compared</h2>
+    <div class="table-content">
+      <table class="table table-bordered align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th scope="col">{% if noun == "drinks" %}Drink{% else %}Product{% endif %}</th>
+            <th scope="col">Serving</th>
+            <th scope="col">Caffeine</th>
+            {%- if has_volume %}
+            <th scope="col">Per 100 ml</th>
+            {%- endif %}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for key in rows -%}
+            {%- assign slug = key | split: '|' | last -%}
+            {%- assign row = site.data.beverages | where: "slug", slug | first -%}
+            {%- assign s = row.servings | where: "default", true | first | default: row.servings.first -%}
+            {%- assign row_page = site.caffeine_in | where: "slug", slug | first -%}
+            <tr{% if forloop.first %} class="table-active"{% endif %}>
+              <td>{% if forloop.first %}<strong>{{ row.product }}</strong>{% else %}<a href="{{ row_page.url | relative_url }}">{{ row.product }}</a>{% endif %}</td>
+              <td>{% include serving-size.html serving=s %}{% if s.size_oz == nil and s.label == nil and s.size_g %}{{ s.size_g }} g{% endif %}</td>
+              <td>{% include serving-mg.html serving=s %}</td>
+              {%- if has_volume %}
+              <td>
+                {%- if s.size_ml -%}
+                  {%- assign base = s.size_ml -%}{%- assign unit = '' -%}
+                {%- elsif s.size_g -%}
+                  {%- assign base = s.size_g -%}{%- assign unit = ' per 100 g' -%}
+                {%- else -%}
+                  {%- assign base = nil -%}
+                {%- endif -%}
+                {%- if base -%}
+                  {%- if s.caffeine_mg != nil -%}
+                    {{ s.caffeine_mg | times: 100.0 | divided_by: base | round }} mg{{ unit }}
+                  {%- else -%}
+                    {{ s.caffeine_mg_low | times: 100.0 | divided_by: base | round }}-{{ s.caffeine_mg_high | times: 100.0 | divided_by: base | round }} mg{{ unit }}
+                  {%- endif -%}
+                {%- else -%}
+                  &mdash;
+                {%- endif -%}
+              </td>
+              {%- endif %}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    <p class="small text-muted mt-2 mb-0">Default serving for each, from the source on its own page.{% if has_volume %}
+      Per 100 ml (per 100 g for solid food) shows strength independent of serving size.{% endif %}</p>
+  </div>
+</section>
+{%- endif -%}

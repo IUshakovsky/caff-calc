@@ -11,7 +11,8 @@ For every file in _caffeine_in/ it checks that:
   - the page shows the entry's source link
   - the page is linked from /caffeine-in/ and from the homepage, and is listed
     in sitemap.xml
-  - its `article` resolves to a post ("Further reading" is rendered)
+  - its `article` resolves to a post (linked under "Useful articles")
+  - every "N mg" in its faq answers is a figure from the data (see faq_numbers)
 
 Exits non-zero on any failure. Needs PyYAML (pip install pyyaml).
 """
@@ -41,6 +42,13 @@ def read(path):
 def front_matter(path):
     m = re.match(r"^---\n(.*?)\n---\n", read(path), re.S)
     return yaml.safe_load(m.group(1)) if m else {}
+
+
+def article_href(slug):
+    """Where "Useful articles" links a post: its URL, or its redirect_to target."""
+    for path in glob.glob(os.path.join(ROOT, "_posts", f"*-{slug}.md")):
+        return front_matter(path).get("redirect_to") or f"/blog/{slug}/"
+    return f"/blog/{slug}/"
 
 
 def body_words(page_html):
@@ -91,7 +99,7 @@ def main():
             errors.append(f"{slug}: not linked from the homepage")
         if f"<loc>https://caffcalc.com{url}</loc>" not in sitemap:
             errors.append(f"{slug}: missing from sitemap.xml")
-        if fm.get("article") and "Further reading" not in page:
+        if fm.get("article") and f'href="{article_href(fm["article"])}"' not in page:
             errors.append(f"{slug}: article {fm['article']!r} did not resolve to a post")
 
     print(f"pages:            {len(files)} (expected {EXPECTED_PAGES})")

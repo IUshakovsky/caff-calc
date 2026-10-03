@@ -41,6 +41,16 @@ excerpt_separator: ""
             <a href="{{ '/caffeine-in/energy-drinks/' | relative_url }}">Energy drinks</a>,
             <a href="{{ '/caffeine-in/sodas/' | relative_url }}">Soda</a>, or
             <a href="{{ '/caffeine-in/starbucks/' | relative_url }}">Starbucks</a>.</p>
+          {%- assign pages_collection = site.collections | where: "label", "pages" | first -%}
+          {%- assign comparisons = pages_collection.docs | where_exp: "d", "d.compare" | sort: "hub_title" -%}
+          {%- if comparisons.size > 0 %}
+          <h3 class="h6 mt-3 mb-2">Head to head</h3>
+          <ul class="mb-0">
+            {%- for cmp in comparisons %}
+            <li><a href="{{ cmp.url | relative_url }}">{{ cmp.hub_title | default: cmp.title }}</a></li>
+            {%- endfor %}
+          </ul>
+          {%- endif %}
         </div>
       </div>
 

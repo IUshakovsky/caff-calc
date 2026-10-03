@@ -3,7 +3,7 @@ layout: caffeine-in
 title: "How Much Caffeine Is in Black Tea?"
 seo_title: "Caffeine in Black Tea: 36–47 mg per Cup"
 description: "An 8 oz cup of brewed black tea has 47 mg of caffeine by USDA data. Steeping time moves the number more than leaf type does."
-related: [green-tea, instant-coffee, brewed-coffee]
+related: [green-tea, instant-coffee, brewed-coffee, decaf-black-tea]
 article: caffeine-sleep-timing
 ---
 

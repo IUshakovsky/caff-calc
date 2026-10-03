@@ -6,7 +6,10 @@ layout: default
   _data/beverages.yml whose slug matches this file's name; the page-specific
   copy is this document's content, wrapped in .caffeine-in-body so
   scripts/check-caffeine-in.py can hold it to the 250-word thin-content floor.
-  Front matter: title, seo_title, description, related (2-3 slugs), article (post slug).
+  Front matter: title, seo_title, description, related (2-3 slugs), article (post slug),
+  optional faq (list of question/answer, also emitted as FAQPage schema by
+  schema.html), sources (list of name/url backing the faq), articles (post slugs
+  to list first under "Useful articles") and last_modified_at.
 {%- endcomment -%}
 {%- assign bev = site.data.beverages | where: "slug", page.slug | first -%}
 {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first -%}
@@ -21,6 +24,18 @@ layout: default
 {%- comment -%} Category/brand hub pages with a sorted comparison table (Phase 5.1) {%- endcomment -%}
 {%- assign category_hubs = "coffee:Coffee:/caffeine-in/coffee/|tea:Tea:/caffeine-in/tea/|energy-drink:Energy drinks:/caffeine-in/energy-drinks/|soda:Soda:/caffeine-in/sodas/" | split: "|" -%}
 {%- assign category_hub = category_hubs | where_exp: "h", "h contains bev.category" | first -%}
+{%- comment -%}
+  "Useful articles": page.article, then page.articles, then these per-category
+  defaults (safe limits by weight, sleep timing, pregnancy and so on), first 3
+  that exist. Edit here to change the defaults.
+{%- endcomment -%}
+{%- assign category_articles = "coffee:caffeine-weight-sensitivity-guide,caffeine-sleep-timing,caffeine-pregnancy-guidelines|tea:caffeine-sleep-timing,caffeine-pregnancy-guidelines,caffeine-anxiety-understanding|energy-drink:caffeine-cardiac-health,caffeine-teens-anxiety-risks-safe-limits,caffeine-weight-sensitivity-guide|energy-shot:caffeine-pills-supplements,caffeine-cardiac-health,caffeine-weight-sensitivity-guide|soda:caffeine-teens-anxiety-risks-safe-limits,caffeine-dental-health,caffeine-sleep-timing|chocolate:weirdest-caffeine-sources,caffeine-sleep-timing,caffeine-pregnancy-guidelines|supplement:caffeine-pills-supplements,caffeine-exercise-performance,caffeine-medication-interactions|medicine:caffeine-medication-interactions,caffeine-headaches-migraines,caffeine-pills-supplements|other:caffeine-sleep-timing,caffeine-weight-sensitivity-guide,caffeine-pregnancy-guidelines" | split: "|" -%}
+{%- assign article_slugs = page.article | default: "" | split: "," -%}
+{%- if page.articles -%}{%- assign article_slugs = article_slugs | concat: page.articles -%}{%- endif -%}
+{%- for pair in category_articles -%}
+  {%- assign p = pair | split: ":" -%}
+  {%- if p[0] == bev.category -%}{%- assign defaults = p[1] | split: "," -%}{%- assign article_slugs = article_slugs | concat: defaults -%}{%- endif -%}
+{%- endfor -%}
 
 <header class="header-area py-4">
   <div class="container">
@@ -57,7 +72,11 @@ layout: default
       <section class="card mb-4 caffeine-in-headline">
         <div class="card-body">
           <p class="caffeine-in-figure mb-1">{% include serving-mg.html serving=serving %}</p>
-          <p class="mb-2"><strong>{{ bev.product }}</strong> &middot; {% include serving-size.html serving=serving %}</p>
+          {%- comment -%} One-sentence direct answer, computed from the data {%- endcomment -%}
+          <p class="mb-2 caffeine-in-answer"><strong>{{ bev.product }}</strong>, {% include serving-size.html serving=serving %}:
+            {% include serving-mg.html serving=serving %} of caffeine,
+            {% if serving.caffeine_mg == nil %}up to {% endif %}{{ drink_mg | times: 100.0 | divided_by: daily_cap | round }}% of the
+            {{ daily_cap }} mg daily reference for healthy adults.</p>
           {%- if bev.notes %}
           <p class="mb-2">{{ bev.notes }}</p>
           {%- endif %}
@@ -139,7 +158,7 @@ layout: default
           <p class="small text-muted how-many-basis mb-3">Based on {{ daily_cap }} mg, the FDA figure for healthy adults.</p>
           <a href="{{ '/' | relative_url }}?drink={{ bev.slug }}" class="btn btn-calculate"
              data-ga-event="drink_to_calc_click" data-ga-params='{"drink":"{{ bev.slug }}"}'>
-            <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Add it to the calculator
+            <i data-lucide="calculator" class="me-2" aria-hidden="true"></i>Calculate my safe limit with {{ bev.product }}
           </a>
           <p class="small text-muted mt-2 mb-0">The calculator sets a personal limit from your weight, age, pregnancy
             status and sensitivity, and this box uses it once you have saved it there.</p>
@@ -179,6 +198,36 @@ layout: default
         </div>
       </article>
 
+      {% include similar-drinks.html bev=bev %}
+
+      {%- comment -%} X-vs-Y pages (_pages with `compare`) naming this drink, then others with a drink in its category {%- endcomment -%}
+      {%- assign pages_collection = site.collections | where: "label", "pages" | first -%}
+      {%- assign comparisons = pages_collection.docs | where_exp: "d", "d.compare" -%}
+      {%- assign own_cmp = '' -%}
+      {%- assign cat_cmp = '' -%}
+      {%- for cmp in comparisons -%}
+        {%- assign cmp_bevs = site.data.beverages | where_exp: "b", "cmp.compare contains b.slug" | map: "category" -%}
+        {%- if cmp.compare contains bev.slug -%}
+          {%- assign own_cmp = own_cmp | append: cmp.url | append: ',' -%}
+        {%- elsif cmp_bevs contains bev.category -%}
+          {%- assign cat_cmp = cat_cmp | append: cmp.url | append: ',' -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- assign cmp_urls = own_cmp | append: cat_cmp | split: ',' -%}
+      {%- if cmp_urls.size > 0 %}
+      <section class="card mb-4" aria-labelledby="comparisons-heading">
+        <div class="card-body">
+          <h2 id="comparisons-heading" class="h5 mb-3">Head-to-head comparisons</h2>
+          <ul class="mb-0">
+            {%- for url in cmp_urls limit: 4 %}
+            {%- assign cmp = comparisons | where: "url", url | first %}
+            <li class="mb-1"><a href="{{ cmp.url | relative_url }}">{{ cmp.hub_title | default: cmp.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </section>
+      {%- endif %}
+
       {%- if page.related %}
       <section class="card mb-4" aria-labelledby="related-drinks-heading">
         <div class="card-body">
@@ -198,15 +247,70 @@ layout: default
       </section>
       {%- endif %}
 
-      {%- assign article = site.posts | where: "slug", page.article | first %}
-      {%- if article %}
-      <section class="card mb-4" aria-labelledby="related-article-heading">
+      {%- if page.faq %}
+      <section class="card mb-4" aria-labelledby="faq-heading">
         <div class="card-body">
-          <h2 id="related-article-heading" class="h5 mb-2">Further reading</h2>
-          <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
+          <h2 id="faq-heading" class="h5 mb-3">Common questions about {{ bev.product }}</h2>
+          {%- for item in page.faq %}
+          <div class="faq-item{% if forloop.last %} mb-0{% endif %}">
+            <h3 class="h6">{{ item.question }}</h3>
+            <p{% if forloop.last %} class="mb-0"{% endif %}>{{ item.answer }}</p>
+          </div>
+          {%- endfor %}
         </div>
       </section>
       {%- endif %}
+
+      {%- assign shown_articles = ',' -%}
+      {%- assign shown_count = 0 -%}
+      {%- for raw_slug in article_slugs -%}
+        {%- assign slug = raw_slug | strip -%}
+        {%- assign post = site.posts | where: "slug", slug | first -%}
+        {%- assign probe = slug | prepend: ',' | append: ',' -%}
+        {%- if post and shown_count < 3 -%}
+          {%- unless shown_articles contains probe -%}
+            {%- assign shown_articles = shown_articles | append: slug | append: ',' -%}
+            {%- assign shown_count = shown_count | plus: 1 -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if shown_count > 0 %}
+      <section class="card mb-4" aria-labelledby="useful-articles-heading">
+        <div class="card-body">
+          <h2 id="useful-articles-heading" class="h5 mb-3">Useful articles</h2>
+          <ul class="mb-0">
+            {%- assign shown_list = shown_articles | split: ',' %}
+            {%- for slug in shown_list %}
+            {%- if slug == '' %}{% continue %}{% endif %}
+            {%- assign post = site.posts | where: "slug", slug | first %}
+            {%- if post.redirect_to %}
+            {%- comment -%} A post merged into a tool page: link the page itself, not the redirect stub {%- endcomment -%}
+            {%- assign target = pages_collection.docs | where: "url", post.redirect_to | first %}
+            <li class="mb-1"><a href="{{ post.redirect_to | relative_url }}">{{ target.title | default: post.title }}</a></li>
+            {%- else %}
+            <li class="mb-1"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {%- endif %}
+            {%- endfor %}
+          </ul>
+        </div>
+      </section>
+      {%- endif %}
+
+      <section class="card mb-4" aria-labelledby="sources-heading">
+        <div class="card-body small">
+          <h2 id="sources-heading" class="h6 mb-2">Sources</h2>
+          <ul class="mb-2">
+            <li><a href="{{ bev.source_url }}" target="_blank" rel="noopener">{{ bev.source_name }}</a>: caffeine figures on this page, checked {{ bev.verified | date: "%-d %B %Y" }}.</li>
+            <li><a href="{{ fda_url }}" target="_blank" rel="noopener">FDA, Spilling the Beans: How Much Caffeine is Too Much?</a>: the {{ daily_cap }} mg daily reference for healthy adults.</li>
+            {%- for src in page.sources %}
+            <li><a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.name }}</a></li>
+            {%- endfor %}
+          </ul>
+          <p class="text-muted mb-0">Written by <a href="{{ '/pages/about/' | relative_url }}">{{ site.author.name }}</a>, not
+            reviewed by a clinician.{% if page.last_modified_at %} Last updated
+            <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time>.{% endif %}</p>
+        </div>
+      </section>
 
       <div class="text-center mb-4">
         <a href="{{ '/caffeine-in/' | relative_url }}" class="btn btn-outline-secondary">

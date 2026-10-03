@@ -2,7 +2,7 @@
 title: "How Much Caffeine Is in Decaf Coffee?"
 seo_title: "Caffeine in Decaf Coffee: 2 to 15 mg a Cup, Not Zero"
 description: "Decaf coffee still has 2 to 15 mg of caffeine per 8 oz cup, per the FDA, and a Venti Starbucks decaf has 30 mg. When that matters, and when it doesn't."
-related: [brewed-coffee, starbucks-pike-place-roast, green-tea]
+related: [brewed-coffee, starbucks-pike-place-roast, green-tea, decaf-black-tea]
 article: caffeine-pregnancy-guidelines
 ---
 

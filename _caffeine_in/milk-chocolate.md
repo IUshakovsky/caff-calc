@@ -2,7 +2,7 @@
 title: "How Much Caffeine Is in Milk Chocolate?"
 seo_title: "Milk Chocolate Caffeine: 6 mg per Ounce, 9 mg a Bar"
 description: "An ounce of milk chocolate has about 6 mg of caffeine by USDA's figures, and a standard 1.55 oz bar about 9 mg. Why it's the lightest chocolate for caffeine."
-related: [dark-chocolate-70-85, hot-chocolate, dark-chocolate-covered-coffee-beans]
+related: [dark-chocolate-70-85, hot-chocolate, dark-chocolate-covered-coffee-beans, white-chocolate]
 article: caffeine-teens-anxiety-risks-safe-limits
 ---
 
