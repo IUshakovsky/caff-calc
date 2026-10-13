@@ -626,7 +626,7 @@ function updateCaffeineStatus() {
   if (user.ageGroup === 'child' && totalCaffeineConsumed > 0) {
     statusElement.classList.remove('d-none', 'alert-success', 'alert-warning');
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="${window.SITE_BASEURL || ''}/pages/health-advice" class="alert-link">See health advice</a> for more information.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> Infants should not consume any caffeine! Current intake: ${totalCaffeineConsumed} mg. <a href="${window.SITE_BASEURL || ''}/pages/health-advice/" class="alert-link">See health advice</a> for more information.`;
     return { percentage: 100, adjustedLimit: 0 };
   }
   
@@ -640,10 +640,10 @@ function updateCaffeineStatus() {
     statusElement.innerHTML = `<strong>Safe:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg).`;
   } else if (percentage <= 100) {
     statusElement.classList.add('alert-warning');
-    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="${window.SITE_BASEURL || ''}/pages/caffeine-science" class="alert-link">Learn more</a> about caffeine metabolism.`;
+    statusElement.innerHTML = `<strong>Caution:</strong> You've consumed ${Math.round(percentage)}% of your daily safe limit (${Math.round(adjustedLimit)} mg). <a href="${window.SITE_BASEURL || ''}/pages/caffeine-science/" class="alert-link">Learn more</a> about caffeine metabolism.`;
   } else {
     statusElement.classList.add('alert-danger');
-    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="${window.SITE_BASEURL || ''}/pages/overdose-symptoms" class="alert-link">overdose symptoms</a> for health concerns.`;
+    statusElement.innerHTML = `<strong>Warning:</strong> You've exceeded your daily safe limit by ${Math.round(percentage - 100)}%! Your limit is ${Math.round(adjustedLimit)} mg. Check <a href="${window.SITE_BASEURL || ''}/pages/overdose-symptoms/" class="alert-link">overdose symptoms</a> for health concerns.`;
   }
   
   return { percentage, adjustedLimit };
@@ -1219,7 +1219,7 @@ async function performSearch(event) {
       const seenResults = new Map();
       const filteredResults = results.filter(result => {
         // Get normalized URL to identify duplicates even with different path formats
-        const normalizedUrl = result.url.split('/').pop();
+        const normalizedUrl = result.url.replace(/\/$/, '').split('/').pop();
         const resultKey = `${result.title}-${normalizedUrl}`;
         
         // If this key already exists and current result is not from current page, skip it
@@ -1248,6 +1248,7 @@ async function performSearch(event) {
         let pageIndicator = '';
         if (!result.isCurrentPage) {
           let pageName = result.url.replace('.html', '').replace('pages/', '');
+          if (!pageName.includes('/20')) pageName = pageName.replace(/^\/+|\/+$/g, '');
           
           // Format blog post URLs nicely (e.g., /2025/09/29/coffee-vs-tea-caffeine-content/)
           if (pageName.includes('/20')) {
@@ -1333,9 +1334,9 @@ async function searchAllPages(searchTerm) {
   const baseurl = window.SITE_BASEURL || '';
   const pages = [
     `${baseurl}/index.html`,
-    `${baseurl}/pages/caffeine-science`,
-    `${baseurl}/pages/overdose-symptoms`,
-    `${baseurl}/pages/health-advice`,
+    `${baseurl}/pages/caffeine-science/`,
+    `${baseurl}/pages/overdose-symptoms/`,
+    `${baseurl}/pages/health-advice/`,
     `${baseurl}/blog/`
   ];
   
