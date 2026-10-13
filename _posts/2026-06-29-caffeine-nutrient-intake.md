@@ -7,7 +7,7 @@ excerpt: "Caffeine can subtly change how your body absorbs iron and calcium, shi
 image: "/assets/images/blog/caffeine-nutrient-intake-balance.jpg"
 redirect_from: /2026/06/29/caffeine-nutrient-intake/
 drinks: [decaf-coffee, brewed-coffee, espresso, starbucks-cold-brew]
-related_posts: [caffeine-nutrition-optimization, caffeine-methylation-homocysteine, caffeine-electrolyte-balance, caffeine-bone-health-risks-benefits]
+related_posts: [caffeine-nutrition-optimization, caffeine-methylation-homocysteine, caffeine-vasopressin-dehydration, caffeine-bone-health-risks-benefits]
 ---
 
 

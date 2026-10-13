@@ -7,7 +7,7 @@ excerpt: "Does caffeine raise your kidney stone risk—or lower it? Learn what t
 image: "/assets/images/blog/caffeine-kidney-stones-prevention.jpg"
 redirect_from: /2026/02/24/caffeine-kidney-stones-prevention/
 drinks: [black-tea, decaf-coffee, green-tea, brewed-coffee]
-related_posts: [hydration-caffeine, caffeine-vasopressin-dehydration, caffeine-electrolyte-balance]
+related_posts: [caffeine-vasopressin-dehydration]
 ---
 
 
