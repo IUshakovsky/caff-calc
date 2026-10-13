@@ -7,7 +7,7 @@ excerpt: "Explore how caffeine affects blood pressure, who is at risk, and pract
 image: "/assets/images/blog/caffeine-blood-pressure.jpg"
 redirect_from: /2025/12/16/caffeine-blood-pressure-risks-safe-limits/
 drinks: [decaf-coffee, black-tea, espresso, excedrin-extra-strength, green-tea]
-related_posts: [caffeine-blood-vessel-function, caffeine-cardiac-health, caffeine-medication-interactions, caffeine-nitric-oxide]
+related_posts: [caffeine-blood-vessel-function, caffeine-medication-interactions]
 ---
 
 
