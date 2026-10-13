@@ -7,7 +7,7 @@ excerpt: "Does caffeine spike blood sugar or protect against diabetes? Learn how
 image: "/assets/images/blog/caffeine-blood-sugar-cover.jpg"
 redirect_from: /2026/03/02/caffeine-blood-sugar/
 drinks: [decaf-coffee, brewed-coffee, latte]
-related_posts: [caffeine-fasting-benefits-risks, caffeine-thermogenesis-weight, caffeine-nutrition-optimization, caffeine-endocrine-system]
+related_posts: [caffeine-fasting-benefits-risks, caffeine-thermogenesis-weight, caffeine-nutrition-optimization, caffeine-hormones-response]
 ---
 
 

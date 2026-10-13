@@ -9,7 +9,7 @@ excerpt: "Discover how caffeine triggers anxiety, who's most at risk, and action
 image: "/assets/images/blog/caffeine-anxiety.jpg"
 redirect_from: /2025/10/20/caffeine-anxiety-understanding/
 drinks: [decaf-coffee, excedrin-extra-strength, green-tea, coca-cola-classic, herbal-tea]
-related_posts: [caffeine-adhd-risks-benefits, caffeine-histamine-sensitivity, caffeine-teens-anxiety-risks-safe-limits, caffeine-stress-response]
+related_posts: [caffeine-adhd-risks-benefits, caffeine-histamine-sensitivity, caffeine-teens-anxiety-risks-safe-limits, caffeine-hormones-response]
 ---
 
 
