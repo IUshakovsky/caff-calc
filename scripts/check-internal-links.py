@@ -7,7 +7,11 @@ Run after `bundle exec jekyll build`:
 
     python3 scripts/check-internal-links.py
 
-Exits non-zero if any post has zero internal inbound links.
+Exits non-zero if any post has zero internal inbound links, or if any page
+links to a merged-away post (a /blog/ redirect stub pointing at another post).
+
+jekyll-redirect-from stubs (recognisable by their meta refresh) are neither
+posts nor link sources.
 """
 import os
 import re
@@ -18,6 +22,7 @@ SITE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 HREF = re.compile(rb'href=["\']([^"\'#?]+)', re.I)
 # Post permalinks are now /blog/slug/ (migrated from /YYYY/MM/DD/slug/)
 POST_URL = re.compile(r"^/blog/[^/]+/$")
+STUB = re.compile(rb'<meta http-equiv="refresh" content="0; url=([^"]+)"', re.I)
 
 
 def url_for(path):
@@ -61,19 +66,34 @@ def main():
                 p = os.path.join(root, f)
                 pages[p] = url_for(p)
 
-    posts = {u for u in pages.values() if POST_URL.match(u)}
+    bodies, merged = {}, {}
+    for path, url in pages.items():
+        with open(path, "rb") as fh:
+            bodies[path] = fh.read()
+        m = STUB.search(bodies[path])
+        if m:
+            dest = normalise(m.group(1), url)
+            # a /blog/ stub that forwards to another post = a merged-away post
+            if POST_URL.match(url) and dest and POST_URL.match(dest):
+                merged[url] = dest
+
+    stub_paths = {p for p, b in bodies.items() if STUB.search(b)}
+    posts = {u for p, u in pages.items() if POST_URL.match(u) and p not in stub_paths}
     inbound = defaultdict(set)
+    to_merged = defaultdict(set)
 
     for path, src_url in pages.items():
-        with open(path, "rb") as fh:
-            body = fh.read()
-        for href in set(HREF.findall(body)):
+        if path in stub_paths:
+            continue
+        for href in set(HREF.findall(bodies[path])):
             target = normalise(href, src_url)
             if target is None:
                 continue
             for candidate in (target, target.rstrip("/") + "/"):
                 if candidate in posts and candidate != src_url:
                     inbound[candidate].add(src_url)
+                if candidate in merged:
+                    to_merged[candidate].add(src_url)
 
     orphans = sorted(p for p in posts if not inbound[p])
     counts = sorted(((len(inbound[p]), p) for p in posts))
@@ -85,10 +105,18 @@ def main():
         print(f"median inbound:   {counts[len(counts) // 2][0]}")
         print(f"most inbound:     {counts[-1][0]} ({counts[-1][1]})")
 
+    print(f"links to merged:  {sum(len(v) for v in to_merged.values())}")
+
+    if to_merged:
+        print("\nLinks to merged-away posts (point them at the redirect target):")
+        for dead in sorted(to_merged):
+            for src in sorted(to_merged[dead]):
+                print(f"  {src} -> {dead} (now {merged[dead]})")
     if orphans:
         print("\nPosts with zero internal inbound links:")
         for o in orphans:
             print("  " + o)
+    if orphans or to_merged:
         return 1
 
     print("\nOK - every post has at least one internal inbound link.")
