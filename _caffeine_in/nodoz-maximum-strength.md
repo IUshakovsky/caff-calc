@@ -3,7 +3,7 @@ title: "How Much Caffeine Is in NoDoz Maximum Strength?"
 seo_title: "NoDoz Caffeine: 200 mg per Caplet"
 description: "NoDoz Maximum Strength has 200 mg of caffeine per caplet, the same as a generic caffeine pill or Vivarin. The label's own dosing limits and how it adds up."
 related: [caffeine-pill, vivarin, c4-original-pre-workout]
-article: caffeine-addictive-withdrawal-symptoms
+article: caffeine-tolerance-reset-guide
 ---
 
 ## 200 mg, matching the category standard

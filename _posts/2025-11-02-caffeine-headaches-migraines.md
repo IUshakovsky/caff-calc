@@ -7,7 +7,7 @@ excerpt: "Caffeine can relieve migraines or trigger them—it depends on your do
 image: "/assets/images/blog/caffeine-headaches-migraines-cover.jpg"
 redirect_from: /2025/11/02/caffeine-headaches-migraines/
 drinks: [decaf-coffee, green-tea, excedrin-migraine]
-related_posts: [caffeine-migraine-triggers, caffeine-addictive-withdrawal-symptoms, caffeine-medication-interactions]
+related_posts: [caffeine-migraine-triggers, caffeine-tolerance-reset-guide, caffeine-medication-interactions]
 ---
 
 
