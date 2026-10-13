@@ -7,7 +7,7 @@ excerpt: "Does caffeine heighten or dull nerve sensitivity? Explore how adenosin
 image: "/assets/images/blog/caffeine-nerve-sensitivity.jpg"
 redirect_from: /2026/04/04/caffeine-nerve-sensitivity/
 drinks: [brewed-coffee]
-related_posts: [caffeine-migraine-triggers, caffeine-hearing-risks, caffeine-headaches-migraines]
+related_posts: [caffeine-headaches-migraines, caffeine-hearing-risks]
 ---
 
 

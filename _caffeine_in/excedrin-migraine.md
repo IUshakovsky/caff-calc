@@ -4,7 +4,7 @@ title: "How Much Caffeine Is in Excedrin Migraine?"
 seo_title: "Caffeine in Excedrin Migraine: 65 mg per Caplet"
 description: "One Excedrin Migraine caplet has 65 mg of caffeine; a standard two-caplet dose is 130 mg. It is easy to overlook when counting total daily caffeine."
 related: [excedrin-extra-strength, caffeine-pill, brewed-coffee]
-article: caffeine-migraine-triggers
+article: caffeine-headaches-migraines
 ---
 
 ## Medicine, not a drink

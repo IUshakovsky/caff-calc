@@ -11,7 +11,7 @@ redirect_from:
   - /blog/caffeine-period-menstrual-cycle/
   - /2026/03/04/caffeine-period-menstrual-cycle/
 drinks: [green-tea, starbucks-cold-brew, latte, decaf-coffee]
-related_posts: [caffeine-migraine-triggers, caffeine-hormones-response, caffeine-menopause-managing-symptoms]
+related_posts: [caffeine-headaches-migraines, caffeine-hormones-response, caffeine-menopause-managing-symptoms]
 ---
 
 
