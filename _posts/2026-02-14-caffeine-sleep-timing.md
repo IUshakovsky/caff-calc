@@ -9,7 +9,7 @@ excerpt: "Caffeine taken 6 hours before bed still measurably cuts your sleep sho
 image: "/assets/images/blog/caffeine-sleep-timing.jpg"
 redirect_from: /2026/02/14/caffeine-sleep-timing/
 drinks: [decaf-coffee, brewed-coffee, green-tea]
-related_posts: [caffeine-circadian-rhythms-timing, caffeine-memory-consolidation, caffeine-circadian-rhythm, caffeine-apnea-sleep-quality]
+related_posts: [caffeine-circadian-rhythms-timing, caffeine-memory-consolidation, caffeine-apnea-sleep-quality]
 ---
 
 ## Why timing is as important as dose
