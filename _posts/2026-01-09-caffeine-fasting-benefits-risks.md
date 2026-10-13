@@ -7,7 +7,7 @@ excerpt: "Can coffee boost your fast or break it? Discover how caffeine affects 
 image: "/assets/images/blog/how-caffeine-impacts-fasting.jpg"
 redirect_from: /2026/01/09/caffeine-fasting-benefits-risks/
 drinks: [decaf-coffee, green-tea, herbal-tea, starbucks-cold-brew]
-related_posts: [caffeine-blood-sugar, caffeine-fat-metabolism, caffeine-nutrition-optimization]
+related_posts: [caffeine-blood-sugar, caffeine-thermogenesis-weight, caffeine-nutrition-optimization]
 ---
 
 
