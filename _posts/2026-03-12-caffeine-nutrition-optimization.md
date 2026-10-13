@@ -2,12 +2,16 @@
 layout: post
 title: "Caffeine and Nutrition: A Practical Guide to Optimize Your Diet"
 date: 2026-03-12 03:00:00 +0000
-tags: [caffeine and nutrition, caffeine intake, diet optimization, sleep, hydration, iron absorption]
+last_modified_at: 2026-10-13
+tags: [caffeine and nutrition, caffeine intake, diet optimization, sleep, hydration, iron absorption, caffeine and nutrient intake, calcium balance, vitamins]
 excerpt: "Make caffeine work for you—not against you. Learn how to pair caffeine with meals, protect sleep, avoid nutrient roadblocks, and set safe daily limits."
 image: "/assets/images/blog/caffeine-nutrition-optimization.jpg"
-redirect_from: /2026/03/12/caffeine-nutrition-optimization/
-drinks: [decaf-coffee]
-related_posts: [caffeine-nutrient-intake, caffeine-blood-sugar, caffeine-vasopressin-dehydration, caffeine-bone-health-risks-benefits]
+redirect_from:
+  - /2026/03/12/caffeine-nutrition-optimization/
+  - /blog/caffeine-nutrient-intake/
+  - /2026/06/29/caffeine-nutrient-intake/
+drinks: [decaf-coffee, brewed-coffee, espresso, starbucks-cold-brew]
+related_posts: [caffeine-blood-sugar, caffeine-vasopressin-dehydration, caffeine-bone-health-risks-benefits]
 ---
 
 
@@ -41,6 +45,8 @@ Key mechanisms and facts:
 - **Sleep disruption:** Research suggests a single large late-day dose can measurably reduce total sleep even when taken 6 hours before bedtime.
 - **Hydration:** Typical coffee and tea do not dehydrate you overall; their water content offsets mild diuretic effects at usual intakes.
 - **Iron and calcium:** Polyphenols in coffee and tea can reduce non-heme iron absorption from plant foods and fortified grains. Caffeine may have a small, short-lived effect on calcium balance. You can work around both with timing.
+- **Appetite:** Some studies report short-term reductions in hunger or changes in satiety hormones after coffee (decaf included), but results are mixed and often small. Don't count on caffeine to meaningfully cut your daily calories.
+- **What the drinks add:** Black coffee contains small amounts of potassium and magnesium plus a trace of niacin; tea can contribute manganese and fluoride. Energy drinks are often fortified with B vitamins, especially niacin, and supplemental niacin above the adult tolerable upper intake level of 35 mg a day can cause flushing.
 
 For a deeper look at how caffeine interacts with your body, see our [caffeine science]({{ '/pages/caffeine-science/' | relative_url }}) page.
 
@@ -82,7 +88,7 @@ If your iron comes mainly from plants (beans, lentils, spinach, fortified cereal
 
 Boost absorption further by adding vitamin C-rich foods—citrus, bell pepper, strawberries—to the iron-rich meal itself.
 
-**Why it works:** Polyphenols in coffee and tea can inhibit non-heme iron absorption by 39–83%, depending on the dose. Vitamin C counters that effect. Animal (heme) iron is much less affected.
+**Why it works:** Polyphenols in coffee and tea can inhibit non-heme iron absorption by 39–83%, depending on the dose. Vitamin C counters that effect, and eating meat, poultry or seafood in the same meal also raises absorption. Animal (heme) iron is much less affected. Timing helps on its own: in a human trial, drinking tea one hour after an iron-containing meal, rather than with it, substantially reduced the inhibition.
 
 ### 5. Keep Perspective on Hydration
 
@@ -119,6 +125,8 @@ Caffeine hides in energy drinks, pre-workouts, cold brews, and some sodas. Tally
 
 Then set simple defaults you can follow without thinking: "Two coffees before noon, tea only before 2 PM," or "Max 300 mg on workdays."
 
+Check labels on energy drinks for added vitamins too: several cans a day can push supplemental niacin past the 35 mg upper limit.
+
 When you want an exact count, [use the CaffCalc calculator]({{ '/' | relative_url }}) to add up caffeine from all your daily sources and see how your intake compares to typical ranges.
 
 **Why it works:** A one-time audit prevents accidental overshooting and helps you build habits that stick without constant counting.
@@ -145,6 +153,9 @@ Yes, to a degree. The polyphenols responsible for inhibiting iron absorption are
 
 **Q: I drink 5+ cups a day. Should I cut back all at once?**  
 Gradual reduction works better. Drop by about one cup (roughly 80–100 mg) every 3–5 days to avoid withdrawal headaches and fatigue. Most people adjust within 1–2 weeks.
+
+**Q: Does coffee curb my appetite?**  
+Only a little, if at all. Short-term studies of coffee and decaf show small, inconsistent effects on hunger and satiety hormones. Poor sleep from late caffeine is more likely to raise next-day cravings than coffee is to suppress them.
 
 **Q: Does adding milk to coffee affect caffeine content?**  
 No. Milk doesn't change the caffeine already dissolved in the coffee. However, the calcium in milk can help offset caffeine's minor effect on calcium balance—so adding milk is a reasonable choice if calcium is a concern.
@@ -174,6 +185,12 @@ Scientific sources supporting this article:
 - [PLOS ONE: No Evidence of Dehydration with Moderate Daily Coffee Intake (2014)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3886980/)  
 - [Mayo Clinic: Caffeinated Drinks and Hydration](https://www.mayoclinic.org/health/caffeinated-drinks/AN01661)  
 - [NIH ODS: Iron—Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/)  
+- [Inhibition of Non-Haem Iron Absorption by Polyphenolic Beverages](https://pubmed.ncbi.nlm.nih.gov/10999016/)  
+- [Tea Timing and Iron Absorption: 1-Hour Interval Attenuates Inhibition](https://pubmed.ncbi.nlm.nih.gov/29046302/)  
+- [NIH ODS: Calcium—Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/)  
+- [Caffeine and Bone Health: Clinical Review](https://pmc.ncbi.nlm.nih.gov/articles/PMC6212940/)  
+- [NIH ODS: Niacin—Health Professional Fact Sheet](https://ods.od.nih.gov/factsheets/Niacin-HealthProfessional/)  
+- [Coffee and Appetite Regulation: Short-Term Effects](https://pubmed.ncbi.nlm.nih.gov/23204152/)  
 - [Clinical Toxicology Review: The Clinical Toxicology of Caffeine](https://pmc.ncbi.nlm.nih.gov/articles/PMC6247400/)  
 - [NIH/NCBI: Nutrition During Pregnancy and Lactation](https://www.ncbi.nlm.nih.gov/books/NBK562624/)  
 - [FDA: Warning on Pure and Highly Concentrated Caffeine Products](https://www.fda.gov/food/information-select-dietary-supplement-ingredients-and-other-substances/fda-warns-consumers-about-pure-and-highly-concentrated-caffeine)  

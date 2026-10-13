@@ -7,7 +7,7 @@ excerpt: "Does caffeine change your body's methylation process? Learn how coffee
 image: "/assets/images/blog/caffeine-methylation-coffee-dna.jpg"
 redirect_from: /2026/05/02/caffeine-methylation-homocysteine/
 drinks: [decaf-coffee, espresso, brewed-coffee, latte, starbucks-cold-brew]
-related_posts: [caffeine-epigenetics-gene-expression, caffeine-genetics-effects, caffeine-nutrient-intake]
+related_posts: [caffeine-epigenetics-gene-expression, caffeine-genetics-effects, caffeine-nutrition-optimization]
 ---
 
 
