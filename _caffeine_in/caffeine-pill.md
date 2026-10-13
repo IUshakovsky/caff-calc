@@ -4,6 +4,7 @@ seo_title: "Caffeine Pills: 200 mg a Tablet, and Why That Matters"
 description: "A standard caffeine tablet has 200 mg, about two cups of coffee, and NoDoz and Vivarin match it. What the label says and where the risks are."
 related: [excedrin-extra-strength, brewed-coffee, celsius-original]
 article: caffeine-pills-supplements
+redirect_from: /caffeine-in/caffeine-pill-vs-vivarin/
 faq_drinks:
 - nodoz-maximum-strength
 - vivarin
