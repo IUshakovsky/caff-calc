@@ -7,7 +7,7 @@ excerpt: "Does caffeine help or hurt your skin? Learn what science says about ac
 image: "/assets/images/blog/caffeine-skin-health-effects-limits.jpg"
 redirect_from: /2026/02/22/caffeine-skin-health-effects-limits/
 drinks: [decaf-coffee, green-tea, herbal-tea]
-related_posts: [caffeine-histamine-sensitivity, caffeine-acne-triggering-factors-and-safe-limits, caffeine-hair-loss-safe-limits]
+related_posts: [caffeine-histamine-sensitivity, caffeine-acne-triggering-factors-and-safe-limits]
 ---
 
 

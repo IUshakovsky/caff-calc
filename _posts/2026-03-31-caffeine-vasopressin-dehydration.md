@@ -15,7 +15,6 @@ redirect_from:
   - /blog/caffeine-electrolyte-balance/
   - /2026/03/11/caffeine-electrolyte-balance/
 drinks: [brewed-coffee, black-tea, cola-soda, latte]
-related_posts: [caffeine-kidney-stones-prevention]
 ---
 
 

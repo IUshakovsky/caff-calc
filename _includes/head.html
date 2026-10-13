@@ -67,7 +67,9 @@
   <meta name="twitter:description" content="{{ page_description | escape }}">
   <meta name="twitter:image" content="{{ page_image }}">
   <title>{{ page_title }}</title>
-  {%- if paginator and paginator.page > 1 -%}
+  {%- if page.noindex -%}
+  <meta name="robots" content="noindex,follow">
+  {%- elsif paginator and paginator.page > 1 -%}
   <meta name="robots" content="noindex,follow">
   {%- endif -%}
   {% include schema.html %}
