@@ -1,8 +1,8 @@
 ---
 layout: caffeine-in
 title: "How Much Caffeine Is in a Starbucks Caramel Macchiato?"
-seo_title: "Caffeine in Starbucks Caramel Macchiato: 75–150 mg"
-description: "A Grande Starbucks Caramel Macchiato has 150 mg of caffeine. It is steamed milk and vanilla syrup marked with espresso, not a traditional espresso macchiato."
+seo_title: "Starbucks Caramel Macchiato Caffeine: 150 mg Grande, All Sizes"
+description: "A Grande Starbucks Caramel Macchiato has 150 mg of caffeine. See every size from Short to Venti, how it compares with coffee, and how many fit in a day."
 related: [starbucks-caffe-latte, starbucks-pumpkin-spice-latte, starbucks-flat-white]
 article: afternoon-slump-caffeine-strategies
 faq_drinks:

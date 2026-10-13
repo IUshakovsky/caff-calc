@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Mountain Dew?"
-seo_title: "Mountain Dew Caffeine: 54 mg per 12 oz Can"
-description: "A 12 oz can of Mountain Dew has 54 mg of caffeine, and Diet Mountain Dew has the same. How it compares with Coke, Pepsi, Kickstart and coffee."
+seo_title: "Mountain Dew Caffeine: 54 mg a Can (vs Coke, Pepsi, Coffee)"
+description: "A 12 oz can of Mountain Dew has 54 mg of caffeine, the most of the mainstream sodas. Compare it with Coke, Pepsi and coffee, and see how many fit in a day."
 related: [coca-cola-classic, pepsi, red-bull]
 article: caffeine-teens-anxiety-risks-safe-limits
 faq_drinks:

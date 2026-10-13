@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Diet Coke?"
-seo_title: "Diet Coke Caffeine: 46 mg per Can, More Than Regular Coke"
-description: "A 12 oz can of Diet Coke has 46 mg of caffeine, 12 mg more than regular Coca-Cola. How it compares with Pepsi, Mountain Dew and a cup of coffee."
+seo_title: "Diet Coke Caffeine: 46 mg a Can (vs Coke, Pepsi and Coffee)"
+description: "A 12 oz can of Diet Coke has 46 mg of caffeine, 12 mg more than regular Coke. Compare it with Pepsi and coffee, and see how many cans fit in your day."
 related: [coca-cola-classic, pepsi, mountain-dew]
 article: caffeine-tolerance-reset-guide
 ---

@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Coca-Cola?"
-seo_title: "Coca-Cola Caffeine: 34 mg per 12 oz Can"
-description: "A 12 oz can of Coca-Cola has 34 mg of caffeine, about a third of a cup of coffee. How Coke compares with Diet Coke, Pepsi and Mountain Dew."
+seo_title: "Coca-Cola Caffeine: 34 mg a Can (vs Diet Coke, Pepsi, Coffee)"
+description: "A 12 oz can of Coca-Cola has 34 mg of caffeine, about a third of a coffee. Compare it with Diet Coke, Pepsi and coffee, and see how many cans fit in a day."
 related: [diet-coke, pepsi, mountain-dew]
 article: caffeine-dental-health
 faq_drinks:

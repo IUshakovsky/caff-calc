@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Starbucks Espresso?"
-seo_title: "Starbucks Espresso Caffeine: 75 mg a Shot, 300 mg a Quad"
-description: "A single Starbucks espresso shot (Solo) has 75 mg of caffeine. A Doppio has 150 mg, a Triple 225 mg, and a Quad 300 mg. The unit behind the whole menu."
+seo_title: "Starbucks Espresso Caffeine: 75 mg a Shot (Solo to Quad)"
+description: "A Starbucks espresso shot has 75 mg of caffeine. See Solo to Quad in one table, how a Doppio compares with brewed coffee, and how many shots fit in a day."
 related: [espresso, starbucks-caffe-latte, starbucks-blonde-vanilla-latte]
 article: afternoon-slump-caffeine-strategies
 ---

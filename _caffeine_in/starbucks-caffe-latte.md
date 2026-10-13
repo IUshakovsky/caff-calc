@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in a Starbucks Latte?"
-seo_title: "Starbucks Latte Caffeine: 75 mg Tall, 150 mg Grande or Venti"
-description: "A Starbucks Caffè Latte has 75 mg in a Short or Tall and 150 mg in a Grande or hot Venti. Why a bigger latte isn't always stronger, and the iced exception."
+seo_title: "Starbucks Latte Caffeine: 150 mg Grande (Every Size + vs Coffee)"
+description: "A Grande Starbucks Caffè Latte has 150 mg of caffeine. See every size from Short to Venti, how it compares with coffee, and how many fit in a day."
 related: [starbucks-pike-place-roast, espresso, starbucks-matcha-latte]
 article: moderate-caffeine-intake-benefits
 faq_drinks:

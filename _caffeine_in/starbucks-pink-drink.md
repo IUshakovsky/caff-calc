@@ -1,7 +1,7 @@
 ---
 title: "Does the Starbucks Pink Drink Have Caffeine?"
-seo_title: "Pink Drink Caffeine: 50 mg in a Grande, 125 mg as Energy"
-description: "Yes: a Grande Starbucks Pink Drink has about 50 mg of caffeine, up to 100 mg in a Trenta. The caffeine-free and Energy versions, and what they mean for kids."
+seo_title: "Pink Drink Caffeine: 50 mg Grande (All Sizes, vs Coke)"
+description: "A Grande Starbucks Pink Drink has about 50 mg of caffeine, more than a Coke. See every size, the caffeine-free and Energy versions, and advice for kids."
 related: [coca-cola-classic, starbucks-matcha-latte, green-tea]
 article: caffeine-teens-anxiety-risks-safe-limits
 faq_drinks:

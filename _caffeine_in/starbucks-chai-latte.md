@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in a Starbucks Chai Latte?"
-seo_title: "Starbucks Chai Latte Caffeine: 55 mg in a Grande"
-description: "A Grande Starbucks Chai Latte has 55 mg of caffeine, a Venti 75 mg, an iced Venti 90 mg. Why chai is lighter than coffee but not caffeine-free."
+seo_title: "Starbucks Chai Latte Caffeine: 55 mg Grande (Sizes + vs Coffee)"
+description: "A Grande Starbucks Chai Latte has 55 mg of caffeine. See every size from Short to Venti, how it compares with coffee, and how many fit in your day."
 related: [starbucks-matcha-latte, green-tea, starbucks-caffe-latte]
 article: caffeine-circadian-rhythms-timing
 ---

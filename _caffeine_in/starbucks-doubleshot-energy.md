@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Starbucks Doubleshot Energy?"
-seo_title: "Starbucks Doubleshot Energy Caffeine: 135 mg in a 15 oz Can"
-description: "A 15 oz can of Starbucks Doubleshot Energy, Coffee has 135 mg of caffeine, less than a Monster or Red Bull of similar size, built from real espresso."
+seo_title: "Starbucks Doubleshot Energy Caffeine: 135 mg vs Red Bull"
+description: "A 15 oz can of Starbucks Doubleshot Energy has 135 mg of caffeine. See how it compares with Red Bull, Monster and coffee, and how many cans fit in a day."
 related: [monster-energy-original, red-bull, starbucks-espresso]
 ---
 

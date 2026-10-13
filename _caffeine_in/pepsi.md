@@ -1,7 +1,7 @@
 ---
 title: "How Much Caffeine Is in Pepsi?"
-seo_title: "Pepsi Caffeine: 38 mg per 12 oz Can, Diet and Zero Sugar"
-description: "A 12 oz can of Pepsi has 38 mg of caffeine; Pepsi Zero Sugar has 38 mg and Diet Pepsi 35 mg. How Pepsi compares with Coke, Mountain Dew and coffee."
+seo_title: "Pepsi Caffeine: 38 mg a Can (vs Coke, Diet Pepsi, Coffee)"
+description: "A 12 oz can of Pepsi has 38 mg of caffeine; Diet Pepsi has 35 mg. Compare it with Coke and coffee, check bottle labels, and see how many cans fit in a day."
 related: [coca-cola-classic, diet-coke, mountain-dew]
 article: caffeine-blood-sugar
 ---
