@@ -1719,6 +1719,13 @@
   - size_oz: 12
     size_ml: 355
     caffeine_mg: 34
+    default: true
+  # 500 ml figure: Coca-Cola Canada product page ("48 mg PER 500 mL"),
+  # listed in _caffeine_in/coca-cola-classic.md sources. Europe publishes none.
+  - label: Bottle
+    size_oz: 16.9
+    size_ml: 500
+    caffeine_mg: 48
   source_name: The Coca-Cola Company, ingredients FAQ
   source_url: https://www.coca-colacompany.com/about-us/faq/ingredients
   verified: 2026-09-19

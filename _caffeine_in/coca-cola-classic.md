@@ -19,12 +19,17 @@ faq:
   answer: 'On caffeine alone, eleven 12 oz cans (374 mg) stay under the 400 mg a day the FDA cites for healthy adults, and a twelfth takes you to 408 mg. Teenagers have far less room: three cans (102 mg) come close to the 125 mg this site''s calculator sets for a 50 kg teen.'
 - question: Is there a caffeine-free Coca-Cola?
   answer: Yes. The Coca-Cola Company sells caffeine-free versions of Coca-Cola, Diet Coke and Coca-Cola Zero Sugar, and lists Sprite, Fresca and Fanta among its drinks with no caffeine.
-last_modified_at: 2026-10-03
+sources:
+- name: Coca-Cola Canada, Coca-Cola Original Taste
+  url: https://www.coca-cola.com/ca/en/brands/coca-cola/products/coca-cola-original-taste
+last_modified_at: 2026-11-04
 ---
 
 ## A small dose, by coffee's standards
 
 A 12 fl oz can of Coca-Cola carries 34 mg of caffeine. The Coca-Cola Company's own FAQ makes the comparison with coffee itself: the same-sized cup of coffee, it says, has 140 mg or more, three to four times as much. USDA's reference figure for 12 fl oz of [drip coffee]({{ '/caffeine-in/brewed-coffee/' | relative_url }}), 142 mg, agrees.
+
+A 500 ml bottle has 48 mg, the figure [Coca-Cola Canada](https://www.coca-cola.com/ca/en/brands/coca-cola/products/coca-cola-original-taste) gives for that size, and the same as the 12 oz can's 34 mg scaled up. Coca-Cola does not publish a caffeine figure for its European bottles, which say only that the drink contains caffeine, so the North American figure is the best available.
 
 Among the big colas, Coke is at the low end. [Pepsi]({{ '/caffeine-in/pepsi/' | relative_url }}) carries 38 mg per 12 oz can, Pepsi Zero Sugar also 38 mg, and [Diet Coke]({{ '/caffeine-in/diet-coke/' | relative_url }}) 46 mg. [Mountain Dew]({{ '/caffeine-in/mountain-dew/' | relative_url }}), at 54 mg, carries more than half as much again as Coke. USDA's figure for [regular cola](https://fdc.nal.usda.gov/food-details/174852/nutrients) works out to 33 mg a can, close to Coke's own number.
 
