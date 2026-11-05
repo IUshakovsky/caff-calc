@@ -40,6 +40,8 @@ vendor/
 
 # Documentation (local-only; docs/analytics-events.md is force-added and tracked)
 docs/
+docs/analytics-events.md
+docs/blog-audit.md
 
 # Test blog posts
 _posts/*test*
