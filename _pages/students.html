@@ -1,0 +1,99 @@
+---
+layout: page
+title: "Caffeine and Sleep: A One-Page Guide for Students"
+description: "How long caffeine stays active, how much is in common student drinks, and when to stop before bed: a printable one-page guide with sources."
+permalink: /pages/students/
+last_modified_at: 2026-11-07
+---
+
+{%- comment -%}
+  Printable handout for campus wellness centres and libraries. Every statement
+  comes from an existing page on the site: don't add new medical claims here.
+  The print rules below are page-scoped and must keep this to one A4/Letter
+  sheet; re-test with Chrome's print-to-PDF after editing.
+{%- endcomment -%}
+{%- assign student_drinks = "brewed-coffee,espresso,black-tea,green-tea,red-bull,monster-energy-original,coca-cola-classic" | split: "," -%}
+
+<style>
+  @media print {
+    .navbar, .footer, .student-guide-print { display: none !important; }
+    html, body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+    .header-area { background: none !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important; }
+    .header-area .title { color: #000 !important; font-size: 16pt; margin: 0 0 4pt; text-shadow: none; }
+    .main-content { margin: 0 !important; padding: 0 !important; max-width: none !important; width: 100% !important; box-shadow: none !important; background: none !important; }
+    .student-guide, .student-guide * { color: #000 !important; background: none !important; box-shadow: none !important; }
+    .student-guide a { text-decoration: none; }
+    .student-guide h2 { font-size: 12pt; margin: 7pt 0 2pt; }
+    .student-guide p, .student-guide ul, .student-guide ol { font-size: 11pt; line-height: 1.25; margin-bottom: 3pt; }
+    .student-guide table { break-inside: avoid; font-size: 11pt; margin-bottom: 3pt; }
+    .student-guide th, .student-guide td { padding: 1pt 5pt !important; }
+    .student-guide-box { border: 1px solid #000 !important; margin: 5pt 0 !important; }
+    .student-guide-box .card-body { padding: 3pt 6pt !important; }
+    .header-area, .header-area .container, .header-area .d-flex { min-height: 0 !important; height: auto !important; }
+    .content-page { margin: 0 !important; padding: 0 !important; }
+    .student-guide-footer, .student-guide-footer p { font-size: 9pt !important; line-height: 1.2; margin: 2pt 0 0 !important; }
+  }
+</style>
+
+<div class="content-page student-guide">
+  <div class="row">
+    <div class="col-lg-10 mx-auto">
+
+      <p>Caffeine's average half-life in healthy adults is roughly 3 to 6 hours, so an afternoon coffee can still be in your system at bedtime. For a serving of about 100 mg, research on dose and timing points to stopping 8 to 10 hours before bed.</p>
+
+      <p class="student-guide-print"><button type="button" class="btn btn-outline-secondary btn-sm" id="printGuide" hidden>Print this page</button></p>
+
+      <h2 class="h5">When caffeine is still active</h2>
+      <p>Every half-life, half of what is left is gone, and individuals have been measured from about 2 to 10 hours. On a 5-hour half-life, a 200 mg coffee at 3 pm leaves about 66 mg at 11 pm and 50 mg at 1 am. Oral contraceptives and pregnancy make it last longer; smoking shortens it. To try your own drink and bedtime, use the <a href="{{ '/half-life/' | relative_url }}">half-life calculator</a> (caffcalc.com/half-life).</p>
+
+      <h2 class="h5">Caffeine in common student drinks</h2>
+      <div class="table-responsive">
+        <table class="table table-sm table-bordered align-middle mb-3">
+          <thead>
+            <tr><th scope="col">Drink</th><th scope="col">Serving</th><th scope="col">Caffeine</th></tr>
+          </thead>
+          <tbody>
+            {%- for slug in student_drinks -%}
+            {%- assign bev = site.data.beverages | where: "slug", slug | first -%}
+            {%- if bev -%}
+            {%- assign serving = bev.servings | where: "default", true | first | default: bev.servings.first %}
+            <tr>
+              <td><a href="{{ '/caffeine-in/' | append: slug | append: '/' | relative_url }}">{{ bev.product }}</a></td>
+              <td>{% include serving-size.html serving=serving %}</td>
+              <td>{% include serving-mg.html serving=serving %}</td>
+            </tr>
+            {%- endif -%}
+            {%- endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="h5">Three practical tips</h2>
+      <ol>
+        <li><strong>Work backwards from your bedtime.</strong> For a serving of about 100 mg, stop 8 to 10 hours before bed; for about 200 to 300 mg, stop 12 to 14 hours before. Move it earlier if your sleep is fragile. (<a href="{{ '/blog/caffeine-sleep-timing/' | relative_url }}">Caffeine and sleep timing</a>)</li>
+        <li><strong>Front-load your caffeine.</strong> Have your strongest dose in the morning; any afternoon dose should be smaller and earlier. (<a href="{{ '/blog/caffeine-sleep-timing/' | relative_url }}">Caffeine and sleep timing</a>)</li>
+        <li><strong>Cutting back? Taper.</strong> Withdrawal symptoms typically start 12 to 24 hours after the last dose and peak around day 2. Tapering gradually reduces their severity. (<a href="{{ '/blog/caffeine-tolerance-reset-guide/' | relative_url }}">Caffeine tolerance reset</a>)</li>
+      </ol>
+
+      <div class="card mb-3 student-guide-box">
+        <div class="card-body">
+          <p class="mb-0"><strong>Check your own limit.</strong> The <a href="{{ '/' | relative_url }}">CaffCalc caffeine calculator</a> (caffcalc.com) estimates a personal daily limit from your age, weight and sensitivity. Free, no sign-up.</p>
+        </div>
+      </div>
+
+      <div class="small text-muted student-guide-footer">
+        <p class="mb-1">Sources: <a href="https://pubmed.ncbi.nlm.nih.gov/36870101/" target="_blank" rel="noopener">Sleep Medicine Reviews, 2023</a> (timing); <a href="https://pubmed.ncbi.nlm.nih.gov/15448977/" target="_blank" rel="noopener">critical review of caffeine withdrawal</a>; half-life studies are cited on <a href="{{ '/half-life/' | relative_url }}">the half-life page</a>. Drink figures are sourced on each drink's page.</p>
+        <p class="mb-0">Information only, not medical advice. Written by <a href="{{ '/pages/about/' | relative_url }}">{{ site.author.name }}</a>, not reviewed by a clinician. Last updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%-d %B %Y" }}</time>.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var button = document.getElementById('printGuide');
+    button.hidden = false;
+    button.addEventListener('click', function () { window.print(); });
+  })();
+</script>
