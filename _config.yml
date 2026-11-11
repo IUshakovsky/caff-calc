@@ -50,6 +50,7 @@ exclude:
   - .github
   - BLOG_GUIDE.md
   - documentation
+  - scripts
   - docs
 
 # Collections
